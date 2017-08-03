@@ -68,8 +68,14 @@ header img {
     right:0;
     border: none;
     border-radius: 50%;
-    height:100%;
+    width:calc(50px + 10vw);
     border: double 5px #aaa;
+}
+
+header img:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 #description {
