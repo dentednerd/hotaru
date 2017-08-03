@@ -11,6 +11,15 @@ body, html {
     min-height:100% !important;
 }
 
+body {
+    color: #222;
+    background-color: #eee;
+    font-family: 'Merriweather', serif;
+    font-size:calc(10px + 0.4vw);
+    line-height:calc(9px + 1vw);
+    width: 100%;
+}
+
 #root {
     overflow:hidden;
 }
@@ -24,24 +33,76 @@ img {
 #wrapper {
     margin-bottom:40px;
     padding-bottom: 40px;
+
 }
 
 a:hover {
     text-shadow: 1px 1px 3px #dd9, -1px -1px 3px #dd9;
 }
 
-/*LAYOUT*/
+/* HEADER */
 
-body {
-    color: #222;
-    background-color: #eee;
-    font: 16px Merriweather, serif;
-    line-height: 24px;
-    width: 100%;
+header {
+    position: relative;
+    margin: 40px 0px 0 0px;
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
+#title {
+    height:50%;
+    width:99%;
+    border-bottom: double 5px #aaa;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+
+header img {
+    position:absolute;
+    top:0;
+    right:0;
+    border: none;
+    border-radius: 50%;
+    height:100%;
+    border: double 5px #aaa;
+}
+
+#description {
+    height:50%;
+    font-weight:bold;
+    font-family: 'Merriweather', serif;
+    font-size:calc(10px + 1vw);
+    text-align: left;
+    padding: 5px 0 0 0;
+    height: 80px;
+}
+
+a {
+    color: #111;
+    text-decoration: none;
+}
+
+a.twitter {
+    color: #4099FF;
+}
+
+a.linkedin {
+    color: #0077B5;
+}
+
+a.email {
+    color: #C92C19;
+}
+
+/*LAYOUT*/
+
 article {
-    margin-top:60px;
+    margin-top:calc(10px + 1vw);
     color: #eee;
     height: auto !important;
     border-radius: 20px;
@@ -77,7 +138,6 @@ article.furtherxp {
     border: none;
     box-shadow: none;
     color: #222;
-    margin: 60px 0 0 0;
 }
 
 article.education {
@@ -103,7 +163,7 @@ figure {
 }
 
 .portfolio {
-    margin:40px 0;
+    margin-top:20px;
     padding-bottom: 40px;
     background:#FC0;
     text-align:center;
@@ -111,7 +171,7 @@ figure {
 }
 
 .video {
-    margin:40px 0;
+    margin-top:20px;
     padding-bottom: 40px;
     background:#c08;
     text-align:center;
@@ -119,46 +179,63 @@ figure {
     color:#111;
 }
 
+/* .videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	/* padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%; 
+} */
+
 .footer {
-    margin:40px 0;
-    padding-bottom: 40px;
+    margin:20px 0;
+    padding:0;
     background:#0b9;
     text-align:center;
     box-shadow: 2px 2px 5px #666, -1px -1px 3px #666;
 }
 
-/* .video {
-    border-top: double 3px #aaa;
-    border-bottom: double 3px #aaa;
-    margin-top:40px;
-    padding:30px 0;
-} */
-
 /*TEXT*/
 
 h1 {
-    font: normal 76px Fjalla One, sans-serif;
-    letter-spacing: -5px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size:calc(20px + 4vw);
+    line-height:calc(40px + 4vw);
+    letter-spacing: -0.25vw;
 }
 
 h2 {
-    font: bold 28px Merriweather, serif;
-    margin-bottom: 10px;
+    font-size:calc(10px + 1.5vw);
+    line-height:calc(14px + 1.5vw);
+    font-weight:bold;
+    margin:0.5vw 0 1.5vw 0;
 }
 
 h3 {
-    font: bold 20px Merriweather Sans, serif;
+    font-weight: bold;
+    font-family: 'Merriweather Sans', serif;
+    font-size:calc(10px + 0.75vw);
+    margin-bottom: 0.3vw;
 }
 
 h4 {
-    font: bold 16px Merriweather Sans, serif;
+    font-weight: bold;
+    font-family: 'Merriweather Sans', serif;
+    font-size:calc(10px + 0.5vw); 
+    line-height:calc(12px + 0.5vw); 
 }
 
 .portfolio h2, .video h2 {
     border-top: double 3px #000;
     border-bottom: double 3px #000;
     margin: 20px 0;
-    padding:20px 0;
+    padding: 20px 0;
 }
 
 figcaption {
@@ -189,25 +266,4 @@ ol {
 
 p {
     margin-top: 16px;
-}
-
-p:first-child {
-    margin-top: 0px;
-}
-
-a {
-    color: #222;
-    text-decoration: none;
-}
-
-a.twitter {
-    color: #4099FF;
-}
-
-a.linkedin {
-    color: #0077B5;
-}
-
-a.email {
-    color: #C92C19;
 }
