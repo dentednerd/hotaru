@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Merriweather|Merriweather+Sans');
+
+/*RESETS*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body, html {
+    min-height:100% !important;
+}
+
+#root {
+    overflow:hidden;
+}
+
+img {
+    border: 0px;
+    max-width: 100% !important;
+    border-radius: 20px;
+}
+
+#wrapper {
+    margin-bottom:40px;
+    padding-bottom: 40px;
+}
+
+a:hover {
+    text-shadow: 1px 1px 3px #dd9, -1px -1px 3px #dd9;
+}
+
+/*LAYOUT*/
+
+body {
+    color: #222;
+    background-color: #eee;
+    font: 16px Merriweather, serif;
+    line-height: 24px;
+    width: 100%;
+}
+
+article {
+    margin-top:60px;
+    color: #eee;
+    height: auto !important;
+    border-radius: 20px;
+}
+
+article.intro {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #222;
+}
+
+article.skills {
+    background: #c08;
+    -moz-box-shadow: inset 2px 2px 5px #805, inset -2px -2px 5px #805;
+    -webkit-box-shadow: inset 2px 2px 5px #805, inset -2px -2px 5px #805;
+    box-shadow: inset 2px 2px 5px #805, inset -2px -2px 5px #805;
+}
+
+article.codexp {
+    background: #0B9;
+    -moz-box-shadow: inset 2px 2px 5px #075, inset -2px -2px 5px #075;
+    -webkit-box-shadow: inset 2px 2px 5px #075, inset -2px -2px 5px #075;
+    box-shadow: inset 2px 2px 5px #075, inset -2px -2px 5px #075;
+}
+
+article.codexp a {
+    color:#FFF;
+}
+
+article.furtherxp {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #222;
+    margin: 60px 0 0 0;
+}
+
+article.education {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #222;
+}
+
+article.interests {
+    font-size:14px;
+    line-height:14px;
+    color: #555;
+    background: #FC0;
+    -moz-box-shadow: inset 2px 2px 5px #A80, inset -2px -2px 5px #A80;
+    -webkit-box-shadow: inset 2px 2px 5px #A80, inset -2px -2px 5px #A80;
+    box-shadow: inset 2px 2px 5px #A80, inset -2px -2px 5px #A80;
+}
+
+figure {
+    width: 375px;
+    border-radius: 20px;
+}
+
+.portfolio {
+    margin:40px 0;
+    padding-bottom: 40px;
+    background:#FC0;
+    text-align:center;
+    box-shadow: 2px 2px 5px #666, -1px -1px 3px #666;
+}
+
+.video {
+    margin:40px 0;
+    padding-bottom: 40px;
+    background:#c08;
+    text-align:center;
+    box-shadow: 2px 2px 5px #666, -1px -1px 3px #666;
+    color:#111;
+}
+
+.footer {
+    margin:40px 0;
+    padding-bottom: 40px;
+    background:#0b9;
+    text-align:center;
+    box-shadow: 2px 2px 5px #666, -1px -1px 3px #666;
+}
+
+/* .video {
+    border-top: double 3px #aaa;
+    border-bottom: double 3px #aaa;
+    margin-top:40px;
+    padding:30px 0;
+} */
+
+/*TEXT*/
+
+h1 {
+    font: normal 76px Fjalla One, sans-serif;
+    letter-spacing: -5px;
+}
+
+h2 {
+    font: bold 28px Merriweather, serif;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font: bold 20px Merriweather Sans, serif;
+}
+
+h4 {
+    font: bold 16px Merriweather Sans, serif;
+}
+
+.portfolio h2, .video h2 {
+    border-top: double 3px #000;
+    border-bottom: double 3px #000;
+    margin: 20px 0;
+    padding:20px 0;
+}
+
+figcaption {
+    width: 350px;
+    background: #ffa;
+    padding: 10px;
+    text-align: left;
+}
+
+blockquote {
+    background: #444;
+    border-left: solid 10px #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+blockquote img {
+    width: 95%;
+    height: auto;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+p {
+    margin-top: 16px;
+}
+
+p:first-child {
+    margin-top: 0px;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+a.twitter {
+    color: #4099FF;
+}
+
+a.linkedin {
+    color: #0077B5;
+}
+
+a.email {
+    color: #C92C19;
+}
