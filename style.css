@@ -15,7 +15,7 @@ body {
     color: #222;
     background-color: #eee;
     font-family: 'Merriweather', serif;
-    font-size: 2.5vh;
+    font-size: 16px;
     width: 100%;
 }
 
@@ -190,8 +190,8 @@ h1 {
 }
 
 h2 {
-    font-size:calc(1em + 0.5vw);
-    line-height:calc(1em + 0.5vw);
+    font-size:20px;
+    line-height:20px;
     font-weight:bold;
     margin:0.5vw 0 1.5vw 0;
 }
@@ -199,15 +199,15 @@ h2 {
 h3 {
     font-weight: bold;
     font-family: 'Merriweather Sans', serif;
-    font-size:calc(1em + 0.25vw);
+    font-size:18px;
     margin-bottom: 0.3vw;
 }
 
 h4 {
     font-weight: bold;
     font-family: 'Merriweather Sans', serif;
-    font-size:calc(1em + 0.1vw); 
-    line-height:calc(1em + 0.25vw); 
+    font-size:16px; 
+    line-height:18px; 
 }
 
 .portfolio h2, .video h2 {
