@@ -261,17 +261,27 @@ footer {
 }
 
 footer p {
-  font-family: 'Cardo', serif;
-  font-size: 20px;
-  letter-spacing: 0;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size:20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 10px;
+  height: 24px;
 }
 
 footer p a:hover {
   text-shadow: none;
+  background-color: #5B276E;
+  padding: 0 10px;
+  height: 24px;
 }
 
 footer .svg-inline--fa {
   margin: 0 5px;
+}
+
+footer .svg-inline--fa:hover {
+  color:#5B276E;
 }
 
 /*TEXT*/
