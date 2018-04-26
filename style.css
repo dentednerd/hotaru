@@ -248,6 +248,10 @@ article {
   margin-bottom: 80px;
 }
 
+.interests .and-finally {
+  display: block;
+}
+
 footer {
   position: absolute;
   bottom: 0;
