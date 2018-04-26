@@ -35,7 +35,8 @@ img {
 .wrapper {
   position: relative;
   margin: 0px auto;
-  max-width: 640px;
+  width: 100%;
+  max-width: 768px;
   min-height: 100vh;
 }
 
@@ -57,7 +58,7 @@ a:hover {
 /* HEADER */
 
 header {
-    max-width: 600px;
+    max-width: 768px;
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -109,7 +110,7 @@ ul.skill-list li  {
 /*LAYOUT*/
 
 article {
-  max-width: 600px;
+  max-width: 768px;
   padding: 0 20px;
   margin-bottom: 80px;
 }
@@ -207,7 +208,7 @@ article {
 
 .project {
     position: relative;
-    max-width: 600px;
+    max-width: 768px;
     width: 100%;
     margin-bottom: 80px;
 }
@@ -215,7 +216,8 @@ article {
 .project-image {
   opacity: 0.5;
   display: block;
-  width: 600px;
+  width: 100%;
+  max-width: 768px;
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
@@ -245,6 +247,12 @@ article {
   padding: 18px;
 }
 
+.video .video-content {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .interests {
   margin-bottom: 80px;
 }
@@ -256,7 +264,7 @@ article {
 footer {
   position: absolute;
   bottom: 0;
-  max-width: 600px;
+  max-width: 768px;
   width: 100%;
   padding:0 20px;
   text-align:center;
@@ -407,6 +415,8 @@ p {
 }
 
 .cards {
+  max-width: 640px;
+  margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
