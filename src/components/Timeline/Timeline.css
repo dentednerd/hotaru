@@ -1,0 +1,78 @@
+.timeline {
+  width: 40%;
+  font-size: 0.75em;
+}
+
+.timeline .timeline-item {
+  margin: 0.5em 0;
+  color: #fff;
+  padding: 1em;
+  background:#c30;
+}
+
+.timeline .timeline-item:last-child {
+  margin-bottom: 0.2em;
+}
+
+.timeline h2 {
+  margin: 0;
+}
+
+.timeline-item h2 {
+  text-align: left;
+  color: #fff;
+  font-size: 1.25em;
+}
+
+.timeline h3 {
+  display: block;
+  margin: 0.5em 0;
+}
+
+.fade, .fade h2, .fade h3, .fade span {
+  color: rgb(255, 170, 125);
+}
+
+.timeline-item.fade {
+  margin-top: 0;
+  margin-bottom: 0.1em;
+  width: 50%;
+  float: right;
+}
+
+.fade h2 {
+  font-size: calc(10px + 0.25em);
+}
+
+.fade h3 {
+  font-size: calc(10px + 0.25em);
+}
+
+.timeline-item span.date {
+  display: block;
+  background: #fff;
+  color: #c30;
+  font-size: 1em;
+  padding: 0.1em 0;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+.fade span.date {
+  background-color: rgb(255, 170, 125);
+}
+
+.timeline-item p.desc {
+  margin: 1em 0;
+}
+
+.timeline-item p.skills {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: 300;
+}

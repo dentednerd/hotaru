@@ -1,0 +1,15 @@
+.orange-box {
+  background: #fda;
+  text-align: left;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.orange-box h2, .orange-box span {
+  font-family: 'Roboto Slab', serif;
+  color: #c30;
+  text-align: left;
+  font-size: 1em;
+  line-height: 1em;
+  margin-bottom: 0.5em;
+}

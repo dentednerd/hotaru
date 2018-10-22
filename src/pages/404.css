@@ -1,0 +1,11 @@
+.center h1, .center .orange-box h2 {
+  text-align: center;
+}
+
+.center .orange-box {
+  height: 80vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,39 @@
+.intro {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+article.intro-section {
+  margin-bottom: 2em;
+  width: 50%;
+}
+
+.hello, .developer, .skill-icons, .looking-for, .pie-chart {
+  margin-bottom: 2em;
+}
+
+.data {
+  padding-left: 1em;
+}
+
+.skill-icons-wrapper {
+  background-color: #ffddaa;
+  padding: 1em;
+  text-align: center;
+  margin: 0 auto 2em auto;
+}
+
+.skill-icons.also {
+  margin-bottom: 0;
+}
+
+.skill-icons img {
+  height: 3em;
+  margin-right: 0.5em;
+}
+
+.skill-icons h2 {
+  margin-bottom: 0.75em;
+}

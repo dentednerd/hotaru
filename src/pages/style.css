@@ -1,0 +1,107 @@
+/*
+Well hello there! I see you're taking a look at my source code. Hopefully you won't find it too untidy. If you have any questions, give me a call on 07791351136. I'd love to hear from you! 
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto+Condensed');
+
+/* ----- RESETS ----- */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body, html {
+  min-height:100vh !important;
+}
+
+body {
+  color: #333;
+  background-color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 24px;
+  width: 100%;
+}
+
+@media(max-width: 800px) {
+  body {
+    font-size: 18px;
+  }
+  .project-middle p.project-caption {
+    display: none;
+  }
+  .project-middle h2 {
+    margin-bottom: 0;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  max-width: 98vw;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 96vw;
+  max-width: 1024px;
+  padding: 0 2vw;
+}
+
+#main {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+article {
+  padding: 0;
+  margin-bottom: 2em;
+}
+
+a {
+  color: #c30;
+  text-decoration: none;
+}
+
+p {
+  font-size: 1em;
+  width: 98%;
+}
+
+/* ----- TEXT DEFAULTS ----- */
+
+h2 {
+  color: #c30;
+  font-family: 'Roboto Slab', serif;
+  font-size:1.5em;
+  margin: 0;
+  font-weight:300;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 1em;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+.icon {
+  margin-right: 0.6em;
+}
+
+/* ----- BLOG POSTS ----- */
+
+.blog {
+  margin-bottom: 2em;
+}

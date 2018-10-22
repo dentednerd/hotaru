@@ -1,0 +1,18 @@
+.pie-chart {
+  position: relative;
+  width: 20em;
+  margin: 0 auto;
+}
+
+.pie-chart .section-label {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
+  width: 35%;
+  font-size: 1em;
+  line-height: 1em;
+  padding-top: 1em;
+}

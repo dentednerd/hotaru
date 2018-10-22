@@ -1,0 +1,9 @@
+.recruiters {
+  text-align: center;
+}
+
+.recruiters span {
+  font-weight: 600;
+  font-family: 'Roboto Slab', serif;
+  color: white;
+}
