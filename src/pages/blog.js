@@ -18,11 +18,11 @@ export default ({ data }) => {
       <Layout>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id} className="blog-post">
-            <h3>
+            <h2>
               <Link to={node.fields.slug}>
                 {node.frontmatter.title}
               </Link>
-            </h3>
+            </h2>
             <h4>{node.frontmatter.date}</h4>
             <p>{node.excerpt}</p>
           </div>
