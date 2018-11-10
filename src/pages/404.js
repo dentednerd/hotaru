@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import OrangeBox from "../components/OrangeBox"
 import './style.css'
@@ -10,7 +11,7 @@ export default () => {
       <Layout>
         <OrangeBox>
           <h1>404!!</h1>
-          <a href="/"><h2>&laquo; Home</h2></a>
+          <Link to="/"><h2>&laquo; Home</h2></Link>
         </OrangeBox>
       </Layout>
     </div>

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import BlogHeader from '../components/BlogHeader';
@@ -21,7 +21,7 @@ export default ({ data }) => {
             <h4>{post.frontmatter.date}</h4>
             <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
-          <h4 className="back-to-blog"><a href="/blog/">&laquo; Back to Blog</a></h4>
+          <h4 className="back-to-blog"><Link to="/blog">&laquo; Back to Blog</Link></h4>
       </Layout>
     </div>
   )
