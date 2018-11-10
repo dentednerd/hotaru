@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Joanne Imlay',
   },
+  pathPrefix: '/CV',
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',

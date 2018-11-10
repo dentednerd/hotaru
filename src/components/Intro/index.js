@@ -85,22 +85,3 @@ const Intro = props => {
 }
 
 export default Intro
-
-export const query = graphql`
-  query {
-    allMarkdownRemark(limit: 1, sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`

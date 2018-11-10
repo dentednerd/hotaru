@@ -7,7 +7,7 @@ class Hero extends React.Component {
   render() {
     return (
       <div className="video-hero">
-        <video autoPlay="true" width="100%" loop muted>
+        <video autoPlay width="100%" loop muted>
           <source src="hero.ogv" />
           <source src="hero.webm" />
         </video>

@@ -36,7 +36,7 @@ class Header extends React.Component {
         </div>
         <div className="menu">
           <Link to='/'>Home</Link>
-          <Link to='/blog/'>Blog</Link>
+          <Link to='/blog'>Blog</Link>
         </div>
       </header>
     )

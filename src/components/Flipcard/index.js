@@ -7,7 +7,7 @@ const Flipcard = ({ title, content }) => {
   return (
     <div
       className="flip-container"
-      ontouchstart="this.classList.toggle('hover');"
+      onTouchStart={() => this.classList.toggle('hover')}
     >
       <div className="flipper">
         <div className="front">

@@ -79,6 +79,7 @@ class Portfolio extends React.Component {
     const thumbnails = projectsData.map((project, i) => {
       return (
         <button
+          key={project.title}
           tabIndex="0"
           onMouseOver={() => this.showThisProject(i)}
         >

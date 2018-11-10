@@ -26,6 +26,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.3.1",
     "react-svg-piechart": "^2.1.1",
     "typed.js": "^2.0.6"
   },
@@ -44,8 +45,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.14.2",
     "gh-pages": "^1.0.0",
+    "prettier": "^1.14.2",
     "prop-types": "^15.5.10",
     "react-scripts": "^1.0.10"
   }
