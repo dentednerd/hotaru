@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+
 import Layout from "../components/Layout"
 import Header from '../components/Header';
 import BlogHeader from '../components/BlogHeader';
@@ -17,9 +18,11 @@ export default ({ data }) => {
       <Layout>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id} className="blog-post">
-            <Link to={node.fields.slug}>
-              <h3>{node.frontmatter.title}</h3>
-            </Link>
+            <h3>
+              <Link to={node.fields.slug}>
+                {node.frontmatter.title}
+              </Link>
+            </h3>
             <h4>{node.frontmatter.date}</h4>
             <p>{node.excerpt}</p>
           </div>

@@ -21,12 +21,12 @@
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.0.5",
     "gatsby-transformer-remark": "^2.1.8",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "react-router-dom": "^4.3.1",
     "react-svg-piechart": "^2.1.1",
     "typed.js": "^2.0.6"
   },
