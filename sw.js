@@ -26,23 +26,23 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-3d1e022d253cadd82cc1.js"
+    "url": "webpack-runtime-82d03f72d577bd26da25.js"
   },
   {
-    "url": "app-9482855261511ee1c008.js"
+    "url": "app-4267f2228d99c28f5aee.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-6f2a176f98b0da76acc0.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "2d168946f67ea20536d5608c2b1275f2"
+    "revision": "667595b1a68e0d908a5dbee8dc9c8ab2"
   },
   {
-    "url": "component---src-pages-404-js.d8690e4f8a25feca1c46.css"
+    "url": "component---src-pages-404-js.7cc507de0e8134c6ec49.css"
   },
   {
-    "url": "component---src-pages-404-js-34c768d27eac6c5b0653.js"
+    "url": "component---src-pages-404-js-d27adb71c6b35e9e01b8.js"
   },
   {
     "url": "static/d/164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E.json",
@@ -60,7 +60,7 @@ self.__precacheManifest = [
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/offline-plugin-app-shell-fallback/index.html", {
+workbox.routing.registerNavigationRoute("/joanneimlay.com/offline-plugin-app-shell-fallback/index.html", {
   whitelist: [/^([^.?]*|[^?]*\.([^.?]{5,}|html))(\?.*)?$/],
   blacklist: [/\?(.+&)?no-cache=1$/],
 });
