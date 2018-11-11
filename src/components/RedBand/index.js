@@ -4,9 +4,9 @@ import './RedBand.css'
 
 const RedBand = props => {
   return (
-    <div className="redband">
+    <section className="redband">
       {props.children}
-    </div>
+    </section>
   )
 }
 

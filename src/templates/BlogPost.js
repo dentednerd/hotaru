@@ -1,30 +1,26 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from '../components/Layout';
-import Header from '../components/Header';
+import Layout from '../templates/Layout';
+import Wrapped from '../components/Wrapped';
 import BlogHeader from '../components/BlogHeader';
 
 import '../pages/style.css'
-// import './BlogPost.css'
 
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <div className="blog">
-      <Layout>
-        <Header />
-      </Layout>
+    <Layout>
       <BlogHeader />
-      <Layout>
-          <div className="blog-post">
-            <h3>{post.frontmatter.title}</h3>
-            <h4>{post.frontmatter.date}</h4>
-            <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
-          <h4 className="back-to-blog"><Link to="/blog">&laquo; Back to Blog</Link></h4>
-      </Layout>
-    </div>
+      <Wrapped>
+        <article className="blog-post">
+          <h2>{post.frontmatter.title}</h2>
+          <h3>{post.frontmatter.date}</h3>
+          <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+        </article>
+        <h3 className="back-to-blog"><Link to="/blog">&laquo; Back to Blog</Link></h3>
+      </Wrapped>
+    </Layout>
   )
 }
 

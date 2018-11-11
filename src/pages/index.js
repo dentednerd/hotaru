@@ -1,7 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import {Helmet} from 'react-helmet';
-import Layout from '../components/Layout';
+
+import Layout from '../templates/Layout';
+import Wrapped from '../components/Wrapped';
 import RedBand from '../components/RedBand';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -9,40 +10,35 @@ import Recruiters from '../components/Recruiters';
 import Intro from '../components/Intro';
 import Interests from '../components/Interests';
 import Portfolio from '../components/Portfolio';
-import Footer from '../components/Footer';
 
 import './style.css'
 
 const IndexPage = ({ data }) => {
   return (
-    <div id="main">
-      <Helmet>
-        <title>Joanne Imlay, front end developer</title>
-      </Helmet>
-      <Layout>
-        <Header />
+    <Layout>
+      <Wrapped>
         <Hero />
-      </Layout>
+      </Wrapped>
       <RedBand>
-        <Layout>
+        <Wrapped>
           <Recruiters />
-        </Layout>
+        </Wrapped>
       </RedBand>
-      <Layout>
+      <Wrapped>
         <Intro latestBlog={data.allMarkdownRemark.edges[0].node}/>
-      </Layout>
+      </Wrapped>
       <RedBand>
-        <Layout>
+        <Wrapped>
           <Portfolio />
-        </Layout>
+        </Wrapped>
       </RedBand>
-      <Layout>
+      <Wrapped>
         <Interests />
-        <Footer />
-      </Layout>
-    </div>
+      </Wrapped>
+    </Layout>
   );
 }
+
 export default IndexPage
 
 export const query = graphql`

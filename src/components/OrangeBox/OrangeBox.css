@@ -5,6 +5,14 @@
   margin: 1em auto;
 }
 
+@media screen and (orientation: portrait) {
+  .orange-box {
+    font-size: 16px;
+    padding: 4px;
+    margin: 8px auto;
+  }
+}
+
 .orange-box h2, .orange-box span {
   font-family: 'Roboto Slab', serif;
   color: #c30;

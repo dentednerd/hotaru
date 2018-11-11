@@ -1,6 +1,6 @@
 import React from 'react'
 import RedBand from '../RedBand'
-import Layout from '../Layout'
+import Wrapped from '../Wrapped'
 
 import './BlogHeader.css'
 
@@ -8,9 +8,9 @@ const BlogHeader = () => {
   return (
     <div className="blog-header">
       <RedBand>
-        <Layout>
+        <Wrapped>
           <h2>{"<Blog />"}</h2>
-        </Layout>
+        </Wrapped>
       </RedBand>
     </div>
   )

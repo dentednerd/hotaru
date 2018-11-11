@@ -1,35 +1,30 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/Layout"
-import Header from '../components/Header';
+import Layout from '../templates/Layout';
+import Wrapped from "../components/Wrapped"
 import BlogHeader from '../components/BlogHeader';
-import IconLinks from '../components/IconLinks';
 
 import './style.css'
 
 export default ({ data }) => {
   return (
-    <div className="blog">
-      <Layout>
-        <Header />
-      </Layout>
+    <Layout>
       <BlogHeader />
-      <Layout>
+      <Wrapped>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id} className="blog-post">
+          <article key={node.id} className="blog-post">
             <h2>
               <Link to={node.fields.slug}>
                 {node.frontmatter.title}
               </Link>
             </h2>
-            <h4>{node.frontmatter.date}</h4>
+            <h3>{node.frontmatter.date}</h3>
             <p>{node.excerpt}</p>
-          </div>
+          </article>
         ))}
-      <IconLinks />
-      </Layout>
-    </div>
+      </Wrapped>
+    </Layout>
   )
 }
 

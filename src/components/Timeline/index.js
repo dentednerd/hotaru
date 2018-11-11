@@ -10,7 +10,7 @@ library.add(faGraduationCap);
 
 const Timeline = () => {
   return (
-    <div className="timeline">
+    <section className="timeline">
 
       {/* <div className="timeline-item">
         <span className="date">The Future</span>
@@ -181,7 +181,7 @@ const Timeline = () => {
           4 A-levels, 9 GCSEs
         </h3>
       </div>
-    </div>
+    </section>
   )
 }
 

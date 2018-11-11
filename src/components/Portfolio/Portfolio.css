@@ -41,14 +41,12 @@ article.portfolio-section {
 .thumbnails img {
   width: 6em;
   transition: .5s ease;
-  /* opacity: 0.5; */
   border-radius: 50%;
   box-shadow: none;
 }
 
 .thumbnails img:hover {
   transition: .5s ease;
-  /* opacity: 1; */
   border-radius: 6px;
   box-shadow: 0px 0px 5px #c30;
 }

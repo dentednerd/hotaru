@@ -6,7 +6,7 @@ import './Header.css'
 
 class Header extends React.Component {
   componentDidMount() {
-    const strings = ["React developer.", "UX obsessive.", "Design geek.", "Tutor and resource creator."]
+    const strings = ["React developer.", "UX obsessive.", "Design geek.", "Mentor and resource creator."]
 
     const options = {
       strings,
@@ -34,10 +34,11 @@ class Header extends React.Component {
             />
           </div>
         </div>
-        <div className="menu">
+        <nav>
           <Link to='/'>Home</Link>
           <Link to='/blog'>Blog</Link>
-        </div>
+          <Link to="/#portfolio">Portfolio</Link>
+        </nav>
       </header>
     )
   }

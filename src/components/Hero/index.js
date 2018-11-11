@@ -6,7 +6,7 @@ import './Hero.css'
 class Hero extends React.Component {
   render() {
     return (
-      <div className="video-hero">
+      <section className="video-hero">
         <video autoPlay width="100%" loop muted>
           <source src="hero.ogv" />
           <source src="hero.webm" />
@@ -16,7 +16,7 @@ class Hero extends React.Component {
           <IconLinks />
         </div>
 
-      </div>
+      </section>
     )
   }
 }

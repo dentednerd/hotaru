@@ -15,3 +15,13 @@
   font-family: 'Roboto Slab', serif;
   color: white;
 }
+
+@media screen and (orientation: portrait) {
+  .redband .wrapper {
+    font-size: 16px;
+  }
+
+  .redband h2 {
+    font-size: 16px;
+  }
+}

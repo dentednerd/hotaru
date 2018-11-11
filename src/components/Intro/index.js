@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 // import Pie from './Pie'
 import Timeline from '../Timeline'
 import OrangeBox from '../OrangeBox'
@@ -8,8 +8,8 @@ import './Intro.css'
 
 const Intro = props => {
   return (
-    <div className="intro">
-      <article className="intro-section">
+    <section className="intro">
+      <div className="intro-section">
 
         <div className="hello">
           <h2>{`Hello, I'm Jo.`}</h2>
@@ -78,9 +78,9 @@ const Intro = props => {
 
         {/* <Pie /> */}
 
-      </article>
+      </div>
       <Timeline />
-    </div>
+    </section>
   )
 }
 

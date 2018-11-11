@@ -1,35 +1,16 @@
 footer {
-  padding-bottom: 2em;
-  text-align:center;
+  width: 100%;
 }
 
-footer p {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 1em;
-  line-height: 1em;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 2vw;
-}
+@media screen and (orientation: portrait) {
+  footer {
+    height: 64px;
+    padding-bottom: 2em;
+    font-size: 16px;
+  }
 
-footer p a {
-  color: #c30;
-}
-
-footer p a:hover {
-  text-shadow: none;
-  color: #f90;
-}
-
-footer .icon .svg-inline--fa {
-  margin: 0 5px;
-  width: 3em;
-  height: 3em;
-  color: #c30;
-  transition: .5s ease;
-}
-
-footer .icon .svg-inline--fa:hover {
-  color:#f90;
-  transition: .5s ease;
+  footer .icons {
+    height: 2em;
+    margin-bottom: 1em;
+  }
 }

@@ -1,5 +1,5 @@
 .timeline {
-  width: 40%;
+  width: 45%;
   font-size: 0.75em;
 }
 
@@ -34,19 +34,16 @@
 }
 
 .timeline-item.fade {
-  margin-top: 0;
-  margin-bottom: 0.1em;
-  width: 50%;
-  float: right;
+  font-size: 0.75em;
 }
 
-.fade h2 {
+/* .fade h2 {
   font-size: calc(10px + 0.25em);
 }
 
 .fade h3 {
   font-size: calc(10px + 0.25em);
-}
+} */
 
 .timeline-item span.date {
   display: block;
@@ -75,4 +72,33 @@
   text-transform: uppercase;
   font-size: 0.75em;
   font-weight: 300;
+}
+
+@media screen and (orientation: portrait) {
+  .timeline {
+    font-size: 16px;
+    width: 40%;
+  }
+
+  .timeline .timeline-item, .timeline .timeline-item.fade {
+    width: 100%;
+    padding: 4px;
+    float: none;
+  }
+
+  .timeline .timeline-item.fade, .timeline .timeline-item.fade h2 {
+    font-size: 12px;
+  }
+
+  .timeline-item h2 {
+    font-size: 16px;
+  }
+
+  .timeline-item p.skills {
+    font-size: 16px;
+  }
+
+  .timeline-item span.date {
+    font-size: 12px;
+  }
 }
