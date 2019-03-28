@@ -12,6 +12,8 @@
     "url": "https://github.com/dentednerd/CV/issues"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-brands-svg-icons": "^5.4.1",
     "@fortawesome/free-solid-svg-icons": "^5.4.1",

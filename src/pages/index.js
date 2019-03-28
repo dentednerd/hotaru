@@ -1,21 +1,28 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import {Helmet} from 'react-helmet';
-import Layout from '../components/Layout';
-import RedBand from '../components/RedBand';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import Recruiters from '../components/Recruiters';
+import styled from '@emotion/styled'
+import Layout from '../components/atoms/Layout';
+import RedBand from '../components/atoms/RedBand';
+import Header from '../components/organisms/Header';
+import Hero from '../components/organisms/Hero';
+import Recruiters from '../components/atoms/Recruiters';
 import Intro from '../components/Intro';
 import Interests from '../components/Interests';
 import Portfolio from '../components/Portfolio';
 import Footer from '../components/Footer';
 
 import './style.css'
+import './global.css'
+
+const Index = styled('div')`
+  box-sizing: border-box;
+  height: 100%;
+`;
 
 const IndexPage = ({ data }) => {
   return (
-    <div id="main">
+    <Index>
       <Helmet>
         <title>Joanne Imlay, front end developer</title>
       </Helmet>
@@ -40,7 +47,7 @@ const IndexPage = ({ data }) => {
         <Interests />
         <Footer />
       </Layout>
-    </div>
+    </Index>
   );
 }
 export default IndexPage

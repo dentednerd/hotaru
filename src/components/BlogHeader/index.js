@@ -1,6 +1,6 @@
 import React from 'react'
-import RedBand from '../RedBand'
-import Layout from '../Layout'
+import RedBand from '../atoms/RedBand'
+import Layout from '../atoms/Layout'
 
 import './BlogHeader.css'
 

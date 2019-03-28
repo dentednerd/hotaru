@@ -1,8 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/Layout"
-import Header from '../components/Header';
+import Layout from "../components/atoms/Layout"
+import Header from '../components/organisms/Header';
 import BlogHeader from '../components/BlogHeader';
 import IconLinks from '../components/IconLinks';
 
