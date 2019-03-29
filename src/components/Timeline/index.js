@@ -6,7 +6,6 @@ import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 
 const StyledTimeline = styled('div')`
   width: 40%;
-  font-size: 0.75em;
 
   h2 {
     margin: 0;
@@ -18,6 +17,7 @@ const TimelineItem = styled('div')`
   color: #fff;
   padding: 1em;
   background: #c30;
+  line-height: 1.25em;
 
   &:last=child {
     margin-bottom: 0.2em;
@@ -67,6 +67,7 @@ const FadeTimelineItem = styled('div')`
   width: 50%;
   float: right;
   color: rgb(255, 170, 125);
+  padding: 0.75em;
 
   h2 {
     color: rgb(255, 170, 125);
@@ -79,7 +80,17 @@ const FadeTimelineItem = styled('div')`
   }
 
   span.date {
+    display: block;
     background-color: rgb(255, 170, 125);
+    color: #c30;
+    font-size: calc(10px + 0.25em);
+    padding: 0.1em 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
   }
 `;
 

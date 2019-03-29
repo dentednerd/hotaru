@@ -1,15 +1,12 @@
 import React from 'react'
-import Wrapped from '../Wrapped';
-import IconLinks from '../IconLinks'
+import IconLinks from '../../molecules/IconLinks'
 
 import './Footer.css'
 
 const Footer = () => {
   return (
     <footer>
-      <Wrapped>
-        <IconLinks />
-      </Wrapped>
+      <IconLinks />
     </footer>
   )
 }

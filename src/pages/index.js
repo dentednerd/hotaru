@@ -2,14 +2,15 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import {Helmet} from 'react-helmet';
 import styled from '@emotion/styled'
-import Layout from '../components/atoms/Layout';
+import WhiteBand from '../components/atoms/WhiteBand';
 import RedBand from '../components/atoms/RedBand';
 import Header from '../components/organisms/Header';
 import Hero from '../components/organisms/Hero';
 import Recruiters from '../components/atoms/Recruiters';
-import Intro from '../components/Intro';
+import Intro from '../components/molecules/Intro';
 import Interests from '../components/Interests';
 import Portfolio from '../components/Portfolio';
+import Footer from '../components/organisms/Footer';
 
 import './style.css'
 import './global.css'
@@ -25,33 +26,24 @@ const IndexPage = ({ data }) => {
       <Helmet>
         <title>Joanne Imlay, front end developer</title>
       </Helmet>
-      <Layout>
+      <WhiteBand>
         <Header />
         <Hero />
-      </Layout>
+      </WhiteBand>
       <RedBand>
-        <Wrapped>
-          <Recruiters />
-        </Wrapped>
+        <Recruiters />
       </RedBand>
-      <Wrapped>
+      <WhiteBand>
         <Intro latestBlog={data.allMarkdownRemark.edges[0].node}/>
-      </Wrapped>
+      </WhiteBand>
       <RedBand>
-        <Wrapped>
-          <Portfolio />
-        </Wrapped>
+        <Portfolio />
       </RedBand>
-      <Wrapped>
+      <WhiteBand>
         <Interests />
-<<<<<<< HEAD
-      </Wrapped>
-    </Layout>
-=======
         <Footer />
-      </Layout>
+      </WhiteBand>
     </Index>
->>>>>>> 184f151961c15639bbd514f0352e702326de4ef3
   );
 }
 

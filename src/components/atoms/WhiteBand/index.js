@@ -2,32 +2,32 @@ import React from 'react'
 import styled from '@emotion/styled';
 import Layout from '../Layout';
 
-const RedBandContainer = styled('div')`
-  background-color: #c30;
+const WhiteBandContainer = styled('div')`
+  background-color: #fff;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   padding: 1em 0;
-  color: white;
+  color: #333;
   margin-bottom: 0.5em;
 
   h2 {
     font-size: 1.5em;
     font-weight: 600;
     font-family: 'Roboto Slab', serif;
-    color: white;
+    color: #c30;
   }
 `;
 
-const RedBand = props => {
+const WhiteBand = props => {
   return (
-    <RedBandContainer>
+    <WhiteBandContainer>
       <Layout>
         {props.children}
       </Layout>
-    </RedBandContainer>
+    </WhiteBandContainer>
   )
 }
 
-export default RedBand
+export default WhiteBand
