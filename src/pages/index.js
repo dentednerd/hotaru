@@ -1,24 +1,34 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
-import Layout from '../templates/Layout';
-import Wrapped from '../components/Wrapped';
-import RedBand from '../components/RedBand';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import Recruiters from '../components/Recruiters';
+import {Helmet} from 'react-helmet';
+import styled from '@emotion/styled'
+import Layout from '../components/atoms/Layout';
+import RedBand from '../components/atoms/RedBand';
+import Header from '../components/organisms/Header';
+import Hero from '../components/organisms/Hero';
+import Recruiters from '../components/atoms/Recruiters';
 import Intro from '../components/Intro';
 import Interests from '../components/Interests';
 import Portfolio from '../components/Portfolio';
 
 import './style.css'
+import './global.css'
+
+const Index = styled('div')`
+  box-sizing: border-box;
+  height: 100%;
+`;
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
-      <Wrapped>
+    <Index>
+      <Helmet>
+        <title>Joanne Imlay, front end developer</title>
+      </Helmet>
+      <Layout>
+        <Header />
         <Hero />
-      </Wrapped>
+      </Layout>
       <RedBand>
         <Wrapped>
           <Recruiters />
@@ -34,8 +44,14 @@ const IndexPage = ({ data }) => {
       </RedBand>
       <Wrapped>
         <Interests />
+<<<<<<< HEAD
       </Wrapped>
     </Layout>
+=======
+        <Footer />
+      </Layout>
+    </Index>
+>>>>>>> 184f151961c15639bbd514f0352e702326de4ef3
   );
 }
 

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Wrapped from "../components/Wrapped"
+import Layout from "../components/atoms/Layout"
 import OrangeBox from "../components/OrangeBox"
 import './style.css'
 import './404.css'
