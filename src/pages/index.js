@@ -2,8 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import {Helmet} from 'react-helmet';
 import styled from '@emotion/styled'
-import Layout from '../components/atoms/Layout';
 import RedBand from '../components/atoms/RedBand';
+import WhiteBand from '../components/atoms/WhiteBand';
 import Header from '../components/organisms/Header';
 import Hero from '../components/organisms/Hero';
 import Recruiters from '../components/atoms/Recruiters';
@@ -26,27 +26,23 @@ const IndexPage = ({ data }) => {
       <Helmet>
         <title>Joanne Imlay, front end developer</title>
       </Helmet>
-      <Layout>
+      <WhiteBand>
         <Header />
         <Hero />
-      </Layout>
+      </WhiteBand>
       <RedBand>
-        <Layout>
           <Recruiters />
-        </Layout>
       </RedBand>
-      <Layout>
+      <WhiteBand>
         <Intro latestBlog={data.allMarkdownRemark.edges[0].node}/>
-      </Layout>
+      </WhiteBand>
       <RedBand>
-        <Layout>
-          <Portfolio />
-        </Layout>
+        <Portfolio />
       </RedBand>
-      <Layout>
+      <WhiteBand>
         <Interests />
         <Footer />
-      </Layout>
+      </WhiteBand>
     </Index>
   );
 }

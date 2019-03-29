@@ -1,5 +1,5 @@
 import React from 'react'
-import IconLinks from '../IconLinks'
+import IconLinks from '../molecules/IconLinks';
 
 import './Footer.css'
 

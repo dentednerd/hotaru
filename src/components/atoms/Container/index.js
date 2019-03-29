@@ -2,7 +2,7 @@ import React from "react"
 import styled from '@emotion/styled'
 import { StaticQuery, graphql } from "gatsby"
 
-const StyledLayout = styled('div')`
+const Container = styled('div')`
   position: relative;
   margin: 0 auto;
   width: 96vw;
@@ -22,9 +22,9 @@ export default ({ children }) => (
       }
     `}
     render={data => (
-      <StyledLayout>
+      <Container>
         {children}
-      </StyledLayout>
+      </Container>
     )}
   />
 )

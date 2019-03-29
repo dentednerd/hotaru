@@ -1,21 +1,21 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/atoms/Layout"
+import WhiteBand from "../components/atoms/WhiteBand"
 import Header from '../components/organisms/Header';
 import BlogHeader from '../components/BlogHeader';
-import IconLinks from '../components/IconLinks';
+import IconLinks from '../components/molecules/IconLinks';
 
 import './style.css'
 
 export default ({ data }) => {
   return (
     <div className="blog">
-      <Layout>
+      <WhiteBand>
         <Header />
-      </Layout>
+      </WhiteBand>
       <BlogHeader />
-      <Layout>
+      <WhiteBand>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id} className="blog-post">
             <h2>
@@ -28,7 +28,7 @@ export default ({ data }) => {
           </div>
         ))}
       <IconLinks />
-      </Layout>
+      </WhiteBand>
     </div>
   )
 }

@@ -14,6 +14,7 @@ const StyledTimeline = styled('div')`
 `;
 
 const TimelineItem = styled('div')`
+  label: TimelineItem;
   margin: 0.5em 0;
   color: #fff;
   padding: 1em;
@@ -61,9 +62,11 @@ const TimelineItem = styled('div')`
 `;
 
 const FadeTimelineItem = styled('div')`
+  label: FadeTimelineItem;
   background: #c30;
   margin-top: 0;
   margin-bottom: 0.1em;
+  padding: 1em;
   width: 50%;
   float: right;
   color: rgb(255, 170, 125);
@@ -79,7 +82,17 @@ const FadeTimelineItem = styled('div')`
   }
 
   span.date {
+    display: block;
     background-color: rgb(255, 170, 125);
+    color: #c30;
+    font-size: 1em;
+    padding: 0.1em 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
   }
 `;
 

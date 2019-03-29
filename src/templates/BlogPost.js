@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from '../components/atoms/Layout';
+import WhiteBand from '../components/atoms/WhiteBand';
 import Header from '../components/organisms/Header';
 import BlogHeader from '../components/BlogHeader';
 
@@ -12,18 +12,18 @@ export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <div className="blog">
-      <Layout>
+      <WhiteBand>
         <Header />
-      </Layout>
+      </WhiteBand>
       <BlogHeader />
-      <Layout>
+      <WhiteBand>
           <div className="blog-post">
             <h3>{post.frontmatter.title}</h3>
             <h4>{post.frontmatter.date}</h4>
             <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
           <h4 className="back-to-blog"><Link to="/blog">&laquo; Back to Blog</Link></h4>
-      </Layout>
+      </WhiteBand>
     </div>
   )
 }
