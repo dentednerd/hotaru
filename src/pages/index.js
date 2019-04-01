@@ -2,15 +2,16 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import {Helmet} from 'react-helmet';
 import styled from '@emotion/styled'
+import WhiteBand from '../components/atoms/WhiteBand';
 import RedBand from '../components/atoms/RedBand';
 import WhiteBand from '../components/atoms/WhiteBand';
 import Header from '../components/organisms/Header';
 import Hero from '../components/organisms/Hero';
 import Recruiters from '../components/atoms/Recruiters';
-import Intro from '../components/Intro';
+import Intro from '../components/molecules/Intro';
 import Interests from '../components/Interests';
 import Portfolio from '../components/Portfolio';
-import Footer from '../components/Footer';
+import Footer from '../components/organisms/Footer';
 
 import './style.css'
 import './global.css'
@@ -31,7 +32,7 @@ const IndexPage = ({ data }) => {
         <Hero />
       </WhiteBand>
       <RedBand>
-          <Recruiters />
+        <Recruiters />
       </RedBand>
       <WhiteBand>
         <Intro latestBlog={data.allMarkdownRemark.edges[0].node}/>
@@ -46,6 +47,7 @@ const IndexPage = ({ data }) => {
     </Index>
   );
 }
+
 export default IndexPage
 
 export const query = graphql`

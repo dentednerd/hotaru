@@ -91,7 +91,7 @@ class Portfolio extends React.Component {
     const whichProject = this.state.displayProject
 
     return (
-      <article className="portfolio-section">
+      <section id="portfolio" className="portfolio-section">
         <h2>
           Here are some examples of my work.
         </h2>
@@ -109,7 +109,7 @@ class Portfolio extends React.Component {
           />
         </div>
 
-      </article >
+      </section>
     )
   }
 }

@@ -6,7 +6,6 @@ import Header from '../components/organisms/Header';
 import BlogHeader from '../components/BlogHeader';
 
 import '../pages/style.css'
-// import './BlogPost.css'
 
 export default ({ data }) => {
   const post = data.markdownRemark

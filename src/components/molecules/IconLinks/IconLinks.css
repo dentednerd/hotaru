@@ -11,7 +11,22 @@
   transition: .5s ease;
 }
 
+.redband .icons .svg-inline--fa {
+  color: #fff;
+}
+
 .icons .svg-inline--fa:hover {
   color: #f90;
   transition: .5s ease;
+}
+
+@media screen and (orientation: portrait) {
+  .icons {
+    width: 8em;
+  }
+  
+  .icons .svg-inline--fa {
+    height: 2em;
+    width: 2em;
+  }
 }

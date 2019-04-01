@@ -17,15 +17,15 @@ export default ({ data }) => {
       <BlogHeader />
       <WhiteBand>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id} className="blog-post">
+          <article key={node.id} className="blog-post">
             <h2>
               <Link to={node.fields.slug}>
                 {node.frontmatter.title}
               </Link>
             </h2>
-            <h4>{node.frontmatter.date}</h4>
+            <h3>{node.frontmatter.date}</h3>
             <p>{node.excerpt}</p>
-          </div>
+          </article>
         ))}
       <IconLinks />
       </WhiteBand>

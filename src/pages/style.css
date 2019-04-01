@@ -1,13 +1,5 @@
 /* ----- BLOG POSTS ----- */
 
-.blog {
-  margin-bottom: 2em;
-}
-
-.blog-post {
-  margin: 2em 0;
-}
-
 .blog-post p {
   margin-bottom: 1em;
 }
@@ -28,7 +20,7 @@
 }
 
 .blog-post header a {
-  color: black;
+  color: #333;
 }
 
 .blog-post .post-content {
@@ -36,16 +28,7 @@
 }
 
 .blog-post h3 {
-  color: #c30;
-  font-family: 'Roboto Slab', serif;
-  font-size:1.5em;
-  margin: 0;
-  font-weight:300;
-  letter-spacing: -0.025em;
-}
-
-.blog-post h4 {
-  color: black;
+  color: #333;
   font-family: 'Roboto Slab', serif;
   font-size:1em;
   margin-bottom: 0.75em;
@@ -53,7 +36,7 @@
   letter-spacing: -0.025em;
 }
 
-h4.back-to-blog {
+h3.back-to-blog {
   color: #c30;
   font-family: 'Roboto Slab', serif;
   font-size:1em;
