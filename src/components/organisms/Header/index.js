@@ -11,6 +11,12 @@ const StyledHeader = styled('header')`
   color:#333;
   font-family: 'Lato', sans-serif;
   margin: 1em 0;
+
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
 `;
 
 const TitleBlock = styled('div')`
@@ -43,6 +49,11 @@ const Nav = styled('nav')`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 1em;
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -91,6 +102,7 @@ class Header extends React.Component {
         <Nav>
           <NavLink to='/'>Home</NavLink>
           <NavLink to='/blog'>Blog</NavLink>
+          <NavLink to='/portfolio'>Portfolio</NavLink>
         </Nav>
       </StyledHeader>
     )

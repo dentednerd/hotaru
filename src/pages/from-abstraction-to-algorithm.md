@@ -1,6 +1,7 @@
 ---
 title: "From Abstraction to Algorithm"
 date: "2017-10-07"
+featuredImage: "./sandwich.jpg"
 ---
 
 Before you read this post, make a sandwich. It’s okay, I’ll wait.

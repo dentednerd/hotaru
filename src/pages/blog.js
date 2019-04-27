@@ -1,10 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import WhiteBand from "../components/atoms/WhiteBand"
 import Header from '../components/organisms/Header';
 import BlogHeader from '../components/BlogHeader';
 import IconLinks from '../components/molecules/IconLinks';
+import Card from '../components/molecules/Card';
+import { GridContainer, GridItem } from '../components/atoms/Grid';
 
 import './style.css'
 
@@ -16,17 +18,13 @@ export default ({ data }) => {
       </WhiteBand>
       <BlogHeader />
       <WhiteBand>
+        <GridContainer>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <article key={node.id} className="blog-post">
-            <h2>
-              <Link to={node.fields.slug}>
-                {node.frontmatter.title}
-              </Link>
-            </h2>
-            <h3>{node.frontmatter.date}</h3>
-            <p>{node.excerpt}</p>
-          </article>
+          <GridItem key={node.id}>
+            <Card article={node} />
+          </GridItem>
         ))}
+        </GridContainer>
       <IconLinks />
       </WhiteBand>
     </div>
@@ -43,6 +41,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp{
+                sizes(maxWidth: 630) {
+                    ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
           fields {
             slug

@@ -1,6 +1,7 @@
 ---
 title: "myNoise.net"
 date: "2017-11-09"
+featuredImage: "./MyNoise.jpg"
 ---
 
 Every so often I write a post about how much I love this website, and I think it’s particularly useful for devs in busy offices trying to get into the zone without any distractions. Working in a small team, I have almost the opposite problem - when everyone has their headphones on, it’s too quiet for me. But when music is too big a distraction and I’m dancing in my seat more than I’m concentrating on code, myNoise is the solution. It boosts my concentration by giving my need for sound something to grab onto.

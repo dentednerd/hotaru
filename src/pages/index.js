@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import {Helmet} from 'react-helmet';
 import styled from '@emotion/styled'
-import WhiteBand from '../components/atoms/WhiteBand';
 import RedBand from '../components/atoms/RedBand';
 import WhiteBand from '../components/atoms/WhiteBand';
 import Header from '../components/organisms/Header';

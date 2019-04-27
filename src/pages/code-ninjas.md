@@ -1,6 +1,7 @@
 ---
 title: "Code Ninjas"
 date: "2018-05-25"
+featuredImage: "./CodeNinjas.png"
 ---
 
 [Code Ninjas](https://codeninjas-nc5.herokuapp.com/)

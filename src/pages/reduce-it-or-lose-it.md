@@ -1,6 +1,7 @@
 ---
 title: "Reduce It or Lose It"
 date: "2017-10-17"
+featuredImage: "./SwissArmyKnife.jpg"
 ---
 
 `.reduce()` is the Swiss army knife of array manipulation. We use this function to  transform an array into anything we want, be it a single value, another array, or an object. Yet it can be really hard for folks new to JavaScript to get their heads around. I know that I really struggled with it until I saw some really simple examples, and from then onwards every kata I did ended up with me saying “stick a reduce on it, bosh”.  
