@@ -1,20 +1,14 @@
-import React from "react"
-import { graphql } from "gatsby"
-import WhiteBand from "../components/atoms/WhiteBand"
-import Header from '../components/organisms/Header'
-import BlogHeader from '../components/BlogHeader'
-import IconLinks from '../components/molecules/IconLinks'
-import Card from '../components/molecules/Card'
-import { GridContainer, GridItem } from '../components/atoms/Grid'
-
-import './style.css'
+import React from 'react'
+import { graphql } from 'gatsby'
+import WhiteBand from '../atoms/WhiteBand'
+import BlogHeader from '../molecules/BlogHeader'
+import Card from '../molecules/Card'
+import { GridContainer, GridItem } from '../atoms/Grid'
+import Layout from '../templates/Layout'
 
 export default ({ data }) => {
   return (
-    <div className="blog">
-      <WhiteBand>
-        <Header />
-      </WhiteBand>
+    <Layout>
       <BlogHeader />
       <WhiteBand>
         <GridContainer>
@@ -24,9 +18,8 @@ export default ({ data }) => {
             </GridItem>
           ))}
         </GridContainer>
-        <IconLinks />
       </WhiteBand>
-    </div>
+    </Layout>
   )
 }
 

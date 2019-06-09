@@ -1,33 +1,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import {Helmet} from 'react-helmet'
-import styled from '@emotion/styled'
-import RedBand from '../components/atoms/RedBand'
-import WhiteBand from '../components/atoms/WhiteBand'
-import Header from '../components/organisms/Header'
-import Hero from '../components/organisms/Hero'
-import Recruiters from '../components/atoms/Recruiters'
-import Intro from '../components/molecules/Intro'
-import Showreel from '../components/molecules/Showreel'
-import Interests from '../components/Interests'
-import Footer from '../components/organisms/Footer'
-
-import './style.css'
+import RedBand from '../atoms/RedBand'
+import WhiteBand from '../atoms/WhiteBand'
+import Hero from '../organisms/Hero'
+import Recruiters from '../atoms/Recruiters'
+import Intro from '../molecules/Intro'
+import Showreel from '../molecules/Showreel'
+import Interests from '../organisms/Interests'
+import Layout from '../templates/Layout'
 import './global.css'
-
-const Index = styled('div')`
-  box-sizing: border-box;
-  height: 100%;
-`
 
 const IndexPage = ({ data }) => {
   return (
-    <Index>
-      <Helmet>
-        <title>Joanne Imlay, front end developer</title>
-      </Helmet>
+    <Layout>
       <WhiteBand>
-        <Header />
         <Hero />
       </WhiteBand>
       <RedBand>
@@ -41,9 +27,8 @@ const IndexPage = ({ data }) => {
       </RedBand>
       <WhiteBand>
         <Interests />
-        <Footer />
       </WhiteBand>
-    </Index>
+    </Layout>
   )
 }
 

@@ -1,32 +1,66 @@
 import React from "react"
+import styled from '@emotion/styled'
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import WhiteBand from '../components/atoms/WhiteBand'
-import Header from '../components/organisms/Header'
-import BlogHeader from '../components/BlogHeader'
+import Layout from '../templates/Layout'
+import WhiteBand from '../atoms/WhiteBand'
+import BlogHeader from '../molecules/BlogHeader'
 
-import '../pages/style.css'             
+const StyledBlogPost = styled('div')`
+  p {
+    margin-bottom: 1em;
+  }
+
+  code {
+    font-size: 0.8em;
+    background-color: #fcb;
+  }
+
+  pre {
+    background-color: #fcb;
+    margin: 1em;
+    padding: 1em;
+  }
+
+  a {
+    color: #c30;
+  }
+
+  header a {
+    color: #333;
+  }
+
+  .post-content {
+    margin: 2em 0;
+  }
+
+  h3 {
+    color: #333;
+    font-family: 'Roboto Slab', serif;
+    font-size:1em;
+    margin-bottom: 0.75em;
+    font-weight:300;
+    letter-spacing: -0.025em;
+  }
+`
 
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <div className="blog">
-      <WhiteBand>
-        <Header />
-      </WhiteBand>
+    <Layout>
       <BlogHeader />
       <WhiteBand>
-        <div className="blog-post">
+        <StyledBlogPost>
           <h2>{post.frontmatter.title}</h2>
           <h3>{post.frontmatter.date}</h3>
           {post.frontmatter.featuredImage && <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />}
           <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-        </div>
+        </StyledBlogPost>
         <h4 className="back-to-blog">
           <Link to="/blog">&laquo; Back to Blog</Link>
         </h4>
       </WhiteBand>
-    </div>
+    </Layout>
   )
 }
 

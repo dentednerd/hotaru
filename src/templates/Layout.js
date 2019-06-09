@@ -1,9 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Wrapped from '../components/Wrapped'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import RedBand from '../components/RedBand'
+import Header from '../organisms/Header'
+import Footer from '../organisms/Footer'
+import WhiteBand from '../atoms/WhiteBand'
 
 const Layout = (props) => {
   const { children } = props
@@ -12,13 +11,13 @@ const Layout = (props) => {
       <Helmet>
         <title>Joanne Imlay, front end developer</title>
       </Helmet>
-      <Wrapped>
+      <WhiteBand>
         <Header />
-      </Wrapped>
+      </WhiteBand>
       {children}
-      <RedBand>
+      <WhiteBand>
         <Footer />
-      </RedBand>
+      </WhiteBand>
     </div>
   )
 }
