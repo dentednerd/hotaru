@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
-import IntroSection from '../../atoms/IntroSection';
+import React, { Fragment } from 'react'
+import IntroSection from '../../atoms/IntroSection'
 
 const Skills = () => (
   <Fragment>
     <IntroSection className="skill-icons">
-      <h2>{`Here's what I use every day.`}</h2>
+      <h2>Here&apos;s what I use every day.</h2>
       <a href="https://reactjs.org"><img src="react.png" alt="React" /></a>
       <a href="https://redux.js.org"><img src="redux.png" alt="Redux" /></a>
       <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"><img src="html5.png" alt="HTML5" /></a>
@@ -17,7 +17,7 @@ const Skills = () => (
     </IntroSection>
 
     <IntroSection className="skill-icons also">
-      <h2 style={{ fontSize: '1em' }}>{`(I've got experience with these too.)`}</h2>
+      <h2 style={{ fontSize: '1em' }}>(I&apos;ve got experience with these too.)</h2>
       <a href="https://www.photoshop.com/"><img src="photoshop.png" alt="Photoshop" /></a>
       <a href="https://jquery.com/"><img src="jquery.png" alt="jQuery" /></a>
       <a href="https://angular.io/"><img src="angular.png" alt="Angular" /></a>
@@ -29,6 +29,6 @@ const Skills = () => (
       <a href="https://gatsbyjs.org"><img src="gatsby.png" alt="Gatsby" /></a>
     </IntroSection>
   </Fragment>
-);
+)
 
-export default Skills;
+export default Skills

@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from '@emotion/styled';
-import Container from '../Container';
+import styled from '@emotion/styled'
+import Container from '../Container'
 
 const RedBandContainer = styled('div')`
   background-color: #c30;
@@ -18,16 +18,17 @@ const RedBandContainer = styled('div')`
     font-family: 'Roboto Slab', serif;
     color: white;
   }
-`;
+`
 
 const RedBand = props => {
+  const { children } = props
   return (
     <RedBandContainer>
       <Container>
-        {props.children}
+        {children}
       </Container>
     </RedBandContainer>
   )
-};
+}
 
-export default RedBand;
+export default RedBand

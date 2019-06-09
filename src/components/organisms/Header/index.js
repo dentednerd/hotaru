@@ -17,14 +17,14 @@ const StyledHeader = styled('header')`
     align-items: flex-start;
     margin-bottom: 0;
   }
-`;
+`
 
 const TitleBlock = styled('div')`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
-`;
+`
 
 const Title = styled('h1')`
   font-size:2em;
@@ -36,13 +36,13 @@ const Title = styled('h1')`
   span {
     color: #c30;
   }
-`;
+`
 
 const Subtitle = styled('div')`
   font-size:1.5em;
   line-height: 1.5em;
   margin-bottom: 0;
-`;
+`
 
 const Nav = styled('nav')`
   display: flex;
@@ -53,8 +53,11 @@ const Nav = styled('nav')`
   @media (max-width: 768px) {
     width: 100%;
     margin-top: 1em;
+    border-top: solid 1px #666;
+    border-bottom: solid 1px #666;
+    margin-bottom: 1em;
   }
-`;
+`
 
 const NavLink = styled(Link)`
   display: block;
@@ -67,7 +70,7 @@ const NavLink = styled(Link)`
     border-radius: 6px;
     color: white;
   }
-`;
+`
 
 class Header extends React.Component {
   componentDidMount() {
@@ -91,7 +94,11 @@ class Header extends React.Component {
     return (
       <StyledHeader>
         <TitleBlock>
-          <Title>&lt;<span>JoanneImlay</span> /&gt;</Title>
+          <Title>
+            &lt;
+            <span>JoanneImlay</span>
+            /&gt;
+          </Title>
           <Subtitle>
             <span
               style={{ whiteSpace: 'pre' }}

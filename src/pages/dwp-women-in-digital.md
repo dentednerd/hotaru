@@ -1,11 +1,11 @@
 ---
 title: "DWP Digital Women in Digital, 20th June 2018"
 date: "2018-06-21"
-featuredImage: ""
+featuredImage: "./DWPWomenInDigital.jpg"
 ---
 
 A few weeks ago, James from [Northcoders](https://www.northcoders.com) put out an open invitation to the Northcoders WiT community for speakers to follow his opening keynote speech at the [DWP Women in Digital conference](https://dwpdigital.blog.gov.uk/2018/05/30/introducing-our-second-women-in-digital-event/) in Leeds. He hoped a few of us could talk about our journeys into coding, to further illustrate the good work Northcoders already do in getting women into technology careers. I immediately volunteered, for two reasons. Firstly, being a Northcoder has absolutely turned my life around, and I will take any opportunity to tell people how supportive and encouraging the Northcoders community is. Secondly, I have a certain history with the DWP, and I figured it might be time to face down an old demon or two. (Disclaimer: I did not meet anyone in the least bit demonic that day. My issues are with the policymakers, not with the people on the ground.)
-
+<!-- 
 [DWP Digital guest post by James: Changing workplace dynamics](https://dwpdigital.blog.gov.uk/2018/06/18/guest-post-changing-workplace-dynamics/)
 
 Going into this, I had a good idea of the sort of impact James’ keynote would have on the conference. He’s passionate about gender equality and diversity not just in the tech world but in the workplace full stop. I wouldn’t have been able to become a Northcoder if it hadn’t been for their Women in Tech scholarships. I think the statement James made about diffusion of responsibility gave the whole audience food for thought - our efforts may seem tiny and insignificant, but they are part of a massive whole and we can, in fact, have a great influence when we pull together.
@@ -26,4 +26,4 @@ I want to thank everyone that attended that day for making the event the inspira
 
 “Feel the fear and do it anyway.” – Susan Jeffers
 
-[DWPWID Twitter moment](https://twitter.com/i/moments/1009365383567020034)
+[DWPWID Twitter moment](https://twitter.com/i/moments/1009365383567020034) -->

@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import React from 'react'
+import styled from '@emotion/styled'
 
 const GridContainer = (props) => {
+  const { children } = props
   const GridContainerDiv = styled('div')`
     label: GridContainer;
     display: flex;
@@ -13,13 +14,13 @@ const GridContainer = (props) => {
     margin: 0;
     padding: 0;
     font-size: 0;
-  `;
+  `
 
   return (
     <GridContainerDiv>
-      {props.children}
+      {children}
     </GridContainerDiv>
-  );
-};
+  )
+}
 
-export default GridContainer;
+export default GridContainer

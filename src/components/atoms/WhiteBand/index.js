@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from '@emotion/styled';
-import Container from '../Container';
+import styled from '@emotion/styled'
+import Container from '../Container'
 
 const WhiteBandContainer = styled('div')`
   background-color: #fff;
@@ -18,16 +18,17 @@ const WhiteBandContainer = styled('div')`
     font-family: 'Roboto Slab', serif;
     color: #c30;
   }
-`;
+`
 
 const WhiteBand = props => {
+  const { children } = props
   return (
     <WhiteBandContainer>
       <Container>
-        {props.children}
+        {children}
       </Container>
     </WhiteBandContainer>
   )
-};
+}
 
-export default WhiteBand;
+export default WhiteBand

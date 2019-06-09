@@ -1,15 +1,15 @@
 import React from 'react'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faTwitterSquare, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin, faTwitterSquare, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 
 import './IconLinks.css'
 
-library.add(faLinkedin);
-library.add(faTwitterSquare);
-library.add(faGithubSquare);
-library.add(faEnvelopeSquare);
+library.add(faLinkedin)
+library.add(faTwitterSquare)
+library.add(faGithubSquare)
+library.add(faEnvelopeSquare)
 
 const IconLinks = () => {
   return (

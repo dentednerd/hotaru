@@ -9,13 +9,15 @@ const StyledRecruiters = styled('div')`
     font-family: 'Roboto Slab', serif;
     color: white;
   }
-`;
+`
 
 const Recruiters = () => {
   return (
     <StyledRecruiters>
       <h2>Recruiters...</h2>
-      I am <span>not open</span> to new opportunities right now.
+      I am 
+      <span>not open</span> 
+      to new opportunities right now.
     </StyledRecruiters>
   )
 }

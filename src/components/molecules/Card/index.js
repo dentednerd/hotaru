@@ -1,12 +1,10 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Img from "gatsby-image";
-import CardImage from '../../atoms/CardImage';
-
-import styled from '@emotion/styled';
+import React from 'react'
+import styled from '@emotion/styled'
+import { Link } from 'gatsby'
+import CardImage from '../../atoms/CardImage'
 
 const Card = props => {
-  const { article } = props;
+  const { article } = props
 
   const StyledCard = styled('article')`
     background: #fff;
@@ -50,25 +48,28 @@ const Card = props => {
         padding: 1em 0;
       }
     }
-      `;
+  `
 
   return (
     <Link to={article.fields.slug}>
       <StyledCard>
         {article.frontmatter.featuredImage && (
           <CardImage imgSrc={article.frontmatter.featuredImage.childImageSharp.sizes.src} />
-          )}
+        )}
         <section>
           <h2>
-              {article.frontmatter.title}
+            {article.frontmatter.title}
           </h2>
-          <h3>{article.frontmatter.date}</h3>
-
-          <p>{article.excerpt}</p>
+          <h3>
+            {article.frontmatter.date}
+          </h3>
+          <p>
+            {article.excerpt}
+          </p>
         </section>
       </StyledCard>
     </Link>
-  );
+  )
 }
 
-export default Card;
+export default Card

@@ -1,11 +1,10 @@
 import React from "react"
-
-import WhiteBand from "../components/atoms/WhiteBand";
+import WhiteBand from "../components/atoms/WhiteBand"
 import WhiteProject from "../components/molecules/WhiteProject"
 import RedProject from "../components/molecules/RedProject"
-import Header from '../components/organisms/Header';
-import PortfolioHeader from '../components/PortfolioHeader';
-import IconLinks from '../components/molecules/IconLinks';
+import Header from '../components/organisms/Header'
+import PortfolioHeader from '../components/PortfolioHeader'
+import IconLinks from '../components/molecules/IconLinks'
 
 import './style.css'
 
@@ -16,7 +15,7 @@ const projectsData = [
     thumb: './CodeNinjasThumb.png',
     title: 'Code Ninjas',
     caption: 'An educational game built in Mongo, Express, React, Redux and Bulma. Accessibility was important to my design approach in this project.',
-    stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB']
+    stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB'],
   },
   {
     link: 'https://northcoders-news-dentednerd.herokuapp.com',
@@ -24,7 +23,7 @@ const projectsData = [
     thumb: './NCNewsThumb.png',
     title: 'Northcoders News',
     caption: 'A Reddit clone built in Express, Mongo, React, Redux and Bulma. I opted for a simple design with this project in order to let the content speak for itself.',
-    stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB']
+    stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB'],
   },
   {
     link: 'https://dentednerd.github.io/Trell-Jo/',
@@ -32,7 +31,7 @@ const projectsData = [
     thumb: './TrellJoThumb.png',
     title: 'TrellJo',
     caption: 'A Trello clone built in React and Bulma. I tried not to deviate the design too much from the original site.',
-    stack: ['React', 'Bulma']
+    stack: ['React', 'Bulma'],
   },
   // {
   //   link: 'https://m.me/Charcodeizard',
@@ -47,7 +46,7 @@ const projectsData = [
     thumb: './NorthwitterThumb.png',
     title: 'Northwitter',
     caption: 'A Twitter clone built in React and Bootstrap. I really liked the idea of a cute, pastel version of Twitter.',
-    stack: ['React', 'Bootstrap']
+    stack: ['React', 'Bootstrap'],
   },
   {
     link: 'https://github.com/dentednerd/LowbarAdv',
@@ -55,7 +54,7 @@ const projectsData = [
     thumb: './LowBarThumb.png',
     title: 'Lowbar',
     caption: 'Pure JavaScript implementations of Underscore functions.',
-    stack: ['JavaScript']
+    stack: ['JavaScript'],
   },
   {
     link: 'https://dentednerd.github.io/precourse-section-3/',
@@ -63,11 +62,11 @@ const projectsData = [
     thumb: './DNReviewsThumb.png',
     title: 'Dented Nerd Reviews',
     caption: 'A small project to showcase my HTML and CSS design skills, with a little jQuery animation. ',
-    stack: ['HTML', 'CSS', 'jQuery']
-  }
+    stack: ['HTML', 'CSS', 'jQuery'],
+  },
 ]
 
-const Portfolio = props => {
+const Portfolio = () => {
   return (
     <div className="portfolio">
       <WhiteBand>
@@ -80,9 +79,10 @@ const Portfolio = props => {
         }
         return <RedProject key={project.title} project={project} />
       })}
+      <IconLinks />
     </div>
 
-  );
+  )
 }
 
-export default Portfolio;
+export default Portfolio

@@ -1,11 +1,10 @@
 import React from 'react'
-// import Pie from './Pie'
+import styled from '@emotion/styled'
 import Timeline from '../../Timeline'
-import Hello from './hello';
-import Developer from './developer';
-import LookingFor from './lookingfor';
-import Skills from './skills';
-import styled from '@emotion/styled';
+import Hello from './hello'
+import Developer from './developer'
+import LookingFor from './lookingfor'
+import Skills from './skills'
 
 const IntroContainer = styled('div')`
   display: flex;
@@ -17,21 +16,30 @@ const IntroContainer = styled('div')`
     height: 50px;
     margin: 1em 1em 0 0;
   }
+
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+  }
 `
 
 const StyledIntro = styled('div')`
   width: 50%;
-`;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
 
 const Intro = props => {
+  const { latestBlog } = props
+
   return (
     <IntroContainer>
       <StyledIntro>
-        <Hello latestBlog={props.latestBlog} />
+        <Hello latestBlog={latestBlog} />
         <Developer />
         <LookingFor />
         <Skills />
-        {/* <Pie /> */}
       </StyledIntro>
       <Timeline />
     </IntroContainer>

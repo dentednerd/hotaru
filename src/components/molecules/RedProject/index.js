@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import RedBand from "../../atoms/RedBand";
+import React from 'react'
+import styled from '@emotion/styled'
+import RedBand from "../../atoms/RedBand"
 
 const ProjectSection = styled('section')`
   display: flex;
@@ -43,21 +43,21 @@ const ProjectSection = styled('section')`
       margin-bottom: 1em;
     }
   }
-`;
+`
 
 const RedProject = props => {
-  const { project } = props;
+  const { project } = props
 
   return (
     <RedBand>
-    <ProjectSection>
+      <ProjectSection>
         <section>
           <h2>{project.title}</h2>
           <p>{project.caption}</p>
           <p className="stack">
             {project.stack.map((tech, index) => {
               if (index === 0) {
-                return `${tech}`;
+                return `${tech}`
               }
               return `» ${tech} `
             })}
@@ -68,7 +68,7 @@ const RedProject = props => {
         </a>
       </ProjectSection>
     </RedBand>
-  );
+  )
 }
 
-export default RedProject;
+export default RedProject

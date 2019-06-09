@@ -1,12 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-
 import WhiteBand from "../components/atoms/WhiteBand"
-import Header from '../components/organisms/Header';
-import BlogHeader from '../components/BlogHeader';
-import IconLinks from '../components/molecules/IconLinks';
-import Card from '../components/molecules/Card';
-import { GridContainer, GridItem } from '../components/atoms/Grid';
+import Header from '../components/organisms/Header'
+import BlogHeader from '../components/BlogHeader'
+import IconLinks from '../components/molecules/IconLinks'
+import Card from '../components/molecules/Card'
+import { GridContainer, GridItem } from '../components/atoms/Grid'
 
 import './style.css'
 
@@ -19,13 +18,13 @@ export default ({ data }) => {
       <BlogHeader />
       <WhiteBand>
         <GridContainer>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <GridItem key={node.id}>
-            <Card article={node} />
-          </GridItem>
-        ))}
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <GridItem key={node.id}>
+              <Card article={node} />
+            </GridItem>
+          ))}
         </GridContainer>
-      <IconLinks />
+        <IconLinks />
       </WhiteBand>
     </div>
   )

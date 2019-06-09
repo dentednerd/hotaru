@@ -3,12 +3,13 @@ import styled from '@emotion/styled'
 
 const StyledIntroSection = styled('section')`
   margin-bottom: 2em;
-`;
+`
 
 const IntroSection = props => {
+  const { children } = props
   return (
     <StyledIntroSection>
-      {props.children}
+      {children}
     </StyledIntroSection>
   )
 }

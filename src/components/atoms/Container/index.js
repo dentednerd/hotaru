@@ -8,7 +8,7 @@ const Container = styled('div')`
   width: 96vw;
   max-width: 1024px;
   padding: 0 2vw;
-`;
+`
 
 export default ({ children }) => (
   <StaticQuery

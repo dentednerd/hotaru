@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import WhiteBand from "../../atoms/WhiteBand";
+import React from 'react'
+import styled from '@emotion/styled'
+import WhiteBand from "../../atoms/WhiteBand"
 
 const ProjectSection = styled('section')`
   display: flex;
@@ -42,10 +42,10 @@ const ProjectSection = styled('section')`
       width: 100%;
     }
   }
-`;
+`
 
 const WhiteProject = props => {
-  const { project } = props;
+  const { project } = props
 
   return (
     <WhiteBand>
@@ -59,7 +59,7 @@ const WhiteProject = props => {
           <p className="stack">
             {project.stack.map((tech, index) => {
               if (index === 0) {
-                return `${tech}`;
+                return `${tech}`
               }
               return `» ${tech} `
             })}
@@ -67,7 +67,7 @@ const WhiteProject = props => {
         </section>
       </ProjectSection>
     </WhiteBand>
-  );
+  )
 }
 
-export default WhiteProject;
+export default WhiteProject

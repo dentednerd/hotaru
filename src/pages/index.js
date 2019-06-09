@@ -1,16 +1,16 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import {Helmet} from 'react-helmet';
+import React from 'react'
+import { graphql } from 'gatsby'
+import {Helmet} from 'react-helmet'
 import styled from '@emotion/styled'
-import RedBand from '../components/atoms/RedBand';
-import WhiteBand from '../components/atoms/WhiteBand';
-import Header from '../components/organisms/Header';
-import Hero from '../components/organisms/Hero';
-import Recruiters from '../components/atoms/Recruiters';
-import Intro from '../components/molecules/Intro';
-import Interests from '../components/Interests';
-import Portfolio from '../components/Portfolio';
-import Footer from '../components/organisms/Footer';
+import RedBand from '../components/atoms/RedBand'
+import WhiteBand from '../components/atoms/WhiteBand'
+import Header from '../components/organisms/Header'
+import Hero from '../components/organisms/Hero'
+import Recruiters from '../components/atoms/Recruiters'
+import Intro from '../components/molecules/Intro'
+import Showreel from '../components/molecules/Showreel'
+import Interests from '../components/Interests'
+import Footer from '../components/organisms/Footer'
 
 import './style.css'
 import './global.css'
@@ -18,7 +18,7 @@ import './global.css'
 const Index = styled('div')`
   box-sizing: border-box;
   height: 100%;
-`;
+`
 
 const IndexPage = ({ data }) => {
   return (
@@ -34,17 +34,17 @@ const IndexPage = ({ data }) => {
         <Recruiters />
       </RedBand>
       <WhiteBand>
-        <Intro latestBlog={data.allMarkdownRemark.edges[0].node}/>
+        <Intro latestBlog={data.allMarkdownRemark.edges[0].node} />
       </WhiteBand>
       <RedBand>
-        <Portfolio />
+        <Showreel />
       </RedBand>
       <WhiteBand>
         <Interests />
         <Footer />
       </WhiteBand>
     </Index>
-  );
+  )
 }
 
 export default IndexPage

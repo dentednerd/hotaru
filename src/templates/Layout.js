@@ -1,11 +1,12 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import Wrapped from '../components/Wrapped';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import RedBand from '../components/RedBand';
+import React from 'react'
+import Helmet from 'react-helmet'
+import Wrapped from '../components/Wrapped'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import RedBand from '../components/RedBand'
 
 const Layout = (props) => {
+  const { children } = props
   return (
     <div id="main">
       <Helmet>
@@ -14,12 +15,12 @@ const Layout = (props) => {
       <Wrapped>
         <Header />
       </Wrapped>
-      {props.children}
+      {children}
       <RedBand>
         <Footer />
       </RedBand>
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons'; 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons' 
 
 const StyledTimeline = styled('div')`
   width: 40%;
@@ -10,7 +10,11 @@ const StyledTimeline = styled('div')`
   h2 {
     margin: 0;
   }
-`;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
 
 const TimelineItem = styled('div')`
   label: TimelineItem;
@@ -59,14 +63,13 @@ const TimelineItem = styled('div')`
     font-size: 0.75em;
     font-weight: 300;
   }
-`;
+`
 
 const FadeTimelineItem = styled('div')`
   label: FadeTimelineItem;
   background: #c30;
   margin-top: 0;
   margin-bottom: 0.1em;
-  padding: 1em;
   width: 50%;
   float: right;
   color: rgb(255, 170, 125);
@@ -95,10 +98,14 @@ const FadeTimelineItem = styled('div')`
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
   }
-`;
 
-library.add(faBriefcase);
-library.add(faGraduationCap);
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
+library.add(faBriefcase)
+library.add(faGraduationCap)
 
 const Timeline = () => {
   return (
@@ -123,10 +130,10 @@ const Timeline = () => {
           </h2>
           <h3>
             <span className="icon">
-            <FontAwesomeIcon icon={faBriefcase} />
+              <FontAwesomeIcon icon={faBriefcase} />
             </span>
             Software Engineer
-            </h3>
+          </h3>
           <p className="desc">Rebuilding all company websites, learning deployment technologies, writing for company Medium publication.</p>
           <p className="skills">React, HTML, CSS, GraphQL, Koa, Docker, Kubernetes, CircleCI, Jenkins, BrowserStack</p>
         </TimelineItem>
@@ -141,10 +148,10 @@ const Timeline = () => {
           </h2>
           <h3>
             <span className="icon">
-            <FontAwesomeIcon icon={faBriefcase} />
+              <FontAwesomeIcon icon={faBriefcase} />
             </span>
             Tutor (Saturdays)
-            </h3>
+          </h3>
           <p className="desc">Supporting Northcoders students on the part-time course with front end development.</p>
           <p className="skills">React, Redux, Redux-Thunk, Webpack, HTML, CSS</p>
         </TimelineItem>
@@ -162,7 +169,7 @@ const Timeline = () => {
               <FontAwesomeIcon icon={faBriefcase} />
             </span>
             Front End Developer
-            </h3>
+          </h3>
           <p className="desc">Currently under NDA.</p>
           <p className="skills">JavaScript, React, Redux, Redux-Saga, Storybook, Webpack, Jest, Git, HTML, CSS</p>
         </TimelineItem>
@@ -226,33 +233,33 @@ const Timeline = () => {
         <span className="date">2016 - 2017</span>
         <h2>
           Just Teachers
-          </h2>
+        </h2>
         <h3>
           <span className="icon">
             <FontAwesomeIcon icon={faBriefcase} />
           </span>
           Supply Primary Teacher
-          </h3>
+        </h3>
       </FadeTimelineItem>
 
       <FadeTimelineItem>
         <span className="date">2014 - 2016</span>
         <h2>
           Manchester Metropolitan University
-          </h2>
+        </h2>
         <h3>
           <span className="icon">
             <FontAwesomeIcon icon={faGraduationCap} />
           </span>
           PGCE in Primary Education
-          </h3>
+        </h3>
       </FadeTimelineItem>
 
       <FadeTimelineItem>
         <span className="date">2004 - 2008</span>
         <h2>
           University of Salford
-          </h2>
+        </h2>
         <h3>
           <span className="icon">
             <FontAwesomeIcon icon={faGraduationCap} />
@@ -265,7 +272,7 @@ const Timeline = () => {
         <span className="date">1997 - 2003</span>
         <h2>
           Wycombe High School
-          </h2>
+        </h2>
         <h3>
           <span className="icon">
             <FontAwesomeIcon icon={faGraduationCap} />
