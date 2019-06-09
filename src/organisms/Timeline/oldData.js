@@ -1,19 +1,19 @@
-{oldData.map(job => (
-  <FadeTimelineItem>
-    <span className="date">
-      {job.dates}
-    </span>
-    <h2>
-      {job.companyName}
-    </h2>
-    <h3>
-      <span className="icon">
-        {icons[job.icon]}
-      </span>
-      {job.jobTitle}
-    </h3>
-  </FadeTimelineItem>
-))}
+// {oldData.map(job => (
+//   <FadeTimelineItem>
+//     <span className="date">
+//       {job.dates}
+//     </span>
+//     <h2>
+//       {job.companyName}
+//     </h2>
+//     <h3>
+//       <span className="icon">
+//         {icons[job.icon]}
+//       </span>
+//       {job.jobTitle}
+//     </h3>
+//   </FadeTimelineItem>
+// ))}
 
 export default [
   {

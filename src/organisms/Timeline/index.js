@@ -66,51 +66,12 @@ const TimelineItem = styled('div')`
   }
 `
 
-const FadeTimelineItem = styled('div')`
-  label: FadeTimelineItem;
-  background: #c30;
-  margin-top: 0;
-  margin-bottom: 0.1em;
-  width: 50%;
-  float: right;
-  color: rgb(255, 170, 125);
-  padding: 0.75em;
-
-  h2 {
-    color: rgb(255, 170, 125);
-    font-size: calc(10px + 0.25em);
-  }
-
-  h3 {
-    color: rgb(255, 170, 125);
-    font-size: calc(10px + 0.25em);
-  }
-
-  span.date {
-    display: block;
-    background-color: rgb(255, 170, 125);
-    color: #c30;
-    font-size: 1em;
-    padding: 0.1em 0;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.5em;
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`
-
 library.add(faBriefcase)
 library.add(faGraduationCap)
 
 const icons = {
   work: <FontAwesomeIcon icon={faBriefcase} />,
-  study: <FontAwesomeIcon icon={faGraduationCap} />
+  study: <FontAwesomeIcon icon={faGraduationCap} />,
 }
 
 const Timeline = () => {
