@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import WhiteBand from "../../atoms/WhiteBand"
+import RedBand from "../../../atoms/RedBand"
+import assets from '../assets'
 
 const ProjectSection = styled('section')`
   display: flex;
@@ -8,17 +9,17 @@ const ProjectSection = styled('section')`
   justify-content: flex-start;
   align-items: flex-start;
 
-  a {
+  section {
     margin-right: 2em;
     width: calc(50% - 1em);
   }
 
-  img {
-    width: 100%;
+  a {
+    width: 50%;
   }
 
-  section {
-    width: 50%;
+  img {
+    width: 100%;
   }
 
   .stack {
@@ -31,28 +32,26 @@ const ProjectSection = styled('section')`
   }
 
   @media (max-width: 768px) {
-    flex-flow: column nowrap;
+    flex-flow: column-reverse nowrap;
+
+    section {
+      width: 100%;
+      margin-right: 0;
+    }
 
     a {
       width: 100%;
       margin-bottom: 1em;
     }
-
-    section {
-      width: 100%;
-    }
   }
 `
 
-const WhiteProject = props => {
+const RedProject = props => {
   const { project } = props
 
   return (
-    <WhiteBand>
+    <RedBand>
       <ProjectSection>
-        <a href={project.link}>
-          <img src={project.image} alt={project.title} />
-        </a>
         <section>
           <h2>{project.title}</h2>
           <p>{project.caption}</p>
@@ -61,13 +60,16 @@ const WhiteProject = props => {
               if (index === 0) {
                 return `${tech}`
               }
-              return ` » ${tech} `
+              return `» ${tech} `
             })}
           </p>
         </section>
+        <a href={project.link}>
+          <img src={assets[project.image]} alt={project.title} />
+        </a>
       </ProjectSection>
-    </WhiteBand>
+    </RedBand>
   )
 }
 
-export default WhiteProject
+export default RedProject

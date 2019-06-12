@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import CardImage from '../../atoms/CardImage'
+import CardImage from './CardImage'
 
 const Card = props => {
   const { article } = props

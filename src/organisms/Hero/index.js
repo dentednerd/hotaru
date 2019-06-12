@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import IconLinks from '../../molecules/IconLinks'
+import heroOGV from './hero.ogv'
+import heroWEBM from './hero.webm'
 
 const VideoHero = styled('div')`
   position: relative;
@@ -23,8 +25,8 @@ const HeroIcons = styled('div')`
 const Hero = () => (
   <VideoHero>
     <video autoPlay width="100%" loop muted>
-      <source src="hero.ogv" />
-      <source src="hero.webm" />
+      <source src={heroOGV} />
+      <source src={heroWEBM} />
     </video>
 
     <HeroIcons>

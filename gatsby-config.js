@@ -17,9 +17,9 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Roboto Slab:700', 'Roboto Condensed']
-        }
-      }
+          families: ['Roboto Slab:700', 'Roboto Condensed'],
+        },
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -28,7 +28,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1024,
+              maxWidth: 1920,
               linkImagesToOriginal: false,
             },
           },
@@ -36,6 +36,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
   ],
 }

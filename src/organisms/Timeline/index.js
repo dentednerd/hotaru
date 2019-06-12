@@ -87,7 +87,7 @@ const Timeline = () => {
         </h3>
       </div> */}
       {data.map(job => (
-        <a href={job.link}>
+        <a href={job.link} key={`${job.dates} + ${job.link}`}>
           <TimelineItem>
             <span className="date">
               {job.dates}

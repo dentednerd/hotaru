@@ -1,6 +1,6 @@
 import React from 'react'
 import IntroSection from '../../atoms/IntroSection'
-import KeyData from '../KeyData'
+import KeyData from '../../molecules/KeyData'
 
 const Hello = props => {
   const { latestBlog } = props

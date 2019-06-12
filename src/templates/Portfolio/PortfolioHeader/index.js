@@ -1,5 +1,5 @@
 import React from 'react'
-import RedBand from '../../atoms/RedBand'
+import RedBand from '../../../atoms/RedBand'
 
 const PortfolioHeader = () => (
   <RedBand>
