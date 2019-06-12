@@ -54,7 +54,7 @@ const Card = props => {
     <Link to={article.fields.slug}>
       <StyledCard>
         {article.frontmatter.featuredImage && (
-          <CardImage imgSrc={article.frontmatter.featuredImage.childImageSharp.sizes.src} />
+          <CardImage imgSrc={`${article.frontmatter.featuredImage.childImageSharp.sizes.src}`} />
         )}
         <section>
           <h2>

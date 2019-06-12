@@ -5,7 +5,8 @@ const CardImage = props => {
   const { imgSrc } = props
 
   const ImageDiv = styled('div')`
-    background-image: url(${imgSrc});
+    background-color: #bbb;
+    background-image: url("${imgSrc}");
     background-size: cover;
     background-position: center;
     height: 14em;

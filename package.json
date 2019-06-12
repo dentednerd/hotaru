@@ -26,6 +26,7 @@
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-remark-copy-linked-files": "^2.0.13",
     "gatsby-remark-images": "^2.0.6",
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.1.8",
@@ -46,10 +47,11 @@
   ],
   "license": "ISC",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "build": "rm -rf .cache/* && gatsby build --prefix-paths",
+    "develop": "rm -rf .cache/* && gatsby develop",
+    "deploy": "rm -rf .cache/* && gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write '**/*.js'",
+    "serve": "rm -rf .cache/* && gatsby build --prefix-paths && gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./src"
   },
