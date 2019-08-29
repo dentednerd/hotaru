@@ -74,19 +74,23 @@ const icons = {
   study: <FontAwesomeIcon icon={faGraduationCap} />,
 }
 
-const Timeline = () => {
+const Timeline = (props) => {
   return (
     <StyledTimeline>
-      {/* <div className="timeline-item">
-        <span className="date">The Future</span>
-        <h2>
-          Your team?
-        </h2>
-        <h3>
-          My technical and creative skills could bring real value to your project
-        </h3>
-      </div> */}
-      {data.map(job => (
+      {props.jobHunt && (
+        <div className="timeline-item">
+          <span className="date">The Future</span>
+          <h2>
+            Your team?
+          </h2>
+          <h3>
+            My technical and creative skills could bring real value to your project
+          </h3>
+        </div>
+      )}
+      {data.map(job => {
+        if (!props.jobHunt && job.hideIfNotHunting) return null
+        return (
         <a href={job.link} key={`${job.dates} + ${job.link}`}>
           <TimelineItem>
             <span className="date">
@@ -109,7 +113,8 @@ const Timeline = () => {
             </p>
           </TimelineItem>
         </a>
-      ))}
+      )}
+      )}
 
     </StyledTimeline>
   )

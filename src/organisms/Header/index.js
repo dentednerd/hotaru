@@ -10,12 +10,17 @@ const StyledHeader = styled('header')`
   align-items: center;
   color:#333;
   font-family: 'Lato', sans-serif;
-  margin: 1em 0;
+  margin: 0 auto;
+  height: 5em;
+  width: 96vw;
+  max-width: 1024px;
 
   @media (max-width: 768px) {
+    width: 100%;
     flex-flow: column nowrap;
     align-items: flex-start;
     margin-bottom: 0;
+    height: auto;
   }
 `
 
@@ -27,21 +32,33 @@ const TitleBlock = styled('div')`
 `
 
 const Title = styled('h1')`
-  font-size:2em;
+  label: Title;
+  font-size: 2em;
   font-weight: 700;
   font-family: 'Roboto Slab', serif;
   color: #333;
-  margin: 0 2vw 0 0;
+  margin-top: 0.5em;
 
   span {
     color: #c30;
   }
+
+  @media (max-width: 768px) {
+    margin-left: 0.25em;
+    margin-bottom: 0.5em;
+  }
 `
 
 const Subtitle = styled('div')`
+  label: Subtitle;
+  height: 1.5em;
   font-size:1.5em;
   line-height: 1.5em;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const Nav = styled('nav')`
@@ -51,11 +68,9 @@ const Nav = styled('nav')`
   align-items: center;
 
   @media (max-width: 768px) {
+    align-items: flex-start;
     width: 100%;
-    margin-top: 1em;
-    border-top: solid 1px #666;
-    border-bottom: solid 1px #666;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
 `
 
@@ -69,6 +84,11 @@ const NavLink = styled(Link)`
     background-color: #c30;
     border-radius: 6px;
     color: white;
+  }
+
+  @media (max-width: 768px) {
+    width: auto;
+    margin: 0 2.5em 0 0.5em;
   }
 `
 
@@ -93,24 +113,24 @@ class Header extends React.Component {
   render() {
     return (
       <StyledHeader>
-        <TitleBlock>
-          <Title>
-            &lt;
-            <span>JoanneImlay</span>
-            /&gt;
-          </Title>
-          <Subtitle>
-            <span
-              style={{ whiteSpace: 'pre' }}
-              ref={(el) => { this.el = el }}
-            />
-          </Subtitle>
-        </TitleBlock>
-        <Nav>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/blog'>Blog</NavLink>
-          <NavLink to='/portfolio'>Portfolio</NavLink>
-        </Nav>
+          <TitleBlock>
+            <Title>
+              &lt;
+              <span>JoanneImlay</span>
+              /&gt;
+            </Title>
+            <Subtitle>
+              <span
+                style={{ whiteSpace: 'pre' }}
+                ref={(el) => { this.el = el }}
+              />
+            </Subtitle>
+          </TitleBlock>
+          <Nav>
+            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/blog'>Blog</NavLink>
+            <NavLink to='/portfolio'>Portfolio</NavLink>
+          </Nav>
       </StyledHeader>
     )
   }

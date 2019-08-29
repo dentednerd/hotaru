@@ -7,7 +7,14 @@ const Container = styled('div')`
   margin: 0 auto;
   width: 96vw;
   max-width: 1024px;
-  padding: 0 2vw;
+  padding: 1em 2vw;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
 `
 
 export default ({ children }) => (

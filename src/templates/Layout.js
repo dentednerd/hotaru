@@ -11,13 +11,9 @@ const Layout = (props) => {
       <Helmet>
         <title>Joanne Imlay, front end developer</title>
       </Helmet>
-      <WhiteBand>
-        <Header />
-      </WhiteBand>
+      <Header />
       {children}
-      <WhiteBand>
-        <Footer />
-      </WhiteBand>
+      <Footer />
     </div>
   )
 }

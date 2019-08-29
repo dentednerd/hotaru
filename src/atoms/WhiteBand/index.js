@@ -8,7 +8,7 @@ const WhiteBandContainer = styled('div')`
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  padding: 1em 0;
+  padding: 0;
   color: #333;
   margin-bottom: 0.5em;
 

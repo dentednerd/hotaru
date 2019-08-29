@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
+import WhiteBand from '../../atoms/WhiteBand'
+import RedBand from '../../atoms/RedBand'
 import Timeline from '../../organisms/Timeline'
 import Hello from './hello'
 import Developer from './developer'
@@ -26,23 +28,53 @@ const StyledIntro = styled('div')`
   width: 50%;
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: calc(100% - 2em);
+    padding: 0 1em;
+  }
+`
+
+const StyledRecruiters = styled('div')`
+  text-align: center;
+
+  span {
+    font-weight: 600;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1em;
   }
 `
 
 const Intro = props => {
   const { latestBlog } = props
+  const jobHunt = false
 
   return (
-    <IntroContainer>
-      <StyledIntro>
-        <Hello latestBlog={latestBlog} />
-        <Developer />
-        <LookingFor />
-        <Skills />
-      </StyledIntro>
-      <Timeline />
-    </IntroContainer>
+    <Fragment>
+      <RedBand>
+        <StyledRecruiters>
+          <h2>Recruiters...</h2>
+          I am 
+          <span>
+            {!jobHunt ? " not open " : " open "}
+          </span> 
+          to new opportunities right now.
+        </StyledRecruiters>
+      </RedBand>  
+      <WhiteBand>
+        <IntroContainer>
+          <StyledIntro>
+            <Hello latestBlog={latestBlog} />
+            <Developer />
+            <LookingFor jobHunt={jobHunt} />
+            <Skills jobHunt={jobHunt} />
+          </StyledIntro>
+          <Timeline jobHunt={jobHunt} />
+        </IntroContainer>
+      </WhiteBand>
+    </Fragment>
   )
 }
 

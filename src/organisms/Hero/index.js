@@ -7,8 +7,8 @@ import heroWEBM from './hero.webm'
 const VideoHero = styled('div')`
   position: relative;
 
-  &video {
-    margin-bottom: -0.25em;
+  & video {
+    margin-bottom: -0.5em;
   }
 `
 

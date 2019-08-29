@@ -8,7 +8,7 @@ const RedBandContainer = styled('div')`
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  padding: 1em 0;
+  padding: 0;
   color: white;
   margin-bottom: 0.5em;
 

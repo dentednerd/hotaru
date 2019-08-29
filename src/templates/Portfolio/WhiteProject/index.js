@@ -1,13 +1,22 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import WhiteBand from "../../../atoms/WhiteBand"
 import assets from '../assets'
+
+const WhiteWrapper = styled('div')`
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+`
 
 const ProjectSection = styled('section')`
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1em 0;
 
   a {
     margin-right: 2em;
@@ -32,6 +41,7 @@ const ProjectSection = styled('section')`
   }
 
   @media (max-width: 768px) {
+    padding: 0;
     flex-flow: column nowrap;
 
     a {
@@ -40,7 +50,8 @@ const ProjectSection = styled('section')`
     }
 
     section {
-      width: 100%;
+      width: 96vw;
+      padding: 0 2vw;
     }
   }
 `
@@ -49,7 +60,7 @@ const WhiteProject = props => {
   const { project } = props
 
   return (
-    <WhiteBand>
+    <WhiteWrapper>
       <ProjectSection>
         <a href={project.link}>
           <img src={assets[project.image]} alt={project.title} />
@@ -67,7 +78,7 @@ const WhiteProject = props => {
           </p>
         </section>
       </ProjectSection>
-    </WhiteBand>
+    </WhiteWrapper>
   )
 }
 

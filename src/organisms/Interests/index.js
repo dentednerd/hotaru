@@ -1,23 +1,34 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
 import Flipcard from './Flipcard'
 import OrangeBox from '../../atoms/OrangeBox'
+import interests from './interests'
 
 const StyledInterests = styled('section')`
-  text-align: center;
-  margin-bottom: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
 
-  h3 {
-    font-family: 'Lato', sans-serif;
-    padding-bottom: 0;
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+  }
+  
+  h2 {
+    margin-bottom: 0.5em;
   }
 
-  .cards {
-    margin: 0 auto 2em auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
+  p {
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  span {
+    font-family: "Roboto Slab", serif;
+    color: #c30;
+    margin-bottom: 0;
+    font-weight: bold;
+    line-height: 1em;
   }
 
   @media screen and (orientation: portrait) {
@@ -27,6 +38,14 @@ const StyledInterests = styled('section')`
     .orange-box h2 {
       font-size: 24px;
     }
+  }
+`
+
+const Hobbies = styled('div')`
+  width: 75%;
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `
 
@@ -52,65 +71,35 @@ const DownloadLink = styled('p')`
 
 const Interests = () => {
   return (
-    <StyledInterests>
-      <h2>These are my interests beyond code.</h2>
-
-      <section className="cards">
-
-        <Flipcard
-          title="Music"
-          content="My degree is in music. I sing and play guitar, bass and piano. I've played guitar at the Albert Hall and for the Queen."
-        />
-
-        <Flipcard
-          title="Video games"
-          content="An unexpected benefit from my developer career so far is that I've become quite good at CS:GO."
-        />
-
-        <Flipcard
-          title="Anime"
-          content="FLCL and Steins;Gate are among my favourite series."
-        />
-
-        <Flipcard
-          title="Crochet"
-          content="I taught myself to crochet whilst I was ill one day. Making gifts for friends and family can be very relaxing."
-        />
-
-        <Flipcard
-          title="Books"
-          content="Neil Gaiman is my author of choice, closely followed by Ursula Le Guin and George R R Martin."
-        />
-
-        <Flipcard
-          title="Cats"
-          content="I have a cat called Zac. He's pretty awesome."
-        />
-
-      </section>
-
-      <OrangeBox>
-        <h2>
-          And finally, some fun facts about me.
-        </h2>
-        <p>If I were a student at Hogwarts, I would be in Ravenclaw.</p>
-        <p>If I lived in Westeros, I would bend the knee to House Targaryen.</p>
-        <p>
-          According to 
-          <a href="https://www.16personalities.com">16personalities.com</a>
-          , I am an Advocate, or an INFJ.
-        </p>
-      </OrangeBox>
+    <Fragment>
+      <StyledInterests>
+        <Hobbies>
+          <h2>When I'm not working, I like...</h2>
+          <section>
+            {interests.map(interest => (
+              <p><span>{interest.name}:</span> {interest.desc}</p>
+            ))}
+          </section>
+        </Hobbies>
+        <OrangeBox>
+          <h2>Let's play a game! Guess which statement isn't true...</h2>
+          <p><a href="https://www.pottermore.com">Pottermore</a> says that I'm a Ravenclaw.</p>
+          <p>My favourite Final Fantasy game was XIII.</p>
+          <p>At least once a year, I go back and re-read the Earthsea books.</p>
+          <p>In World of Warcraft, my main character is a hunter.</p>
+          <p><a href="https://www.16personalities.com">16personalities.com</a> says that I'm an Advocate, or an INFJ.</p>
+          <p>I bend the knee to House Targaryen.</p>
+          <p>My favourite Doctor? Eleven.</p>
+        </OrangeBox>
+      </StyledInterests>
 
       <h2>I&apos;d love to hear from you. Get in touch!</h2>
-
       <DownloadLink>
         <a href="https://www.dropbox.com/s/fekqikh5iek86t2/Joanne%20Imlay%20CV.pdf?dl=0" target="_blank" rel="noopener noreferrer">
           Download this CV in PDF format
         </a>
       </DownloadLink>
-
-    </StyledInterests>
+</Fragment>
   )
 }
 

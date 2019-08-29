@@ -8,6 +8,7 @@ const StyledShowreel = styled('section')`
   align-items: flex-start;
 
   @media (max-width: 768px) {
+    width: 100%;
     flex-flow: column nowrap;
   }
 `

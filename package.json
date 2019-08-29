@@ -35,6 +35,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
+    "react-sticky": "^6.0.3",
     "react-svg-piechart": "^2.1.1",
     "typed.js": "^2.0.6"
   },

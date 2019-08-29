@@ -1,13 +1,23 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import RedBand from "../../../atoms/RedBand"
 import assets from '../assets'
+
+const RedWrapper = styled('div')`
+  background-color: #c30;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  color: #fff;
+`
 
 const ProjectSection = styled('section')`
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1em 0;
 
   section {
     margin-right: 2em;
@@ -28,15 +38,17 @@ const ProjectSection = styled('section')`
   }
 
   h2, p {
+    color: #fff;
     margin-bottom: 1em;
   }
 
   @media (max-width: 768px) {
+    padding: 0;
     flex-flow: column-reverse nowrap;
 
     section {
-      width: 100%;
-      margin-right: 0;
+      width: 96vw;
+      margin: 2vw;
     }
 
     a {
@@ -50,7 +62,7 @@ const RedProject = props => {
   const { project } = props
 
   return (
-    <RedBand>
+    <RedWrapper>
       <ProjectSection>
         <section>
           <h2>{project.title}</h2>
@@ -68,7 +80,7 @@ const RedProject = props => {
           <img src={assets[project.image]} alt={project.title} />
         </a>
       </ProjectSection>
-    </RedBand>
+    </RedWrapper>
   )
 }
 

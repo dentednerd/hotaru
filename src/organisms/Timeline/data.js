@@ -43,6 +43,7 @@ export default [
     jobTitle: "Beginner Developer",
     jobDesc: "Self-directed study in preparation for Northcoders bootcamp.",
     skills: "JavaScript, Git, JQuery, Sass",
+    hideIfNotHunting: true,
   },
   {
     link: "https://freecodecamp.com",
@@ -52,5 +53,6 @@ export default [
     jobTitle: "Beginner Developer",
     jobDesc: "Self-directed study in preparation for Northcoders bootcamp.",
     skills: "Basic JavaScript, Object Oriented and Functional Programming, Basic Algorithm Scripting",
+    hideIfNotHunting: true,
   },
 ]
