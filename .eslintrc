@@ -15,38 +15,12 @@
     "jest": true
   },
   "rules": {
-    "semi": [2, "never"],
-    "comma-dangle": [2, "always-multiline"],
-    "max-len": 0,
-    "no-shadow": 0,
-    "arrow-body-style": 0,
-    "global-require": 0,
-    "no-unused-expressions": 0,
-    "no-confusing-arrow": 0,
-    "import/no-cycle": 0,
-    "import/no-duplicates": 0,
-    "import/no-dynamic-require": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/no-named-as-default": 0,
-    "import/no-named-as-default-member": 0,
-    "import/no-self-import": 0,  
-    "import/no-useless-path-segments": 0,  
-    "import/order": 0,
-    "import/prefer-default-export": 0,
-    "react/no-this-in-sfc": 0,
-    "react/require-default-props": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": 0,
-    "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx"]}],
-    "import/no-unresolved": 0,
-    "import/extensions": 0,
-    "react/no-danger": 0,
-    "jsx-a11y/href-no-hash": "off",
-    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
-    "jsx-a11y/media-has-caption": 0
+    "max-len": 0
   },
   "extends": [
     "airbnb",
-    "prettier",
     "react-app"
   ]
 }

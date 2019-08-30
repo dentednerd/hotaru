@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react'
-import styled from '@emotion/styled'
-import WhiteBand from '../../atoms/WhiteBand'
-import RedBand from '../../atoms/RedBand'
-import Timeline from '../../organisms/Timeline'
-import Hello from './hello'
-import Developer from './developer'
-import LookingFor from './lookingfor'
-import Skills from './skills'
+import React, { Fragment } from 'react';
+import styled from '@emotion/styled';
+import WhiteBand from '../../atoms/WhiteBand';
+import RedBand from '../../atoms/RedBand';
+import Timeline from '../Timeline';
+import Hello from './hello';
+import Developer from './developer';
+import LookingFor from './lookingfor';
+import Skills from './skills';
 
 const IntroContainer = styled('div')`
   display: flex;
@@ -22,7 +22,7 @@ const IntroContainer = styled('div')`
   @media (max-width: 768px) {
     flex-flow: column nowrap;
   }
-`
+`;
 
 const StyledIntro = styled('div')`
   width: 50%;
@@ -31,7 +31,7 @@ const StyledIntro = styled('div')`
     width: calc(100% - 2em);
     padding: 0 1em;
   }
-`
+`;
 
 const StyledRecruiters = styled('div')`
   text-align: center;
@@ -45,24 +45,24 @@ const StyledRecruiters = styled('div')`
   @media (max-width: 768px) {
     padding: 1em;
   }
-`
+`;
 
-const Intro = props => {
-  const { latestBlog } = props
-  const jobHunt = false
+const Intro = (props) => {
+  const { latestBlog } = props;
+  const jobHunt = false;
 
   return (
     <Fragment>
       <RedBand>
         <StyledRecruiters>
           <h2>Recruiters...</h2>
-          I am 
+          I am
           <span>
-            {!jobHunt ? " not open " : " open "}
-          </span> 
+            {!jobHunt ? ' not open ' : ' open '}
+          </span>
           to new opportunities right now.
         </StyledRecruiters>
-      </RedBand>  
+      </RedBand>
       <WhiteBand>
         <IntroContainer>
           <StyledIntro>
@@ -75,7 +75,7 @@ const Intro = props => {
         </IntroContainer>
       </WhiteBand>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;

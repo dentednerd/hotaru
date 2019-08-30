@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from 'react';
+import styled from '@emotion/styled';
 
 const StyledShowreel = styled('section')`
   display: flex;
@@ -11,7 +11,7 @@ const StyledShowreel = styled('section')`
     width: 100%;
     flex-flow: column nowrap;
   }
-`
+`;
 
 const VideoContainer = styled('div')`
   label: Showreel;
@@ -27,22 +27,20 @@ const VideoContainer = styled('div')`
     width: 100%;
     height: 100%;
   }
-`
+`;
 
-const Showreel = () => {
-  return (
-    <StyledShowreel>
-      <VideoContainer>
-        <iframe
-          title="showreel"
-          src="https://www.youtube.com/embed/videoseries?list=PLAdBHMPjLXymQOXs1yxNqgKBnHKDfDBgU"
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-        />
-      </VideoContainer>
-    </StyledShowreel>
-  )
-}
+const Showreel = () => (
+  <StyledShowreel>
+    <VideoContainer>
+      <iframe
+        title="showreel"
+        src="https://www.youtube.com/embed/videoseries?list=PLAdBHMPjLXymQOXs1yxNqgKBnHKDfDBgU"
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      />
+    </VideoContainer>
+  </StyledShowreel>
+);
 
-export default Showreel
+export default Showreel;

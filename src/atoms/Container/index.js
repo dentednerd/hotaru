@@ -1,6 +1,6 @@
-import React from "react"
-import styled from '@emotion/styled'
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react';
+import styled from '@emotion/styled';
+import { StaticQuery, graphql } from 'gatsby';
 
 const Container = styled('div')`
   position: relative;
@@ -15,7 +15,7 @@ const Container = styled('div')`
     padding: 0;
     margin: 0;
   }
-`
+`;
 
 export default ({ children }) => (
   <StaticQuery
@@ -34,4 +34,4 @@ export default ({ children }) => (
       </Container>
     )}
   />
-)
+);

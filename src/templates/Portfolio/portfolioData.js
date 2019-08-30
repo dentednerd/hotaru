@@ -41,4 +41,4 @@ export default [
     caption: 'A small project to showcase my HTML and CSS design skills, with a little jQuery animation. ',
     stack: ['HTML', 'CSS', 'jQuery'],
   },
-]
+];

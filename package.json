@@ -33,6 +33,7 @@
     "gatsby-transformer-sharp": "^2.1.18",
     "markdownlint": "^0.13.0",
     "react": "^16.5.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-sticky": "^6.0.3",
@@ -57,7 +58,7 @@
     "lint": "eslint ./src"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
+    "eslint": "5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-config-react-app": "^4.0.1",

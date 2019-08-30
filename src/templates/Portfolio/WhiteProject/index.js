@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import assets from '../assets'
+import React from 'react';
+import styled from '@emotion/styled';
+import assets from '../assets';
 
 const WhiteWrapper = styled('div')`
   background-color: #fff;
   padding: 0;
   margin: 0;
   width: 100%;
-`
+`;
 
 const ProjectSection = styled('section')`
   display: flex;
@@ -54,10 +54,10 @@ const ProjectSection = styled('section')`
       padding: 0 2vw;
     }
   }
-`
+`;
 
-const WhiteProject = props => {
-  const { project } = props
+const WhiteProject = (props) => {
+  const { project } = props;
 
   return (
     <WhiteWrapper>
@@ -71,15 +71,15 @@ const WhiteProject = props => {
           <p className="stack">
             {project.stack.map((tech, index) => {
               if (index === 0) {
-                return `${tech}`
+                return `${tech}`;
               }
-              return ` » ${tech} `
+              return ` » ${tech} `;
             })}
           </p>
         </section>
       </ProjectSection>
     </WhiteWrapper>
-  )
-}
+  );
+};
 
-export default WhiteProject
+export default WhiteProject;

@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import IconLinks from '../../molecules/IconLinks'
-import heroOGV from './hero.ogv'
-import heroWEBM from './hero.webm'
+import React from 'react';
+import styled from '@emotion/styled';
+import IconLinks from '../../molecules/IconLinks';
+import heroOGV from './hero.ogv';
+import heroWEBM from './hero.webm';
 
 const VideoHero = styled('div')`
   position: relative;
@@ -10,7 +10,7 @@ const VideoHero = styled('div')`
   & video {
     margin-bottom: -0.5em;
   }
-`
+`;
 
 const HeroIcons = styled('div')`
   background: rgba(255,255,255,0.3);
@@ -20,7 +20,7 @@ const HeroIcons = styled('div')`
   z-index:999;
   padding: 0.5em;
   border-radius: 6px;
-`
+`;
 
 const Hero = () => (
   <VideoHero>
@@ -34,6 +34,6 @@ const Hero = () => (
     </HeroIcons>
 
   </VideoHero>
-)
+);
 
-export default Hero
+export default Hero;

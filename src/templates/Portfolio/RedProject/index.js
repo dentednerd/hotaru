@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import assets from '../assets'
+import React from 'react';
+import styled from '@emotion/styled';
+import assets from '../assets';
 
 const RedWrapper = styled('div')`
   background-color: #c30;
@@ -8,7 +8,7 @@ const RedWrapper = styled('div')`
   margin: 0;
   width: 100%;
   color: #fff;
-`
+`;
 
 const ProjectSection = styled('section')`
   display: flex;
@@ -56,10 +56,10 @@ const ProjectSection = styled('section')`
       margin-bottom: 1em;
     }
   }
-`
+`;
 
-const RedProject = props => {
-  const { project } = props
+const RedProject = (props) => {
+  const { project } = props;
 
   return (
     <RedWrapper>
@@ -70,9 +70,9 @@ const RedProject = props => {
           <p className="stack">
             {project.stack.map((tech, index) => {
               if (index === 0) {
-                return `${tech}`
+                return `${tech}`;
               }
-              return `» ${tech} `
+              return `» ${tech} `;
             })}
           </p>
         </section>
@@ -81,7 +81,7 @@ const RedProject = props => {
         </a>
       </ProjectSection>
     </RedWrapper>
-  )
-}
+  );
+};
 
-export default RedProject
+export default RedProject;

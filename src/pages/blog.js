@@ -1,27 +1,25 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import WhiteBand from '../atoms/WhiteBand'
-import BlogHeader from '../molecules/BlogHeader'
-import Card from '../molecules/Card'
-import { GridContainer, GridItem } from '../atoms/Grid'
-import Layout from '../templates/Layout'
+import React from 'react';
+import { graphql } from 'gatsby';
+import WhiteBand from '../atoms/WhiteBand';
+import BlogHeader from '../molecules/BlogHeader';
+import Card from '../molecules/Card';
+import { GridContainer, GridItem } from '../atoms/Grid';
+import Layout from '../templates/Layout';
 
-export default ({ data }) => {
-  return (
-    <Layout>
-      <BlogHeader />
-      <WhiteBand>
-        <GridContainer>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <GridItem key={node.id}>
-              <Card article={node} />
-            </GridItem>
-          ))}
-        </GridContainer>
-      </WhiteBand>
-    </Layout>
-  )
-}
+export default ({ data }) => (
+  <Layout>
+    <BlogHeader />
+    <WhiteBand>
+      <GridContainer>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <GridItem key={node.id}>
+            <Card article={node} />
+          </GridItem>
+        ))}
+      </GridContainer>
+    </WhiteBand>
+  </Layout>
+);
 
 export const query = graphql`
   query {
@@ -49,4 +47,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

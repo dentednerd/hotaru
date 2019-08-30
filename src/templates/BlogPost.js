@@ -1,10 +1,10 @@
-import React from "react"
-import styled from '@emotion/styled'
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import Layout from '../templates/Layout'
-import WhiteBand from '../atoms/WhiteBand'
-import BlogHeader from '../molecules/BlogHeader'
+import React from 'react';
+import styled from '@emotion/styled';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Layout from './Layout';
+import WhiteBand from '../atoms/WhiteBand';
+import BlogHeader from '../molecules/BlogHeader';
 
 const StyledBlogPost = styled('div')`
   p {
@@ -42,10 +42,10 @@ const StyledBlogPost = styled('div')`
     font-weight:300;
     letter-spacing: -0.025em;
   }
-`
+`;
 
 export default ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
   return (
     <Layout>
       <BlogHeader />
@@ -61,8 +61,8 @@ export default ({ data }) => {
         </h4>
       </WhiteBand>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query($slug: String!) {
@@ -85,4 +85,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { Link } from "gatsby"
-import OrangeBox from '../../atoms/OrangeBox'
+import React from 'react';
+import styled from '@emotion/styled';
+import { Link } from 'gatsby';
+import OrangeBox from '../../atoms/OrangeBox';
 
 const StyledTable = styled('table')`
   td.data {
     padding-left: 1em;
   }
-`
+`;
 
-const KeyData = props => {
-  const { latestBlog } = props
+const KeyData = (props) => {
+  const { latestBlog } = props;
 
   return (
     <OrangeBox>
@@ -35,7 +35,7 @@ const KeyData = props => {
         </tbody>
       </StyledTable>
     </OrangeBox>
-  )
-}
+  );
+};
 
-export default KeyData
+export default KeyData;

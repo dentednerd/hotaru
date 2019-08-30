@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons' 
-import data from './data'
+import React from 'react';
+import styled from '@emotion/styled';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import data from './data';
 
 const StyledTimeline = styled('div')`
   width: 40%;
@@ -15,7 +15,7 @@ const StyledTimeline = styled('div')`
   @media (max-width: 768px) {
     width: 100%;
   }
-`
+`;
 
 const TimelineItem = styled('div')`
   label: TimelineItem;
@@ -64,60 +64,62 @@ const TimelineItem = styled('div')`
     font-size: 0.75em;
     font-weight: 300;
   }
-`
+`;
 
-library.add(faBriefcase)
-library.add(faGraduationCap)
+library.add(faBriefcase);
+library.add(faGraduationCap);
 
 const icons = {
   work: <FontAwesomeIcon icon={faBriefcase} />,
   study: <FontAwesomeIcon icon={faGraduationCap} />,
-}
+};
 
 const Timeline = (props) => {
+  const { jobHunt } = props;
+
   return (
     <StyledTimeline>
-      {props.jobHunt && (
-        <div className="timeline-item">
-          <span className="date">The Future</span>
-          <h2>
-            Your team?
-          </h2>
-          <h3>
-            My technical and creative skills could bring real value to your project
-          </h3>
-        </div>
+      {jobHunt && (
+      <div className="timeline-item">
+        <span className="date">The Future</span>
+        <h2>
+              Your team?
+        </h2>
+        <h3>
+              My technical and creative skills could bring real value to your project
+        </h3>
+      </div>
       )}
-      {data.map(job => {
-        if (!props.jobHunt && job.hideIfNotHunting) return null
+      {data.map((job) => {
+        if (!jobHunt && job.hideIfNotHunting) return null;
         return (
-        <a href={job.link} key={`${job.dates} + ${job.link}`}>
-          <TimelineItem>
-            <span className="date">
-              {job.dates}
-            </span>
-            <h2>
-              {job.companyName}
-            </h2>
-            <h3>
-              <span className="icon">
-                {icons[job.icon]}
+          <a href={job.link} key={`${job.dates} + ${job.link}`}>
+            <TimelineItem>
+              <span className="date">
+                {job.dates}
               </span>
-              {job.jobTitle}
-            </h3>
-            <p className="desc">
-              {job.jobDesc}
-            </p>
-            <p className="skills">
-              {job.skills}
-            </p>
-          </TimelineItem>
-        </a>
-      )}
-      )}
+              <h2>
+                {job.companyName}
+              </h2>
+              <h3>
+                <span className="icon">
+                  {icons[job.icon]}
+                </span>
+                {job.jobTitle}
+              </h3>
+              <p className="desc">
+                {job.jobDesc}
+              </p>
+              <p className="skills">
+                {job.skills}
+              </p>
+            </TimelineItem>
+          </a>
+        );
+      })}
 
     </StyledTimeline>
-  )
-}
+  );
+};
 
-export default Timeline
+export default Timeline;

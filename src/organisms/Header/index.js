@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from '@emotion/styled'
-import Typed from 'typed.js'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from '@emotion/styled';
+import Typed from 'typed.js';
 
 const StyledHeader = styled('header')`
   display: flex;
@@ -22,14 +22,14 @@ const StyledHeader = styled('header')`
     margin-bottom: 0;
     height: auto;
   }
-`
+`;
 
 const TitleBlock = styled('div')`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
-`
+`;
 
 const Title = styled('h1')`
   label: Title;
@@ -47,7 +47,7 @@ const Title = styled('h1')`
     margin-left: 0.25em;
     margin-bottom: 0.5em;
   }
-`
+`;
 
 const Subtitle = styled('div')`
   label: Subtitle;
@@ -59,7 +59,7 @@ const Subtitle = styled('div')`
   @media (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 const Nav = styled('nav')`
   display: flex;
@@ -72,7 +72,7 @@ const Nav = styled('nav')`
     width: 100%;
     margin-bottom: 0.5em;
   }
-`
+`;
 
 const NavLink = styled(Link)`
   display: block;
@@ -90,11 +90,11 @@ const NavLink = styled(Link)`
     width: auto;
     margin: 0 2.5em 0 0.5em;
   }
-`
+`;
 
 class Header extends React.Component {
   componentDidMount() {
-    const strings = ["React developer.", "Coding mentor.", "Crazy cat lady."]
+    const strings = ['React developer.', 'Coding mentor.', 'Crazy cat lady.'];
 
     const options = {
       strings,
@@ -102,38 +102,38 @@ class Header extends React.Component {
       backSpeed: 50,
       loop: true,
       loopCount: Infinity,
-    }
-    this.typed = new Typed(this.el, options)
+    };
+    this.typed = new Typed(this.el, options);
   }
 
   componentWillUnmount() {
-    this.typed.destroy()
+    this.typed.destroy();
   }
 
   render() {
     return (
       <StyledHeader>
-          <TitleBlock>
-            <Title>
+        <TitleBlock>
+          <Title>
               &lt;
-              <span>JoanneImlay</span>
+            <span>JoanneImlay</span>
               /&gt;
-            </Title>
-            <Subtitle>
-              <span
-                style={{ whiteSpace: 'pre' }}
-                ref={(el) => { this.el = el }}
-              />
-            </Subtitle>
-          </TitleBlock>
-          <Nav>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/blog'>Blog</NavLink>
-            <NavLink to='/portfolio'>Portfolio</NavLink>
-          </Nav>
+          </Title>
+          <Subtitle>
+            <span
+              style={{ whiteSpace: 'pre' }}
+              ref={(el) => { this.el = el; }}
+            />
+          </Subtitle>
+        </TitleBlock>
+        <Nav>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
+          <NavLink to="/portfolio">Portfolio</NavLink>
+        </Nav>
       </StyledHeader>
-    )
+    );
   }
 }
 
-export default Header
+export default Header;

@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from 'react';
+import styled from '@emotion/styled';
 
-const CardImage = props => {
-  const { imgSrc } = props
+const CardImage = (props) => {
+  const { imgSrc } = props;
 
   const ImageDiv = styled('div')`
     background-color: #bbb;
@@ -13,9 +13,9 @@ const CardImage = props => {
     width: 100%;
     margin: 0;
     padding: 0;
-  `
+  `;
 
-  return <ImageDiv />
-}
+  return <ImageDiv />;
+};
 
-export default CardImage
+export default CardImage;

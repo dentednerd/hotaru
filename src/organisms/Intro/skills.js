@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
-import IntroSection from '../../atoms/IntroSection'
-import skillsData from './skillsData'
-import weakSkillsData from './weakSkillsData'
-import logos from './logos'
+import React, { Fragment } from 'react';
+import IntroSection from '../../atoms/IntroSection';
+import skillsData from './skillsData';
+import weakSkillsData from './weakSkillsData';
+import logos from './logos';
 
-const Skills = (props) => (
+const Skills = props => (
   <Fragment>
     <IntroSection className="skill-icons">
       <h2>Here&apos;s what I use every day.</h2>
@@ -22,6 +22,6 @@ const Skills = (props) => (
       </IntroSection>
     )}
   </Fragment>
-)
+);
 
-export default Skills
+export default Skills;

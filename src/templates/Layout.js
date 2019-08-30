@@ -1,11 +1,10 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Header from '../organisms/Header'
-import Footer from '../organisms/Footer'
-import WhiteBand from '../atoms/WhiteBand'
+import React from 'react';
+import Helmet from 'react-helmet';
+import Header from '../organisms/Header';
+import Footer from '../organisms/Footer';
 
 const Layout = (props) => {
-  const { children } = props
+  const { children } = props;
   return (
     <div id="main">
       <Helmet>
@@ -15,7 +14,7 @@ const Layout = (props) => {
       {children}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

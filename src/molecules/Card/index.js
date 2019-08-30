@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { Link } from 'gatsby'
-import CardImage from './CardImage'
+import React from 'react';
+import styled from '@emotion/styled';
+import { Link } from 'gatsby';
+import CardImage from './CardImage';
 
-const Card = props => {
-  const { article } = props
+const Card = (props) => {
+  const { article } = props;
 
   const StyledCard = styled('article')`
     background: #fff;
@@ -48,7 +48,7 @@ const Card = props => {
         padding: 1em 0;
       }
     }
-  `
+  `;
 
   return (
     <Link to={article.fields.slug}>
@@ -69,7 +69,7 @@ const Card = props => {
         </section>
       </StyledCard>
     </Link>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
