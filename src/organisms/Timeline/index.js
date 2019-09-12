@@ -6,7 +6,7 @@ import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import data from './data';
 
 const StyledTimeline = styled('div')`
-  width: 40%;
+  width: 100%;
 
   h2 {
     margin: 0;

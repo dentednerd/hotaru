@@ -24,6 +24,7 @@
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-copy-linked-files": "^2.0.13",
@@ -38,6 +39,7 @@
     "react-helmet": "^5.2.0",
     "react-sticky": "^6.0.3",
     "react-svg-piechart": "^2.1.1",
+    "react-transition-group": "^4.2.2",
     "typed.js": "^2.0.6"
   },
   "keywords": [

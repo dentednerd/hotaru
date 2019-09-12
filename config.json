@@ -1,14 +1,18 @@
 {
   "colors": {
-    "midblue": "#828dac",
-    "darkblue": "#384977",
-    "lightpeach": "#ffead8",
-    "midpeach": "#ffdab9",
-    "textbrown": "#804515"
+    "pink": "#FFAECB",
+    "darkpink": "#FF7DAB",
+    "sage": "#BFC4A5",
+    "darksage": "#9BA17B",
+    "powderblue": "#64BBFF",
+    "darkblue": "#0263AE",
+    "purple": "#8D88A2",
+    "darkpurple": "#332E4A"
   },
   "fonts": {
-    "maintitle": "Open Sans Condensed, sans-serif",
-    "subtitle": "Raleway, sans-serif",
-    "body": "Merriweather, serif"
+    "header": "Fredericka the Great, serif",
+    "subheader": "Josefin Sans, sans-serif",
+    "body": "Cormorant Garamond, serif"
   }
 }
+

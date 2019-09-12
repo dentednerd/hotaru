@@ -13,6 +13,7 @@ Well hello there! I see you're taking a look at my source code. Hopefully you wo
 
 body, html {
   min-height:100vh !important;
+  background-color: #fff;
 }
 
 span.icon svg {
