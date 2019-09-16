@@ -1,0 +1,84 @@
+div.bm-burger-button {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  left: 1rem;
+  top: 1rem;
+  border-radius: 1rem;
+  background-color: transparent;
+  padding: 0;
+  transition: 0.5s ease;
+}
+
+div.bm-burger-button * {
+  background: #7a7495;
+  opacity: 0.5;
+  transition: 0.5s ease;
+}
+
+div.bm-burger-button *:hover {
+  opacity: 1;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.bm-burger-bars {
+  border-radius: 8px;
+}
+
+/* .burger-button {
+  color: #332E4A;
+}
+
+
+
+.bm-burger-button button {
+  color: blue;
+  background: red;
+  height: 1rem !important;
+  width: 1rem !important;
+}
+
+.bm-burger-button:hover {
+  background: #ffffff;
+  transition: 0.5s ease;
+}
+
+.bm-burger-button span {
+  opacity: 0.5;
+  background: #ffffff;
+}
+*/
+
+
+/* inside menu */
+
+.bm-menu {
+  background: #6e6191;
+  padding: 1rem;
+  margin: 0;
+}
+
+.bm-item {
+  margin: 0;
+  padding: 0;
+  display: inline !important;
+}
+
+.bm-item:hover {
+  color: #ffb8d0;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.bm-item-list {
+  color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Screen from '../atoms/Screen';
 import Layout from '../templates/Layout';
-import portfolio from '../templates/Portfolio';
+import showreel from '../templates/Showreel';
 
 export default class extends React.Component {
   constructor(props) {
@@ -15,7 +15,6 @@ export default class extends React.Component {
     this.section2 = React.createRef();
     this.section3 = React.createRef();
     this.section4 = React.createRef();
-    this.section5 = React.createRef();
     this.scroll = this.scroll.bind(this);
   }
 
@@ -40,13 +39,11 @@ export default class extends React.Component {
           onClick={() => this.scroll(this.section0)}
         >
           <Hero>
-            <h1>portfolio</h1>
-            <p>
-              <FontAwesomeIcon
-                icon={faLaptopCode}
-                style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
-              />
-            </p>
+            <h1>showreel</h1>
+            <FontAwesomeIcon
+              icon={faYoutube}
+              style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
+            />
           </Hero>
         </Screen>
         <Screen
@@ -54,43 +51,36 @@ export default class extends React.Component {
           ref={this.section0}
           onClick={() => this.scroll(this.section1)}
         >
-          {portfolio.CodeNinjas}
+          {showreel[0]}
         </Screen>
         <Screen
           className="lemon"
           ref={this.section1}
           onClick={() => this.scroll(this.section2)}
         >
-          {portfolio.DNReviews}
+          {showreel[1]}
         </Screen>
         <Screen
           className="sky"
           ref={this.section2}
           onClick={() => this.scroll(this.section3)}
         >
-          {portfolio.LowBar}
+          {showreel[2]}
         </Screen>
         <Screen
           className="sage"
           ref={this.section3}
           onClick={() => this.scroll(this.section4)}
         >
-          {portfolio.NCNews}
+          {showreel[3]}
         </Screen>
         <Screen
           className="lemon"
-          ref={this.section4}
-          onClick={() => this.scroll(this.section5)}
-        >
-          {portfolio.Northwitter}
-        </Screen>
-        <Screen
-          className="sky"
           backToTop
-          ref={this.section5}
+          ref={this.section4}
           onClick={() => this.scroll(this.topSection)}
         >
-          {portfolio.TrellJo}
+          {showreel[4]}
         </Screen>
       </Layout>
     );

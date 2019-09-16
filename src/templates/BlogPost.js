@@ -2,44 +2,55 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import Layout from './Layout';
-import WhiteBand from '../atoms/WhiteBand';
-import BlogHeader from '../molecules/BlogHeader';
 
-const StyledBlogPost = styled('div')`
+const FeaturedImage = styled(Img)`
+  width: 50vw;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
+`;
+
+const BlogPost = styled('div')`
+  width: calc(50vw - 2rem);
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    width: calc(100vw - 2rem);
+    margin: 0;
+  }
+
   p {
     margin-bottom: 1em;
-  }
-
-  code {
-    font-size: 0.8em;
-    background-color: #fcb;
-  }
-
-  pre {
-    background-color: #fcb;
-    margin: 1em;
-    padding: 1em;
+    letter-spacing: -0.025em;
   }
 
   a {
-    color: #c30;
-  }
-
-  header a {
-    color: #333;
+    color: #ff7dab;
   }
 
   .post-content {
-    margin: 2em 0;
+    margin: 1em 0;
+  }
+
+  h2 {
+    margin-bottom: 0;
   }
 
   h3 {
-    color: #333;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 600;
     font-size:1em;
-    margin-bottom: 0.75em;
-    font-weight:300;
+    margin-top: 0;
+    margin-bottom: 0;
     letter-spacing: -0.025em;
   }
 `;
@@ -48,18 +59,23 @@ export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <BlogHeader />
-      <WhiteBand>
-        <StyledBlogPost>
-          <h2>{post.frontmatter.title}</h2>
-          <h3>{post.frontmatter.date}</h3>
-          {post.frontmatter.featuredImage && <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />}
-          <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-        </StyledBlogPost>
-        <h4 className="back-to-blog">
-          <Link to="/blog">&laquo; Back to Blog</Link>
-        </h4>
-      </WhiteBand>
+      {post.frontmatter.featuredImage && (
+        <FeaturedImage
+          sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
+        />
+      )}
+      <BlogPost className="lemon">
+        <h2>{post.frontmatter.title}</h2>
+        <h3>{post.frontmatter.date}</h3>
+        <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Link to="/blog">
+          <FontAwesomeIcon
+            icon={faAngleDoubleLeft}
+            style={{ marginRight: '1rem' }}
+          />
+          Back to Blog
+        </Link>
+      </BlogPost>
     </Layout>
   );
 };

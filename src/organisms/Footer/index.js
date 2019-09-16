@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import WhiteBand from '../../atoms/WhiteBand';
 import IconLinks from '../../molecules/IconLinks';
 
-const StyledFooter = styled('footer')`
+const Footer = styled('footer')`
   width: 100%;
   height: 2em;
 
@@ -15,13 +14,8 @@ const StyledFooter = styled('footer')`
     height: 2em;
   }
 `;
-
-const Footer = () => (
-  <WhiteBand>
-    <StyledFooter>
-      <IconLinks />
-    </StyledFooter>
-  </WhiteBand>
+export default () => (
+  <Footer>
+    <IconLinks />
+  </Footer>
 );
-
-export default Footer;

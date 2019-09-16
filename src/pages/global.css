@@ -1,95 +1,154 @@
-/*
-Well hello there! I see you're taking a look at my source code. Hopefully you won't find it too untidy. If you have any questions, give me a call on 07791351136. I'd love to hear from you! 
-*/
-
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:700|Lato');
-
-/* ----- RESETS ----- */
-
-* {
-  padding: 0px;
-  margin: 0px;
-}
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Sacramento|Ubuntu+Mono&display=swap');
 
 body, html {
-  min-height:100vh !important;
-  background-color: #fff;
-}
-
-span.icon svg {
-  height: 1em;
-  max-height: 1em;
-}
-
-body {
-  color: #333;
-  background-color: #fff;
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
-  line-height: 1.5em;
-  width: 100%;
-}
-
-@media(max-width: 800px) {
-  body {
-    font-size: 18px;
-  }
-  .project-middle p.project-caption {
-    display: none;
-  }
-  .project-middle h2 {
-    margin-bottom: 0;
-  }
-}
-
-#root {
-  min-height: 100vh;
-  max-width: 98vw;
-  overflow: hidden;
-}
-
-article {
+  background-color: #332E4A;
+  color: #fff;
+  font-family: "Josefin Slab", serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  overflow-x: hidden;
+  margin: 0;
   padding: 0;
-  margin-bottom: 2em;
+  color: #fff;
+  background-image: url(../assets/joey.svg);
+  background-blend-mode: lighten;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-a {
-  color: #c30;
-  text-decoration: none;
+@media (max-width: 768px) {
+  body, html {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 p {
-  font-size: 1em;
-  width: 98%;
+  margin: 0 0 1rem 0;
 }
 
-/* ----- TEXT DEFAULTS ----- */
+pre {
+  background-color: #161032;
+  color: #fffacd;
+  margin: 1em auto;
+  padding: 1em 1em 0 1em;
+  border-radius: 1rem;
+  width: 60%;
+  white-space: pre-wrap;
+}
+
+code {
+  background-color: #161032;
+  color: #fffacd;
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding: 0.1rem;
+  word-wrap: break-word;
+}
+
+li {
+  margin: 1rem auto;
+  width: 80%;
+
+}
+
+h1 {
+  font-family: 'Sacramento', cursive;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 3rem;
+  margin: 24px 0;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0.1rem 0.1rem 0.5rem #ffb8d0,
+    -0.1rem 0.1rem 0.5rem #ffb8d0,
+    0.1rem -0.1rem 0.5rem #ffb8d0,
+    -0.1rem -0.1rem 0.5rem #ffb8d0;
+}
 
 h2 {
-  color: #c30;
-  font-family: 'Roboto Slab', serif;
-  font-size:1.5em;
-  margin: 0;
-  font-weight:300;
-  letter-spacing: -0.025em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  letter-spacing: -0.05rem;
 }
 
 h3 {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  font-family: 'Lato', sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  margin-bottom: 1em;
+  font-family: 'Josefin Slab', serif;
+  font-weight: 700;
+  font-size: 1.25em;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: -0.025em;
 }
 
-ul,
-ol {
-    list-style-type: none;
+h3 svg {
+  margin: 0 1rem 0 0;
+  opacity: 1;
 }
 
-.icon {
-  margin-right: 0.6em;
+h3 svg:hover {
+  cursor: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #ffb8d0;
+  transition: 0.5s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  transition: 0.5s ease;
+}
+
+.purple {
+  background-color: rgba(51,46,74,0.65);
+  color: #fff;
+}
+
+.sage {
+  background: #d2ddcb;
+  color: #7a7495;
+}
+
+.sage h2, .sage a {
+  color: #679dbe;
+}
+
+.sage img {
+  background-color: #aabd9e;
+}
+
+.lemon {
+  background: #fffacd;
+  color: #7a7495;
+}
+
+.lemon h2, .lemon a {
+  color: #ff7dab;
+}
+
+.lemon img {
+  background-color: #dbd494;
+}
+
+.sky {
+  background: #c2e4ff;
+  color: #7a7495;
+}
+
+.sky h2, .sky a {
+  color: #332E4A;
+}
+
+.sky img {
+  background-color: #91cfff;
 }

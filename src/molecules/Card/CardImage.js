@@ -9,7 +9,7 @@ const CardImage = (props) => {
     background-image: url("${imgSrc}");
     background-size: cover;
     background-position: center;
-    height: 14em;
+    height: 6em;
     width: 100%;
     margin: 0;
     padding: 0;

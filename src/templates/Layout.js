@@ -1,20 +1,22 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import Helmet from 'react-helmet';
-import Header from '../organisms/Header';
-import Footer from '../organisms/Footer';
+import SideBar from '../organisms/Sidebar';
 
-const Layout = (props) => {
+const Layout = styled('div')`
+  overflow-y: hidden;
+  overflow-x: hidden;
+`;
+
+export default (props) => {
   const { children } = props;
   return (
-    <div id="main">
+    <Layout>
       <Helmet>
         <title>Joanne Imlay, front end developer</title>
       </Helmet>
-      <Header />
+      <SideBar width="50%" />
       {children}
-      <Footer />
-    </div>
+    </Layout>
   );
 };
-
-export default Layout;

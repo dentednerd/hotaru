@@ -7,12 +7,8 @@
     "powderblue": "#64BBFF",
     "darkblue": "#0263AE",
     "purple": "#8D88A2",
-    "darkpurple": "#332E4A"
-  },
-  "fonts": {
-    "header": "Fredericka the Great, serif",
-    "subheader": "Josefin Sans, sans-serif",
-    "body": "Cormorant Garamond, serif"
+    "darkpurple": "#332E4A",
+    "darkgrey": "#333333"
   }
 }
 

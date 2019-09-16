@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import Screen from '../atoms/Screen';
 import Layout from '../templates/Layout';
 
 const Styled404 = styled('div')`
-  height: 80vh;
-  text-align: center;
-
-  h1 {
-    line-height: 3em;
-  }
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default () => (
   <Layout>
-    <Styled404>
-      <h1>404!!</h1>
-      <Link to="/"><h2>&laquo; Home</h2></Link>
-    </Styled404>
+    <Screen className="purple" noIcon>
+      <Styled404>
+        <h1>Quoth the server, 404.</h1>
+      </Styled404>
+    </Screen>
   </Layout>
 );

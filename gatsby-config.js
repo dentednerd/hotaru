@@ -17,7 +17,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Roboto Slab:700', 'Roboto Condensed'],
+          families: ['Josefin Sans', 'Josefin Slab', 'Sacramento', 'Ubuntu Mono'],
         },
       },
     },
@@ -42,6 +42,10 @@ module.exports = {
       options: {
         plugins: ['gatsby-remark-copy-linked-files'],
       },
+    },
+    {
+      resolve: 'gatsby-plugin-emotion',
+      options: {},
     },
   ],
 };
