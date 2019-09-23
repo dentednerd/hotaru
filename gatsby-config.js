@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
+    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -41,10 +42,6 @@ module.exports = {
       options: {
         plugins: ['gatsby-remark-copy-linked-files'],
       },
-    },
-    {
-      resolve: 'gatsby-plugin-emotion',
-      options: {},
     },
   ],
 };
