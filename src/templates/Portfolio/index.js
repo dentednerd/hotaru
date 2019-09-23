@@ -20,6 +20,10 @@ const projects = portfolioData.map(project => (
   </Project>
 ));
 
-const projectNames = portfolioData.map((project, index) => [project.image, projects[index]]);
-const portfolio = Object.fromEntries(projectNames);
+let portfolio = {};
+portfolioData.map((project, index) => {
+  portfolio[project.image] = projects[index];
+});
+console.log('*****portfolio', portfolio);
+
 export default portfolio;
