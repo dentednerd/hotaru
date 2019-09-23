@@ -152,3 +152,7 @@ a:hover {
 .sky img {
   background-color: #91cfff;
 }
+
+.svg-inline--fa {
+  height: 1rem;
+}
