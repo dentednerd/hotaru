@@ -5,6 +5,7 @@ import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import Screen from '../atoms/Screen';
 import Layout from '../templates/Layout';
 import portfolio from '../templates/Portfolio';
+import './global.css';
 
 export default class extends React.Component {
   constructor(props) {

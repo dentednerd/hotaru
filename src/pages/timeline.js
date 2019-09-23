@@ -10,6 +10,7 @@ import Split from '../atoms/Split';
 import Half from '../atoms/Half';
 import timelineData from '../data/timelineData';
 import timelineOldData from '../data/timelineOldData';
+import './global.css';
 
 const jobTitle = css`
   text-align: right;

@@ -5,6 +5,7 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Screen from '../atoms/Screen';
 import Layout from '../templates/Layout';
 import showreel from '../templates/Showreel';
+import './global.css';
 
 export default class extends React.Component {
   constructor(props) {

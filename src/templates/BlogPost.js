@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import Layout from './Layout';
+import '../pages/global.css';
 
 const FeaturedImage = styled(Img)`
   width: 50vw;

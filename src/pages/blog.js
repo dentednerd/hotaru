@@ -8,6 +8,7 @@ import Layout from '../templates/Layout';
 import Card from '../molecules/Card';
 import IconLinks from '../molecules/IconLinks';
 import { GridContainer, GridItem } from '../atoms/Grid';
+import './global.css';
 
 export default class BlogPage extends React.Component {
   constructor(props) {
