@@ -24,6 +24,4 @@ let portfolio = {};
 portfolioData.map((project, index) => {
   portfolio[project.image] = projects[index];
 });
-console.log('*****portfolio', portfolio);
-
 export default portfolio;
