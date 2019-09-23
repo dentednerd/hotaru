@@ -11,7 +11,7 @@ body, html {
   margin: 0;
   padding: 0;
   color: #fff;
-  background-image: url(../assets/joey.svg);
+  background-image: url('../assets/joey.svg');
   background-blend-mode: lighten;
   background-repeat: no-repeat;
   background-size: contain;
