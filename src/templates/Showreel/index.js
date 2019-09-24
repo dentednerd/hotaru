@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 const videos = [
   'https://youtube.com/embed/gk_5ezTqd3c',
+  'https://youtube.com/embed/l62-FZS5lGA',
   'https://youtube.com/embed/3Ew5dfitW6g',
   'https://youtube.com/embed/SsoueiuOUbc',
   'https://youtube.com/embed/Ua4bVgMO8ls',

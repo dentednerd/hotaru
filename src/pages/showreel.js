@@ -16,6 +16,7 @@ export default class extends React.Component {
     this.section2 = React.createRef();
     this.section3 = React.createRef();
     this.section4 = React.createRef();
+    this.section5 = React.createRef();
     this.scroll = this.scroll.bind(this);
   }
 
@@ -77,11 +78,18 @@ export default class extends React.Component {
         </Screen>
         <Screen
           className="lemon"
-          backToTop
           ref={this.section4}
-          onClick={() => this.scroll(this.topSection)}
+          onClick={() => this.scroll(this.section5)}
         >
           {showreel[4]}
+        </Screen>
+        <Screen
+          className="sky"
+          backToTop
+          ref={this.section5}
+          onClick={() => this.scroll(this.topSection)}
+        >
+          {showreel[5]}
         </Screen>
       </Layout>
     );
