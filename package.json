@@ -3,7 +3,7 @@
   "description": "Joanne Imlay's CV, portfolio and blog",
   "version": "4.0.0",
   "author": "Joanne Imlay jo.imlay@gmail.com",
-  "homepage": "https://dentednerd.github.io/CV",
+  "homepage": "https://joanneimlay.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dentednerd/CV.git"

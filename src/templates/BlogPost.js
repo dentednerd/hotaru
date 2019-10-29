@@ -54,6 +54,16 @@ const BlogPost = styled('div')`
     margin-bottom: 0;
     letter-spacing: -0.025em;
   }
+
+  h4 {
+    font-weight: 600;
+    font-size: 1.25em;
+    line-height: 1.25em;
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: -0.025em;
+    color: #ff7dab;
+  }
 `;
 
 export default ({ data }) => {
