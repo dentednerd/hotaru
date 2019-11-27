@@ -2,6 +2,7 @@
 title: "Positive Action, Positive Change: Reframe Women in Tech"
 date: "2019-10-29"
 featuredImage: "./Reframe.jpg"
+tags: ["events"]
 ---
 
 Huge congratulations to [Beckie Taylor](https://twitter.com/RTaylor81) and the [Tech Returners](https://www.techreturners.com/) team for organising the exceptional Reframe WIT conference yesterday! It was a brilliant day with much to enjoy and much more to go home and think over afterwards. It's taken me a little while to process everything that I've learned over the day - coming off a weekend doing [Hack Manchester](https://www.hac100.com/event/HM2019/), I'm absolutely exhausted. But here are some of my highlights from the day:

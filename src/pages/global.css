@@ -34,8 +34,8 @@ pre {
   background-color: #161032;
   color: #fffacd;
   margin: 1em auto;
-  padding: 1em 1em 0 1em;
-  border-radius: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   width: 60%;
   white-space: pre-wrap;
 }
@@ -46,8 +46,13 @@ code {
   font-family: "Ubuntu Mono", monospace;
   font-weight: 300;
   font-size: 0.8rem;
-  padding: 0.1rem;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
   word-wrap: break-word;
+}
+
+pre code {
+  display: block;
 }
 
 li {

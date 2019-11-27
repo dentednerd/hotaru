@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from '@emotion/styled';
+import kebabCase from 'lodash/kebabCase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Screen from '../atoms/Screen';
 import Layout from '../templates/Layout';
 import Card from '../molecules/Card';
-import IconLinks from '../molecules/IconLinks';
 import { GridContainer, GridItem } from '../atoms/Grid';
-import './global.css';
 
-export default class BlogPage extends React.Component {
+class BlogPage extends React.Component {
   constructor(props) {
     super(props);
     this.blogWrap = React.createRef();
@@ -21,7 +20,12 @@ export default class BlogPage extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
+    const {
+      data: {
+        allMarkdownRemark: { group },
+      },
+    } = this.props;
+
     const Hero = styled('div')`
       display: flex;
       flex-direction: column;
@@ -62,27 +66,41 @@ export default class BlogPage extends React.Component {
         </Screen>
         <div style={{ background: '#332E4A', width: '100vw', paddingBottom: '1rem' }}>
           <BlogWrap ref={this.blogWrap}>
-            <GridContainer>
-              {data.allMarkdownRemark.edges.map(({ node }) => (
-                <GridItem key={node.id}>
-                  <Card article={node} />
-                </GridItem>
-              ))}
-            </GridContainer>
+            {group.map(tag => (
+              <Fragment key={tag.fieldValue}>
+                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                  {tag.fieldValue.charAt(0).toUpperCase() + tag.fieldValue.substring(1)}
+                </Link>
+                <GridContainer>
+                  {tag.nodes.map(node => (
+                    <GridItem key={node.id}>
+                      <Card article={node} />
+                    </GridItem>
+                  ))}
+                </GridContainer>
+              </Fragment>
+            ))}
           </BlogWrap>
-          <IconLinks />
         </div>
       </Layout>
     );
   }
-};
+}
 
-export const query = graphql`
+export default BlogPage;
+
+export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
-      edges {
-        node {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+        nodes {
           id
           frontmatter {
             title
@@ -94,11 +112,12 @@ export const query = graphql`
                 }
               }
             }
+            tags
           }
           fields {
             slug
           }
-          excerpt(pruneLength: 70)
+          excerpt(pruneLength: 125)
         }
       }
     }

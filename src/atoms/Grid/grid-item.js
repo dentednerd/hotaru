@@ -10,7 +10,7 @@ const GridItem = (props) => {
     vertical-align: top;
     box-sizing: border-box;
     font-size: 1rem;
-    width: calc(33.33% - 1em);
+    width: calc(50% - 1em);
 
     @media (max-width: 768px) {
       width: 100%;

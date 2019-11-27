@@ -2,6 +2,7 @@
 title: "Code Ninjas"
 date: "2018-05-25"
 featuredImage: "./CodeNinjas.png"
+tags: ["projects"]
 ---
 
 [Code Ninjas](https://codeninjas-nc5.herokuapp.com/)

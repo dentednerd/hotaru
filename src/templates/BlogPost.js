@@ -66,8 +66,10 @@ const BlogPost = styled('div')`
   }
 `;
 
-export default ({ data }) => {
-  const post = data.markdownRemark;
+export default (props) => {
+  console.log('BlogPost props', props);
+  const post = props.data.markdownRemark;
+
   return (
     <Layout>
       {post.frontmatter.featuredImage && (

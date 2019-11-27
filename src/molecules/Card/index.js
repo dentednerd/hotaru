@@ -11,7 +11,6 @@ export default (props) => {
     background: #fffacd;
     padding: 0;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-    overflow: hidden;
     height: 15em;
     font-weight: 600;
 
@@ -25,8 +24,11 @@ export default (props) => {
     }
 
     section {
-      padding: 1em;
+      padding: 0;
+      margin: 1rem;
       text-decoration: none;
+      overflow: hidden;
+      height: 7rem;
     }
 
     img {
@@ -39,10 +41,6 @@ export default (props) => {
       line-height: 1em;
       margin-bottom: 0;
       letter-spacing: -0.05rem;
-      height: 1rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     h3 {
@@ -54,6 +52,8 @@ export default (props) => {
       line-height: 0.8rem;
       text-decoration: none;
       margin-top: 0.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     @media (max-width: 768px) {
@@ -76,9 +76,6 @@ export default (props) => {
           <h2>
             {article.frontmatter.title}
           </h2>
-          <h3>
-            {article.frontmatter.date}
-          </h3>
           <p>
             {article.excerpt}
           </p>

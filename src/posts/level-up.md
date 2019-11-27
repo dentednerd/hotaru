@@ -2,6 +2,7 @@
 title: "Level Up! 'Published' Skill Learned"
 date: "2018-10-21"
 featuredImage: "./levelup.jpeg"
+tags: ["projects", "events"]
 ---
 *Photo by [Melvina Mak](https://medium.com/r/?url=https%3A%2F%2Funsplash.com%2Fphotos%2Fg3iPyBkN2vw%3Futm_source%3Dunsplash%26utm_medium%3Dreferral%26utm_content%3DcreditCopyText) on [Unsplash](https://medium.com/r/?url=https%3A%2F%2Funsplash.com%2Fsearch%2Fphotos%2Fpokemon%3Futm_source%3Dunsplash%26utm_medium%3Dreferral%26utm_content%3DcreditCopyText)*
 

@@ -2,6 +2,7 @@
 title: "DWP Women in Digital"
 date: "2018-06-21" 
 featuredImage: "./dwp.jpg"
+tags: ["events"]
 ---
 
 A few weeks ago, James from [Northcoders](https://www.northcoders.com) put out an open invitation to the Northcoders WiT community for speakers to follow his opening keynote speech at the [DWP Women in Digital conference](https://dwpdigital.blog.gov.uk/2018/05/30/introducing-our-second-women-in-digital-event/) in Leeds. He hoped a few of us could talk about our journeys into coding, to further illustrate the good work Northcoders already do in getting women into technology careers. I immediately volunteered, for two reasons. Firstly, being a Northcoder has absolutely turned my life around, and I will take any opportunity to tell people how supportive and encouraging the Northcoders community is. Secondly, I have a certain history with the DWP, and I figured it might be time to face down an old demon or two. (Disclaimer: I did not meet anyone in the least bit demonic that day. My issues are with the policymakers, not with the people on the ground.)
