@@ -2,9 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import Screen from '../atoms/Screen';
+import Screen from '../Screen';
 import Layout from '../templates/Layout';
 import portfolio from '../templates/Portfolio';
+import Hero from '../Hero';
 import './global.css';
 
 export default class extends React.Component {
@@ -25,14 +26,6 @@ export default class extends React.Component {
   }
 
   render() {
-    const Hero = styled('div')`
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    `;
-
     return (
       <Layout>
         <Screen

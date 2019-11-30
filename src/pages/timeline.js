@@ -4,10 +4,11 @@ import { css } from '@emotion/core';
 import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHistory, faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
-import Screen from '../atoms/Screen';
+import Screen from '../Screen';
 import Layout from '../templates/Layout';
-import Split from '../atoms/Split';
-import Half from '../atoms/Half';
+import Split from '../Split';
+import Half from '../Half';
+import Hero from '../Hero';
 import timelineData from '../data/timelineData';
 import timelineOldData from '../data/timelineOldData';
 import './global.css';
@@ -59,7 +60,6 @@ export default class extends React.Component {
     this.section1 = React.createRef();
     this.section2 = React.createRef();
     this.section3 = React.createRef();
-    this.section4 = React.createRef();
     this.section5 = React.createRef();
     this.section6 = React.createRef();
   }
@@ -86,14 +86,6 @@ export default class extends React.Component {
       h3 {
         font-size: 1.1rem;
       }
-    `;
-
-    const Hero = styled('div')`
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
     `;
 
     return (
@@ -135,21 +127,13 @@ export default class extends React.Component {
         <Screen
           className="sage"
           ref={this.section3}
-          onClick={() => this.scroll(this.section4)}
+          onClick={() => this.scroll(this.section5)}
         >
           {mappedData[3]}
         </Screen>
         <Screen
-          className="lemon"
-          ref={this.section4}
-          onClick={() => this.scroll(this.section5)}
-        >
-          {mappedData[4]}
-          {mappedData[5]}
-        </Screen>
-        <Screen
           backToTop
-          className="sky"
+          className="lemon"
           ref={this.section5}
           onClick={() => this.scroll(this.topSection)}
         >

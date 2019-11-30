@@ -1,5 +1,5 @@
 import React from 'react';
-import Screen from '../atoms/Screen';
+import Screen from '../Screen';
 import {
   Hero, Intro, Code, Developer,
 } from '../templates/Home';

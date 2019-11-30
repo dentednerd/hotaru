@@ -1,27 +1,20 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import Image from '../../assets/image.svg';
-import Split from '../../atoms/Split';
-import Half from '../../atoms/Half';
-import Art from '../../atoms/Art';
+import Art from '../../Art';
 
 export default () => (
-  <Split>
-    <Half>
-      <Fade left>
-        <Art src={Image} alt="hello" />
-      </Fade>
-    </Half>
-    <Half>
-      <Fade right>
-        <h2>Hello. I&apos;m Joey.</h2>
-        <p>I love making beautiful web apps for desktop and mobile.</p>
-        <p>
-          Right now I&apos;m working for&nbsp;
-          <a href="http://www.ladbiblegroup.com/">the LADbible Group</a>
-        .
-        </p>
-      </Fade>
-    </Half>
-  </Split>
+  <>
+    <Fade left>
+      <Art top src={Image} alt="Hello. I&apos;m Joey." />
+    </Fade>
+    <Fade right>
+      <p style={{ textAlign: 'center' }}>I love making beautiful web apps for desktop and mobile.</p>
+      <p style={{ textAlign: 'center' }}>
+        Right now I&apos;m working for&nbsp;
+        <a href="http://www.ladbiblegroup.com/">the LADbible Group</a>
+      .
+      </p>
+    </Fade>
+  </>
 );

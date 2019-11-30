@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = styled('div')`
   margin: 25vh auto 0 auto;
@@ -26,20 +24,8 @@ const Hero = styled('div')`
   }
 `;
 
-export default () => (
+export default ({ children }) => (
   <Hero>
-    <h1>Joanne Imlay</h1>
-    <p>
-      <FontAwesomeIcon
-        icon={faCode}
-      />
-      front end developer
-    </p>
-    <p>
-      <FontAwesomeIcon
-        icon={faMapMarkerAlt}
-      />
-      Manchester, England
-    </p>
+    {children}
   </Hero>
 );

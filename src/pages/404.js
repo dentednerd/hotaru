@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Screen from '../atoms/Screen';
+import Screen from '../Screen';
 import Layout from '../templates/Layout';
 
 const Styled404 = styled('div')`

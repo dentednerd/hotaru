@@ -1,8 +1,15 @@
 export default [
   {
+    link: 'https://codeninjas-v2.herokuapp.com',
+    image: 'CodeNinjas',
+    title: 'Code Ninjas v2',
+    caption: 'An educational game built in Mongo, Express, React, Redux and Bulma. A reskin of the original project.',
+    stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB'],
+  },
+  {
     link: 'https://codeninjas-nc5.herokuapp.com',
     image: 'CodeNinjas',
-    title: 'Code Ninjas',
+    title: 'Code Ninjas v1',
     caption: 'An educational game built in Mongo, Express, React, Redux and Bulma. Accessibility was important to my design approach in this project.',
     stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB'],
   },

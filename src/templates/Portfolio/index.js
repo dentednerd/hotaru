@@ -1,12 +1,12 @@
 import React from 'react';
 import assets from './assets';
 import portfolioData from '../../data/portfolioData';
-import Project from '../../molecules/Project';
+import Art from '../../Art';
 
 const projects = portfolioData.map(project => (
-  <Project bgImage={assets[project.image]}>
+  <>
     <a href={project.link}>
-      <h2>{project.title}</h2>
+      <Art src={assets[project.image]} alt={project.title} light />
     </a>
     <p className="project-caption">{project.caption}</p>
     <span style={{ fontVariant: 'small-caps', fontSize: '0.8rem' }}>
@@ -17,7 +17,7 @@ const projects = portfolioData.map(project => (
         return ` » ${tech} `;
       })}
     </span>
-  </Project>
+  </>
 ));
 
 let portfolio = {};

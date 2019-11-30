@@ -20,32 +20,6 @@ yarn develop
 
 In browser, navigate to [localhost:8000](http://localhost:8000).
 
-## File Structure
-
-    .
-    ├── .cache
-    ├── node_modules
-    ├── public
-    ├── src
-        ├── atoms
-        ├── molecules
-        ├── organisms
-        ├── pages
-        ├── posts
-        └── templates
-    ├── .gitignore
-    ├── .prettierrc
-    ├── CNAME
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    ├── README.md
-    └── yarn.lock
-
 ## Deployment
 
 ```sh

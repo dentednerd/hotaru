@@ -1,7 +1,7 @@
 ---
-title: "From Abstraction to Algorithm"
+title: "From abstraction to algorithm"
 date: "2017-10-07"
-featuredImage: "./sandwich.jpg"
+featuredImage: "./images/from-abstraction-to-algorithm.jpg"
 tags: ["programming"]
 ---
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
-import Screen from '../atoms/Screen';
+import Screen from '../Screen';
 import Layout from '../templates/Layout';
 import showreel from '../templates/Showreel';
+import Hero from '../Hero';
 import './global.css';
 
 export default class extends React.Component {
@@ -25,14 +25,6 @@ export default class extends React.Component {
   }
 
   render() {
-    const Hero = styled('div')`
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    `;
-
     return (
       <Layout>
         <Screen
