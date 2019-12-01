@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from 'gatsby';
 import Screen from '../Screen';
 import Layout from '../templates/Layout';
@@ -12,6 +12,7 @@ import Hero from '../Hero';
 class Journal extends React.Component {
   constructor(props) {
     super(props);
+    this.topSection = React.createRef();
     this.journal = React.createRef();
   }
 
@@ -46,6 +47,13 @@ class Journal extends React.Component {
       }
     `;
 
+    const JournalFooter = styled.section`
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    `;
+
     const classnames = {
       0: 'sage',
       1: 'pink',
@@ -57,6 +65,7 @@ class Journal extends React.Component {
       <Layout>
         <Screen
           className="purple"
+          ref={this.topSection}
           onClick={() => this.scroll(this.journal)}
         >
           <Hero>
@@ -84,7 +93,14 @@ class Journal extends React.Component {
           ))}
         </section>
         <JournalSection className={classnames[group.length % 4]}>
-          <Footer />
+          <JournalFooter>
+            <FontAwesomeIcon
+              icon={faAngleDoubleUp}
+              style={{ color: '#585273', marginBottom: '0.25rem', cursor: 'pointer' }}
+              onClick={() => this.scroll(this.topSection)}
+            />
+            <Footer />
+          </JournalFooter>
         </JournalSection>
       </Layout>
     );
