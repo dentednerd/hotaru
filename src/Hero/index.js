@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Hero = styled('div')`
-  margin: 25vh auto 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -5,8 +5,8 @@ export default [
     companyName: 'LADbible Group',
     icon: 'work',
     jobTitle: 'Software Engineer',
-    jobDesc: 'Replatforming group websites (LADbible, SPORTbible, Pretty52, Unilad), learning deployment technologies, writing for company Medium publication.',
-    skills: ['React', 'HTML', 'CSS', 'GraphQL', 'Koa', 'Docker', 'Kubernetes', 'CircleCI', 'Storybook', 'BrowserStack', 'Cypress'],
+    jobDesc: 'Replatforming group websites (LADbible, SPORTbible, Pretty52, Unilad), developing cross-platform mobile app, learning deployment technologies, writing for company Medium publication.',
+    skills: ['React', 'React Native', 'HTML', 'CSS', 'GraphQL', 'Koa', 'Docker', 'Kubernetes', 'CircleCI', 'Storybook', 'BrowserStack', 'Cypress'],
   },
   {
     link: 'https://www.northcoders.com',

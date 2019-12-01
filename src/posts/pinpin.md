@@ -5,4 +5,4 @@ featuredImage: "./images/pinpin.png"
 tags: ["projects"]
 ---
 
-Let's talk about Pinpin.
+[WIP] A Chrome extension built with create-react-app, localStorage and React hooks.

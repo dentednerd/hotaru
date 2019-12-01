@@ -21,6 +21,7 @@ export default React.forwardRef((props, ref) => {
     justify-content: space-between;
     align-items: center;    
     overflow: hidden;
+    position: relative;
     
     svg {
       margin-bottom: 0.5rem;
@@ -36,11 +37,13 @@ export default React.forwardRef((props, ref) => {
   `;
 
   const Content = styled('div')`
-    margin-top: 1rem;
     width: 100%;
     max-width: 50vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: 768px) {
       margin-top: 10vh;
@@ -49,6 +52,13 @@ export default React.forwardRef((props, ref) => {
       overflow: hidden;
       max-width: calc(100vw - 2rem);
     }
+  `;
+
+  const ScreenFooter = styled.section`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
   `;
 
   const Icon = backToTop
@@ -72,7 +82,9 @@ export default React.forwardRef((props, ref) => {
       <Content>
         {children}
       </Content>
-      {!noIcon && Icon}
+      <ScreenFooter>
+        {!noIcon && Icon}
+      </ScreenFooter>
     </ScreenWrap>
   );
 });
