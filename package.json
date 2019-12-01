@@ -1,15 +1,15 @@
 {
-  "name": "cv",
-  "description": "Joanne Imlay's CV, portfolio and blog",
+  "name": "hotaru",
+  "description": "Joanne Imlay's personal site",
   "version": "4.0.0",
   "author": "Joanne Imlay jo.imlay@gmail.com",
   "homepage": "https://joanneimlay.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dentednerd/CV.git"
+    "url": "git+https://github.com/dentednerd/hotaru.git"
   },
   "bugs": {
-    "url": "https://github.com/dentednerd/CV/issues"
+    "url": "https://github.com/dentednerd/hotaru/issues"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
