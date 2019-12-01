@@ -42,6 +42,11 @@ class Journal extends React.Component {
       width: 100%;
       max-width: 50vw;
 
+      @media (max-width: 1023px) {
+        margin: 0 1rem;
+        max-width: calc(100vw - 2rem);
+      }
+
       h2 {
         color: #332E4A;
       }

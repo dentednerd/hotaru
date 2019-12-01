@@ -20,6 +20,11 @@ export default (props) => {
     text-shadow: none;
     transition: text-shadow 0.5s ease;
 
+    @media (max-width: 1023px) {
+      width: 80vw;
+      height: 45vw;
+    }
+
     &:hover {
       text-shadow: 1px 1px 3px #ff7dab, -1px -1px 3px #ff7dab;
       transition: text-shadow 0.5s ease;
@@ -43,6 +48,12 @@ export default (props) => {
       letter-spacing: -0.05rem;
       padding: 1.5rem 0.5rem 0.25rem;
       ${!top && 'background-image: linear-gradient(to top, #332E4A, transparent);'}
+
+      @media (max-width: 1023px) {
+        ${top && 'top: 0;'}
+        ${top && 'left: 0;'} 
+        ${top && 'padding: 1rem 0.25rem;'}
+      }
     }
   `;
 

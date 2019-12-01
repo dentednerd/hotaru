@@ -20,6 +20,10 @@ export default (props) => {
     justify-content: flex-start;
     align-items: center;
 
+    @media (max-width:1023px) {
+      width: calc(100vw - 2rem);
+    }
+
     :hover {
       box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
       transition: box-shadow 0.1s ease-in;

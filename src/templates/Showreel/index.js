@@ -18,7 +18,6 @@ const VideoContainer = styled('div')`
   background: rgba(0,0,0,0.25);
 
   iframe {
-    
     width: calc(50vw - 2rem);
     height: calc(28.125vw - 2rem);
     margin-bottom: 0;
@@ -26,7 +25,6 @@ const VideoContainer = styled('div')`
   }
 
   @media (max-width: 768px) {
-    margin-top: calc(25vh - 10.9375vw);
     width: calc(100vw - 2rem);
     max-width: calc(100vw - 2rem);
     height: calc(56.25vw - 2rem);
