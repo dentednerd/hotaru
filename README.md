@@ -9,12 +9,12 @@ My personal site, built in [Gatsby](https://www.gatsbyjs.org/) and hosted on [Ne
 ## Installation
 
 ```sh
-git clone https://github.com/dentednerd/CV.git
-cd ./CV
+git clone https://github.com/dentednerd/hotaru.git
+cd ./hotaru
 yarn
 ```
 
-## Usage
+## Development
 
 ```sh
 yarn develop
@@ -25,5 +25,7 @@ In browser, navigate to [localhost:8000](http://localhost:8000).
 ## Deployment
 
 ```sh
-yarn deploy
+git push
 ```
+
+Pushing to the master branch triggers a Netlify deployment.
