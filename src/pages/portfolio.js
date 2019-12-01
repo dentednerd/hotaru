@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import Screen from '../Screen';
@@ -73,35 +74,39 @@ export default class extends React.Component {
               onClick={() => this.scroll(refs[index + 1])}
               backToTop={index === portfolioData.length - 1}
             >
-              <a href={project.link}>
-                <Art src={assets[project.image]} alt={project.title} light />
-              </a>
-              <p className="project-caption">{project.caption}</p>
-              <ul style={{ alignSelf: 'flex-start', padding: 0 }}>
-                {project.stack.map((tech, stackIndex) => {
-                  if (stackIndex === 0) {
+              <Fade left>
+                <a href={project.link}>
+                  <Art src={assets[project.image]} alt={project.title} light />
+                </a>
+              </Fade>
+              <Fade right>
+                <p className="project-caption">{project.caption}</p>
+                <ul style={{ alignSelf: 'flex-start', padding: 0 }}>
+                  {project.stack.map((tech, stackIndex) => {
+                    if (stackIndex === 0) {
+                      return (
+                        <li style={{ display: 'inline' }}>
+                          <FontAwesomeIcon
+                            icon={faAngleDoubleRight}
+                            style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
+                          />
+                          {tech}
+                        </li>
+                      );
+                    }
+
                     return (
                       <li style={{ display: 'inline' }}>
                         <FontAwesomeIcon
                           icon={faAngleDoubleRight}
-                          style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
+                          style={{ margin: '0 0.5rem 0 1rem', opacity: 1 }}
                         />
                         {tech}
                       </li>
                     );
-                  }
-
-                  return (
-                    <li style={{ display: 'inline' }}>
-                      <FontAwesomeIcon
-                        icon={faAngleDoubleRight}
-                        style={{ margin: '0 0.5rem 0 1rem', opacity: 1 }}
-                      />
-                      {tech}
-                    </li>
-                  );
-                })}
-              </ul>
+                  })}
+                </ul>
+              </Fade>
             </Screen>
           );
         })}
