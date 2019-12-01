@@ -1,5 +1,5 @@
 ---
-title: "Manchester Web Meetup; Stemettes Monster Confidence"
+title: "Manchester Web Meetup; Stemettes Monster Confidence (Oct - Nov 2018)"
 date: "2018-11-10"
 featuredImage: "./images/manchester-web-meetup.jpg"
 tags: ["events"]

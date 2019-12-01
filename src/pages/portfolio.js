@@ -1,10 +1,11 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faLaptopCode, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import Screen from '../Screen';
 import Layout from '../templates/Layout';
-import portfolio from '../templates/Portfolio';
+import assets from '../templates/Portfolio/assets';
+import portfolioData from '../data/portfolioData';
+import Art from '../Art';
 import Hero from '../Hero';
 import './global.css';
 
@@ -18,6 +19,7 @@ export default class extends React.Component {
     this.section3 = React.createRef();
     this.section4 = React.createRef();
     this.section5 = React.createRef();
+    this.section6 = React.createRef();
     this.scroll = this.scroll.bind(this);
   }
 
@@ -26,6 +28,25 @@ export default class extends React.Component {
   }
 
   render() {
+    const classnames = {
+      0: 'lemon',
+      1: 'sage',
+      2: 'pink',
+      3: 'sky',
+      4: 'lavender',
+    };
+
+    const refs = [
+      this.section0,
+      this.section1,
+      this.section2,
+      this.section3,
+      this.section4,
+      this.section5,
+      this.section6,
+      this.topSection,
+    ];
+
     return (
       <Layout>
         <Screen
@@ -43,49 +64,47 @@ export default class extends React.Component {
             </p>
           </Hero>
         </Screen>
-        <Screen
-          className="sage"
-          ref={this.section0}
-          onClick={() => this.scroll(this.section1)}
-        >
-          {portfolio.CodeNinjas}
-        </Screen>
-        <Screen
-          className="lemon"
-          ref={this.section1}
-          onClick={() => this.scroll(this.section2)}
-        >
-          {portfolio.DNReviews}
-        </Screen>
-        <Screen
-          className="sky"
-          ref={this.section2}
-          onClick={() => this.scroll(this.section3)}
-        >
-          {portfolio.LowBar}
-        </Screen>
-        <Screen
-          className="sage"
-          ref={this.section3}
-          onClick={() => this.scroll(this.section4)}
-        >
-          {portfolio.NCNews}
-        </Screen>
-        <Screen
-          className="lemon"
-          ref={this.section4}
-          onClick={() => this.scroll(this.section5)}
-        >
-          {portfolio.Northwitter}
-        </Screen>
-        <Screen
-          className="sky"
-          backToTop
-          ref={this.section5}
-          onClick={() => this.scroll(this.topSection)}
-        >
-          {portfolio.TrellJo}
-        </Screen>
+        {portfolioData.map((project, index) => {
+          return (
+            <Screen
+              ref={refs[index]}
+              key={project.title}
+              className={classnames[index % 5]}
+              onClick={() => this.scroll(refs[index + 1])}
+              backToTop={index === portfolioData.length - 1}
+            >
+              <a href={project.link}>
+                <Art src={assets[project.image]} alt={project.title} light />
+              </a>
+              <p className="project-caption">{project.caption}</p>
+              <ul style={{ alignSelf: 'flex-start', padding: 0 }}>
+                {project.stack.map((tech, stackIndex) => {
+                  if (stackIndex === 0) {
+                    return (
+                      <li style={{ display: 'inline' }}>
+                        <FontAwesomeIcon
+                          icon={faAngleDoubleRight}
+                          style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
+                        />
+                        {tech}
+                      </li>
+                    );
+                  }
+
+                  return (
+                    <li style={{ display: 'inline' }}>
+                      <FontAwesomeIcon
+                        icon={faAngleDoubleRight}
+                        style={{ margin: '0 0.5rem 0 1rem', opacity: 1 }}
+                      />
+                      {tech}
+                    </li>
+                  );
+                })}
+              </ul>
+            </Screen>
+          );
+        })}
       </Layout>
     );
   }

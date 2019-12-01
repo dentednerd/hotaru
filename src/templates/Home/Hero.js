@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = styled('div')`
-  margin: 25vh auto 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

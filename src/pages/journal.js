@@ -26,6 +26,8 @@ class Journal extends React.Component {
       },
     } = this.props;
 
+    const reverseGroup = [...group].reverse();
+
     const JournalSection = styled('section')`
       width: 100vw;
       display: flex;
@@ -66,7 +68,7 @@ class Journal extends React.Component {
           </Hero>
         </Screen>
         <section ref={this.journal}>
-          {group.reverse().map((tag, index) => (
+          {reverseGroup.map((tag, index) => (
             <JournalSection
               key={tag.fieldValue}
               className={classnames[index % 4]}

@@ -9,6 +9,7 @@ import Layout from '../templates/Layout';
 import Split from '../Split';
 import Half from '../Half';
 import Hero from '../Hero';
+import Center from '../Center';
 import timelineData from '../data/timelineData';
 import timelineOldData from '../data/timelineOldData';
 import './global.css';

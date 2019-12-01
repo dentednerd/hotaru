@@ -5,6 +5,7 @@ import Screen from '../Screen';
 import Layout from '../templates/Layout';
 import showreel from '../templates/Showreel';
 import Hero from '../Hero';
+import Center from '../Center';
 import './global.css';
 
 export default class extends React.Component {
