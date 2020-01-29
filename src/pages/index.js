@@ -1,7 +1,7 @@
 import React from 'react';
 import Screen from '../Screen';
 import {
-  Hero, Intro, Code, Developer,
+  Hero, Intro, Code, Developer, CallToAction,
 } from '../templates/Home';
 import Layout from '../templates/Layout';
 import './global.css';
@@ -13,6 +13,7 @@ export default class HomePage extends React.Component {
     this.secondDiv = React.createRef();
     this.thirdDiv = React.createRef();
     this.fourthDiv = React.createRef();
+    this.fifthDiv = React.createRef();
     this.scroll = this.scroll.bind(this);
   }
 
@@ -46,11 +47,18 @@ export default class HomePage extends React.Component {
         </Screen>
         <Screen
           ref={this.fourthDiv}
-          backToTop
           className="sky"
-          onClick={() => this.scroll(this.firstDiv)}
+          onClick={() => this.scroll(this.fifthDiv)}
         >
           <Developer />
+        </Screen>
+        <Screen
+          ref={this.fifthDiv}
+          backToTop
+          className="pink"
+          onClick={() => this.scroll(this.firstDiv)}
+        >
+          <CallToAction />
         </Screen>
       </Layout>
     );

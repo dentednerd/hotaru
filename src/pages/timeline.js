@@ -96,7 +96,7 @@ export default class extends React.Component {
           onClick={() => this.scroll(this.section0)}
         >
           <Hero>
-            <h1>timeline</h1>
+            <h1>experience</h1>
             <FontAwesomeIcon
               icon={faHistory}
               style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
