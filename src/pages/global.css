@@ -17,7 +17,6 @@ body, html {
   background-size: contain;
   background-attachment: fixed;
   background-position: center;
-  overflow: hidden;
 }
 
 @media (max-width: 767px) {
@@ -42,6 +41,10 @@ p {
   margin-top: 0;
   margin-bottom: 0.5rem;
   max-width: 32vw;
+}
+
+.post-content p {
+  max-width: 100%;
 }
 
 @media (max-width: 1023px) {
