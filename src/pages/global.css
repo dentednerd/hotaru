@@ -29,6 +29,7 @@ body, html {
 p {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  max-width: 32vw;
 }
 
 ul {

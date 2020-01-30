@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHistory, faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faHistory, faBriefcase, faGraduationCap, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import Screen from '../Screen';
 import Layout from '../templates/Layout';
 import Split from '../Split';
@@ -39,7 +39,11 @@ const mappedData = timelineData.map(job => (
     <Half>
       <Fade right>
         <p>{job.jobDesc}</p>
-        <p style={{ fontVariant: 'small-caps', fontSize: '0.8rem' }}>
+        <p>
+          <FontAwesomeIcon
+            icon={faLaptopCode}
+            style={{ fontSize: '0.9rem', margin: '0 0.5rem 0 0', opacity: 1 }}
+          />
           {job.skills.map((tech, stackIndex) => {
             if (stackIndex === 0) {
               return `${tech}`;

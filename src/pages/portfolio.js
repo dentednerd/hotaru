@@ -1,14 +1,19 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+import { faLaptopCode, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import Screen from '../Screen';
 import Layout from '../templates/Layout';
 import assets from '../templates/Portfolio/assets';
 import portfolioData from '../data/portfolioData';
-import Art from '../Art';
+import Screenshot from '../Screenshot';
 import Hero from '../Hero';
 import './global.css';
+
+const ProjectCaption = styled('p')`
+  text-align: center;
+`;
 
 export default class extends React.Component {
   constructor(props) {
@@ -76,19 +81,26 @@ export default class extends React.Component {
             >
               <Fade left>
                 <a href={project.link}>
-                  <Art src={assets[project.image]} alt={project.title} light />
+                  <Screenshot src={assets[project.image]} alt={project.title} light />
                 </a>
               </Fade>
               <Fade right>
-                <p className="project-caption">{project.caption}</p>
-                <ul style={{ alignSelf: 'flex-start', padding: 0 }}>
+                <ProjectCaption>
+                  <FontAwesomeIcon
+                    icon={faExternalLinkAlt}
+                    style={{ fontSize: '0.8rem', margin: '0 0.5rem 0 0', opacity: 1 }}
+                  />
+                  <a href={project.link}>{project.link}</a>
+                </ProjectCaption>
+                <ProjectCaption>{project.caption}</ProjectCaption>
+                <ul style={{ padding: 0 }}>
                   {project.stack.map((tech, stackIndex) => {
                     if (stackIndex === 0) {
                       return (
-                        <li style={{ display: 'inline' }}>
+                        <li style={{ display: 'inline', marginRight: '0.5rem' }}>
                           <FontAwesomeIcon
-                            icon={faAngleDoubleRight}
-                            style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
+                            icon={faLaptopCode}
+                            style={{ fontSize: '0.8rem', margin: '0 0.5rem 0 0', opacity: 1 }}
                           />
                           {tech}
                         </li>
@@ -96,12 +108,8 @@ export default class extends React.Component {
                     }
 
                     return (
-                      <li style={{ display: 'inline' }}>
-                        <FontAwesomeIcon
-                          icon={faAngleDoubleRight}
-                          style={{ margin: '0 0.5rem 0 1rem', opacity: 1 }}
-                        />
-                        {tech}
+                      <li style={{ display: 'inline', marginRight: '0.5rem' }}>
+                        {`» ${tech}`}
                       </li>
                     );
                   })}
