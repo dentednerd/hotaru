@@ -1,7 +1,7 @@
 export default [
   {
     link: 'https://codeninjas-v2.herokuapp.com',
-    image: 'CodeNinjas',
+    image: 'CodeNinjas2',
     title: 'Code Ninjas v2',
     caption: 'A reskin of the original project.',
     stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB'],

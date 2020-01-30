@@ -1,4 +1,5 @@
 import CodeNinjas from './CodeNinjasShot.png';
+import CodeNinjas2 from './CodeNinjas2Shot.png';
 import DNReviews from './DNReviewsShot.png';
 import LowBar from './LowBarShot.png';
 import NCNews from './NCNewsShot.png';
@@ -7,6 +8,7 @@ import TrellJo from './TrellJoShot.png';
 
 const assets = {
   CodeNinjas,
+  CodeNinjas2,
   DNReviews,
   LowBar,
   NCNews,

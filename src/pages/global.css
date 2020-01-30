@@ -160,9 +160,17 @@ a:hover {
   background-color: #ff7dab;
 }
 
+.pink a {
+  color: #fff;
+}
+
 .lavender {
   background-color: #828dac;
   color: #ffffff;
+}
+
+.lavender a {
+  color: #ffbfef;
 }
 
 .svg-inline--fa {
