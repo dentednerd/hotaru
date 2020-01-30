@@ -24,13 +24,9 @@ export default (props) => {
       width: calc(100vw - 2rem);
     }
 
-    :hover {
+    &:hover {
       box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
       transition: box-shadow 0.1s ease-in;
-
-      section h2 {
-        text-decoration-color: transparent;
-      }
     }
 
     section {
@@ -73,7 +69,7 @@ export default (props) => {
   `;
 
   return (
-    <Link to={article.fields.slug}>
+    <Link to={article.fields.slug} style={{ textDecoration: 'none' }}>
       <Card className="lemon">
         {article.frontmatter.featuredImage && (
           <CardImage imgSrc={`${article.frontmatter.featuredImage.childImageSharp.sizes.src}`} />
