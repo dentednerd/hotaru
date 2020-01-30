@@ -267,10 +267,10 @@ div.bm-burger-button *:hover {
 }
 
 .bm-item-list h1 {
-  font-size: 10vh;
+  font-size: 8vh;
   padding: 0;
   margin: 0;
-  line-height: 10vh;
+  line-height: 8vh;
 }
 
 @media (max-width: 1023px) {
