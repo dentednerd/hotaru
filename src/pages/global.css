@@ -17,12 +17,24 @@ body, html {
   background-size: contain;
   background-attachment: fixed;
   background-position: center;
+  overflow: hidden;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   body, html {
     font-size: 18px;
     line-height: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body, html {
+    font-size: 24px;
+    line-height: 32px;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 
@@ -32,9 +44,25 @@ p {
   max-width: 32vw;
 }
 
+@media (max-width: 1023px) {
+  p {
+    max-width: 80vw;
+  }
+  .post-content p {
+    max-width: calc(100vw - 2rem);
+  }
+}
+
 ul {
   padding-left: 1rem;
   margin: 0 0 1rem 0;
+}
+
+@media (max-width: 1023px) {
+  ul {
+    text-align: center;
+    max-width: 80vw;
+  }
 }
 
 /* headings */

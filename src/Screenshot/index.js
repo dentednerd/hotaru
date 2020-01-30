@@ -18,12 +18,18 @@ export default (props) => {
 
     @media (max-width: 1023px) {
       width: 80vw;
-      height: 45vw;
+      height: 37vw;
     }
     
     img {
       width: 32vw;
+
+      @media (max-width: 1023px) {
+        width: 80vw;
+      }
     }
+
+
 
     &:hover {
       text-shadow: 1px 1px 3px #ff7dab, -1px -1px 3px #ff7dab;

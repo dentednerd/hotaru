@@ -5,7 +5,7 @@ featuredImage: "./images/my-dev-environment.png"
 tags: ["programming"]
 ---
 
-So much of my life as a developer is wrapped up in [Visual Studio Code](https://code.visualstudio.com/). I love it - it's endlessly customisable and extendable, which is great when you have a need to impress your own personality upon the space in which you spend the majority of your time (me).
+Most of my life as a developer is wrapped up in [Visual Studio Code](https://code.visualstudio.com/). I love it - it's endlessly customisable and extendable, which is great when you have a burning need to impress your own personality upon your immediate environment.
 
 Below I've linked to the VSCode extensions I use on the daily, along with the relevant settings from my `settings.json`. [Let me know](https://www.twitter.com/dentednerd) if any of these are useful to you!
 
@@ -75,6 +75,8 @@ Here are some further customisations I've made to the colours in VSCode, in keep
 "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
 "editor.fontLigatures": true
 ```
+
+Lately, however, I've been trying out [Jetbrains Mono](https://www.jetbrains.com/lp/mono/), which has been specifically designed to decrease eye strain. It also has ligatures, and uses taller letter formation.
 
 If you struggle to follow indentations every now and then, [Indent-Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) colorizes each step of indentation in your code. I use a rotation of five custom colours to match the fairyfloss theme. Details!
 

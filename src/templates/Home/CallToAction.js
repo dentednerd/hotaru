@@ -57,7 +57,7 @@ export default () => (
       </a>
     </CTASection>
     <CTASection>
-      <a href="/timeline">
+      <a href="/experience">
         <FontAwesomeIcon
           icon={faHistory}
         />

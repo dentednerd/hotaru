@@ -33,6 +33,7 @@ const BlogPost = styled('div')`
   p {
     margin-bottom: 1em;
     letter-spacing: -0.025em;
+    width: 100vw;
   }
 
   a {
