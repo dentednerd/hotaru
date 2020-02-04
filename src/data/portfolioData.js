@@ -1,5 +1,33 @@
 export default [
   {
+    link: 'https://www.ladbible.com',
+    image: 'LAD',
+    title: 'LADbible',
+    caption: 'Part of the LADbible Group family of sites.',
+    stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
+  },
+  {
+    link: 'https://www.unilad.co.uk',
+    image: 'UNILAD',
+    title: 'UNILAD',
+    caption: 'Part of the LADbible Group family of sites.',
+    stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
+  },
+  {
+    link: 'https://www.tyla.com',
+    image: 'Tyla',
+    title: 'Tyla',
+    caption: 'Part of the LADbible Group family of sites.',
+    stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
+  },
+  {
+    link: 'https://www.sportbible.com',
+    image: 'SPORT',
+    title: 'SPORTbible',
+    caption: 'Part of the LADbible Group family of sites.',
+    stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
+  },
+  {
     link: 'https://codeninjas-v2.herokuapp.com',
     image: 'CodeNinjas2',
     title: 'Code Ninjas v2',
