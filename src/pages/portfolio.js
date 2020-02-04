@@ -26,6 +26,10 @@ export default class extends React.Component {
     this.section4 = React.createRef();
     this.section5 = React.createRef();
     this.section6 = React.createRef();
+    this.section7 = React.createRef();
+    this.section8 = React.createRef();
+    this.section9 = React.createRef();
+    this.section10 = React.createRef();
     this.scroll = this.scroll.bind(this);
   }
 
@@ -50,6 +54,10 @@ export default class extends React.Component {
       this.section4,
       this.section5,
       this.section6,
+      this.section7,
+      this.section8,
+      this.section9,
+      this.section10,
       this.topSection,
     ];
 
@@ -70,54 +78,54 @@ export default class extends React.Component {
             </p>
           </Hero>
         </Screen>
-        {portfolioData.map((project, index) => {
-          return (
-            <Screen
-              ref={refs[index]}
-              key={project.title}
-              className={classnames[index % 5]}
-              onClick={() => this.scroll(refs[index + 1])}
-              backToTop={index === portfolioData.length - 1}
-            >
-              <Fade left>
-                <a href={project.link}>
-                  <Screenshot src={assets[project.image]} alt={project.title} light />
-                </a>
-              </Fade>
-              <Fade right>
-                <ProjectCaption>
-                  <FontAwesomeIcon
-                    icon={faExternalLinkAlt}
-                    style={{ fontSize: '0.8rem', margin: '0 0.5rem 0 0', opacity: 1 }}
-                  />
-                  <a href={project.link}>{project.link}</a>
-                </ProjectCaption>
-                <ProjectCaption>{project.caption}</ProjectCaption>
-                <ul style={{ padding: 0 }}>
-                  {project.stack.map((tech, stackIndex) => {
-                    if (stackIndex === 0) {
-                      return (
-                        <li style={{ display: 'inline', marginRight: '0.5rem' }}>
-                          <FontAwesomeIcon
-                            icon={faLaptopCode}
-                            style={{ fontSize: '0.8rem', margin: '0 0.5rem 0 0', opacity: 1 }}
-                          />
-                          {tech}
-                        </li>
-                      );
-                    }
+        {portfolioData.map((project, index) => (
+          <Screen
+            ref={refs[index]}
+            key={project.title}
+            className={classnames[index % 5]}
+            onClick={() => this.scroll(refs[index + 1])}
+            backToTop={index === portfolioData.length - 1}
+          >
+            <Fade left>
+              <a href={project.link}>
+                <Screenshot src={assets[project.image]} alt={project.title} light />
+              </a>
+            </Fade>
+            <Fade right>
+              <ProjectCaption>
+                <FontAwesomeIcon
+                  icon={faExternalLinkAlt}
+                  style={{ fontSize: '0.8rem', margin: '0 0.5rem 0 0', opacity: 1 }}
+                />
+                <a href={project.link}>{project.link}</a>
+              </ProjectCaption>
+              <ProjectCaption>{project.caption}</ProjectCaption>
+              <ul style={{ padding: 0 }}>
 
+                {project.stack.map((tech, stackIndex) => {
+                  if (stackIndex === 0) {
                     return (
                       <li style={{ display: 'inline', marginRight: '0.5rem' }}>
-                        {`» ${tech}`}
+                        <FontAwesomeIcon
+                          icon={faLaptopCode}
+                          style={{ fontSize: '0.8rem', margin: '0 0.5rem 0 0', opacity: 1 }}
+                        />
+                        {tech}
                       </li>
                     );
-                  })}
-                </ul>
-              </Fade>
-            </Screen>
-          );
-        })}
+                  }
+
+                  return (
+                    <li style={{ display: 'inline', marginRight: '0.5rem' }}>
+                      {`» ${tech}`}
+                    </li>
+                  );
+                })}
+
+              </ul>
+            </Fade>
+          </Screen>
+        ))}
       </Layout>
     );
   }
