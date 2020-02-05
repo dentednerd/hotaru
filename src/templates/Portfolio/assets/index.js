@@ -9,6 +9,14 @@ import LAD from './LAD.png';
 import Tyla from './Tyla.png';
 import SPORT from './SPORT.png';
 import UNILAD from './UNILAD.png';
+import LADAPP1 from './LADAPP1.png';
+
+import CodeNinjasThumb from './CodeNinjasThumb.png';
+import DNReviewsThumb from './DNReviewsThumb.png';
+import LowBarThumb from './LowBarThumb.png';
+import NCNewsThumb from './NCNewsThumb.png';
+import NorthwitterThumb from './NorthwitterThumb.png';
+import TrellJoThumb from './TrellJoThumb.png';
 
 const assets = {
   CodeNinjas,
@@ -22,6 +30,19 @@ const assets = {
   Tyla,
   SPORT,
   UNILAD,
+  LADAPP1,
 };
 
-export default assets;
+const thumbs = {
+  CodeNinjasThumb,
+  DNReviewsThumb,
+  LowBarThumb,
+  NCNewsThumb,
+  NorthwitterThumb,
+  TrellJoThumb,
+};
+
+export {
+  assets,
+  thumbs,
+};
