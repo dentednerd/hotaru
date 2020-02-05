@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import {
   Grid, Main, Tall, Square, Wide,
 } from '../Grid';
@@ -83,10 +83,6 @@ export default class extends React.Component {
     const projectCaption = project => (
       <Wide style={{ alignItems: 'flex-start', textAlign: 'left' }}>
         <p>
-          <FontAwesomeIcon
-            icon={faExternalLinkAlt}
-            style={{ fontSize: '0.8rem', margin: '0 0.5rem 0 0', opacity: 1 }}
-          />
           <a href={project.link}>{project.link}</a>
         </p>
         <p>{project.caption}</p>
