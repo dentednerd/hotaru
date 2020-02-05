@@ -44,7 +44,6 @@ const Tall = styled('a')`
   background-position: center center;
   transition: all .2s ease-in-out;
   box-shadow: 0.1rem 0.1rem 0.25rem #332e4a;
-
   width: 18vh;
   height: 32vh;
   margin: 0 auto 2rem;
@@ -52,6 +51,8 @@ const Tall = styled('a')`
   @media (min-width: 1024px) {
     grid-row: span 16;
     grid-column: span 8;
+    width: auto;
+    height: auto;
     margin: 0;
   }
 
@@ -65,6 +66,7 @@ const Square = styled('div')`
   display: none;
 
   @media (min-width: 1024px) {
+    display: block;
     grid-row: span 8;
     grid-column: span 8;
     background-size: contain;
@@ -83,8 +85,6 @@ const Wide = styled('div')`
   @media (min-width: 1024px) {
     grid-row: span 4;
     grid-column: span 8;
-    align-items: right;
-    text-align: right;
   }
 
   &:hover {
