@@ -5,13 +5,13 @@ featuredImage: "./images/my-dev-environment.png"
 tags: ["programming"]
 ---
 
-Most of my life as a developer is wrapped up in [Visual Studio Code](https://code.visualstudio.com/). I love it - it's endlessly customisable and extendable, which is great when you have a burning need to impress your own personality upon your immediate environment.
+Most of my life as a developer is wrapped up in [Visual Studio Code](https://code.visualstudio.com/). I love it - it's endlessly customisable and extendable, which is great when you have a burning need to impress your own personality upon your immediate environment. (Hi. I'm Joey. If I can customise it, I will.)
 
 Below I've linked to the VSCode extensions I use on the daily, along with the relevant settings from my `settings.json`. [Let me know](https://www.twitter.com/dentednerd) if any of these are useful to you!
 
 #### Colours
 
-I'm not a super girly girl, but in certain situations, cute is very much my aesthetic. Enter sailorhg's [fairyfloss](https://github.com/sailorhg/fairyfloss) theme. It's very much based on the colour palette seen in that most feminine of classic anime, Sailor Moon, but with a dark enough background to still go easy on those of us who prefer a dark scheme. The VSCode port lives [here](https://marketplace.visualstudio.com/items?itemName=nopjmp.fairyfloss).
+I'm not a super girly girl, but in certain situations, cute is very much my aesthetic. Enter [sailorhg](https://twitter.com/sailorhg)'s [fairyfloss](https://github.com/sailorhg/fairyfloss) theme. It's very much based on the colour palette seen in that most feminine of classic anime, Sailor Moon, but with a dark enough background to still go easy on those of us who prefer a dark scheme. The VSCode port lives [here](https://marketplace.visualstudio.com/items?itemName=nopjmp.fairyfloss).
 
 ```json
 "workbench.colorTheme": "fairyfloss"
@@ -57,7 +57,7 @@ Here are some further customisations I've made to the colours in VSCode, in keep
 
 ```json
 "workbench.colorCustomizations" : {
-  "terminal.background" : "#332E4A",
+  "terminal.background" : "#332E4A", // more on the terminal in a bit
   "editor.selectionBackground": "#be96e1",
   "editor.selectionHighlightBackground": "#be96e1",
   "editor.lineHighlightBackground": "#8B6897",
@@ -78,7 +78,7 @@ Here are some further customisations I've made to the colours in VSCode, in keep
 
 Lately, however, I've been trying out [Jetbrains Mono](https://www.jetbrains.com/lp/mono/), which has been specifically designed to decrease eye strain. It also has ligatures, and uses taller letter formation.
 
-If you struggle to follow indentations every now and then, [Indent-Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) colorizes each step of indentation in your code. I use a rotation of five custom colours to match the fairyfloss theme. Details!
+If you struggle to follow indentations every now and then, [Indent-Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) colorizes each step of indentation in your code. I use a rotation of five custom colours to match the fairyfloss theme.
 
 ```json
 "indentRainbow.colors": [
@@ -126,7 +126,7 @@ With this, your integrated terminal will happily use zsh, Oh My ZSH and your cho
 "workbench.colorCustomizations" : {
   "terminal.background" : "#332E4A",
   "terminal.foreground":"#f8f8f2",
-  "terminal.ansiBlack":"#332E4A", // went with the darker background to contrast against my dev window
+  "terminal.ansiBlack":"#332E4A",
   "terminal.ansiBrightBlack":"#8077a8",
   "terminal.ansiBlue": "#c5a3ff",
   "terminal.ansiBrightBlue":"#c5a3ff",
@@ -148,4 +148,4 @@ With this, your integrated terminal will happily use zsh, Oh My ZSH and your cho
 
 One final recommendation:  [VSCode can do that?!](https://vscodecandothat.com/) lists a ton of features and extensions for VSCode that might make your dev life a little easier.
 
-[Drop me a tweet](https://www.twitter.com/dentednerd) if you found anything in this post helpful!
+Has my obsessive attention to detail inspired you to upgrade your dev environment? [Drop me a tweet](https://www.twitter.com/dentednerd) if you found this post helpful!
