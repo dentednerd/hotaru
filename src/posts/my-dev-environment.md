@@ -108,7 +108,7 @@ Let me head this section up with another recommendation - the [Command Line Powe
 - iTerm2 on Mac, Terminator on Ubuntu
 - zsh and [Oh My ZSH!](https://ohmyz.sh/)
 - Agnoster theme for Oh My ZSH!
-- Fira Code font (or any [Powerline patched font](https://github.com/powerline/fonts) for the nifty special characters used by Agnoster
+- Fira Code font (any [Powerline patched font](https://github.com/powerline/fonts) will have the nifty special characters used by Agnoster)
 - [fairyfloss theme](https://github.com/aquartier/fairyfloss) for iTerm2, lightly customised for a darker background
 
 In iTerm2, I've split up my default window into four panes, one for each of the repos I work with most often. I've set them up to run immediately on startup - one click to open iTerm, and a few seconds later all my Docker containers are up and running. No typing. Terminal zen.
@@ -120,13 +120,13 @@ Replicating this level of zen in VSCode's integrated terminal requires a few ext
 "terminal.explorerKind": "external",
 ```
 
-With this, your integrated terminal will happily use zsh, Oh My ZSH and your chosen OMZ theme, but your iTerm colours likely won't match your external terminal. I had a looot of fun replicating the Fairyfloss theme in VSCode settings...
+With this, your integrated terminal will happily use zsh, Oh My ZSH and your chosen OMZ theme, but it's likely that if you're using a colour scheme in iTerm, your integrated terminal colours won't match yet. Don't worry, because there are settings for those too. A looot of settings...
 
 ```json
 "workbench.colorCustomizations" : {
   "terminal.background" : "#332E4A",
   "terminal.foreground":"#f8f8f2",
-  "terminal.ansiBlack":"#332E4A",
+  "terminal.ansiBlack":"#332E4A", // went with the darker background to contrast against my dev window
   "terminal.ansiBrightBlack":"#8077a8",
   "terminal.ansiBlue": "#c5a3ff",
   "terminal.ansiBrightBlue":"#c5a3ff",
