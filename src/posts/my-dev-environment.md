@@ -146,4 +146,6 @@ With this, your integrated terminal will happily use zsh, Oh My ZSH and your cho
 },
 ```
 
-I do believe that attention to detail makes for a beautiful dev environment. [Drop me a tweet](https://www.twitter.com/dentednerd) if you found anything in this post helpful!
+One final recommendation:  [VSCode can do that?!](https://vscodecandothat.com/) lists a ton of features and extensions for VSCode that might make your dev life a little easier.
+
+[Drop me a tweet](https://www.twitter.com/dentednerd) if you found anything in this post helpful!
