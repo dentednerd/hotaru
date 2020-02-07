@@ -90,8 +90,60 @@ If you struggle to follow indentations every now and then, [Indent-Rainbow](http
 ]
 ```
 
-Unfortunately, I haven't yet customised [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) to match the rotation I'm using in indent-rainbow. It uses colours set by the chosen colour scheme, so it doesn't look out of place. This is an invaluable extension to help you keep track of your brackets and avoid errors from functions that haven't closed properly.
+I've customised some of the CSS in [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) to better highlight the section of code I'm currently working in. I thought about matching the bracket colours to the Fairyfloss theme, but a) the automatic colours with BPC don't look out of place with the theme, and b) the slight distinction makes them easier to keep track of anyways. BPC is an invaluable extension to help you avoid errors from functions that haven't closed properly. I can't recommend it enough.
+
+```json
+"bracketPairColorizer.scopeLineCSS": [
+  "borderStyle : dotted",
+  "borderWidth : 2px",
+  "borderColor : {color}; opacity: 0.75",
+  "backgroundColor : {color}; opacity: 0.25"
+]
+```
 
 #### Terminal
 
-I use zsh rather than Bash, and [Oh My ZSH!](https://ohmyz.sh/) on top of that for theming. I use the Agnoster theme - with the original colours, as they're pastel enough to blend in with the fairyfloss scheme, but also different enough for me to know that I'm working in the terminal - along with the Fira Code font.
+Let me head this section up with another recommendation - the [Command Line Power User](https://commandlinepoweruser.com/) video series by Wes Bos. It's been a big inspiration to me in achieving terminal zen. Here's a quick rundown of my setup:
+
+- iTerm2 on Mac, Terminator on Ubuntu
+- zsh and [Oh My ZSH!](https://ohmyz.sh/)
+- Agnoster theme for Oh My ZSH!
+- Fira Code font (or any [Powerline patched font](https://github.com/powerline/fonts) for the nifty special characters used by Agnoster
+- [fairyfloss theme](https://github.com/aquartier/fairyfloss) for iTerm2, lightly customised for a darker background
+
+In iTerm2, I've split up my default window into four panes, one for each of the repos I work with most often. I've set them up to run immediately on startup - one click to open iTerm, and a few seconds later all my Docker containers are up and running. No typing. Terminal zen.
+
+Replicating this level of zen in VSCode's integrated terminal requires a few extra settings. To get VSCode to use iTerm, add these settings:
+
+```json
+"terminal.external.osxExec": "iTerm.app",
+"terminal.explorerKind": "external",
+```
+
+With this, your integrated terminal will happily use zsh, Oh My ZSH and your chosen OMZ theme, but your iTerm colours likely won't match your external terminal. I had a looot of fun replicating the Fairyfloss theme in VSCode settings...
+
+```json
+"workbench.colorCustomizations" : {
+  "terminal.background" : "#332E4A",
+  "terminal.foreground":"#f8f8f2",
+  "terminal.ansiBlack":"#332E4A",
+  "terminal.ansiBrightBlack":"#8077a8",
+  "terminal.ansiBlue": "#c5a3ff",
+  "terminal.ansiBrightBlue":"#c5a3ff",
+  "terminal.ansiCyan":"#c2ffdf",
+  "terminal.ansiBrightCyan":"#c2ffdf",
+  "terminal.ansiGreen":"#afecad",
+  "terminal.ansiBrightGreen":"#afecad",
+  "terminal.ansiMagenta":"#ffb8d1",
+  "terminal.ansiBrightMagenta":"#ffb8d1",
+  "terminal.ansiRed":"#ff857f",
+  "terminal.ansiBrightRed":"#ff9e9a",
+  "terminal.ansiWhite":"#f8f8f2",
+  "terminal.ansiBrightWhite":"#feffff",
+  "terminal.ansiYellow":"#ffea00",
+  "terminal.ansiBrightYellow":"#ffea00",
+  ...
+},
+```
+
+I do believe that attention to detail makes for a beautiful dev environment. [Drop me a tweet](https://www.twitter.com/dentednerd) if you found anything in this post helpful!
