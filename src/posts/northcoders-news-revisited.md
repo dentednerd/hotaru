@@ -61,6 +61,8 @@ There's actually not a whole lot of difference - each package requires its own D
 
 Well, Northcoders News v2 is hosted by our old friend Heroku. If it's a little slow to start, it's because I'm using free plans on both Heroku and mLab, so any delay will be in spinning up the repo again. Be patient! The code is available on [Github](https://github.com/dentednerd/northcodersnewsdocker) - feel free to have a play with it. I'd love to know if you have any suggestions! [Tweet me](https://twitter.com/dentednerd) with your ideas, okay?
 
-I've got some ideas about future iterations. I'd like to go back and tidy up the components a bit more - the structure isn't as neat as I'd like, and a few things need splitting out in the name of separation of concerns. I'd like to add a footer to match the header! Most of all, I want to see if it's possible to strip out Redux and control the state entirely with `useState`, `useEffect` and `useContext` hooks.
+Also, I've got my original [Northcoders News](https://northcoders-news-dentednerd.herokuapp.com/) working, using the API of NC News v2, so you can compare the two. Version 1 isn't a looker though! Think of it more as a _proof of concept_...
+
+I've got some ideas about future iterations. I'd like to go back and tidy up the components a bit more - the structure isn't as neat as I'd like, and a few things need splitting out in the name of separation of concerns. It would be nice to bring vote counts back into article cards, as they were a huge part of the cards in the first iteration, but totally absent in this version. I'd like to add a footer to match the header! Most of all, I want to see if it's possible to strip out Redux and control the state entirely with `useState`, `useEffect` and `useContext` hooks.
 
 Maybe one day I'll be back with Northcoders News v3!
