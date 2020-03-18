@@ -6,6 +6,10 @@ My personal site, built in [Gatsby](https://www.gatsbyjs.org/) and hosted on [Ne
 
 ![Hotaru](./src/posts/images/hotaru.png)
 
+## Prerequisites
+
+- install Gatsby CLI: `npm install -g gatsby-cli`
+
 ## Installation
 
 ```sh
