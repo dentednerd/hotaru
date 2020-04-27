@@ -12,8 +12,13 @@ export default (props) => {
   const { children } = props;
   return (
     <Layout>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: 'en',
+        }}
+      >
         <title>Joanne Imlay, front end developer</title>
+        <meta name="description" content="Joanne Imlay is a front end developer in Manchester, England." />
       </Helmet>
       <SideBar width="50%" />
       {children}

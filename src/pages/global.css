@@ -190,6 +190,11 @@ a:hover {
   background-color: #91cfff;
 }
 
+.sky a, .sage a {
+  color: #403f56;
+  font-weight: bold;
+}
+
 .pink {
   background-color: #ffbfef;
   color: #7a7495;

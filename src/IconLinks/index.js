@@ -35,19 +35,19 @@ export default () => (
   <IconLinks>
 
     <a href="mailto:jo.imlay@gmail.com">
-      <FontAwesomeIcon icon={faEnvelopeSquare} />
+      <FontAwesomeIcon icon={faEnvelopeSquare} alt="email" />
     </a>
 
     <a href="https://www.linkedin.com/in/joanne-imlay-4a7a7056/" target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon icon={faLinkedin} />
+      <FontAwesomeIcon icon={faLinkedin} alt="LinkedIn" />
     </a>
 
     <a href="https://www.github.com/dentednerd" target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon icon={faGithubSquare} />
+      <FontAwesomeIcon icon={faGithubSquare} alt="Github" />
     </a>
 
     <a href="https://www.twitter.com/dentednerd" target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon icon={faTwitterSquare} />
+      <FontAwesomeIcon icon={faTwitterSquare} alt="Twitter" />
     </a>
 
   </IconLinks>
