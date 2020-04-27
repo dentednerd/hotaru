@@ -47,6 +47,18 @@ p {
   max-width: 100%;
 }
 
+.post-content blockquote {
+  width: 60%;
+  padding: 1rem;
+  margin: 1rem auto;
+  background-color: #ffbfef;
+  border-radius: 1rem;
+}
+
+.post-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 1023px) {
   p {
     max-width: 80vw;
