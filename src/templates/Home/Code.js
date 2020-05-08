@@ -1,7 +1,7 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import Code from '../../assets/code.svg';
-import Art from '../../Art';
+import Art from '../../atoms/Art';
 
 export default () => (
   <>

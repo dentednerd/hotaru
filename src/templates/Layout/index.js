@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Helmet from 'react-helmet';
-import SideBar from '../../Sidebar';
+import Sidebar from '../../molecules/Sidebar';
+import MenuButton from '../../atoms/MenuButton';
 
 const Layout = styled('div')`
   overflow-y: hidden;
@@ -10,6 +11,8 @@ const Layout = styled('div')`
 
 export default (props) => {
   const { children } = props;
+  const [open, toggleOpen] = useState(false);
+
   return (
     <Layout>
       <Helmet
@@ -18,9 +21,13 @@ export default (props) => {
         }}
       >
         <title>Joanne Imlay, front end developer</title>
-        <meta name="description" content="Joanne Imlay is a front end developer in Manchester, England." />
+        <meta
+          name="description"
+          content="Joanne Imlay is a front end developer in Manchester, England."
+        />
       </Helmet>
-      <SideBar width="50%" />
+      <MenuButton open={open} toggleOpen={toggleOpen} />
+      <Sidebar open={open} />
       {children}
     </Layout>
   );

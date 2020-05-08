@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
-import Screen from '../Screen';
+import Screen from '../organisms/Screen';
 import Layout from '../templates/Layout';
 import showreel from '../templates/Showreel';
-import Hero from '../Hero';
+import Hero from '../atoms/Hero';
 import './global.css';
 
 export default class extends React.Component {

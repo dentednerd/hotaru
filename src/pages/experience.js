@@ -3,14 +3,15 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHistory, faBriefcase, faGraduationCap, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import Screen from '../Screen';
+import { faHistory, faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import Screen from '../organisms/Screen';
 import Layout from '../templates/Layout';
-import Split from '../Split';
-import Half from '../Half';
-import Hero from '../Hero';
+import Split from '../organisms/Split';
+import Half from '../organisms/Half';
+import Hero from '../atoms/Hero';
 import timelineData from '../data/timelineData';
 import timelineOldData from '../data/timelineOldData';
+import { stackMap } from '../helpers';
 import './global.css';
 
 const jobTitle = css`
@@ -39,17 +40,8 @@ const mappedData = timelineData.map(job => (
     <Half>
       <Fade right>
         <p>{job.jobDesc}</p>
-        <p>
-          <FontAwesomeIcon
-            icon={faLaptopCode}
-            style={{ fontSize: '0.9rem', margin: '0 0.5rem 0 0', opacity: 1 }}
-          />
-          {job.skills.map((tech, stackIndex) => {
-            if (stackIndex === 0) {
-              return `${tech}`;
-            }
-            return ` » ${tech} `;
-          })}
+        <p style={{ fontFamily: 'Josefin Sans, sans-serif', fontWeight: '300' }}>
+        {stackMap(job.skills)}
         </p>
       </Fade>
     </Half>

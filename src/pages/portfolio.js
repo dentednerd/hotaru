@@ -1,14 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import {
-  Grid, Main, Tall, Square, Wide,
-} from '../Grid';
-import Screen from '../Screen';
+import Screen from '../organisms/Screen';
 import Layout from '../templates/Layout';
 import { assets, thumbs } from '../templates/Portfolio/assets';
+import Screenshot from '../atoms/Screenshot';
 import portfolioData from '../data/portfolioData';
-import Hero from '../Hero';
+import Hero from '../atoms/Hero';
+import Project from '../molecules/Project';
+import { classnames } from '../helpers';
 import './global.css';
 
 export default class extends React.Component {
@@ -35,14 +35,6 @@ export default class extends React.Component {
   }
 
   render() {
-    const classnames = {
-      0: 'lemon',
-      1: 'sage',
-      2: 'pink',
-      3: 'sky',
-      4: 'lavender',
-    };
-
     const refs = [
       this.section0,
       this.section1,
@@ -58,45 +50,6 @@ export default class extends React.Component {
       this.section11,
       this.topSection,
     ];
-
-    const techStack = stack => (
-      stack.map((tech, stackIndex) => {
-        if (stackIndex === 0) {
-          return (
-            <li style={{ display: 'inline', marginRight: '0.5rem' }}>
-              <FontAwesomeIcon
-                icon={faLaptopCode}
-                style={{ fontSize: '0.8rem', margin: '0 0.5rem 0 0', opacity: 1 }}
-              />
-              {tech}
-            </li>
-          );
-        }
-        return (
-          <li style={{ display: 'inline', marginRight: '0.5rem' }}>
-            {`» ${tech}`}
-          </li>
-        );
-      })
-    );
-
-    const projectCaption = project => (
-      <Wide style={{ alignItems: 'flex-start', textAlign: 'left' }}>
-        <p>
-          <a href={project.link}>{project.link}</a>
-        </p>
-        <p>{project.caption}</p>
-      </Wide>
-    );
-
-    const projectTitleAndStack = project => (
-      <Wide>
-        <h2>{project.title}</h2>
-        <ul style={{ padding: 0 }}>
-          {techStack(project.stack)}
-        </ul>
-      </Wide>
-    );
 
     return (
       <Layout>
@@ -123,29 +76,8 @@ export default class extends React.Component {
             onClick={() => this.scroll(refs[index + 1])}
             backToTop={index === portfolioData.length - 1}
           >
-            <Grid>
-              {project.mobile
-                ? (<Tall href={project.link} style={{ backgroundImage: `url(${assets[project.image]})` }} />)
-                : (<Main href={project.link} style={{ backgroundImage: `url(${assets[project.image]})` }} />)
-              }
-              {index % 2 === 0
-                ? (
-                  <>
-                    {project.thumb && <Square style={{ backgroundImage: `url(${thumbs[project.thumb]})` }} />}
-                    {projectTitleAndStack(project)}
-                    {projectCaption(project)}
-                  </>
-                )
-                : (
-                  <>
-                    {projectTitleAndStack(project)}
-                    {project.thumb && <Square style={{ backgroundImage: `url(${thumbs[project.thumb]})` }} />}
-                    {projectCaption(project)}
-                  </>
-                )
-              }
-            </Grid>
-          </Screen>
+          <Project project={project} />
+         </Screen>
         ))}
       </Layout>
     );

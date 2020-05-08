@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import FaIcon from '../../atoms/FaIcon';
 import {
   faAngleDoubleDown,
   faAngleDoubleUp,
 } from '@fortawesome/free-solid-svg-icons';
-import Footer from '../Footer';
 
 export default React.forwardRef((props, ref) => {
   const {
@@ -63,15 +62,12 @@ export default React.forwardRef((props, ref) => {
 
   const Icon = backToTop
     ? (
-      <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
-        <FontAwesomeIcon
-          icon={faAngleDoubleUp}
-          onClick={onClick}
-        />
-        <Footer />
-      </div>
+      <FaIcon
+        icon={faAngleDoubleUp}
+        onClick={onClick}
+      />
     ) : (
-      <FontAwesomeIcon
+      <FaIcon
         icon={faAngleDoubleDown}
         onClick={onClick}
       />

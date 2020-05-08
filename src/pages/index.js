@@ -1,5 +1,5 @@
 import React from 'react';
-import Screen from '../Screen';
+import Screen from '../organisms/Screen';
 import {
   Hero, Intro, Code, Developer, CallToAction,
 } from '../templates/Home';

@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Sacramento|Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Josefin+Slab&family=Sacramento&family=Ubuntu+Mono&display=swap');
 
 body, html {
   background-color: #332E4A;
   color: #fff;
   font-family: "Josefin Slab", serif;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 24px;
+  line-height: 30px;
   font-weight: 600;
   overflow-x: hidden;
   margin: 0;
@@ -21,8 +21,8 @@ body, html {
 
 @media (max-width: 767px) {
   body, html {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 24px;
+    line-height: 30px;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -31,7 +31,7 @@ body, html {
 @media (min-width: 768px) and (max-width: 1023px) {
   body, html {
     font-size: 24px;
-    line-height: 32px;
+    line-height: 30px;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -94,11 +94,12 @@ h1 {
     -0.1rem 0.1rem 0.5rem #ffb8d0,
     0.1rem -0.1rem 0.5rem #ffb8d0,
     -0.1rem -0.1rem 0.5rem #ffb8d0;
+  transition: text-shadow 0.2s;
 }
 
 h2 {
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.5rem;
   margin-top: 0;
@@ -223,89 +224,5 @@ a:hover {
 
 .svg-inline--fa {
   height: 1rem;
-}
-
-/* sidebar */
-
-div.bm-burger-button {
-  position: fixed;
-  width: 2rem;
-  height: 2rem;
-  left: 1rem;
-  top: 1rem;
-  border-radius: 1rem;
-  background-color: transparent;
-  padding: 0;
-  transition: 0.5s ease;
-}
-
-div.bm-burger-button * {
-  background: #7a7495;
-  opacity: 0.5;
-  transition: 0.5s ease;
-}
-
-div.bm-burger-button *:hover {
-  opacity: 1;
-  transition: 0.5s ease;
-  cursor: pointer;
-}
-
-.bm-burger-bars {
-  border-radius: 8px;
-}
-
-/* inside menu */
-
-.bm-menu {
-  background: #6e6191;
-  padding: 1rem;
-  margin: 0;
-}
-
-.bm-item {
-  margin: 0;
-  padding: 0;
-  height: 10vh;
-}
-
-.bm-item:hover {
-  color: #ffb8d0;
-  text-decoration: none;
-  transition: color 0.5s;
-}
-
-.bm-item-list {
-  color: #fff;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.bm-item-list h1 {
-  font-size: 8vh;
-  padding: 0;
-  margin: 0;
-  line-height: 8vh;
-}
-
-@media (max-width: 1023px) {
-  .bm-item {
-    margin: 0;
-    padding: 1vh;
-    height: 8vh;
-  }
-
-  .bm-item-list h1 {
-    font-size: 8vh;
-    padding: 0;
-    margin: 0;
-    line-height: 8vh;
-  }
-}
-
-
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  width: 1rem;
 }

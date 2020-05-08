@@ -9,8 +9,10 @@ export default (props) => {
   const Screenshot = styled('section')`
     position: relative;
     width: 32vw;
-    height: 15.5vw;
-    background-color: rgba(0,0,0,0.1);
+    height: 15.4vw;
+    background-image: url(${src});
+    background-size: contain;
+    background-color: transparent;
     margin: 0 auto 1rem auto;
     text-shadow: none;
     transition: text-shadow 0.5s ease;
@@ -20,38 +22,23 @@ export default (props) => {
       width: 80vw;
       height: 37vw;
     }
-    
-    img {
-      width: 32vw;
-
-      @media (max-width: 1023px) {
-        width: 80vw;
-      }
-    }
-
-
-
-    &:hover {
-      text-shadow: 1px 1px 3px #ff7dab, -1px -1px 3px #ff7dab;
-      transition: text-shadow 0.5s ease;
-    }
 
     section {
       position: absolute;
-      width: calc(100% - 2rem);
-      color: ${light ? '#fff' : '#585273'};
-      text-align: ${top ? 'left' : 'right'};
-      bottom: 0;
+      bottom: -0.5rem;
       right: 0;
+      display: inline;
+      background-color: #332E4A;
+      color: #ff7dab;
+      text-shadow: 1px 1px 2px #332E4A;
+      text-align: ${top ? 'left' : 'right'};
       font-family: 'Josefin Sans', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       font-size: 1.5rem;
-      line-height: 1.5rem;
+      height: 1.5rem;
       letter-spacing: -0.05rem;
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 1.5rem 1rem 0.5rem 1rem;
-      ${!top && 'background-image: linear-gradient(to top, #7a7495, transparent);'}
+      padding: 1rem;
+      overflow: auto;
 
       @media (max-width: 1023px) {
         ${top && 'top: 0;'}
@@ -63,9 +50,10 @@ export default (props) => {
 
   return (
     <Screenshot>
-      <img src={src} alt={alt} />
       <section>
-        {alt}
+        <p>
+          {alt}
+        </p>
       </section>
     </Screenshot>
   );
