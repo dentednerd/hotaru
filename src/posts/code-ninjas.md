@@ -2,7 +2,8 @@
 title: "Code Ninjas: revisiting Northcoders project phase"
 date: "2018-05-25"
 featuredImage: "./images/code-ninjas.png"
-tags: ["projects"]
+category: "projects"
+tags: ["Northcoders", "MongoDB", "Heroku", "React", "Redux", "MERN"]
 ---
 
 Ten months after graduation, I finally deployed our team’s final [Northcoders](https://northcoders.com/) project, [Code Ninjas](https://codeninjas-nc5.herokuapp.com/), to the web. It wasn’t easy; I had to find a way to turn our [MongoDB](https://www.mongodb.com/) database into an accessible API, which I finally managed with [mLab](https://mlab.com/) and [Heroku](https://www.heroku.com/).

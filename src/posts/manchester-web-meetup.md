@@ -2,7 +2,8 @@
 title: "Manchester Web Meetup; Stemettes Monster Confidence (Oct - Nov 2018)"
 date: "2018-11-10"
 featuredImage: "./images/manchester-web-meetup.jpg"
-tags: ["events"]
+category: "events"
+tags: ["BrowserStack", "CircleCI", "visual regression"]
 ---
 
 On October 24th we hosted the third [Manchester Web Meetup](https://www.meetup.com/Manchester-Web-Meetup/events/255197131/) at LADbible. Way more people showed up to visit our freshly refurbished office and listen to us talk about our continuous integration workflows than we were expecting, so it turned into quite a night! I gave a talk based on the [Medium article](https://medium.com/ladbiblegroup/automating-browserstack-screenshot-generation-with-circleci-502bad7dcb7d) I wrote, and it felt very cool to be able to answer questions about my work and get excited about the things we're doing on this project without feeling like a total noob. I guess that's because I'm not a total noob anymore. Two of my colleagues who spoke that night had been with us for less than a month by then, and it was amazing to realise just how much they'd done for the project in such a short space of time.

@@ -2,7 +2,8 @@
 title: "Hotaru: how I made this site"
 date: "2019-11-29"
 featuredImage: "./images/hotaru.png"
-tags: ["projects"]
+category: "projects"
+tags: ["WIP", "Gatsby", "React", "GraphQL", "CSS-in-JS"]
 ---
 
 [WIP] Gatsby, styled-components and a lot of work.

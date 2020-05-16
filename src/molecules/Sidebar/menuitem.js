@@ -4,6 +4,10 @@ import FaIcon from '../../atoms/FaIcon';
 
 const StyledMenuItem = styled('section')`
   margin: 2rem 0;
+
+  @media(max-width: 767px) {
+    margin: 5vh 0;
+  }
   
   a {
     &:hover {
@@ -17,21 +21,19 @@ const StyledMenuItem = styled('section')`
   }
 `;
 
-const MenuItem = (props) => {
-  return (
-    <StyledMenuItem>
-      <a href={`/${props.page}`}>
-        <h2>
-          <FaIcon
-            icon={props.icon}
-            inline
-          />
-          {props.page}
-        </h2>
-      </a>
-      {props.children}
-    </StyledMenuItem>
-  );
-};
+const MenuItem = ({ page, icon, children }) => (
+  <StyledMenuItem>
+    <a href={`/${page}`}>
+      <h2>
+        <FaIcon
+          icon={icon}
+          inline
+        />
+        {page}
+      </h2>
+    </a>
+    {children}
+  </StyledMenuItem>
+);
 
 export default MenuItem;

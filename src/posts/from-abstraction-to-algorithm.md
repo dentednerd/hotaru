@@ -2,7 +2,8 @@
 title: "From abstraction to algorithm"
 date: "2017-10-07"
 featuredImage: "./images/from-abstraction-to-algorithm.jpg"
-tags: ["programming"]
+category: "programming"
+tags: ["basics"]
 ---
 
 Before you read this post, make a sandwich. It’s okay, I’ll wait.

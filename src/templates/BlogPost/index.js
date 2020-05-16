@@ -1,108 +1,106 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import { graphql } from 'gatsby';
 import Layout from '../Layout';
-import '../../pages/global.css';
+import JournalHeader from '../../molecules/JournalHeader';
+import JournalWrapper from '../../organisms/JournalWrapper';
+import JournalPost from '../../molecules/JournalPost';
+import JournalBackLink from '../../molecules/JournalBackLink';
+import LeftBar from '../../molecules/LeftBar';
+import RightBar from '../../molecules/RightBar';
 
-const FeaturedImage = styled(Img)`
-  width: 50vw;
-  max-width: 1024px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    width: 100vw;
-  }
-`;
-
-const BlogPost = styled('div')`
-  width: calc(50vw - 2rem);
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 1rem 1rem 0.5rem 1rem;
-  font-weight: 600;
-
-  @media (max-width: 768px) {
-    width: calc(100vw - 2rem);
-    margin: 0;
-  }
-
-  p {
-    margin-bottom: 1em;
-    letter-spacing: -0.025em;
-    width: 100vw;
-  }
-
-  a {
-    color: #ff7dab;
-  }
-
-  .post-content {
-    margin: 0;
-  }
-
-  h3 {
-    font-weight: 600;
-    font-size: 1rem;
-  }
-`;
-
-const Back = styled('span')`
-  display: block;
-  text-align: center;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-`;
-
-export default ({ data }) => {
-  const post = data.markdownRemark;
+export default ({ pageContext, data }) => {
+  const { post, tags, categories } = data;
 
   return (
     <Layout>
-      {post.frontmatter.featuredImage && (
-        <FeaturedImage
-          sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
-        />
-      )}
-      <BlogPost className="lemon">
-        <h2>{post.frontmatter.title}</h2>
-        <div
-          className="post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-        <Back>
-          <Link to="/journal">
-            <FontAwesomeIcon
-              icon={faAngleDoubleLeft}
-              style={{ marginRight: '0.5rem' }}
-            />
-          </Link>
-        </Back>
-      </BlogPost>
+      <JournalHeader />
+      <JournalWrapper>
+        <LeftBar categories={categories.group} pageContext={pageContext} />
+        <JournalPost post={post} />
+        <RightBar tags={tags} />
+      </JournalWrapper>
+      <JournalBackLink />
     </Layout>
   );
 };
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    post: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
         date(formatString: "DD MMMM, YYYY")
         featuredImage {
           childImageSharp{
-            sizes(maxWidth: 1920) {
+            fluid(maxWidth: 1920) {
               src
-              aspectRatio
             }
           }
         }
       }
       fields {
         slug
+      }
+    }
+    tags: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 2000
+    ) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+        nodes {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp{
+                fluid(maxWidth: 630) {
+                  src
+                }
+              }
+            }
+            tags
+            category
+          }
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 90)
+          html
+        }
+      }
+    }
+    categories: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 2000
+    ) {
+      group(field: frontmatter___category) {
+        fieldValue
+        totalCount
+        nodes {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp{
+                fluid(maxWidth: 630) {
+                  src
+                }
+              }
+            }
+            tags
+            category
+          }
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 90)
+          html
+        }
       }
     }
   }

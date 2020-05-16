@@ -6,11 +6,12 @@ import {
   faMapMarkerAlt,
   faLaptopCode,
   faHistory,
-  faPencilAlt
+  faPencilAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import MenuItem from './menuitem';
 import IconLinks from '../IconLinks';
 import FaIcon from '../../atoms/FaIcon';
+import GlowHeading from '../../atoms/GlowHeading';
 
 const StyledSidebar = styled('section')`
   height: 100%;
@@ -53,11 +54,12 @@ const SidebarHeader = styled('header')`
   width: 15rem;
   margin: 0 auto;
 
-  p {
-    line-height: 24px;
+  @media(max-width: 767px) {
+    max-width: 100%;
   }
 
-  p, h1 {
+  p {
+    line-height: 24px;
     margin-bottom: 0;
     text-align: center;
   }
@@ -76,41 +78,41 @@ const SidebarHeader = styled('header')`
   }
 `;
 
-const Sidebar = (props) => {
-  return (
-    <StyledSidebar className={props.open ? 'open' : null}>
-      <SidebarHeader>
-        <a href="/"><h1>Joanne Imlay</h1></a>
-        <p>
-          <FaIcon
-            icon={faCode}
-            inline
-          />
-          front end developer
-        </p>
-        <p>
-          <FaIcon
-            icon={faMapMarkerAlt}
-            inline
-          />
-          Manchester, England
-        </p>
-      </SidebarHeader>
+const Sidebar = ({ open }) => (
+  <StyledSidebar className={open ? 'open' : null}>
+    <SidebarHeader>
+      <a href="/">
+        <GlowHeading text="Joanne Imlay" />
+      </a>
+      <p>
+        <FaIcon
+          icon={faCode}
+          inline
+        />
+        front end developer
+      </p>
+      <p>
+        <FaIcon
+          icon={faMapMarkerAlt}
+          inline
+        />
+        Manchester, England
+      </p>
+    </SidebarHeader>
 
-      <div>
-        <hr />
-        <IconLinks sidebar />
-        <hr />
-      </div>
+    <div>
+      <hr />
+      <IconLinks sidebar />
+      <hr />
+    </div>
 
-      <div>
-        <MenuItem page="portfolio" icon={faLaptopCode} />
-        <MenuItem page="experience" icon={faHistory} />
-        <MenuItem page="journal" icon={faPencilAlt} />
-        <MenuItem page="showreel" icon={faYoutube} />
-      </div>
-    </StyledSidebar>
-  )
-};
+    <div>
+      <MenuItem page="portfolio" icon={faLaptopCode} />
+      <MenuItem page="experience" icon={faHistory} />
+      <MenuItem page="journal" icon={faPencilAlt} />
+      <MenuItem page="showreel" icon={faYoutube} />
+    </div>
+  </StyledSidebar>
+);
 
 export default Sidebar;

@@ -2,7 +2,8 @@
 title: "A look around my dev environment"
 date: "2019-11-29"
 featuredImage: "./images/my-dev-environment.png"
-tags: ["programming"]
+category: "programming"
+tags: ["Visual Studio Code", "iTerm2", "zsh"]
 ---
 
 Most of my life as a developer is wrapped up in [Visual Studio Code](https://code.visualstudio.com/). I love it - it's endlessly customisable and extendable, which is great when you have a burning need to impress your own personality upon your immediate environment. (Hi. I'm Joey. If I can customise it, I will.)

@@ -45,6 +45,24 @@ pre[class*="language-"] {
   word-wrap: break-word;
 }
 
+@media(max-width: 1023px) {
+  pre[class*="language-"] {
+    width: calc(100% - 4rem);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    white-space: normal;
+    word-wrap: normal;
+  }
+}
+
+@media(max-width: 767px) {
+  pre[class*="language-"] {
+    width: calc(100% - 1rem);
+    font-size: 0.75rem;
+  }
+}
+
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background-color: #585273 !important;

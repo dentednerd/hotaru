@@ -5,6 +5,7 @@ import Screen from '../organisms/Screen';
 import Layout from '../templates/Layout';
 import showreel from '../templates/Showreel';
 import Hero from '../atoms/Hero';
+import GlowHeading from '../atoms/GlowHeading';
 import './global.css';
 
 export default class extends React.Component {
@@ -33,7 +34,7 @@ export default class extends React.Component {
           onClick={() => this.scroll(this.section0)}
         >
           <Hero>
-            <h1>showreel</h1>
+            <GlowHeading text="showreel" />
             <FontAwesomeIcon
               icon={faYoutube}
               style={{ margin: '0 0.5rem 0 0', opacity: 1 }}

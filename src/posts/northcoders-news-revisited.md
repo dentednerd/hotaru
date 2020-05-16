@@ -2,7 +2,8 @@
 title: "Northcoders News, revisited"
 date: "2020-03-10"
 featuredImage: "./images/northcoders-news-revisited.png"
-tags: ["projects"]
+category: "projects"
+tags: ["Northcoders", "React", "Redux", "MongoDB", "Heroku", "hooks", "CSS-in-JS", "MERN"]
 ---
 
 It's a nice, quiet day. I'm working on this very site, paying attention to all sorts of details in my never-ending quest for perfection. Right now, I'm looking at my portfolio. Can I improve the presentation? Would animation give each project a boost? _Do all the links work?_

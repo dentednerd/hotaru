@@ -2,7 +2,8 @@
 title: "Pinpin: a calming new tab for Chrome"
 date: "2019-11-28"
 featuredImage: "./images/pinpin.png"
-tags: ["projects"]
+category: "projects"
+tags: ["WIP", "Chrome extension", "React", "hooks", "localStorage", "dayjs"]
 ---
 
 [WIP] A Chrome extension built with create-react-app, localStorage and React hooks.

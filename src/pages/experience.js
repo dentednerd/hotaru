@@ -9,6 +9,7 @@ import Layout from '../templates/Layout';
 import Split from '../organisms/Split';
 import Half from '../organisms/Half';
 import Hero from '../atoms/Hero';
+import GlowHeading from '../atoms/GlowHeading';
 import timelineData from '../data/timelineData';
 import timelineOldData from '../data/timelineOldData';
 import { stackMap } from '../helpers';
@@ -41,7 +42,7 @@ const mappedData = timelineData.map(job => (
       <Fade right>
         <p>{job.jobDesc}</p>
         <p style={{ fontFamily: 'Josefin Sans, sans-serif', fontWeight: '300' }}>
-        {stackMap(job.skills)}
+          {stackMap(job.skills)}
         </p>
       </Fade>
     </Half>
@@ -92,7 +93,7 @@ export default class extends React.Component {
           onClick={() => this.scroll(this.section0)}
         >
           <Hero>
-            <h1>experience</h1>
+            <GlowHeading text="experience" />
             <FontAwesomeIcon
               icon={faHistory}
               style={{ margin: '0 0.5rem 0 0', opacity: 1 }}

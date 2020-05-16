@@ -2,7 +2,8 @@
 title: ".reduce(): reduce it or lose it"
 date: "2017-10-17"
 featuredImage: "./images/reduce-it-or-lose-it.jpg"
-tags: ["programming"]
+category: "programming"
+tags: ["basics"]
 ---
 
 `.reduce()` is the Swiss army knife of array manipulation. We use this function to transform an array into anything we want - a single value, another array, an object, anything.

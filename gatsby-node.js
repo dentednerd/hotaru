@@ -18,7 +18,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve('src/templates/BlogPost/index.js');
 
   const result = await graphql(`{
       postsRemark: allMarkdownRemark(
@@ -39,6 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
             tags
+            category
           }
           fields {
             slug
@@ -67,11 +67,23 @@ exports.createPages = async ({ graphql, actions }) => {
   posts.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: blogPostTemplate,
+      component: path.resolve('src/templates/BlogPost/index.js'),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
+      },
+    });
+  });
+
+  const tags = result.data.tagsGroup.group;
+  // Make tag pages
+  tags.forEach((tag) => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: path.resolve('src/templates/TagPage/index.js'),
+      context: {
+        tag: tag.fieldValue,
       },
     });
   });

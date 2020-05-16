@@ -2,7 +2,8 @@
 title: "Medium: Automating BrowserStack screenshot generation"
 date: "2018-10-21"
 featuredImage: "./images/automating-browserstack.jpeg"
-tags: ["projects"]
+category: "projects"
+tags: ["BrowserStack", "CircleCI", "visual regression", "automation"]
 ---
 
 I've published an article on [BrowserStack screenshot automation in CircleCI](https://medium.com/ladbiblegroup/automating-browserstack-screenshot-generation-with-circleci-502bad7dcb7d) for the LADbible Medium page. It's what I'll be basing my talk on at the [Manchester Web Meetup](https://www.meetup.com/Manchester-Web-Meetup/events/255197131/) that we're hosting next week, which should be a lot of fun.

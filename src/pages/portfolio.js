@@ -3,10 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import Screen from '../organisms/Screen';
 import Layout from '../templates/Layout';
-import { assets, thumbs } from '../templates/Portfolio/assets';
-import Screenshot from '../atoms/Screenshot';
 import portfolioData from '../data/portfolioData';
 import Hero from '../atoms/Hero';
+import GlowHeading from '../atoms/GlowHeading';
 import Project from '../molecules/Project';
 import { classnames } from '../helpers';
 import './global.css';
@@ -59,7 +58,7 @@ export default class extends React.Component {
           onClick={() => this.scroll(this.section0)}
         >
           <Hero>
-            <h1>portfolio</h1>
+            <GlowHeading text="portfolio" />
             <p>
               <FontAwesomeIcon
                 icon={faLaptopCode}

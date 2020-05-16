@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import GlowHeading from '../../atoms/GlowHeading';
 
 const Hero = styled('div')`
   margin: 0 auto;
@@ -21,14 +22,14 @@ const Hero = styled('div')`
     }
   }
 
-  @media (max-width:768px) {
+  @media (max-width:767px) {
     margin-top: 20vh;
   }
 `;
 
 export default () => (
   <Hero>
-    <h1>Joanne Imlay</h1>
+    <GlowHeading text="Joanne Imlay" />
     <p>
       <FontAwesomeIcon
         icon={faCode}
