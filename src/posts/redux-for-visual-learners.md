@@ -3,7 +3,7 @@ title: "Redux for Visual Learners"
 date: "2018-03-16"
 featuredImage: "./images/redux-for-visual-learners.png"
 category: "projects"
-tags: ["Redux", "React"]
+tags: ["Redux", "React", "learning resources"]
 ---
 
 I really struggled getting my head around Redux for the longest time, so I created a Prezi that breaks down how each of the different components communicate with each other, with a few memes added in for good measure.
