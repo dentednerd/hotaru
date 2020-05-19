@@ -4,7 +4,7 @@ import Card from '../Card';
 
 const SidebarSection = ({ tag }) => {
   const Section = styled('section')`
-    grid-columns: 1 / 4;
+    grid-column: 1 / 4;
     padding: 0;
     margin-bottom: 2rem;
     width: 100%;

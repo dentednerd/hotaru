@@ -4,7 +4,6 @@ import Layout from '../Layout';
 import JournalHeader from '../../molecules/JournalHeader';
 import JournalWrapper from '../../organisms/JournalWrapper';
 import JournalPost from '../../molecules/JournalPost';
-import JournalBackLink from '../../molecules/JournalBackLink';
 import LeftBar from '../../molecules/LeftBar';
 import RightBar from '../../molecules/RightBar';
 
@@ -16,10 +15,9 @@ export default ({ pageContext, data }) => {
       <JournalHeader />
       <JournalWrapper>
         <LeftBar categories={categories.group} pageContext={pageContext} />
-        <JournalPost post={post} />
+        <JournalPost post={post} pageContext={pageContext} />
         <RightBar tags={tags} />
       </JournalWrapper>
-      <JournalBackLink />
     </Layout>
   );
 };

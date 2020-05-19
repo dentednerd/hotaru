@@ -8,9 +8,8 @@ import LeftBar from '../molecules/LeftBar';
 import JournalPost from '../molecules/JournalPost';
 import RightBar from '../molecules/RightBar';
 
-const Journal = ({ data: { tags, categories } }) => {
-  const sortedCategories = [...categories.group].reverse();
-  const latestPost = sortedCategories[0].nodes[0];
+const Journal = ({ data: { posts, tags, categories } }) => {
+  const latestPost = posts.edges[0].node;
 
   const JournalPostWrapper = styled('main')`
     grid-column: 4 / 10;
@@ -38,6 +37,31 @@ export default Journal;
 
 export const pageQuery = graphql`
   query {
+    posts: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp{
+                fluid(maxWidth: 630) {
+                  src
+                }
+              }
+            }
+            tags
+            category
+          }
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 90)
+          html
+        }
+      }
+    }
     tags: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 2000

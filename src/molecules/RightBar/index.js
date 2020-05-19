@@ -5,20 +5,30 @@ import { Link } from 'gatsby';
 
 const JournalRightBar = styled('aside')`
   grid-column: 10 / 13;
-  height: 90vh;
   margin-left: 1rem;
 
   a {
     display: inline-block;
     font-size: 0.75rem;
     line-height: 0.75rem;
-    background: #fff;
+    background-color: #fff;
     color: #7a7495;
     padding: 0 0 0 0.25rem;
     border-radius: 0.25rem;
     margin-bottom: 0.25rem;
     margin-right: 0.25rem;
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5),
+                -0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5);
+    transition: all 0.25s ease-in;
 
+    &:hover {
+      text-decoration: none;
+      background-color: #fffacd;
+      box-shadow: 0.0625rem 0.0625rem 0 rgba(0,0,0,0.5),
+                  -0.0625rem 0.0625rem 0 rgba(0,0,0,0.5);
+      transition: all 0.25s ease-in;
+    }
+    
     span {
       margin-left: 0.25rem;
       padding: 0.35rem 0.25rem 0.25rem;
@@ -39,7 +49,7 @@ const JournalRightBar = styled('aside')`
 
 const IntroSection = styled('section')`
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
   font-size: 0.75rem;
   line-height: 0.75rem;
 
@@ -53,9 +63,6 @@ const RightBar = ({ tags }) => {
 
   return (
     <JournalRightBar>
-      <IntroSection className="sky">
-        {"My journal is a collection of observations on programming, reports on events I've participated in, and commentaries on projects I've created. It isn't a blog in the traditional sense. I prefer getting a lot of ideas out at once, then working on them one by one, rather than writing a perfectly polished entry in one sitting. That's why you'll see a few incomplete entries tagged 'WIP' in here."}
-      </IntroSection>
       <h2>Tags</h2>
       {sortedTags.map(tag => (
         <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} key={tag.fieldValue}>
@@ -63,6 +70,9 @@ const RightBar = ({ tags }) => {
           <span>{tag.totalCount}</span>
         </Link>
       ))}
+      <IntroSection className="sky">
+        {"My journal is a collection of observations on programming, reports on events I've participated in, and commentaries on projects I've created. It isn't a blog in the traditional sense. I prefer getting a lot of ideas out at once, then working on them one by one, rather than writing a perfectly polished entry in one sitting. That's why you'll see a few incomplete entries tagged 'WIP' in here. The dates in the header of each post refer to when it was created, rather than when it was last updated."}
+      </IntroSection>
     </JournalRightBar>
   );
 };

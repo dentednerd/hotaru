@@ -14,24 +14,18 @@ export default (props) => {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 12rem;
-    min-width: 100%;
     height: 12rem;
     margin-bottom: 1rem;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.5),
-                -3px -3px 6px rgba(0,0,0,0.5),
-                -3px 3px 6px rgba(0,0,0,0.5),
-                3px -3px 6px rgba(0,0,0,0.5);
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5),
+                -0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5);
     font-weight: 600;
-    transition: box-shadow 0.1s ease-in;
+    transition: box-shadow 0.2s ease-in;
     padding: 0;
 
     &:hover {
-      box-shadow: 1px 1px 3px rgba(0,0,0,0.5),
-                  -1px -1px 3px rgba(0,0,0,0.5),
-                  -1px 1px 3px rgba(0,0,0,0.5),
-                  1px -1px 3px rgba(0,0,0,0.5);
-      transition: box-shadow 0.1s ease-in;
+      box-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0,0,0,0.5),
+                  -0.0625rem 0.0625rem 0.125rem rgba(0,0,0,0.5);
+      transition: box-shadow 0.2s ease-in;
     }
 
     @media(max-width: 1023px) {

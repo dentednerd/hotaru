@@ -14,7 +14,7 @@ const Heading = styled('h1')`
     -0.1rem 0.1rem 0.5rem #ffb8d0,
     0.1rem -0.1rem 0.5rem #ffb8d0,
     -0.1rem -0.1rem 0.5rem #ffb8d0;
-  transition: text-shadow 0.2s;
+  transition: text-shadow 0.3s;
 
   @media(max-width: 767px) {
     height: 2rem;
