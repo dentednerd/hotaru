@@ -3,15 +3,7 @@ import styled from '@emotion/styled';
 import Stack from './stack';
 import Screenshot from '../../atoms/Screenshot';
 import { assets } from '../../templates/Portfolio/assets';
-import {
-  ImageSvg,
-  CodeSvg,
-  JoeySvg,
-  JapanSvg,
-  DeveloperSvg
-  } from '../../assets';
-
-const illustrations = [ImageSvg, CodeSvg, JoeySvg, JapanSvg, DeveloperSvg];
+import * as illustrations from '../../assets';
 
 export default ({ project, index }) => {
   const ProjectWrapper = styled('section')`
@@ -56,7 +48,7 @@ export default ({ project, index }) => {
         position: absolute;
         opacity: 0.25;
         content: "";
-        background-image: url(${illustrations[index % 5]});
+        background-image: url(${illustrations[project.illustration]});
         background-blend-mode: lighten;
         background-size: contain;
         background-color: transparent;
@@ -101,7 +93,7 @@ export default ({ project, index }) => {
       </ProjectSection>
 
       <Illustration>
-        <Screenshot src={illustrations[index % 5]} alt="" />
+        <Screenshot src={illustrations[project.illustration]} alt="" />
       </Illustration>
     </ProjectWrapper>
   );

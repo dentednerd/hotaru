@@ -8,7 +8,6 @@ import GlowHeading from '../../atoms/GlowHeading';
 import Screen from '../../organisms/Screen';
 import Project from '../../molecules/Project';
 import PortfolioExtras from './extras';
-import { JapanSvg } from '../../assets';
 
 const PortfolioTemplate = () => {
   const topSection = useRef();
