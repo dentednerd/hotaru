@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
 import FaIcon from '../../atoms/FaIcon';
 import {
@@ -11,9 +11,18 @@ export default React.forwardRef((props, ref) => {
     children, className, backToTop, onClick, noIcon,
   } = props;
 
+  const isClient = typeof window === 'object';
+  let height = '100vh';
+
+  useEffect(() => {
+    height = (isClient && window.innerWidth < 767)? `${window.innerHeight}px` : '100vh';
+    console.log('height from useEffect', height);
+  }, [])
+
   const ScreenWrap = styled('div')`
     label: Screen;
-    height: 100vh;
+    height: ${height};
+    max-height: ${height};
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -55,7 +64,7 @@ export default React.forwardRef((props, ref) => {
 
   const ScreenFooter = styled.section`
     position: absolute;
-    bottom: 0;
+    bottom: 1rem;
     width: 100%;
     text-align: center;
   `;

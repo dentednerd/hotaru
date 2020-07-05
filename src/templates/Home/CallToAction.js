@@ -10,7 +10,7 @@ const CTAWrapper = styled('div')`
   justify-content: space-around;
   align-items: center; 
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-flow: column nowrap;
     justify-content: center;
   }
@@ -24,7 +24,7 @@ const CTASection = styled('section')`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     margin-bottom: 1rem;
   }
 

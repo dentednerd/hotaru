@@ -7,7 +7,7 @@ import GlowHeading from '../../atoms/GlowHeading';
 const Hero = styled('div')`
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   height: 40vh;
@@ -20,10 +20,6 @@ const Hero = styled('div')`
       opacity: 1;
       margin: 0 1rem 0 0;
     }
-  }
-
-  @media (max-width:767px) {
-    margin-top: 20vh;
   }
 `;
 
