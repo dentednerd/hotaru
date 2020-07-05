@@ -3,8 +3,6 @@ import Screen from '../../organisms/Screen';
 import {
   ImageSvg,
   CodeSvg,
-  JoeySvg,
-  JapanSvg,
   DeveloperSvg
 } from '../../assets';
 
@@ -65,7 +63,6 @@ const HomeTemplate = () => {
         ref={refCTA}
         backToTop
         className="pink"
-        background={JapanSvg}
         onClick={() => scroll(refHero)}
       >
         <CallToAction />

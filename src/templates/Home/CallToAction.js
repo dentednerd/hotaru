@@ -2,13 +2,19 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faLaptopCode, faHistory } from '@fortawesome/free-solid-svg-icons';
+import { JapanSvg } from '../../assets';
 
 const CTAWrapper = styled('div')`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center; 
+  background-image: url(${JapanSvg});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 
   @media (max-width: 767px) {
     flex-flow: column nowrap;
@@ -24,6 +30,9 @@ const CTASection = styled('section')`
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease;
+  background-color: rgba(255, 191, 239, 0.75);
+  height: 100%;
+  width: 100%;
 
   &:hover {
     a {

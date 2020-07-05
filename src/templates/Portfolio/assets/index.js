@@ -3,6 +3,7 @@ import CodeNinjas2 from './CodeNinjas2Shot.png';
 import DNReviews from './DNReviewsShot.png';
 import LowBar from './LowBarShot.png';
 import NCNews from './NCNewsShot.png';
+import NCNewsv2 from './NCNewsv2Shot.png';
 import Northwitter from './NorthwitterShot.png';
 import TrellJo from './TrellJoShot.png';
 import LAD from './LAD.png';
@@ -24,6 +25,7 @@ const assets = {
   DNReviews,
   LowBar,
   NCNews,
+  NCNewsv2,
   Northwitter,
   TrellJo,
   LAD,

@@ -17,7 +17,7 @@ export default React.forwardRef((props, ref) => {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;    
     overflow: hidden;
     position: relative;
@@ -38,7 +38,7 @@ export default React.forwardRef((props, ref) => {
       }
     }
 
-    @media(max-width:  767px) {
+    @media(max-width: 767px) {
       background-image: none;
     }
   `;
@@ -53,13 +53,10 @@ export default React.forwardRef((props, ref) => {
     align-items: center;
     position: relative;
 
-    @media (max-width: 768px) {
-      width: 100%;
-      margin: 10vh 0 0 0;
-      height: 80vh;
-      max-height:80vh;
+    @media (max-width: 767px) {
+      margin: 2rem;
+      width: calc(100vw - 2rem);
       overflow: hidden;
-      max-width: calc(100vw - 2rem);
     }
   `;
 

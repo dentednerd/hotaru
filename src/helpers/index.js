@@ -12,7 +12,6 @@ const classnames = {
   1: 'sage',
   2: 'pink',
   3: 'sky',
-  4: 'lavender',
 };
 
 export {
