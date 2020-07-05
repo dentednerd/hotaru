@@ -10,14 +10,16 @@ const FaIcon = ({ icon, inline, onClick }) => {
     ${inline && 'max-width: 1rem;'}
 
     svg {
-      {inline && 'width: 1rem;'}
+      ${inline && 'width: 1rem;'}
     }
+
   `;
 
   return (
     <StyledIcon
       icon={icon}
       onClick={onClick}
+      size="3x"
     />
   )
 };

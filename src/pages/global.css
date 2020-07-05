@@ -25,6 +25,7 @@ body, html {
     line-height: 30px;
     overflow-y: auto;
     overflow-x: hidden;
+    background-position: center calc(50% - 2rem);
   }
 }
 

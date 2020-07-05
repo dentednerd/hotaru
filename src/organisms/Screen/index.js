@@ -11,18 +11,9 @@ export default React.forwardRef((props, ref) => {
     children, className, backToTop, onClick, noIcon,
   } = props;
 
-  const isClient = typeof window === 'object';
-  let height = '100vh';
-
-  useEffect(() => {
-    height = (isClient && window.innerWidth < 767)? `${window.innerHeight}px` : '100vh';
-    console.log('height from useEffect', height);
-  }, [])
-
   const ScreenWrap = styled('div')`
     label: Screen;
-    height: ${height};
-    max-height: ${height};
+    height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -64,9 +55,18 @@ export default React.forwardRef((props, ref) => {
 
   const ScreenFooter = styled.section`
     position: absolute;
-    bottom: 1rem;
+    bottom: 0;
     width: 100%;
     text-align: center;
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   `;
 
   const Icon = backToTop
