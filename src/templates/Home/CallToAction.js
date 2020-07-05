@@ -9,6 +9,11 @@ const CTAWrapper = styled('div')`
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center; 
+
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
 `;
 
 const CTASection = styled('section')`
@@ -18,6 +23,10 @@ const CTASection = styled('section')`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
 
   a {
     color: #585273;
