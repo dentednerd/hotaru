@@ -23,6 +23,21 @@ const CTASection = styled('section')`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s ease;
+
+  &:hover {
+    a {
+      opacity: 1;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.5s ease;
+    }
+
+    svg {
+      color: #fff;
+      transition: all 0.5s ease;
+    }
+  }
 
   @media (max-width: 767px) {
     margin-bottom: 1rem;
@@ -38,11 +53,6 @@ const CTASection = styled('section')`
     margin-bottom: 0.5rem;
     letter-spacing: -0.05rem;
     opacity: 0.75;
-
-    &:hover {
-      opacity: 1;
-      text-decoration: none;
-    }
 
     svg {
       font-size: 3rem;

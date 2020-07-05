@@ -1,20 +1,54 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import Fade from 'react-reveal/Fade';
 import Image from '../../assets/image.svg';
 import Art from '../../atoms/Art';
 
-export default () => (
+const TextSection = styled('section')`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    position: relative;
+    background-color: transparent;
+    padding: 0;
+
+    h2 {
+      display: none;
+    }
+    
+    p {
+      text-align: center;
+    }
+  }
+`;
+
+export default (props) => (
   <>
     <Fade left>
-      <Art top src={Image} alt="Hello. I&apos;m Joey." />
+      <Art
+        src={Image}
+        alt={props.title}
+      />
     </Fade>
+
     <Fade right>
-      <p style={{ textAlign: 'center' }}>I love making beautiful web apps for desktop and mobile.</p>
-      <p style={{ textAlign: 'center' }}>
-        Right now I&apos;m working for&nbsp;
-        <a href="http://www.ladbiblegroup.com/">the LADbible Group</a>
-      .
-      </p>
+      <TextSection>
+        <h2>{props.title}</h2>
+        <p>I love making beautiful web apps for desktop and mobile.</p>
+        <p>
+          Right now I&apos;m working for&nbsp;
+          <a href="http://www.ladbiblegroup.com/">the LADbible Group</a>
+        .
+        </p>
+      </TextSection>
     </Fade>
   </>
 );

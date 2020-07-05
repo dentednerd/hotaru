@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import FaIcon from '../../atoms/FaIcon';
 import {
@@ -8,7 +8,7 @@ import {
 
 export default React.forwardRef((props, ref) => {
   const {
-    children, className, backToTop, onClick, noIcon,
+    children, className, backToTop, onClick, noIcon, background
   } = props;
 
   const ScreenWrap = styled('div')`
@@ -21,6 +21,10 @@ export default React.forwardRef((props, ref) => {
     align-items: center;    
     overflow: hidden;
     position: relative;
+    ${background && `
+      background-image: url(${background});
+      background-size: cover;
+    `}
     
     svg {
       margin-bottom: 0.5rem;
@@ -33,19 +37,25 @@ export default React.forwardRef((props, ref) => {
         cursor: pointer;
       }
     }
+
+    @media(max-width:  767px) {
+      background-image: none;
+    }
   `;
 
   const Content = styled('div')`
-    width: 100%;
-    max-width: 50vw;
-    height: 100vh;
+    width: calc(100% - 8rem);
+    height: 100%;
+    margin: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     @media (max-width: 768px) {
-      margin-top: 10vh;
+      width: 100%;
+      margin: 10vh 0 0 0;
       height: 80vh;
       max-height:80vh;
       overflow: hidden;
@@ -56,7 +66,8 @@ export default React.forwardRef((props, ref) => {
   const ScreenFooter = styled.section`
     position: absolute;
     bottom: 0;
-    width: 100%;
+    left: 4rem;
+    width: calc(100% - 8rem);
     text-align: center;
 
     svg {
