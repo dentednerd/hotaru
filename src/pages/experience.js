@@ -29,10 +29,6 @@ const GridContainer = styled('section')`
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
-
-    h2 {
-      font-size: 1.25rem;
-    }
   }
 `;
 
@@ -86,13 +82,7 @@ const AncientHistory = styled(GridContainer)`
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
-    background-position: center bottom;
-  }
-`;
-
-const Illustration = styled('section')`
-  @media(max-width: 767px) {
-    display: none;
+    background-position: center;
   }
 `;
 
@@ -113,9 +103,7 @@ const mappedData = timelineData.map((job, index) => (
           </Fade>
         </JobTitle>
         <Fade left>
-          <Illustration>
-            <Screenshot src={illusArray[index]} alt={job.jobTitle} />
-          </Illustration>
+          <Screenshot src={illusArray[index]} alt={job.jobTitle} />
         </Fade>
     </LeftHalf>
     <RightHalf right>

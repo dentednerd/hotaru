@@ -42,18 +42,18 @@ export default ({ project, index }) => {
 
       &:after {
         top: 0;
-        left: 1rem;
-        bottom: 1.5rem;
-        right: 1rem;
+        left: 0;
+        bottom: 0;
+        right: 0;
         position: absolute;
-        opacity: 0.25;
+        opacity: 0.5;
         content: "";
         background-image: url(${illustrations[project.illustration]});
         background-blend-mode: lighten;
-        background-size: contain;
+        background-size: 40%;
         background-color: transparent;
         background-repeat: no-repeat;
-        background-position: center bottom;
+        background-position: right bottom;
       }
     }
   `;
