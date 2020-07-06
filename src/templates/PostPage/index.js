@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../Layout';
-import JournalHeader from '../../molecules/JournalHeader';
 import JournalWrapper from '../../organisms/JournalWrapper';
 import JournalPost from '../../molecules/JournalPost';
 import LeftBar from '../../molecules/LeftBar';
@@ -12,9 +11,8 @@ export default ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <JournalHeader />
       <JournalWrapper>
-        <LeftBar categories={categories.group} pageContext={pageContext} />
+        <LeftBar categories={categories.group} />
         <JournalPost post={post} pageContext={pageContext} />
         <RightBar tags={tags} />
       </JournalWrapper>

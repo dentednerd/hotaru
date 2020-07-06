@@ -2,36 +2,47 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
 import Layout from '../Layout';
-import JournalHeader from '../../molecules/JournalHeader';
 import JournalWrapper from '../../organisms/JournalWrapper';
 import Card from '../../molecules/Card';
-import JournalBackLink from '../../molecules/JournalBackLink';
+import LeftBar from '../../molecules/LeftBar';
+import RightBar from '../../molecules/RightBar';
 
-const JournalPostWrapper = styled('main')`
+const TagPageWrapper = styled('main')`
   grid-column: 4 / 10;
+  margin-top: 1rem;
 
   @media(max-width: 1023px) {
+    order: 1;
     grid-column: 2 / 12;
+  }
+
+  section {
+    background: #fffacd;
+    padding: 1rem;
+
+    a:last-child article {
+      margin-bottom: 0;
+    }
   }
 `;
 
 const TagPage = ({ pageContext, data }) => {
+  console.log('Tag Page data', data);
   const { tag } = pageContext;
-  const { edges } = data.allMarkdownRemark;
-
-  let tagTitle = tag.split('');
-  tagTitle[0] = tagTitle[0].toUpperCase();
-  tagTitle = tagTitle.join('');
+  const { edges } = data.taggedPosts;
+  const { tags, categories } = data;
 
   return (
     <Layout>
-      <JournalHeader />
       <JournalWrapper>
-        <JournalPostWrapper>
-          <h2>{tagTitle}</h2>
-          {edges.map(({ node }) => <Card article={node} key={node.id} />)}
-          <JournalBackLink />
-        </JournalPostWrapper>
+        <LeftBar categories={categories.group} />
+        <TagPageWrapper>
+          <h2 style={{ textAlign: 'center' }}>posts about {tag}</h2>
+          <section style={{ background: '#fffacd', padding: '1rem' }}>
+            {edges.map(({ node }) => <Card article={node} key={node.id} />)}
+          </section>
+        </TagPageWrapper>
+        <RightBar tags={tags} />
       </JournalWrapper>
     </Layout>
   );
@@ -41,7 +52,7 @@ export default TagPage;
 
 export const pageQuery = graphql`
   query($tag: String) {
-    allMarkdownRemark(
+    taggedPosts: allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
@@ -62,6 +73,68 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+
+    categories: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 2000
+    ) {
+      group(field: frontmatter___category) {
+        fieldValue
+        totalCount
+        nodes {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp{
+                fluid(maxWidth: 630) {
+                  src
+                }
+              }
+            }
+            tags
+            category
+          }
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 90)
+          html
+        }
+      }
+    }
+
+    tags: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 2000
+    ) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+        nodes {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp{
+                fluid(maxWidth: 630) {
+                  src
+                }
+              }
+            }
+            tags
+            category
+          }
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 90)
+          html
         }
       }
     }

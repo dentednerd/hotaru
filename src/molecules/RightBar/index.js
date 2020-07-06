@@ -5,8 +5,8 @@ import { Link } from 'gatsby';
 
 const JournalRightBar = styled('aside')`
   grid-column: 10 / 13;
-  margin-left: 1rem;
-
+  margin: 1rem 0 0 1rem;
+  
   a {
     display: inline-block;
     font-size: 0.75rem;
@@ -44,6 +44,7 @@ const JournalRightBar = styled('aside')`
     grid-column: 1 / 13;
     height: auto;
     margin: 2rem;
+    order: 3;
   }
 `;
 

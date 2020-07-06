@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import JournalBackLink from '../JournalBackLink';
 
 const JournalPost = ({ pageContext, post }) => {
   const Post = styled('article')`
@@ -44,11 +43,12 @@ const JournalPost = ({ pageContext, post }) => {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    height: 18rem;
+    height: calc((50vw / 16) * 9);
     box-shadow: 0.25rem 0 0.5rem rgba(0,0,0,0.5), -0.25rem 0 0.5rem rgba(0,0,0,0.5);
+    padding: 0 2rem;
 
-    @media(max-width:767px) {
-      height: 8rem;
+    @media(max-width: 767px) {
+      height: calc((100vw / 16) * 9) ;
     }
 
     a, h2 {
@@ -76,19 +76,19 @@ const JournalPost = ({ pageContext, post }) => {
     font-weight: 600;
     background-color: #fffacd;
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5), -0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5);
+    line-height: 1.125rem;
   `;
 
   return (
     <Post>
       <PostTitle>
-        <h2>{post.frontmatter.title}</h2>
+      <h2>{post.frontmatter.title}</h2>
         <h3>{post.frontmatter.date}</h3>
       </PostTitle>
       <PostContent
         className="post-content"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
-      {pageContext && <JournalBackLink />}
     </Post>
   );
 };

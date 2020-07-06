@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
 import Layout from '../templates/Layout';
 import JournalWrapper from '../organisms/JournalWrapper';
-import JournalHeader from '../molecules/JournalHeader';
 import LeftBar from '../molecules/LeftBar';
 import JournalPost from '../molecules/JournalPost';
 import RightBar from '../molecules/RightBar';
@@ -14,14 +13,14 @@ const Journal = ({ data: { posts, tags, categories } }) => {
   const JournalPostWrapper = styled('main')`
     grid-column: 4 / 10;
 
-    @media(max-width: 1023px) {
-      display: none;
+    @media(max-width: 767px) {
+      order: 1;
+      grid-column: 1 / 13;
     }
   `;
 
   return (
     <Layout>
-      <JournalHeader />
       <JournalWrapper>
         <LeftBar categories={categories.group} />
         <JournalPostWrapper>
