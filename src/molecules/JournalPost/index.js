@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import kebabCase from 'lodash/kebabCase';
+import { Link } from 'gatsby';
 
 const JournalPost = ({ pageContext, post }) => {
   const Post = styled('article')`
@@ -45,13 +47,13 @@ const JournalPost = ({ pageContext, post }) => {
     align-items: center;
     height: calc((50vw / 16) * 9);
     box-shadow: 0.25rem 0 0.5rem rgba(0,0,0,0.5), -0.25rem 0 0.5rem rgba(0,0,0,0.5);
-    padding: 0 2rem;
+    padding: 0;
 
     @media(max-width: 767px) {
       height: calc((100vw / 16) * 9) ;
     }
 
-    a, h2 {
+    h2 {
       font-size: 2rem;
       color: #fff;
       text-shadow: 3px 3px 6px #332E4A, -3px -3px 6px #332E4A, -3px 3px 6px #332E4A, 3px -3px 6px #332E4A;
@@ -79,16 +81,62 @@ const JournalPost = ({ pageContext, post }) => {
     line-height: 1.125rem;
   `;
 
+  const Tags = styled('section')`
+    text-align: center;
+    margin-top: 1rem;
+    
+    a {
+      color: #fff;
+    }
+  `;
+
+  const Tag = styled(Link)`
+    display: inline-block;
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    color: #fff;
+    background-color: #7a7495;
+    padding: 0.25rem 0.25rem 0.1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.25rem;
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5),
+                -0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5);
+    transition: all 0.25s ease-in;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #fffacd;
+      color: #7a7495;
+      box-shadow: 0.0625rem 0.0625rem 0 rgba(0,0,0,0.5),
+                  -0.0625rem 0.0625rem 0 rgba(0,0,0,0.5);
+      transition: all 0.25s ease-in;
+    }
+  `;
+
+  console.log('JournalPost post data', post);
+
   return (
     <Post>
       <PostTitle>
-      <h2>{post.frontmatter.title}</h2>
+        <h2>{post.frontmatter.title}</h2>
         <h3>{post.frontmatter.date}</h3>
+        <Tags>
+          <p>
+            {post.frontmatter.tags.map(tag => (
+              <Tag to={`/tags/${kebabCase(tag.fieldValue)}/`} key={tag}>
+                {tag}
+              </Tag>
+            ))}
+          </p>
+        </Tags>
       </PostTitle>
       <PostContent
         className="post-content"
         dangerouslySetInnerHTML={{ __html: post.html }}
-      />
+      >
+
+      </PostContent>
     </Post>
   );
 };
