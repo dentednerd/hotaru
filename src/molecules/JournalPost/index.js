@@ -114,8 +114,6 @@ const JournalPost = ({ pageContext, post }) => {
     }
   `;
 
-  console.log('JournalPost post data', post);
-
   return (
     <Post>
       <PostTitle>

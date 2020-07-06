@@ -27,7 +27,6 @@ const TagPageWrapper = styled('main')`
 `;
 
 const TagPage = ({ pageContext, data }) => {
-  console.log('Tag Page data', data);
   const { tag } = pageContext;
   const { edges } = data.taggedPosts;
   const { tags, categories } = data;
