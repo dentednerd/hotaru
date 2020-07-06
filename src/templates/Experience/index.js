@@ -7,8 +7,7 @@ import * as illustrations from '../../assets';
 import timelineData from '../../data/timelineData';
 import { classnames, stackMap } from '../../helpers';
 import Screenshot from '../../atoms/Screenshot';
-import Hero from '../../atoms/Hero';
-import GlowHeading from '../../atoms/GlowHeading';
+import Hero from '../../organisms/Hero';
 import Screen from '../../organisms/Screen';
 import AncientHistory from './ancienthistory';
 
@@ -151,19 +150,13 @@ const ExperienceTemplate = () => {
 
   return (
     <>
-      <Screen
-        className="purple"
-        ref={topSection}
-        onClick={() => scroll(section0)}
-      >
-        <Hero>
-          <GlowHeading text="experience" />
-          <FontAwesomeIcon
-            icon={faHistory}
-            style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
-          />
-        </Hero>
-      </Screen>
+      <Hero
+        text="experience"
+        passedRef={topSection}
+        passedNextRef={section0}
+        icon={faHistory}
+        scrollFunc={scroll}
+      />
 
       {mappedData.map((item, index) => (
         <Screen
@@ -175,7 +168,10 @@ const ExperienceTemplate = () => {
         </Screen>
       ))}
 
-      <AncientHistory passedRef={section6} passedTopRef={topSection} />
+      <AncientHistory
+        passedRef={section6}
+        passedTopRef={topSection}
+      />
     </>
   );
 };

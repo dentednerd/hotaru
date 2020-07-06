@@ -4,8 +4,7 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Screen from '../organisms/Screen';
 import Layout from '../templates/Layout';
 import showreel from '../templates/Showreel';
-import Hero from '../atoms/Hero';
-import GlowHeading from '../atoms/GlowHeading';
+import Hero from '../organisms/Hero';
 import './global.css';
 
 export default class extends React.Component {
@@ -28,19 +27,13 @@ export default class extends React.Component {
   render() {
     return (
       <Layout>
-        <Screen
-          className="purple"
-          ref={this.topSection}
-          onClick={() => this.scroll(this.section0)}
-        >
-          <Hero>
-            <GlowHeading text="showreel" />
-            <FontAwesomeIcon
-              icon={faYoutube}
-              style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
-            />
-          </Hero>
-        </Screen>
+        <Hero
+          text="showreel"
+          passedRef={this.topSection}
+          passedNextRef={this.section0}
+          icon={faYoutube}
+          scrollFunc={this.scroll}
+        />
         <Screen
           className="sage"
           ref={this.section0}

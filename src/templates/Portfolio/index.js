@@ -1,10 +1,8 @@
 import React, { useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import portfolioData from '../../data/portfolioData';
 import { classnames } from '../../helpers';
-import Hero from '../../atoms/Hero';
-import GlowHeading from '../../atoms/GlowHeading';
+import Hero from '../../organisms/Hero';
 import Screen from '../../organisms/Screen';
 import Project from '../../molecules/Project';
 import PortfolioExtras from './extras';
@@ -47,21 +45,14 @@ const PortfolioTemplate = () => {
 
   return (
     <>
-      <Screen
-        className="purple"
-        ref={topSection}
-        onClick={() => scroll(section0)}
-      >
-        <Hero>
-          <GlowHeading text="portfolio" />
-          <p>
-            <FontAwesomeIcon
-              icon={faLaptopCode}
-              style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
-            />
-          </p>
-        </Hero>
-      </Screen>
+      <Hero
+        text="portfolio"
+        passedRef={topSection}
+        passedNextRef={section0}
+        icon={faLaptopCode}
+        scrollFunc={scroll}
+      />
+
       {portfolioData.map((project, index) => (
         <Screen
           ref={refs[index]}
