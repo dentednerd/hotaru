@@ -44,9 +44,9 @@ export default React.forwardRef((props, ref) => {
   `;
 
   const Content = styled('div')`
-    width: calc(100% - 8rem);
+    width: 100%;
     height: 100%;
-    margin: 4rem;
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,8 +54,8 @@ export default React.forwardRef((props, ref) => {
     position: relative;
 
     @media (max-width: 767px) {
-      margin: 2rem;
-      width: calc(100vw - 2rem);
+      margin: 0 2rem;
+      width: calc(100vw - 4rem);
       overflow: hidden;
     }
   `;

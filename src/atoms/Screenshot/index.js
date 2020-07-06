@@ -13,7 +13,7 @@ export default (props) => {
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto;
     text-shadow: none;
     transition: text-shadow 0.5s ease;
     overflow: hidden;

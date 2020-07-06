@@ -58,6 +58,12 @@ export default [
     stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB'],
     mobile: false,
     illustration: 'DeveloperSvg',
+    relatedPosts: [
+      {
+        name: 'Code Ninjas: revisiting Northcoders project phase',
+        slug: '/posts/code-ninjas/'
+      }
+    ]
   },
   {
     link: 'https://codeninjas-nc5.herokuapp.com',
@@ -68,6 +74,12 @@ export default [
     stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB'],
     mobile: false,
     illustration: 'CodeSvg',
+    relatedPosts: [
+      {
+        name: 'Code Ninjas: revisiting Northcoders project phase',
+        slug: '/posts/code-ninjas/'
+      }
+    ]
   },
   {
     link: 'https://northcoders-news-dentednerd-v2.herokuapp.com',
@@ -78,6 +90,12 @@ export default [
     stack: ['React', 'Redux', 'Express', 'MongoDB'],
     mobile: false,
     illustration: 'MobileSvg',
+    relatedPosts: [
+      {
+        name: 'Northcoders News, revisited',
+        slug: '/posts/northcoders-news-revisited/'
+      }
+    ]
   },
   {
     link: 'https://northcoders-news-dentednerd.herokuapp.com',
@@ -88,6 +106,12 @@ export default [
     stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB'],
     mobile: false,
     illustration: 'ReactSvg',
+    relatedPosts: [
+      {
+        name: 'Northcoders News, revisited',
+        slug: '/posts/northcoders-news-revisited/'
+      }
+    ]
   },
   {
     link: 'https://dentednerd.github.io/Trell-Jo/',
