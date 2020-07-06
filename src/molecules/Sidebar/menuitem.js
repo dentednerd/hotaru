@@ -18,7 +18,12 @@ const StyledMenuItem = styled('section')`
 
   p, h2 {
     margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
   }
+
 `;
 
 const MenuItem = ({ page, icon, children }) => (
