@@ -21,14 +21,16 @@ const GridContainer = styled('section')`
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
-  height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
 
   @media(max-width: 767px) {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    height: 100%;
   }
 `;
 
@@ -38,7 +40,10 @@ const LeftHalf = styled('section')`
   text-align: right;
 
   @media(max-width: 767px) {
+    grid-area: 1 / 1 / 2 / 2;
     text-align: center;
+    width: 100%;
+    padding: 0;
   }
 `;
 
@@ -52,18 +57,40 @@ const RightHalf = styled('section')`
   text-align: left;
 
   @media(max-width: 767px) {
+    grid-area: 2 / 1 / 3 / 2;
     text-align: right;
+    padding: 0;
   }
 `;
 
 const JobTitle = styled('section')`
   text-align: right;
   margin-bottom: 1rem;
+  padding: 0;
 
   @media (max-width: 767px) {
-    margin: 0 auto 2rem;
+    margin: 2rem auto 0;
     text-align: left;
+    line-height: 1.25rem;
   }
+`;
+
+const Illustration = styled('section')`
+  max-width: 100vw;
+  padding: 0;
+
+  @media(max-width: 767px) {
+    section {
+      max-width: 90%;
+    }
+  }
+`;
+
+const ExperienceText = styled('section')`
+  max-width: 100%;
+  padding: 0;
+  margin: 1rem 0;
+  line-height: 1.25rem;
 `;
 
 const AncientHistory = styled(GridContainer)`
@@ -103,15 +130,19 @@ const mappedData = timelineData.map((job, index) => (
           </Fade>
         </JobTitle>
         <Fade left>
-          <Screenshot src={illusArray[index]} alt={job.jobTitle} />
+          <Illustration>
+            <Screenshot src={illusArray[index]} alt={job.jobTitle} />
+          </Illustration>
         </Fade>
     </LeftHalf>
     <RightHalf right>
       <Fade right>
-        <p>{job.jobDesc}</p>
-        <p style={{ fontFamily: 'Josefin Sans, sans-serif', fontWeight: '300' }}>
-          {stackMap(job.skills)}
-        </p>
+        <ExperienceText>
+          <p>{job.jobDesc}</p>
+          <p style={{ fontFamily: 'Josefin Sans, sans-serif', fontWeight: '300' }}>
+            {stackMap(job.skills)}
+          </p>
+        </ExperienceText>
       </Fade>
     </RightHalf>
   </GridContainer>
