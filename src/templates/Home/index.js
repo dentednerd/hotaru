@@ -6,10 +6,8 @@ import {
   DeveloperSvg
 } from '../../assets';
 
+import IntroScreen from './IntroScreen';
 import Hero from './Hero';
-import Intro from './Intro';
-import Code from './Code';
-import Developer from './Developer';
 import CallToAction from './CallToAction';
 
 const HomeTemplate = () => {
@@ -33,32 +31,49 @@ const HomeTemplate = () => {
         <Hero />
       </Screen>
 
-      <Screen
-        className="sage"
-        onClick={() => {}}
-        background={ImageSvg}
-        ref={refIntro}
-        onClick={() => scroll(refCode)}
+      <IntroScreen
+        colorScheme="sage"
+        image={ImageSvg}
+        passedRef={refIntro}
+        passedNextRef={refCode}
+        title="Hello, I'm Joey"
       >
-        <Intro title={"Hello. I'm Joey."}/>
-      </Screen>
-      <Screen
-        ref={refCode}
-        className="lemon"
-        onClick={() => {}}
-        background={CodeSvg}
-        onClick={() => scroll(refDeveloper)}
+        <p>I love making beautiful web apps for desktop and mobile.</p>
+        <p>
+          Right now I&apos;m working for&nbsp;
+          <a href="http://www.ladbiblegroup.com/">the LADbible Group</a>
+        .
+        </p>
+      </IntroScreen>
+
+      <IntroScreen
+        colorScheme="lemon"
+        image={CodeSvg}
+        passedRef={refCode}
+        passedNextRef={refDeveloper}
+        title="I started young."
+        bottom
+        right
       >
-        <Code title={"I started young."}/>
-      </Screen>
-      <Screen
-        ref={refDeveloper}
-        className="sky"
-        background={DeveloperSvg}
-        onClick={() => scroll(refCTA)}
+        <p>I wrote my first program in BASIC on my dad&apos;s Amiga 500 when I was seven. At fourteen, I made my first website. By fifteen, I'd taught myself HTML, CSS, Flash and Photoshop.</p>
+      </IntroScreen>
+
+      <IntroScreen
+        colorScheme="sky"
+        image={DeveloperSvg}
+        passedRef={refDeveloper}
+        passedNextRef={refCTA}
+        title="Now it's my career."
+        right
       >
-        <Developer title={"Now it's my career."}/>
-      </Screen>
+        <p>
+          In 2017, I won a scholarship at&nbsp;
+          <a href="http://www.northcoders.com">Northcoders</a>
+          &nbsp;and trained as a JavaScript developer. I started my first developer role three weeks after graduating.
+        </p>
+        <p>Now, my hobby is my career.</p>
+      </IntroScreen>
+
       <Screen
         ref={refCTA}
         backToTop
