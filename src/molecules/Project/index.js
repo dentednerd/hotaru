@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import Fade from 'react-reveal/Fade';
 import Stack from './stack';
 import Screenshot from '../../atoms/Screenshot';
 import { assets } from '../../templates/Portfolio/assets';
@@ -53,7 +54,6 @@ export default ({ project, index }) => {
     align-items: center;
     padding: 1rem;
     text-align: center;
-    z-index: 99;
 
     @media(max-width: 767px) {
       margin-top: 1rem;
@@ -95,29 +95,37 @@ export default ({ project, index }) => {
   return (
     <ProjectWrapper>
       <Title href={project.link}>
-        <a href={project.link}>
-          <Screenshot src={assets[project.image]} alt={project.title} />
-          <h2>{project.title}</h2>
-        </a>
+        <Fade left>
+          <a href={project.link}>
+            <Screenshot src={assets[project.image]} alt={project.title} />
+            <h2>{project.title}</h2>
+          </a>
+        </Fade>
         {project.relatedPosts && (
-          <StyledRelatedPosts>
-            <h3>Read more in my journal:</h3>
-            {project.relatedPosts.map(link => (
-              <Link to={link.slug} key={link.name}>
-                {link.name}
-              </Link>
-            ))}
-          </StyledRelatedPosts>
+          <Fade left>
+            <StyledRelatedPosts>
+              <h3>Read more in my journal:</h3>
+              {project.relatedPosts.map(link => (
+                <Link to={link.slug} key={link.name}>
+                  {link.name}
+                </Link>
+              ))}
+            </StyledRelatedPosts>
+          </Fade>
         )}
       </Title>
 
-      <ProjectText>
-        <Stack project={project} />
-        <p>{project.caption}</p>
-      </ProjectText>
+      <Fade right>
+        <ProjectText>
+          <Stack project={project} />
+          <p>{project.caption}</p>
+        </ProjectText>
+      </Fade>
 
       <Illustration>
-        <Screenshot src={illustrations[project.illustration]} alt="" />
+        <Fade right>
+          <Screenshot src={illustrations[project.illustration]} alt="" />
+        </Fade>
       </Illustration>
     </ProjectWrapper>
   );
