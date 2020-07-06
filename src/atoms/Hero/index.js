@@ -20,7 +20,11 @@ const Hero = styled('div')`
   }
 
   @media (max-width:768px) {
-    margin-top: 20vh;
+    h1 {
+      height: 4rem;
+      font-size: 4rem;
+      line-height: 4rem;
+    }
   }
 `;
 
