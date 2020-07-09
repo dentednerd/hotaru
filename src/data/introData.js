@@ -14,8 +14,8 @@ export default [
     image: 'DeveloperSvg',
     flipped: true,
   },
-  {
-    content: '<h2>I love React.</h2><p>Write some words here.</p>',
-    image: 'ReactSvg',
-  },
+  // {
+  //   content: '<h2>I love React.</h2><p>Write some words here.</p>',
+  //   image: 'ReactSvg',
+  // },
 ];
