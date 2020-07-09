@@ -60,6 +60,8 @@ export default ({ project, index }) => {
       background: rgba(255,255,255,0.75);
       justify-content: flex-end;
       align-items: flex-end;
+      font-size: 16px;
+      line-height: 20px;
     }
   `;
 
@@ -78,6 +80,11 @@ export default ({ project, index }) => {
       font-weight: 400;
       font-size: 0.8rem;
     }
+
+    @media(max-width: 767px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
   `;
 
   const Illustration = styled('section')`
@@ -88,7 +95,8 @@ export default ({ project, index }) => {
     align-items: center;
 
     @media(max-width: 767px) {
-      margin-top: 1rem;
+      display: none;
+      // margin-top: 1rem;
     }
   `;
 

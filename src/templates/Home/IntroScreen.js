@@ -8,6 +8,7 @@ const Container = styled('section')`
   position: relative;
   width: calc(100% - 8rem);
   height: calc(100% - 8rem);
+  overflow: hidden;
 
   @media(max-width: 767px) {
     width: 100%;
@@ -35,10 +36,10 @@ const IntroScreen = ({
   bottom,
   passedRef,
   passedNextRef,
-  title,
-  children,
+  content,
+  flipped,
 }) => {
-  const scroll = (ref) => { // eslint-disable-line class-methods-use-this
+  const scroll = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -48,6 +49,7 @@ const IntroScreen = ({
     ${right ? 'right: 0;' : 'left: 0;'}
     background-color: rgba(255, 255, 255, 0.5);
     padding: 1rem;
+    overflow: hidden;
 
     p:last-child {
       margin-bottom: 0;
@@ -70,22 +72,20 @@ const IntroScreen = ({
       background={image}
       ref={passedRef}
       onClick={() => scroll(passedNextRef)}
+      flipped={flipped}
     >
       <Container>
         <MobileOnly>
           <Fade right>
             <Screenshot
               src={image}
-              alt={title}
+              alt="Hello. I'm Joey."
             />
           </Fade>
         </MobileOnly>
 
         <Fade left>
-          <TextSection>
-            <h2>{title}</h2>
-            {children}
-          </TextSection>
+          <TextSection dangerouslySetInnerHTML={{ __html: content }} />
         </Fade>
       </Container>
     </Screen>

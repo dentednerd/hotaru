@@ -32,6 +32,8 @@ const ProjectWrapper = styled('section')`
     justify-content: center;
     align-items: center;
     position: relative;
+    font-size: 16px;
+    line-height: 20px;
   }
 `;
 

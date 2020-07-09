@@ -1,23 +1,20 @@
-import React, { useRef } from 'react';
+import React, { createRef } from 'react';
 import Screen from '../../organisms/Screen';
-import {
-  ImageSvg,
-  CodeSvg,
-  DeveloperSvg,
-} from '../../assets';
+import * as backgrounds from '../../assets';
+import introData from '../../data/introData';
+import { classnames } from '../../helpers';
 
 import IntroScreen from './IntroScreen';
 import Hero from './Hero';
 import CallToAction from './CallToAction';
 
 const HomeTemplate = () => {
-  const refHero = useRef();
-  const refIntro = useRef();
-  const refCode = useRef();
-  const refDeveloper = useRef();
-  const refCTA = useRef();
+  const refs = [];
+  introData.forEach(() => refs.push(createRef()));
+  refs.push(createRef()); // for the final screen
+  const refHero = createRef();
 
-  const scroll = (ref) => { // eslint-disable-line class-methods-use-this
+  const scroll = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -26,58 +23,29 @@ const HomeTemplate = () => {
       <Screen
         className="purple"
         ref={refHero}
-        onClick={() => scroll(refIntro)}
+        onClick={() => scroll(refs[0])}
       >
         <Hero />
       </Screen>
 
-      <IntroScreen
-        colorScheme="sage"
-        image={ImageSvg}
-        passedRef={refIntro}
-        passedNextRef={refCode}
-        title="Hello, I'm Joey"
-      >
-        <p>I love making beautiful web apps for desktop and mobile.</p>
-        <p>
-          Right now I&apos;m working for&nbsp;
-          <a href="http://www.ladbiblegroup.com/">the LADbible Group</a>
-          .
-        </p>
-      </IntroScreen>
-
-      <IntroScreen
-        colorScheme="lemon"
-        image={CodeSvg}
-        passedRef={refCode}
-        passedNextRef={refDeveloper}
-        title="I started young."
-        bottom
-        right
-      >
-        <p>I wrote my first program in BASIC on my dad&apos;s Amiga 500 when I was seven. At fourteen, I made my first website. By fifteen, I'd taught myself HTML, CSS, Flash and Photoshop.</p>
-      </IntroScreen>
-
-      <IntroScreen
-        colorScheme="sky"
-        image={DeveloperSvg}
-        passedRef={refDeveloper}
-        passedNextRef={refCTA}
-        title="Now it's my career."
-        right
-      >
-        <p>
-          In 2017, I won a scholarship at&nbsp;
-          <a href="http://www.northcoders.com">Northcoders</a>
-          &nbsp;and trained as a JavaScript developer. I started my first developer role three weeks after graduating.
-        </p>
-        <p>Now, my hobby is my career.</p>
-      </IntroScreen>
+      {introData.map((screen, index) => (
+        <IntroScreen
+          key={screen.image}
+          colorScheme={classnames[index % 4]}
+          image={backgrounds[screen.image]}
+          passedRef={refs[index]}
+          passedNextRef={refs[index + 1]}
+          content={screen.content}
+          flipped={screen.flipped}
+          bottom={screen.bottom}
+          right={screen.right}
+        />
+      ))}
 
       <Screen
-        ref={refCTA}
+        ref={refs[refs.length - 1]}
         backToTop
-        className="pink"
+        className={classnames[(introData.length + 1) % 4]}
         onClick={() => scroll(refHero)}
       >
         <CallToAction />

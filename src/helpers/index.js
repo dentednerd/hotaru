@@ -5,12 +5,12 @@ const stackMap = stack => stack.map((tech, index) => {
   return ` » ${tech} `;
 });
 
-const classnames = {
-  0: 'lemon',
-  1: 'sage',
-  2: 'pink',
-  3: 'sky',
-};
+const classnames = [
+  'sage',
+  'lemon',
+  'sky',
+  'pink',
+];
 
 export {
   stackMap,

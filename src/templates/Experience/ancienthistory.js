@@ -19,6 +19,7 @@ const GridContainer = styled('section')`
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: calc(100vw - 4rem);
   }
 `;
 
@@ -48,6 +49,13 @@ const RightHalf = styled('section')`
     grid-area: 2 / 1 / 3 / 2;
     text-align: right;
     padding: 0;
+    font-size: 20px;
+    line-height: 24px;
+
+    h2 {
+      font-size: 24px;
+      line-height: 28px;
+    }
   }
 `;
 

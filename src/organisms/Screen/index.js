@@ -14,6 +14,7 @@ export default React.forwardRef((props, ref) => {
     onClick,
     noIcon,
     background,
+    flipped,
   } = props;
 
   const ScreenWrap = styled('div')`
@@ -29,6 +30,21 @@ export default React.forwardRef((props, ref) => {
     ${background && `
       background-image: url(${background});
       background-size: cover;
+    `}
+    ${background && flipped && `
+      -webkit-transform:scaleX(-1);
+      -moz-transform:scaleX(-1);
+      -ms-transform:scaleX(-1);
+      -o-transform:scaleX(-1);
+      transform:scaleX(-1);
+
+      & > * {
+        -webkit-transform:scaleX(-1);
+        -moz-transform:scaleX(-1);
+        -ms-transform:scaleX(-1);
+        -o-transform:scaleX(-1);
+        transform:scaleX(-1);
+      }
     `}
     
     svg {
@@ -59,8 +75,8 @@ export default React.forwardRef((props, ref) => {
     position: relative;
 
     @media (max-width: 767px) {
-      margin: 0 2rem;
-      width: calc(100vw - 4rem);
+      padding: 0 2rem;
+      width: 100%;
       overflow: hidden;
     }
   `;

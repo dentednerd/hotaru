@@ -28,6 +28,11 @@ const StyledHeroContainer = styled('section')`
       font-size: 4rem;
       line-height: 4rem;
     }
+
+    .svg-inline--fa {
+      height: 25vw;
+      width: 25vw;
+    }
   }
 `;
 

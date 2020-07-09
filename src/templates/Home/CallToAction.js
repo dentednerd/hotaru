@@ -15,6 +15,18 @@ const CTAWrapper = styled('div')`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  position: relative;
+  
+  &:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffdadd;
+    opacity: 0.75;
+    content: '';
+  }
 
   @media (max-width: 767px) {
     flex-flow: column nowrap;
@@ -30,7 +42,6 @@ const CTASection = styled('section')`
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease;
-  background-color: rgba(255, 191, 239, 0.75);
   height: 100%;
   width: 100%;
 

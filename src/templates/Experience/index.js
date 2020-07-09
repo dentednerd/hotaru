@@ -27,6 +27,7 @@ const GridContainer = styled('section')`
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: calc(100vw - 4rem);
   }
 `;
 
@@ -56,6 +57,11 @@ const RightHalf = styled('section')`
     grid-area: 2 / 1 / 3 / 2;
     text-align: right;
     padding: 0;
+
+    p {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 `;
 
