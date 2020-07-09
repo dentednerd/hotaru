@@ -11,6 +11,7 @@ const JournalPost = ({ pageContext, post }) => {
     background-color: transparent;
     color: #7a7495;
     height: auto;
+    margin-top: 1rem;
 
     @media (max-width: 1023px) {
       grid-column: 1 / 13;
@@ -18,6 +19,10 @@ const JournalPost = ({ pageContext, post }) => {
       ul {
         text-align: left;
       }
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 0;
     }
 
     p {
@@ -100,7 +105,7 @@ const JournalPost = ({ pageContext, post }) => {
     line-height: 1.125rem;
 
     @media(max-width: 767px) {
-      p {
+      p, li {
         font-size: 16px;
         line-height: 20px;
       }
@@ -128,8 +133,8 @@ const JournalPost = ({ pageContext, post }) => {
     display: inline-block;
     font-size: 0.75rem;
     line-height: 0.75rem;
-    color: #fff;
     background-color: #7a7495;
+    color: #fffacd !important;
     padding: 0.25rem 0.25rem 0.1rem;
     border-radius: 0.25rem;
     margin-bottom: 0.25rem;
@@ -141,7 +146,7 @@ const JournalPost = ({ pageContext, post }) => {
     &:hover {
       text-decoration: none;
       background-color: #fffacd;
-      color: #7a7495;
+      color: #7a7495 !important;
       box-shadow: 0.0625rem 0.0625rem 0 rgba(0,0,0,0.5),
                   -0.0625rem 0.0625rem 0 rgba(0,0,0,0.5);
       transition: all 0.25s ease-in;
@@ -156,7 +161,7 @@ const JournalPost = ({ pageContext, post }) => {
         <Tags>
           <p>
             {post.frontmatter.tags.map(tag => (
-              <Tag to={`/tags/${kebabCase(tag.fieldValue)}/`} key={tag}>
+              <Tag to={`/tags/${kebabCase(tag)}/`} key={tag}>
                 {tag}
               </Tag>
             ))}
