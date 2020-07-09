@@ -1,5 +1,5 @@
 ---
-title: "DWP Women in Digital conference (Jun 2018)"
+title: "DWP Women in Digital conference"
 date: "2018-06-21" 
 featuredImage: "./images/dwp.jpg"
 category: "events"

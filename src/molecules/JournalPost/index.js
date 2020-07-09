@@ -41,6 +41,7 @@ const JournalPost = ({ pageContext, post }) => {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-blend-mode: lighten;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -48,6 +49,19 @@ const JournalPost = ({ pageContext, post }) => {
     height: calc((50vw / 16) * 9);
     box-shadow: 0.25rem 0 0.5rem rgba(0,0,0,0.5), -0.25rem 0 0.5rem rgba(0,0,0,0.5);
     padding: 0;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: #332E4A;
+      content: '';
+      opacity: 0.75;
+      pointer-events: none;
+    }
 
     @media(max-width: 767px) {
       height: calc((100vw / 16) * 9) ;
@@ -56,20 +70,25 @@ const JournalPost = ({ pageContext, post }) => {
     h2 {
       font-size: 2rem;
       color: #fff;
-      text-shadow: 3px 3px 6px #332E4A, -3px -3px 6px #332E4A, -3px 3px 6px #332E4A, 3px -3px 6px #332E4A;
+      text-shadow: 3px 3px 6px #332E4A,
+                  -3px -3px 6px #332E4A,
+                  -3px 3px 6px #332E4A,
+                  3px -3px 6px #332E4A;
       text-align: center;
       line-height: 2rem;
       padding: 1rem;
-    }
-
-    h2 {
       margin-bottom: 0;
+      z-index: 2;
     }
 
     h3 {
       color: #fff;
       weight: 600;
-      text-shadow: 2px 2px 4px #332E4A, -2px -2px 4px #332E4A, -2px 2px 4px #332E4A, 2px -2px 4px #332E4A;
+      z-index: 2;
+      text-shadow: 2px 2px 4px #332E4A,
+                  -2px -2px 4px #332E4A,
+                  -2px 2px 4px #332E4A,
+                  2px -2px 4px #332E4A;
     }
   `;
 
@@ -84,6 +103,7 @@ const JournalPost = ({ pageContext, post }) => {
   const Tags = styled('section')`
     text-align: center;
     margin-top: 1rem;
+    z-index: 2;
     
     a {
       color: #fff;
@@ -132,9 +152,7 @@ const JournalPost = ({ pageContext, post }) => {
       <PostContent
         className="post-content"
         dangerouslySetInnerHTML={{ __html: post.html }}
-      >
-
-      </PostContent>
+      />
     </Post>
   );
 };

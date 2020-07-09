@@ -1,5 +1,5 @@
 ---
-title: "Reframe Women in Tech conference (Oct 2019)"
+title: "Reframe Women in Tech conference"
 date: "2019-10-29"
 featuredImage: "./images/reframe-women-in-tech.jpg"
 category: "events"

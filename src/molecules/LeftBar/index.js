@@ -7,16 +7,16 @@ const LeftBar = ({ pageContext, categories }) => {
   if (pageContext) hideOnPage = true;
 
   const Sidebar = styled('aside')`
-  grid-column: 1 / 4;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 1rem 1rem 0 0;
+    grid-column: 1 / 4;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1rem 1rem 0 0;
 
-  @media(max-width: 1023px) {
-    order: 2;
-    ${hideOnPage ? 'display: none;' : 'grid-column: 2 / 12;'}
-    margin-right: 0;
-  }
-`;
+    @media(max-width: 1023px) {
+      order: 2;
+      ${hideOnPage ? 'display: none;' : 'grid-column: 2 / 12;'}
+      margin-right: 0;
+    }
+  `;
 
   const sortedCategories = [...categories].reverse();
 

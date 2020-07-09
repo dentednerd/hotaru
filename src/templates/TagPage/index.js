@@ -3,9 +3,10 @@ import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
 import Layout from '../Layout';
 import JournalWrapper from '../../organisms/JournalWrapper';
-import Card from '../../molecules/Card';
 import LeftBar from '../../molecules/LeftBar';
 import RightBar from '../../molecules/RightBar';
+import JournalHeading from '../../molecules/JournalHeading';
+import TagCard from './TagCard';
 
 const TagPageWrapper = styled('main')`
   grid-column: 4 / 10;
@@ -36,10 +37,10 @@ const TagPage = ({ pageContext, data }) => {
       <JournalWrapper>
         <LeftBar categories={categories.group} />
         <TagPageWrapper>
-          <h2 style={{ textAlign: 'center' }}>posts about {tag}</h2>
-          <section style={{ background: '#fffacd', padding: '1rem' }}>
-            {edges.map(({ node }) => <Card article={node} key={node.id} />)}
-          </section>
+          <JournalHeading center>
+            posts about {tag}
+          </JournalHeading>
+          {edges.map(({ node }) => <TagCard post={node} key={node.id} />)}
         </TagPageWrapper>
         <RightBar tags={tags} />
       </JournalWrapper>
@@ -59,6 +60,7 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
           fields {
             slug
           }

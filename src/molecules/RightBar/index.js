@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import kebabCase from 'lodash/kebabCase';
 import { Link } from 'gatsby';
+import JournalHeading from '../../molecules/JournalHeading';
 
 const JournalRightBar = styled('aside')`
   grid-column: 10 / 13;
@@ -40,6 +41,10 @@ const JournalRightBar = styled('aside')`
     }
   }
 
+  h2 {
+    height: 2rem;
+  }
+
   @media(max-width: 1023px) {
     grid-column: 1 / 13;
     height: auto;
@@ -64,7 +69,9 @@ const RightBar = ({ tags }) => {
 
   return (
     <JournalRightBar>
-      <h2>Tags</h2>
+      <JournalHeading>
+        Tags
+      </JournalHeading>
       {sortedTags.map(tag => (
         <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} key={tag.fieldValue}>
           {tag.fieldValue}

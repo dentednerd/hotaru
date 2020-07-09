@@ -10,7 +10,7 @@ const MenuButton = ({ open, toggleOpen }) => {
     right: 0;
     background: transparent;
     color: #fff;
-    z-index: 999;
+    z-index: 4;
     display: flex;
     justify-content: center;
     align-items: center;

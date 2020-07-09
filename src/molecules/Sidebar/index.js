@@ -24,7 +24,7 @@ const StyledSidebar = styled('section')`
   top: 0;
   left: 0;
   width: calc(40% - 2rem);
-  z-index: 200;
+  z-index: 3;
   box-shadow: 1rem 0px 50px rgba(0,0,0,1);
   transform: translateX(calc(-100% - 50px));
   transition: transform 0.5s;
