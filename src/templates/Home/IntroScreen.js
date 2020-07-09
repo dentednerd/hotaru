@@ -36,12 +36,11 @@ const IntroScreen = ({
   passedRef,
   passedNextRef,
   title,
-  children
+  children,
 }) => {
-
   const scroll = (ref) => { // eslint-disable-line class-methods-use-this
     ref.current.scrollIntoView({ behavior: 'smooth' });
-  }
+  };
 
   const TextSection = styled('section')`
     position: absolute;
@@ -94,10 +93,3 @@ const IntroScreen = ({
 };
 
 export default IntroScreen;
-
-
-
-
-
-
-        

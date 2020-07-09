@@ -1,11 +1,9 @@
-const stackMap = (stack) => {
-  return stack.map((tech, index) => {
-    if (index === 0) {
-      return `${tech}`
-    }
-    return ` » ${tech} `;
-  });
-};
+const stackMap = stack => stack.map((tech, index) => {
+  if (index === 0) {
+    return `${tech}`;
+  }
+  return ` » ${tech} `;
+});
 
 const classnames = {
   0: 'lemon',
@@ -16,5 +14,5 @@ const classnames = {
 
 export {
   stackMap,
-  classnames
+  classnames,
 };

@@ -40,8 +40,8 @@ const PortfolioTemplate = () => {
     section9,
     section10,
     section11,
-    section12
-  ]
+    section12,
+  ];
 
   return (
     <>
@@ -60,7 +60,7 @@ const PortfolioTemplate = () => {
           className={classnames[index % 4]}
           onClick={() => scroll(refs[index + 1])}
         >
-          <Project project={project} index={index}/>
+          <Project project={project} index={index} />
         </Screen>
       ))}
       <Screen

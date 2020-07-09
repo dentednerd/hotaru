@@ -21,8 +21,6 @@ body, html {
 
 @media (max-width: 767px) {
   body, html {
-    font-size: 16px;
-    line-height: 16px;
     overflow-y: auto;
     overflow-x: hidden;
     background-position: center calc(50% - 2rem);

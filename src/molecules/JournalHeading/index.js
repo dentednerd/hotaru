@@ -6,7 +6,7 @@ const JournalHeading = ({ center, children }) => {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: ${center? 'center' : 'flex-start'};
+    align-items: ${center ? 'center' : 'flex-start'};
     height: 2rem;
 
     @media(max-width: 767px) {

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import kebabCase from 'lodash/kebabCase';
 import { Link } from 'gatsby';
-import JournalHeading from '../../molecules/JournalHeading';
+import JournalHeading from '../JournalHeading';
 
 const JournalRightBar = styled('aside')`
   grid-column: 10 / 13;

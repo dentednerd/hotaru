@@ -19,6 +19,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "babel": "^6.23.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-react-hooks": "^4.0.6",
     "gatsby": "^2.8.6",
     "gatsby-image": "^2.0.40",
     "gatsby-plugin-emotion": "^4.1.6",

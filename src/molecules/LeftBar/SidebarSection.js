@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Card from '../Card';
-import JournalHeading from '../../molecules/JournalHeading'
+import JournalHeading from '../JournalHeading';
 
 const SidebarSection = ({ tag }) => {
   const Section = styled('section')`
@@ -12,7 +12,7 @@ const SidebarSection = ({ tag }) => {
   `;
 
   let backgroundColor;
-  switch(tag.fieldValue) {
+  switch (tag.fieldValue) {
     case 'projects':
       backgroundColor = '#d2ddcb';
       break;

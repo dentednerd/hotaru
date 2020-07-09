@@ -10,7 +10,7 @@ Most of my life as a developer is wrapped up in [Visual Studio Code](https://cod
 
 Below I've linked to the VSCode extensions I use on the daily, along with the relevant settings from my `settings.json`. [Let me know](https://www.twitter.com/dentednerd) if any of these are useful to you!
 
-#### Colours
+## Colours
 
 I'm not a super girly girl, but in certain situations, cute is very much my aesthetic. Enter [sailorhg](https://twitter.com/sailorhg)'s [fairyfloss](https://github.com/sailorhg/fairyfloss) theme. It's very much based on the colour palette seen in that most feminine of classic anime, Sailor Moon, but with a dark enough background to still go easy on those of us who prefer a dark scheme. The VSCode port lives [here](https://marketplace.visualstudio.com/items?itemName=nopjmp.fairyfloss).
 
@@ -68,7 +68,7 @@ Here are some further customisations I've made to the colours in VSCode, in keep
 }
 ```
 
-#### Readability
+## Readability
 
 [Fira Code](https://github.com/tonsky/FiraCode) is an excellent font choice for programmers. It renders characters in a very readable way by employing ligatures (that's a typographical term to describe two characters that are joined together to form a single glyph).
 
@@ -102,7 +102,7 @@ I've customised some of the CSS in [Bracket Pair Colorizer](https://marketplace.
 ]
 ```
 
-#### Terminal
+## Terminal
 
 Let me head this section up with another recommendation - the [Command Line Power User](https://commandlinepoweruser.com/) video series by Wes Bos. It's been a big inspiration to me in achieving terminal zen. Here's a quick rundown of my setup:
 

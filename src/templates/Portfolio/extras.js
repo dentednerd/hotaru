@@ -13,7 +13,7 @@ const Container = styled('section')`
   background-position: center;
   background-size: contain;
 `;
-  
+
 const ProjectWrapper = styled('section')`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -35,54 +35,78 @@ const ProjectWrapper = styled('section')`
   }
 `;
 
-const PortfolioExtras = () => {
-  return (
-    <Container>
-      <ProjectWrapper>
-        <div style={{
+const PortfolioExtras = () => (
+  <Container>
+    <ProjectWrapper>
+      <div
+        style={{
           gridArea: '1 / 1 / 3 / 2',
           display: 'flex',
           flexFlow: 'column nowrap',
           justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-          <h2>Let's see, what else?</h2>
-        </div>
-        <div style={{
+          alignItems: 'center',
+        }}
+      >
+        <h2>Let's see, what else?</h2>
+      </div>
+      <div
+        style={{
           gridArea: '1 / 2 / 3 / 3',
           display: 'flex',
           flexFlow: 'column nowrap',
           justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-          <p>
-            <a href="https://github.com/dentednerd/hotaru">
-              joanneimlay.dev
-            </a>
-            : this very site, built in <a href="https://www.gatsbyjs.org">Gatsby</a> with illustrations from <a href="https://undraw.co/">unDraw</a>.
-          </p>
-          <p>
-            <a href="https://github.com/dentednerd/pinpin">
-              pinpin
-            </a>
-            : a Chrome extension built in React; one day I'll make this available in the Chrome Web Store.
-          </p>
-          <p>
-            <a href="https://github.com/dentednerd/jest-katas">
-              Jest katas
-            </a>
-            : a small resource I created to practice TDD skills using <a href="https://jestjs.io">Jest</a>.
-          </p>
-          <p>
-            <a href="https://github.com/dentednerd/LowbarAdv">
-              Lowbar
-            </a>
-            : an early Northcoders sprint, to reimplement functions from the <a href="https://www.lodash.com">Lodash</a> library.
-          </p>
-        </div>
-      </ProjectWrapper>
-    </Container>
-  );
-};
+          alignItems: 'center',
+        }}
+      >
+        <p>
+          <a href="https://github.com/dentednerd/hotaru">
+            joanneimlay.dev
+          </a>
+          : this very site, built in
+          {' '}
+          <a href="https://www.gatsbyjs.org">
+            Gatsby
+          </a>
+          {' '}
+          with illustrations from
+          {' '}
+          <a href="https://undraw.co/">
+            unDraw
+          </a>
+          .
+        </p>
+        <p>
+          <a href="https://github.com/dentednerd/pinpin">
+            pinpin
+          </a>
+          : a Chrome extension built in React; one day I'll make this available in the Chrome Web Store.
+        </p>
+        <p>
+          <a href="https://github.com/dentednerd/jest-katas">
+            Jest katas
+          </a>
+          : a small resource I created to practice TDD skills using
+          {' '}
+          <a href="https://jestjs.io">
+            Jest
+          </a>
+          .
+        </p>
+        <p>
+          <a href="https://github.com/dentednerd/LowbarAdv">
+            Lowbar
+          </a>
+          : an early Northcoders sprint, to reimplement functions from the
+          {' '}
+          <a href="https://www.lodash.com">
+            Lodash
+          </a>
+          {' '}
+          library.
+        </p>
+      </div>
+    </ProjectWrapper>
+  </Container>
+);
 
 export default PortfolioExtras;

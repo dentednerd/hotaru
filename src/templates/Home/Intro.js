@@ -30,23 +30,23 @@ const TextSection = styled('section')`
   }
 `;
 
-export default (props) => (
+export default ({ title }) => (
   <>
     <Fade left>
       <Art
         src={Image}
-        alt={props.title}
+        alt={title}
       />
     </Fade>
 
     <Fade right>
       <TextSection>
-        <h2>{props.title}</h2>
+        <h2>{title}</h2>
         <p>I love making beautiful web apps for desktop and mobile.</p>
         <p>
           Right now I&apos;m working for&nbsp;
           <a href="http://www.ladbiblegroup.com/">the LADbible Group</a>
-        .
+          .
         </p>
       </TextSection>
     </Fade>

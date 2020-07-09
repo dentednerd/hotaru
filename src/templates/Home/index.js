@@ -3,7 +3,7 @@ import Screen from '../../organisms/Screen';
 import {
   ImageSvg,
   CodeSvg,
-  DeveloperSvg
+  DeveloperSvg,
 } from '../../assets';
 
 import IntroScreen from './IntroScreen';
@@ -19,7 +19,7 @@ const HomeTemplate = () => {
 
   const scroll = (ref) => { // eslint-disable-line class-methods-use-this
     ref.current.scrollIntoView({ behavior: 'smooth' });
-  }
+  };
 
   return (
     <>
@@ -42,7 +42,7 @@ const HomeTemplate = () => {
         <p>
           Right now I&apos;m working for&nbsp;
           <a href="http://www.ladbiblegroup.com/">the LADbible Group</a>
-        .
+          .
         </p>
       </IntroScreen>
 

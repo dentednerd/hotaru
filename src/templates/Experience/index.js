@@ -92,24 +92,24 @@ const ExperienceText = styled('section')`
 const mappedData = timelineData.map((job, index) => (
   <GridContainer>
     <LeftHalf left>
-        <JobTitle>
-          <Fade left>
-            <h2 style={{ marginBottom: 0 }}>{job.companyName}</h2>
-            <h3>
-              <FontAwesomeIcon
-                icon={job.icon === 'work' ? faBriefcase : faGraduationCap}
-                style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
-              />
-              {job.jobTitle}
-            </h3>
-            <p style={{ display: 'inline-block' }}>{job.dates}</p>
-          </Fade>
-        </JobTitle>
+      <JobTitle>
         <Fade left>
-          <Illustration>
-            <Screenshot src={illusArray[index]} alt={job.jobTitle} />
-          </Illustration>
+          <h2 style={{ marginBottom: 0 }}>{job.companyName}</h2>
+          <h3>
+            <FontAwesomeIcon
+              icon={job.icon === 'work' ? faBriefcase : faGraduationCap}
+              style={{ margin: '0 0.5rem 0 0', opacity: 1 }}
+            />
+            {job.jobTitle}
+          </h3>
+          <p style={{ display: 'inline-block' }}>{job.dates}</p>
         </Fade>
+      </JobTitle>
+      <Fade left>
+        <Illustration>
+          <Screenshot src={illusArray[index]} alt={job.jobTitle} />
+        </Illustration>
+      </Fade>
     </LeftHalf>
     <RightHalf right>
       <Fade right>

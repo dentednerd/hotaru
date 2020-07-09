@@ -5,9 +5,6 @@ import Code from '../../assets/code.svg';
 import Art from '../../atoms/Art';
 
 const TextSection = styled('section')`
-  position: absolute;
-  bottom: 0;
-  right: 0;
   width: 45%;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 1rem;
@@ -36,14 +33,14 @@ const TextSection = styled('section')`
   }
 `;
 
-export default (props) => (
+export default ({ title }) => (
   <>
     <Fade left>
-      <Art src={Code} alt={props.title} light />
+      <Art src={Code} alt={title} light />
     </Fade>
-    <Fade right>
+    <Fade>
       <TextSection>
-        <h2>{props.title}</h2>
+        <h2>{title}</h2>
         <p>I wrote my first program in BASIC on my dad&apos;s Amiga 500 when I was seven. At fourteen, I made my first website. By fifteen, I'd taught myself HTML, CSS, Flash and Photoshop.</p>
       </TextSection>
     </Fade>

@@ -9,12 +9,10 @@ const StackWrapper = styled('p')`
   text-align: center;
 `;
 
-const Stack = ({ project }) => {
-  return (
-    <StackWrapper>
-      {stackMap(project.stack)}
-    </StackWrapper>
-  );
-};
+const Stack = ({ project }) => (
+  <StackWrapper>
+    {stackMap(project.stack)}
+  </StackWrapper>
+);
 
 export default Stack;

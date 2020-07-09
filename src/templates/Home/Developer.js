@@ -37,14 +37,14 @@ const TextSection = styled('section')`
   }
 `;
 
-export default (props) => (
+export default ({ title }) => (
   <>
     <Fade left>
-      <Art src={Developer} alt={props.title} />
+      <Art src={Developer} alt={title} />
     </Fade>
     <Fade right style={{ textAlign: 'left' }}>
       <TextSection>
-        <h2>{props.title}</h2>
+        <h2>{title}</h2>
         <p>
           In 2017, I won a scholarship at&nbsp;
           <a href="http://www.northcoders.com">Northcoders</a>

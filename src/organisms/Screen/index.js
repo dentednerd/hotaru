@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import FaIcon from '../../atoms/FaIcon';
 import {
   faAngleDoubleDown,
   faAngleDoubleUp,
 } from '@fortawesome/free-solid-svg-icons';
+import FaIcon from '../../atoms/FaIcon';
 
 export default React.forwardRef((props, ref) => {
   const {
-    children, className, backToTop, onClick, noIcon, background
+    children,
+    className,
+    backToTop,
+    onClick,
+    noIcon,
+    background,
   } = props;
 
   const ScreenWrap = styled('div')`

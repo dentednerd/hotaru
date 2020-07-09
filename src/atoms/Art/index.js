@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 export default (props) => {
   const {
-    src, alt
+    src, alt,
   } = props;
 
   const Art = styled('section')`

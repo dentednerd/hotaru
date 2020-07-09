@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Screen from '../Screen';
 import GlowHeading from '../../atoms/GlowHeading';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledHeroContainer = styled('section')`
   margin: 0 auto;
@@ -31,7 +31,13 @@ const StyledHeroContainer = styled('section')`
   }
 `;
 
-const Hero = ({ text, passedRef, passedNextRef, icon, scrollFunc }) => (
+const Hero = ({
+  text,
+  passedRef,
+  passedNextRef,
+  icon,
+  scrollFunc,
+}) => (
   <Screen
     className="purple"
     ref={passedRef}

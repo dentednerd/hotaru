@@ -10,7 +10,7 @@ library.add(faTwitterSquare);
 library.add(faGithubSquare);
 library.add(faEnvelopeSquare);
 
-export default (props) => {
+export default ({ sidebar }) => {
   const IconLinks = styled('section')`
     width: 100%;
     display: flex;
@@ -22,7 +22,7 @@ export default (props) => {
       margin: 0;
       height: 2em;
       width: 2em;
-      color: ${props.sidebar ? '#fff' : '#332E4A'};
+      color: ${sidebar ? '#fff' : '#332E4A'};
       opacity: 0.5;
       transition: opacity 0.5s ease;
     }
@@ -53,5 +53,5 @@ export default (props) => {
       </a>
 
     </IconLinks>
-  )
+  );
 };

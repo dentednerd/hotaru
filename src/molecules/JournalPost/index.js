@@ -64,7 +64,7 @@ const JournalPost = ({ pageContext, post }) => {
     }
 
     @media(max-width: 767px) {
-      height: calc((100vw / 16) * 9) ;
+      height: auto;
     }
 
     h2 {
@@ -98,6 +98,20 @@ const JournalPost = ({ pageContext, post }) => {
     background-color: #fffacd;
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5), -0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5);
     line-height: 1.125rem;
+
+    @media(max-width: 767px) {
+      p {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 36px;
+      }
+    }
+
   `;
 
   const Tags = styled('section')`

@@ -21,7 +21,7 @@ const FaIcon = ({ icon, inline, onClick }) => {
       onClick={onClick}
       size="3x"
     />
-  )
+  );
 };
 
 export default FaIcon;

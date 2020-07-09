@@ -17,10 +17,8 @@ const StyledBackdrop = styled('div')`
   }
 `;
 
-export default ({ open, toggleOpen }) => {
-  return (
-    <StyledBackdrop
-      className={open ? 'open' : null}
-    />
-  )
-};
+export default ({ open, toggleOpen }) => (
+  <StyledBackdrop
+    className={open ? 'open' : null}
+  />
+);

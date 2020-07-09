@@ -38,7 +38,8 @@ const TagPage = ({ pageContext, data }) => {
         <LeftBar categories={categories.group} />
         <TagPageWrapper>
           <JournalHeading center>
-            posts about {tag}
+            posts about
+            {` ${tag}`}
           </JournalHeading>
           {edges.map(({ node }) => <TagCard post={node} key={node.id} />)}
         </TagPageWrapper>

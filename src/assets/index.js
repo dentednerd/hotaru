@@ -6,7 +6,7 @@ import JoeySvg from './joey.svg';
 import ReactSvg from './React.svg';
 import ProudSvg from './proud.svg';
 import MobileSvg from './mobile.svg';
-import WebSvg from './web.svg'
+import WebSvg from './web.svg';
 
 export {
   CodeSvg,

@@ -34,7 +34,6 @@ const Showreel = () => {
 
   return (
     <Layout>
-      
       <Hero
         text="showreel"
         passedRef={topSection}
@@ -42,7 +41,6 @@ const Showreel = () => {
         icon={faYoutube}
         scrollFunc={scroll}
       />
-
       {showreel.map((item, index) => (
         <Screen
           className={classnames[index % 4]}
@@ -54,9 +52,8 @@ const Showreel = () => {
           {item}
         </Screen>
       ))}
-
     </Layout>
   );
-}
+};
 
 export default Showreel;

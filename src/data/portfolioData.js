@@ -61,9 +61,9 @@ export default [
     relatedPosts: [
       {
         name: 'Code Ninjas: revisiting Northcoders project phase',
-        slug: '/posts/code-ninjas/'
-      }
-    ]
+        slug: '/posts/code-ninjas/',
+      },
+    ],
   },
   {
     link: 'https://codeninjas-nc5.herokuapp.com',
@@ -77,9 +77,9 @@ export default [
     relatedPosts: [
       {
         name: 'Code Ninjas: revisiting Northcoders project phase',
-        slug: '/posts/code-ninjas/'
-      }
-    ]
+        slug: '/posts/code-ninjas/',
+      },
+    ],
   },
   {
     link: 'https://northcoders-news-dentednerd-v2.herokuapp.com',
@@ -93,9 +93,9 @@ export default [
     relatedPosts: [
       {
         name: 'Northcoders News, revisited',
-        slug: '/posts/northcoders-news-revisited/'
-      }
-    ]
+        slug: '/posts/northcoders-news-revisited/',
+      },
+    ],
   },
   {
     link: 'https://northcoders-news-dentednerd.herokuapp.com',
@@ -109,9 +109,9 @@ export default [
     relatedPosts: [
       {
         name: 'Northcoders News, revisited',
-        slug: '/posts/northcoders-news-revisited/'
-      }
-    ]
+        slug: '/posts/northcoders-news-revisited/',
+      },
+    ],
   },
   {
     link: 'https://dentednerd.github.io/Trell-Jo/',
@@ -121,7 +121,7 @@ export default [
     caption: 'Most developers starting out in React end up building a to-do list. The next level up from this was to build a basic Trello clone. I tried not to deviate the design too much from the original site.',
     stack: ['React', 'Bulma'],
     mobile: false,
-    illustration: 'ProudSvg'
+    illustration: 'ProudSvg',
   },
   {
     link: 'https://dentednerd.github.io/Northwitter/',

@@ -40,7 +40,7 @@ const MenuButton = ({ open, toggleOpen }) => {
         icon={faBars}
       />
     </StyledMenuButton>
-  )
+  );
 };
 
 export default MenuButton;

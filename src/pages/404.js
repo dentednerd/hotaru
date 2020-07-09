@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Screen from '../organisms/Screen';
 import Layout from '../templates/Layout';
-import GlowHeading from '../atoms/GlowHeading'
+import GlowHeading from '../atoms/GlowHeading';
 
 const Styled404 = styled('div')`
   height: 50vh;

@@ -78,7 +78,6 @@ const TagCard = ({ post }) => {
         dangerouslySetInnerHTML={{ __html: post.excerpt }}
       />
     </StyledTagCard>
-    
   );
 };
 
