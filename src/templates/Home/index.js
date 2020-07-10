@@ -9,10 +9,12 @@ import Hero from './Hero';
 import CallToAction from './CallToAction';
 
 const HomeTemplate = () => {
-  const refs = [];
-  introData.forEach(() => refs.push(createRef()));
+  const refs = introData.reduce((acc) => {
+    acc.push(createRef());
+    return acc;
+  }, []);
   refs.push(createRef()); // for the final screen
-  const refHero = createRef();
+  const refHero = createRef(); // for the hero screen
 
   const scroll = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });

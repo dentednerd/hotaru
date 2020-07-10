@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { createRef } from 'react';
 import styled from '@emotion/styled';
 import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -131,26 +131,14 @@ const mappedData = timelineData.map((job, index) => (
 ));
 
 const ExperienceTemplate = () => {
-  const topSection = useRef();
-  const section0 = useRef();
-  const section1 = useRef();
-  const section2 = useRef();
-  const section3 = useRef();
-  const section4 = useRef();
-  const section5 = useRef();
-  const section6 = useRef();
+  const refs = mappedData.reduce((acc) => {
+    acc.push(createRef());
+    return acc;
+  }, []);
+  refs.push(createRef()); // for the final screen
+  const refHero = createRef(); // for the hero screen
 
-  const refs = [
-    section0,
-    section1,
-    section2,
-    section3,
-    section4,
-    section5,
-    section6,
-  ];
-
-  const scroll = (ref) => { // eslint-disable-line class-methods-use-this
+  const scroll = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -158,8 +146,8 @@ const ExperienceTemplate = () => {
     <>
       <Hero
         text="experience"
-        passedRef={topSection}
-        passedNextRef={section0}
+        passedRef={refHero}
+        passedNextRef={refs[0]}
         icon={faHistory}
         scrollFunc={scroll}
       />
@@ -175,8 +163,8 @@ const ExperienceTemplate = () => {
       ))}
 
       <AncientHistory
-        passedRef={section6}
-        passedTopRef={topSection}
+        passedRef={refs[mappedData.length]}
+        passedTopRef={refHero}
       />
     </>
   );

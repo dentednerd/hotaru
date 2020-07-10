@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { createRef } from 'react';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Screen from '../organisms/Screen';
 import Layout from '../templates/Layout';
@@ -11,24 +11,14 @@ import './global.css';
 const illusArray = Object.values(illustrations);
 
 const Showreel = () => {
-  const topSection = useRef();
-  const section0 = useRef();
-  const section1 = useRef();
-  const section2 = useRef();
-  const section3 = useRef();
-  const section4 = useRef();
-  const section5 = useRef();
+  const refs = showreel.reduce((acc) => {
+    acc.push(createRef());
+    return acc;
+  }, []);
+  refs.push(createRef()); // for the final screen
+  const refHero = createRef(); // for the hero screen
 
-  const refs = [
-    section0,
-    section1,
-    section2,
-    section3,
-    section4,
-    section5,
-  ];
-
-  const scroll = (ref) => { // eslint-disable-line class-methods-use-this
+  const scroll = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -36,8 +26,8 @@ const Showreel = () => {
     <Layout>
       <Hero
         text="showreel"
-        passedRef={topSection}
-        passedNextRef={section0}
+        passedRef={refHero}
+        passedNextRef={refs[0]}
         icon={faYoutube}
         scrollFunc={scroll}
       />
@@ -45,7 +35,7 @@ const Showreel = () => {
         <Screen
           className={classnames[index % 4]}
           ref={refs[index]}
-          onClick={() => scroll(index === showreel.length - 1 ? topSection : refs[index + 1])}
+          onClick={() => scroll(index === showreel.length - 1 ? refHero : refs[index + 1])}
           background={illusArray[index]}
           backToTop={index === showreel.length - 1}
         >
