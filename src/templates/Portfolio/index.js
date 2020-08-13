@@ -1,52 +1,28 @@
-import React, { createRef } from 'react';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import portfolioData from '../../data/portfolioData';
-import { classnames } from '../../helpers';
-import Hero from '../../organisms/Hero';
-import Screen from '../../organisms/Screen';
-import Project from '../../molecules/Project';
-import PortfolioExtras from './extras';
+import React from 'react';
+import styled from '@emotion/styled';
+import portfolioData from './portfolioData';
+import Project from './Project';
+import Header from '../../organisms/Header';
+import Footer from '../../organisms/Footer';
+
+const StyledPortfolio = styled('section')`
+  background: linear-gradient(90deg, #ffdadd 50%, #828dac 50%);
+
+  @media(max-width: 767px) {
+    background: #ffdadd;
+  }
+`;
 
 const PortfolioTemplate = () => {
-  const scroll = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const refs = portfolioData.reduce((acc) => {
-    acc.push(createRef());
-    return acc;
-  }, []);
-  refs.push(createRef()); // for the final screen
-  const refHero = createRef(); // for the hero screen
-
   return (
     <>
-      <Hero
-        text="portfolio"
-        passedRef={refHero}
-        passedNextRef={refs[0]}
-        icon={faLaptopCode}
-        scrollFunc={scroll}
-      />
-
-      {portfolioData.map((project, index) => (
-        <Screen
-          ref={refs[index]}
-          key={project.title}
-          className={classnames[index % 4]}
-          onClick={() => scroll(refs[index + 1])}
-        >
-          <Project project={project} index={index} />
-        </Screen>
-      ))}
-      <Screen
-        ref={refs[portfolioData.length]}
-        className={classnames[portfolioData.length % 4]}
-        onClick={() => scroll(refHero)}
-        backToTop
-      >
-        <PortfolioExtras />
-      </Screen>
+      <Header />
+      <StyledPortfolio>
+        {portfolioData.map(project => (
+          <Project project={project} />
+        ))}
+      </StyledPortfolio>
+      <Footer />
     </>
   );
 };

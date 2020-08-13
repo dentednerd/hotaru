@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Josefin+Slab&family=Sacramento&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400&family=Josefin+Slab:wght@400;700&family=Sacramento&family=Ubuntu+Mono&display=swap');
 
 body, html {
   background-color: #332E4A;
@@ -6,7 +6,7 @@ body, html {
   font-family: "Josefin Slab", serif;
   font-size: 24px;
   line-height: 30px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
