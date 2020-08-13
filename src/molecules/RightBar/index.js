@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import kebabCase from 'lodash/kebabCase';
 import { Link } from 'gatsby';
 import JournalHeading from '../JournalHeading';
+import Tag from '../../atoms/Tag';
 
 const JournalRightBar = styled('aside')`
   grid-column: 10 / 13;
@@ -48,7 +49,7 @@ const JournalRightBar = styled('aside')`
   @media(max-width: 1023px) {
     grid-column: 1 / 13;
     height: auto;
-    margin: 2rem;
+    margin: 0 1rem 1rem;
     order: 3;
   }
 `;
@@ -73,10 +74,10 @@ const RightBar = ({ tags }) => {
         Tags
       </JournalHeading>
       {sortedTags.map(tag => (
-        <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} key={tag.fieldValue}>
+        <Tag to={`/tags/${kebabCase(tag.fieldValue)}/`} key={tag.fieldValue}>
           {tag.fieldValue}
           <span>{tag.totalCount}</span>
-        </Link>
+        </Tag>
       ))}
       <IntroSection className="sky">
         {"My journal is a collection of observations on programming, reports on events I've participated in, and commentaries on projects I've created. It isn't a blog in the traditional sense. I prefer getting a lot of ideas out at once, then working on them one by one, rather than writing a perfectly polished entry in one sitting. That's why you'll see a few incomplete entries tagged 'WIP' in here. The dates in the header of each post refer to when it was created, rather than when it was last updated."}

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import kebabCase from 'lodash/kebabCase';
-import { Link } from 'gatsby';
+import Tag from '../../atoms/Tag';
 
 const JournalPost = ({ pageContext, post }) => {
   const Post = styled('article')`
@@ -14,25 +14,19 @@ const JournalPost = ({ pageContext, post }) => {
     margin-top: 1rem;
 
     @media (max-width: 1023px) {
-      grid-column: 1 / 13;
+      margin-top: 0;
+      grid-column-end: 2;
+      width: 100%;
 
       ul {
         text-align: left;
       }
     }
 
-    @media (max-width: 767px) {
-      margin-top: 0;
-    }
-
     p {
       margin-bottom: 1em;
       letter-spacing: -0.025em;
       width: 100vw;
-    }
-
-    a {
-      color: #ff7dab;
     }
   
     h3 {
@@ -68,8 +62,9 @@ const JournalPost = ({ pageContext, post }) => {
       pointer-events: none;
     }
 
-    @media(max-width: 767px) {
-      height: auto;
+    @media(max-width: 1023px) {
+      width: 100vw;
+      height: 56.25vw;
     }
 
     h2 {
@@ -84,6 +79,20 @@ const JournalPost = ({ pageContext, post }) => {
       padding: 1rem;
       margin-bottom: 0;
       z-index: 2;
+    }
+
+    @media(max-width: 1279px) {
+      h2 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    @media(max-width: 767px) {
+      h2 {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+      }
     }
 
     h3 {
@@ -104,6 +113,18 @@ const JournalPost = ({ pageContext, post }) => {
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5), -0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5);
     line-height: 1.125rem;
 
+    p, li {
+      max-width: 100%;
+    }
+
+    a {
+      color: #ff7dab;
+    }
+
+    @media(max-width: 1023px) {
+      max-width: calc(100vw - 2rem);
+    }
+
     @media(max-width: 767px) {
       p, li {
         font-size: 16px;
@@ -123,34 +144,6 @@ const JournalPost = ({ pageContext, post }) => {
     text-align: center;
     margin-top: 1rem;
     z-index: 2;
-    
-    a {
-      color: #fff;
-    }
-  `;
-
-  const Tag = styled(Link)`
-    display: inline-block;
-    font-size: 0.75rem;
-    line-height: 0.75rem;
-    background-color: #7a7495;
-    color: #fffacd !important;
-    padding: 0.25rem 0.25rem 0.1rem;
-    border-radius: 0.25rem;
-    margin-bottom: 0.25rem;
-    margin-right: 0.25rem;
-    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5),
-                -0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5);
-    transition: all 0.25s ease-in;
-
-    &:hover {
-      text-decoration: none;
-      background-color: #fffacd;
-      color: #7a7495 !important;
-      box-shadow: 0.0625rem 0.0625rem 0 rgba(0,0,0,0.5),
-                  -0.0625rem 0.0625rem 0 rgba(0,0,0,0.5);
-      transition: all 0.25s ease-in;
-    }
   `;
 
   return (
@@ -159,13 +152,11 @@ const JournalPost = ({ pageContext, post }) => {
         <h2>{post.frontmatter.title}</h2>
         <h3>{post.frontmatter.date}</h3>
         <Tags>
-          <p>
-            {post.frontmatter.tags.map(tag => (
-              <Tag to={`/tags/${kebabCase(tag)}/`} key={tag}>
-                {tag}
-              </Tag>
-            ))}
-          </p>
+          {post.frontmatter.tags.map(tag => (
+            <Tag to={`/tags/${kebabCase(tag)}/`} key={tag}>
+              {tag}
+            </Tag>
+          ))}
         </Tags>
       </PostTitle>
       <PostContent

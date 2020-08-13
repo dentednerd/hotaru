@@ -17,7 +17,7 @@ To reduce an array, you need two parameters:
 
 Rather than try to explain these, let’s jump right into an example.
 
-#### Example 1: sum()
+## Example 1: sum()
 
 ```js
 let nums = [1,2,3,4,5];
@@ -44,7 +44,7 @@ With no more values to iterate, `.reduce()` returns the final value of `accumula
 
 Let’s look at another `.reduce()` that operates on the same `nums` array.  
 
-#### Example 2: doubles()
+## Example 2: doubles()
 
 ```js
 let doubles = nums.reduce((acc, num) => {
@@ -59,7 +59,7 @@ Incidentally, there’s a very good reason why we can’t just use `return acc.p
 
 One more example!  
 
-#### Example 3: evens()
+## Example 3: evens()
 
 ```js
 let evens = nums.reduce(function (acc, num) {
@@ -74,7 +74,7 @@ Our result will be an array again, but this time it will only contain even numbe
 
 `.reduce()` can and does get far more complicated than these examples, but this should give you an idea of what it can do to make your coding life easier. Now go stick a `.reduce()` on it. _Bosh._
 
-#### Further reading
+## Further reading
 
 - [MDN: Array.prototype.reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 - [FreeCodeCamp: A Guide To The Reduce Method In Javascript​](https://www.freecodecamp.org/news/reduce-f47a7da511a9/)

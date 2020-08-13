@@ -12,9 +12,13 @@ const LeftBar = ({ pageContext, categories }) => {
     margin: 1rem 1rem 0 0;
 
     @media(max-width: 1023px) {
+      background-color: #332e4a;
       order: 2;
       ${hideOnPage ? 'display: none;' : 'grid-column: 2 / 12;'}
-      margin-right: 0;
+      margin: 0;
+      padding: 1rem 0.5rem 0;
+      display: flex;
+      flex-flow: row nowrap;
     }
   `;
 

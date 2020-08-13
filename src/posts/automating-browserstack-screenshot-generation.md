@@ -10,7 +10,7 @@ I've published an article on [BrowserStack screenshot automation in CircleCI](ht
 
 It'll be the first event we've hosted for the public since our office refurb, so it'll be exciting to see what everyone thinks of our new home. It'll also be my first talk since I spoke at the [DWP Women in Digital](https://dwpdigital.blog.gov.uk/2018/05/30/introducing-our-second-women-in-digital-event/) event in June.
 
-#### Further reading
+## Further reading
 
 - [Medium: Automating BrowserStack screenshot generation with CircleCI](https://medium.com/ladbiblegroup/automating-browserstack-screenshot-generation-with-circleci-502bad7dcb7d)
 - [Youtube: Automating BrowserStack screenshot generation with CircleCI](https://www.youtube.com/watch?v=gk_5ezTqd3c)

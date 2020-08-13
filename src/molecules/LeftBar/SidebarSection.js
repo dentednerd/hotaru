@@ -9,6 +9,11 @@ const SidebarSection = ({ tag }) => {
     padding: 0;
     margin-bottom: 2rem;
     width: 100%;
+
+    @media(max-width: 1023px) {
+      padding: 0 0.5rem;
+      margin-bottom: 0;
+    }
   `;
 
   let backgroundColor;
