@@ -14,10 +14,6 @@ const StyledFooter = styled('footer')`
     padding-top: 1rem;
     margin-top: 1rem;
     width: calc(50% - 2rem);
-
-    @media(max-width: 767px) {
-      width: 100%;
-    }
   }
 
   h2 {
@@ -33,6 +29,24 @@ const StyledFooter = styled('footer')`
     font-size: 0.75rem;
     line-height: 0.8625rem;
     font-weight: 200;
+  }
+
+  @media(max-width: 767px) {
+    text-align: center;
+
+    div {
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 0.6rem;
+      text-align: left;
+    }
+
+    p {
+      font-size: 0.6rem;
+      text-align: left;
+    }
   }
 `;
 

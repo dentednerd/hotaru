@@ -55,9 +55,9 @@ const JournalPost = ({ post }) => {
     }
 
     @media(max-width: 1023px) {
-      width: 100vw;
-      height: 56.25vw;
-      padding: 0;
+      width: calc(100vw - 2rem);
+      min-height: 56.25vw;
+      max-height: calc(100vw - 2rem);
     }
   `;
 

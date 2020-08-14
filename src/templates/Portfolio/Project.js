@@ -13,7 +13,7 @@ export default ({ project }) => {
 
     div {
       padding: 2rem;
-      width: calc(50% - 4rem);
+      width: 50%;
 
       @media(max-width: 767px) {
         padding: 1rem 0;
@@ -100,13 +100,34 @@ export default ({ project }) => {
     }
   `;
 
-  const Shot = styled('img')`
-    max-width: calc(50vw - 4rem);
-    max-height: calc((50vw - 4rem) * 0.5625);
-    margin-bottom: 2rem;
+  const Images = styled('div')`
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    @media(max-width: 1023px) {
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+    }
 
     @media(max-width: 767px) {
-      max-width: 100%;
+      width: calc(100vw - 2rem);
+      padding: 0;
+    }
+  `;
+
+  const Shot = styled('img')`
+    max-width: calc(50vw - 4rem);
+    margin-bottom: 2rem;
+
+    @media(min-width: 768px) and (max-width: 1023px) {
+      height: auto;
+    }
+
+    @media(max-width: 767px) {
+      width: calc(100vw - 2rem);
+      min-width: calc(100vw - 2rem);
+      min-height: calc((100vw - 2rem) * 0.5625);
       margin-bottom: 1rem;
 
       &:last-child {
@@ -139,11 +160,11 @@ export default ({ project }) => {
           </Visit>
         ))}
       </div>
-      <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-around' }}>
+      <Images>
         {project.images.map(image => (
           <Shot src={assets[image]} alt={project.title}/>
         ))}
-      </div>
+      </Images>
     </ProjectWrapper>
   );
 };

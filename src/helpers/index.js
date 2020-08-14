@@ -6,7 +6,6 @@ const stackMap = stack => stack.map((tech, index) => {
 });
 
 const classnames = [
-  'sage',
   'lemon',
   'sky',
   'pink',

@@ -1,48 +1,28 @@
-import React, { createRef } from 'react';
-import { faHistory } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
+import styled from '@emotion/styled';
 import timelineData from '../../data/timelineData';
-import { classnames } from '../../helpers';
-import Hero from '../../organisms/Hero';
-import Screen from '../../organisms/Screen';
-import AncientHistory from './ancienthistory';
+import Header from '../../organisms/Header';
+import Footer from '../../organisms/Footer';
 import ExperienceScreen from './ExperienceScreen';
 
 const ExperienceTemplate = () => {
-  const refs = timelineData.reduce((acc) => {
-    acc.push(createRef());
-    return acc;
-  }, []);
-  refs.push(createRef()); // for the final screen
-  const refHero = createRef(); // for the hero screen
+  const StyledExperience = styled('section')`
+    background: linear-gradient(90deg, #c2e4ff 50%, #828dac 50%);
 
-  const scroll = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
+    @media(max-width: 767px) {
+      background: #c2e4ff;
+    }
+  `;
 
   return (
     <>
-      <Hero
-        text="experience"
-        passedRef={refHero}
-        passedNextRef={refs[0]}
-        icon={faHistory}
-        scrollFunc={scroll}
-      />
-
-      {timelineData.map((job, index) => (
-        <Screen
-          className={classnames[index % 4]}
-          ref={refs[index]}
-          onClick={() => scroll(refs[index + 1])}
-        >
+      <Header text="experience" />
+      <StyledExperience>
+        {timelineData.map((job, index) => (
           <ExperienceScreen job={job} index={index} />
-        </Screen>
-      ))}
-
-      <AncientHistory
-        passedRef={refs[timelineData.length]}
-        passedTopRef={refHero}
-      />
+        ))}
+      </StyledExperience>
+      <Footer />
     </>
   );
 };

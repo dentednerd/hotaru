@@ -1,47 +1,69 @@
-import React, { createRef } from 'react';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons';
-import Screen from '../organisms/Screen';
+import React from 'react';
+import styled from '@emotion/styled';
+import Header from '../organisms/Header';
+import Footer from '../organisms/Footer';
 import Layout from '../templates/Layout';
-import showreel from '../templates/Showreel';
-import Hero from '../organisms/Hero';
-import * as illustrations from '../assets';
-import { classnames } from '../helpers';
 import './global.css';
 
-const illusArray = Object.values(illustrations);
+const videos = [
+  'https://youtube.com/embed/gk_5ezTqd3c',
+  'https://youtube.com/embed/l62-FZS5lGA',
+  'https://youtube.com/embed/3Ew5dfitW6g',
+  'https://youtube.com/embed/SsoueiuOUbc',
+  'https://youtube.com/embed/Ua4bVgMO8ls',
+  'https://youtube.com/embed/2bA0KAGYjIc',
+];
+
+const ShowreelBackground = styled('section')`
+  background-color: #828dac;
+  
+  section.content {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  div {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    margin: 1rem auto;
+    width: 100%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+`;
 
 const Showreel = () => {
-  const refs = showreel.reduce((acc) => {
-    acc.push(createRef());
-    return acc;
-  }, []);
-  refs.push(createRef()); // for the final screen
-  const refHero = createRef(); // for the hero screen
-
-  const scroll = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <Layout>
-      <Hero
-        text="showreel"
-        passedRef={refHero}
-        passedNextRef={refs[0]}
-        icon={faYoutube}
-        scrollFunc={scroll}
-      />
-      {showreel.map((item, index) => (
-        <Screen
-          className={classnames[index % 4]}
-          ref={refs[index]}
-          onClick={() => scroll(index === showreel.length - 1 ? refHero : refs[index + 1])}
-          background={illusArray[index]}
-          backToTop={index === showreel.length - 1}
-        >
-          {item}
-        </Screen>
-      ))}
+      <Header text="showreel" />
+      <ShowreelBackground>
+        <section className="content">
+          {videos.map(item => (
+            <div>
+              <iframe
+                title="showreel"
+                src={item}
+                frameBorder="0"
+                allow="encrypted-media"
+                allowFullScreen
+              />
+            </div>
+          ))}
+        </section>
+      </ShowreelBackground>
+      <Footer />
     </Layout>
   );
 };

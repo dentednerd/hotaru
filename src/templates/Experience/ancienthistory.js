@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Fade from 'react-reveal/Fade';
 import * as illustrations from '../../assets';
-import Screen from '../../organisms/Screen';
 import timelineOldData from '../../data/timelineOldData';
 
 const GridContainer = styled('section')`
@@ -91,37 +90,26 @@ const StyledAncientHistory = styled(GridContainer)`
   }
 `;
 
-const AncientHistory = ({ passedRef, passedTopRef }) => {
-  const scroll = (ref) => { // eslint-disable-line class-methods-use-this
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
+const AncientHistory = () => {
   return (
-    <Screen
-      backToTop
-      className="lemon"
-      ref={passedRef}
-      onClick={() => scroll(passedTopRef)}
-    >
-      <StyledAncientHistory>
-        <LeftHalf>
-          <Fade left>
-            <JobTitle style={{ marginBottom: '1rem' }}>
-              <h2 style={{ marginBottom: 0 }}>Before I was a developer...</h2>
-            </JobTitle>
+    <StyledAncientHistory>
+      <LeftHalf>
+        <Fade left>
+          <JobTitle style={{ marginBottom: '1rem' }}>
+            <h2 style={{ marginBottom: 0 }}>Before I was a developer...</h2>
+          </JobTitle>
+        </Fade>
+      </LeftHalf>
+      <RightHalf>
+        {timelineOldData.map(job => (
+          <Fade right>
+            <h2 style={{ marginBottom: '0', textAlign: 'left' }}>{job.companyName}</h2>
+            <h3 style={{ textAlign: 'left' }}>{job.jobTitle}</h3>
+            <p style={{ textAlign: 'left' }}>{job.dates}</p>
           </Fade>
-        </LeftHalf>
-        <RightHalf>
-          {timelineOldData.map(job => (
-            <Fade right>
-              <h2 style={{ marginBottom: '0', textAlign: 'left' }}>{job.companyName}</h2>
-              <h3 style={{ textAlign: 'left' }}>{job.jobTitle}</h3>
-              <p style={{ textAlign: 'left' }}>{job.dates}</p>
-            </Fade>
-          ))}
-        </RightHalf>
-      </StyledAncientHistory>
-    </Screen>
+        ))}
+      </RightHalf>
+    </StyledAncientHistory>
   );
 };
 

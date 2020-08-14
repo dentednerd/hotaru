@@ -3,11 +3,10 @@ import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faLaptopCode, faHistory } from '@fortawesome/free-solid-svg-icons';
 import { JapanSvg } from '../../assets';
-import Footer from '../../organisms/Footer';
 
 const CTAWrapper = styled('div')`
   width: 100%;
-  height: 50vh;
+  height: calc(75vh - 4rem);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -33,7 +32,7 @@ const CTAWrapper = styled('div')`
   @media (max-width: 767px) {
     flex-flow: column nowrap;
     justify-content: center;
-    max-height: 75vh;
+    height: calc(80vh - 8rem);
   }
 `;
 
@@ -128,6 +127,5 @@ export default () => (
         </a>
       </CTASection>
     </CTAWrapper>
-    <Footer />
   </>
 );

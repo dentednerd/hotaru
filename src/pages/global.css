@@ -136,26 +136,9 @@ a:hover {
   color: #fff;
 }
 
-.sage {
-  background: #d2ddcb;
-  color: #7a7495;
-}
-
-.sage h2 {
-  color: #679dbe;
-}
-
-.sage img {
-  background-color: #aabd9e;
-}
-
 .lemon {
   background: #fffacd;
   color: #7a7495;
-}
-
-.lemon h2 {
-  color: #ff7dab;
 }
 
 .lemon img {
@@ -167,15 +150,11 @@ a:hover {
   color: #7a7495;
 }
 
-.sky h2 {
-  color: #332E4A;
-}
-
 .sky img {
   background-color: #91cfff;
 }
 
-.sky a, .sage a {
+.sky a {
   color: #403f56;
   font-weight: bold;
 }
@@ -183,10 +162,6 @@ a:hover {
 .pink {
   background-color: #ffdadd;
   color: #7a7495;
-}
-
-.pink h2 {
-  color: #679dbe;
 }
 
 .pink img {

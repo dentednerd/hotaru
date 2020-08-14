@@ -19,14 +19,16 @@ export default React.forwardRef((props, ref) => {
 
   const ScreenWrap = styled('div')`
     label: Screen;
-    height: 100vh;
-    width: 100vw;
+    height: calc(100vh - 6rem);
+    width: calc(100vw - 4rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;    
     overflow: hidden;
     position: relative;
+    padding: 3rem 2rem;
+
     ${background && `
       background-image: url(${background});
       background-size: cover;
@@ -61,31 +63,17 @@ export default React.forwardRef((props, ref) => {
 
     @media(max-width: 767px) {
       background-image: none;
-    }
-  `;
-
-  const Content = styled('div')`
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    @media (max-width: 767px) {
-      padding: 0 2rem;
-      width: 100%;
-      overflow: hidden;
+      padding: 1rem;
+      height: calc(100vh - 2rem);
+      width: calc(100vw - 2rem);
     }
   `;
 
   const ScreenFooter = styled.section`
     position: absolute;
     bottom: 0;
-    left: 4rem;
-    width: calc(100% - 8rem);
+    left: 0;
+    width: 100%;
     text-align: center;
 
     svg {
@@ -113,9 +101,7 @@ export default React.forwardRef((props, ref) => {
 
   return (
     <ScreenWrap className={className} ref={ref}>
-      <Content>
-        {children}
-      </Content>
+      {children}
       <ScreenFooter>
         {!noIcon && Icon}
       </ScreenFooter>

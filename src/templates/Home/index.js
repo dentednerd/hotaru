@@ -3,7 +3,7 @@ import Screen from '../../organisms/Screen';
 import * as backgrounds from '../../assets';
 import introData from '../../data/introData';
 import { classnames } from '../../helpers';
-
+import Footer from '../../organisms/Footer';
 import IntroScreen from './IntroScreen';
 import Hero from './Hero';
 import CallToAction from './CallToAction';
@@ -47,9 +47,11 @@ const HomeTemplate = () => {
       <Screen
         ref={refs[refs.length - 1]}
         noIcon
-        style={{ height: '75vh' }}
       >
-        <CallToAction />
+        <div style={{ display: 'flex', flexFlow: 'column nowrap', justifyContent: 'flex-start' }}>
+          <CallToAction />
+          <Footer />
+        </div>
       </Screen>
     </>
   );
