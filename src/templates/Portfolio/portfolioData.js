@@ -44,6 +44,24 @@ export default [
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
   {
+    title: 'Pinpin',
+    caption: '<p>A Chrome new tab extension, built with React.</p><p>Every new React developer makes a to-do app, and I\'m no different. But I wanted to take mine one step further, so I turned it into a friendly extension for Chrome, with some soothing background colours that change throughout the day.</p><p>(I haven\'t deployed it to the Chrome web store yet, but the code is available for you to view.)</p>',
+    links: [
+      {
+        text: 'visit the Pinpin repo',
+        url: 'https://github.com/dentednerd/pinpin'
+      }
+    ],
+    images: ['PinpinDay', 'PinpinDusk'],
+    relatedPosts: [
+      {
+        name: 'Pinpin: a calming new tab for Chrome',
+        slug: '/posts/pinpin/',
+      },
+    ],
+    stack: ['React']
+  },
+  {
     title: 'Code Ninjas',
     caption: '<p>An educational multiple-choice game, created during the final project phase at Northcoders in a team of four. Accessibility was important to our design approach.</p><p>I tried to keep that approach to accessibility in the second version, whilst implementing a cleaner, slicker design, and adding new features such as level select, a progress bar for each level, and more ninja-themed assets!</p>',
     links: [
@@ -89,7 +107,7 @@ export default [
   },
   {
     title: 'TrellJo',
-    caption: '<p>A bare-bones Trello clone, created at Northcoders.</p><p>Most developers starting out in React will create a to-do list app fairly early on, so the Trello clone felt like the next logical step. I tried not to deviate the design too much from Trello\'s own, but at the time I was very proud of that stripy background.</p><p>The work I did on TrellJo inspired much of a later project - a Chrome extension called Pinpin.</p>',
+    caption: '<p>A bare-bones Trello clone, created at Northcoders.</p><p>Most developers starting out in React will create a to-do list app fairly early on, so the Trello clone felt like the next logical step. I tried not to deviate the design too much from Trello\'s own, but at the time I was very proud of that stripy background.</p><p>The work I did on TrellJo informed a lot of what I did on Pinpin.</p>',
     links: [
       {
         text: 'visit TrellJo',

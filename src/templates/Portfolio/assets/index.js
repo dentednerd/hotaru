@@ -11,6 +11,8 @@ import SPORT from './SPORT.png';
 import UNILAD from './UNILAD.png';
 import LADAPP1 from './LADAPP1.png';
 import LADAPP2 from './LADAPP2.png';
+import PinpinDay from './PinpinDayShot.png';
+import PinpinDusk from './PinpinDuskShot.png';
 
 const assets = {
   CodeNinjas,
@@ -25,7 +27,9 @@ const assets = {
   SPORT,
   UNILAD,
   LADAPP1,
-  LADAPP2
+  LADAPP2,
+  PinpinDay,
+  PinpinDusk
 };
 
 export { assets };
