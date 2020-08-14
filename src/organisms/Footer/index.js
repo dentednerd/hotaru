@@ -5,7 +5,9 @@ const StyledFooter = styled('footer')`
   background-color: #332E4A;
   color: #fff;
   min-height: 25vh;
+  height: auto;
   padding: 2rem;
+  width: calc(100vw - 4rem);
 
   div {
     border-top: solid 1px #fff;

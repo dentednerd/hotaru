@@ -3,14 +3,16 @@ import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faLaptopCode, faHistory } from '@fortawesome/free-solid-svg-icons';
 import { JapanSvg } from '../../assets';
+import Footer from '../../organisms/Footer';
 
 const CTAWrapper = styled('div')`
   width: 100%;
-  height: 100%;
+  height: 50vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center; 
+  background-color: #fffacd;
   background-image: url(${JapanSvg});
   background-repeat: no-repeat;
   background-position: center;
@@ -31,6 +33,7 @@ const CTAWrapper = styled('div')`
   @media (max-width: 767px) {
     flex-flow: column nowrap;
     justify-content: center;
+    max-height: 75vh;
   }
 `;
 
@@ -44,6 +47,10 @@ const CTASection = styled('section')`
   transition: all 0.5s ease;
   height: 100%;
   width: 100%;
+
+  @media(max-width: 767px) {
+    max-height: 15vh;
+  }
 
   &:hover {
     a {
@@ -59,10 +66,6 @@ const CTASection = styled('section')`
     }
   }
 
-  @media (max-width: 767px) {
-    margin-bottom: 1rem;
-  }
-
   a {
     color: #585273;
     font-family: 'Josefin Sans', sans-serif;
@@ -74,44 +77,57 @@ const CTASection = styled('section')`
     letter-spacing: -0.05rem;
     opacity: 0.75;
 
+    @media(max-width: 767px) {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+
     svg {
       font-size: 3rem;
       width: 3rem;
       height: 3rem;
       margin-bottom: 1rem;
       opacity: 1;
+
+      @media(max-width: 767px) {
+        font-size: 2rem;
+        margin-bottom: 0;
+      }
     }
   }
 `;
 
 export default () => (
-  <CTAWrapper>
-    <CTASection>
-      <a href="/portfolio">
-        <FontAwesomeIcon
-          icon={faLaptopCode}
-        />
-        <br />
-        portfolio
-      </a>
-    </CTASection>
-    <CTASection>
-      <a href="/experience">
-        <FontAwesomeIcon
-          icon={faHistory}
-        />
-        <br />
-        experience
-      </a>
-    </CTASection>
-    <CTASection>
-      <a href="/journal">
-        <FontAwesomeIcon
-          icon={faPencilAlt}
-        />
-        <br />
-        journal
-      </a>
-    </CTASection>
-  </CTAWrapper>
+  <>
+    <CTAWrapper>
+      <CTASection>
+        <a href="/portfolio">
+          <FontAwesomeIcon
+            icon={faLaptopCode}
+          />
+          <br />
+          portfolio
+        </a>
+      </CTASection>
+      <CTASection>
+        <a href="/experience">
+          <FontAwesomeIcon
+            icon={faHistory}
+          />
+          <br />
+          experience
+        </a>
+      </CTASection>
+      <CTASection>
+        <a href="/journal">
+          <FontAwesomeIcon
+            icon={faPencilAlt}
+          />
+          <br />
+          journal
+        </a>
+      </CTASection>
+    </CTAWrapper>
+    <Footer />
+  </>
 );

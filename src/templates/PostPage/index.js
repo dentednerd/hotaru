@@ -1,22 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../Layout';
-import JournalWrapper from '../../organisms/JournalWrapper';
-import JournalPost from '../../molecules/JournalPost';
-import LeftBar from '../../molecules/LeftBar';
-import RightBar from '../../molecules/RightBar';
+import JournalTemplate from '../../templates/Journal';
+import JournalPost from './JournalPost';
 
-export default ({ pageContext, data }) => {
-  const { post, tags, categories } = data;
+export default ({ data }) => {
+  const { post } = data;
 
   return (
-    <Layout>
-      <JournalWrapper>
-        <LeftBar categories={categories.group} />
-        <JournalPost post={post} pageContext={pageContext} />
-        <RightBar tags={tags} />
-      </JournalWrapper>
-    </Layout>
+    <JournalTemplate data={data} >
+      <JournalPost post={post} />
+    </JournalTemplate>
   );
 };
 

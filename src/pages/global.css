@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400&family=Josefin+Slab:wght@400;700&family=Sacramento&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400&family=Josefin+Slab:wght@200;400;700&family=Sacramento&family=Ubuntu+Mono&display=swap');
 
 body, html {
   background-color: #332E4A;
@@ -50,8 +50,8 @@ p {
   width: 60%;
   padding: 1rem;
   margin: 1rem auto;
-  background-color: #ffbfef;
-  border-radius: 1rem;
+  background-color: #ffdadd;
+  border-radius: 0.5rem;
 }
 
 .post-content blockquote p:last-child {

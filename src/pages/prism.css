@@ -31,17 +31,21 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-pre code {
-  overflow-wrap: break-word;
+@media(max-width: 767px) {
+  code[class*="language-"] {
+    font-size: 16px;
+    line-height: 16px;
+  }
 }
 
 pre code span {
   display: inline-block;
+  overflow-wrap: break-word;
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em;
+  padding: 1rem;
   margin: 1rem auto;
   width: 60%;
   border-radius: 0.5rem;
@@ -58,7 +62,7 @@ pre[class*="language-"] {
   pre[class*="language-"] {
     width: calc(100% - 1rem);
     font-size: 0.75rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.75rem;
     border-radius: 0.25rem;
     font-size: 1rem;
     white-space: normal;

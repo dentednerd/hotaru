@@ -19,9 +19,9 @@ const StyledHeader = styled('header')`
   background-position: center;
 `;
 
-const Header = () => (
+const Header = ({ text }) => (
   <StyledHeader>
-    <GlowHeading text="portfolio" />
+    <GlowHeading text={text} />
   </StyledHeader>
 );
 

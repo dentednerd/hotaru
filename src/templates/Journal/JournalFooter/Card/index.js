@@ -17,7 +17,7 @@ export default (props) => {
     margin-bottom: 1rem;
     box-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5),
                 -0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5);
-    font-weight: 600;
+    font-weight: 200;
     transition: box-shadow 0.2s ease-in;
     padding: 0.5rem;
     position: relative;

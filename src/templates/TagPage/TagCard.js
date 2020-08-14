@@ -6,7 +6,6 @@ const StyledTagCard = styled(Link)`
   display: block;
   width: 100%;
   margin-bottom: 2rem;
-  box-shadow: 0.25rem 0 0.5rem rgba(0,0,0,0.5), -0.25rem 0 0.5rem rgba(0,0,0,0.5);
 
   &:hover {
     text-decoration: none;
@@ -38,11 +37,7 @@ const TagCard = ({ post }) => {
       content: '';
       opacity: 0.5;
     }
-
-    @media(max-width: 767px) {
-      height: calc((100vw / 16) * 9) ;
-    }
-
+    
     h2 {
       font-size: 2rem;
       color: #fff;
@@ -53,15 +48,23 @@ const TagCard = ({ post }) => {
       margin-bottom: 0;
       z-index: 2;
     }
+
+    @media(max-width: 767px) {
+      height: calc((100vw / 16) * 9) ;
+
+      h2 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+      }
+    }
   `;
 
   const PostContent = styled('div')`
     padding: 1rem;
-    font-weight: 600;
+    font-weight: 200;
     background-color: #fffacd;
     color: #7a7495;
-    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5), -0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5);
-    line-height: 1.125rem;
+    line-height: 1.5rem;
 
     &:hover {
       text-decoration: none;

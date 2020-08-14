@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Fade from 'react-reveal/Fade';
 import Screen from '../../organisms/Screen';
 import Screenshot from '../../atoms/Screenshot';
 
@@ -47,20 +46,26 @@ const IntroScreen = ({
     position: absolute;
     ${bottom ? 'bottom: 0;' : 'top: 0;'}
     ${right ? 'right: 0;' : 'left: 0;'}
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #fff;
     padding: 1rem;
     overflow: hidden;
+    width: calc(50vw - 8rem);
 
-    p:last-child {
-      margin-bottom: 0;
+    p {
+      max-width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     @media (max-width: 767px) {
       position: relative;
       background-color: transparent;
+      width: calc(100% - 2rem);
       padding: 0;
       
-      h2, p {
+      h2 {
         text-align: center;
       }
     }
@@ -76,17 +81,13 @@ const IntroScreen = ({
     >
       <Container>
         <MobileOnly>
-          <Fade right>
-            <Screenshot
-              src={image}
-              alt="Hello. I'm Joey."
-            />
-          </Fade>
+          <Screenshot
+            src={image}
+            alt="Hello. I'm Joey."
+          />
         </MobileOnly>
 
-        <Fade left>
-          <TextSection dangerouslySetInnerHTML={{ __html: content }} />
-        </Fade>
+        <TextSection dangerouslySetInnerHTML={{ __html: content }} />
       </Container>
     </Screen>
   );

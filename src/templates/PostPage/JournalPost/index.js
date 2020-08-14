@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import kebabCase from 'lodash/kebabCase';
-import Tag from '../../atoms/Tag';
+import Tag from './Tag';
 
-const JournalPost = ({ pageContext, post }) => {
+const JournalPost = ({ post }) => {
   const Post = styled('article')`
-    grid-column: 4 / 10;
     padding: 0;
-    font-weight: 600;
+    font-weight: 200;
     background-color: transparent;
     color: #7a7495;
     height: auto;
-    margin-top: 1rem;
 
     @media (max-width: 1023px) {
       margin-top: 0;
@@ -28,14 +26,9 @@ const JournalPost = ({ pageContext, post }) => {
       letter-spacing: -0.025em;
       width: 100vw;
     }
-  
-    h3 {
-      font-weight: 600;
-      font-size: 1rem;
-    }
   `;
 
-  const PostTitle = styled('div')`
+  const PostHeader = styled('header')`
     background-image: url(${post.frontmatter.featuredImage.childImageSharp.fluid.src});
     background-size: cover;
     background-repeat: no-repeat;
@@ -45,10 +38,9 @@ const JournalPost = ({ pageContext, post }) => {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    height: calc((50vw / 16) * 9);
-    box-shadow: 0.25rem 0 0.5rem rgba(0,0,0,0.5), -0.25rem 0 0.5rem rgba(0,0,0,0.5);
-    padding: 0;
     position: relative;
+    padding: 1rem;
+    height: 450px;
 
     &:before {
       position: absolute;
@@ -56,62 +48,61 @@ const JournalPost = ({ pageContext, post }) => {
       left: 0;
       bottom: 0;
       right: 0;
-      background-color: #332E4A;
+      background-color: #828dac;
       content: '';
-      opacity: 0.75;
+      opacity: 0.5;
       pointer-events: none;
     }
 
     @media(max-width: 1023px) {
       width: 100vw;
       height: 56.25vw;
+      padding: 0;
     }
+  `;
 
-    h2 {
-      font-size: 2rem;
-      color: #fff;
-      text-shadow: 3px 3px 6px #332E4A,
-                  -3px -3px 6px #332E4A,
-                  -3px 3px 6px #332E4A,
-                  3px -3px 6px #332E4A;
-      text-align: center;
-      line-height: 2rem;
-      padding: 1rem;
-      margin-bottom: 0;
-      z-index: 2;
-    }
+  const PostTitle = styled('h2')`
+    max-width: calc(100% - 2rem);
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 3px 3px 6px #332E4A,
+                -3px -3px 6px #332E4A,
+                -3px 3px 6px #332E4A,
+                3px -3px 6px #332E4A;
+    text-align: center;
+    line-height: 2rem;
+    padding: 0;
+    margin-bottom: 0;
+    z-index: 2;
 
     @media(max-width: 1279px) {
-      h2 {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-      }
+      font-size: 1.5rem;
+      line-height: 1.5rem;
     }
 
     @media(max-width: 767px) {
-      h2 {
-        font-size: 1.25rem;
-        line-height: 1.25rem;
-      }
+      font-size: 1.25rem;
+      line-height: 1.25rem;
     }
+  `;
 
-    h3 {
-      color: #fff;
-      weight: 600;
-      z-index: 2;
-      text-shadow: 2px 2px 4px #332E4A,
-                  -2px -2px 4px #332E4A,
-                  -2px 2px 4px #332E4A,
-                  2px -2px 4px #332E4A;
-    }
+  const PostDate = styled('h3')`
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    z-index: 999;
+    text-shadow: 2px 2px 4px #332E4A,
+                -2px -2px 4px #332E4A,
+                -2px 2px 4px #332E4A,
+                2px -2px 4px #332E4A;
+    margin: 0.5rem 0;
   `;
 
   const PostContent = styled('div')`
     padding: 1rem;
-    font-weight: 600;
+    font-weight: 200;
     background-color: #fffacd;
-    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5), -0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5);
-    line-height: 1.125rem;
+    line-height: 1.5rem;
 
     p, li {
       max-width: 100%;
@@ -142,15 +133,14 @@ const JournalPost = ({ pageContext, post }) => {
 
   const Tags = styled('section')`
     text-align: center;
-    margin-top: 1rem;
     z-index: 2;
   `;
 
   return (
     <Post>
-      <PostTitle>
-        <h2>{post.frontmatter.title}</h2>
-        <h3>{post.frontmatter.date}</h3>
+      <PostHeader>
+        <PostTitle>{post.frontmatter.title}</PostTitle>
+        <PostDate>{post.frontmatter.date}</PostDate>
         <Tags>
           {post.frontmatter.tags.map(tag => (
             <Tag to={`/tags/${kebabCase(tag)}/`} key={tag}>
@@ -158,7 +148,7 @@ const JournalPost = ({ pageContext, post }) => {
             </Tag>
           ))}
         </Tags>
-      </PostTitle>
+      </PostHeader>
       <PostContent
         className="post-content"
         dangerouslySetInnerHTML={{ __html: post.html }}

@@ -16,7 +16,7 @@ const StyledPortfolio = styled('section')`
 const PortfolioTemplate = () => {
   return (
     <>
-      <Header />
+      <Header text="portfolio" />
       <StyledPortfolio>
         {portfolioData.map(project => (
           <Project project={project} />

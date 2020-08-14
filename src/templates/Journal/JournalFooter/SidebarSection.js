@@ -1,23 +1,15 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Card from '../Card';
-import JournalHeading from '../JournalHeading';
+import Card from './Card';
 
-const SidebarSection = ({ tag }) => {
+const SidebarSection = ({ cat }) => {
   const Section = styled('section')`
-    grid-column: 1 / 4;
-    padding: 0;
-    margin-bottom: 2rem;
-    width: 100%;
-
-    @media(max-width: 1023px) {
-      padding: 0 0.5rem;
-      margin-bottom: 0;
-    }
+    display: flex;
+    flex-flow: column nowrap;
   `;
 
   let backgroundColor;
-  switch (tag.fieldValue) {
+  switch (cat.fieldValue) {
     case 'projects':
       backgroundColor = '#d2ddcb';
       break;
@@ -34,12 +26,12 @@ const SidebarSection = ({ tag }) => {
 
   return (
     <Section
-      key={tag.fieldValue}
+      key={cat.fieldValue}
     >
-      <JournalHeading>
-        {tag.fieldValue.charAt(0).toUpperCase() + tag.fieldValue.substring(1)}
-      </JournalHeading>
-      {tag.nodes.map(node => (
+      <h2>
+        {cat.fieldValue.charAt(0).toUpperCase() + cat.fieldValue.substring(1)}
+      </h2>
+      {cat.nodes.map(node => (
         <Card article={node} key={node.id} backgroundColor={backgroundColor} />
       ))}
     </Section>

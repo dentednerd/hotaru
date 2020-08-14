@@ -12,15 +12,19 @@ const StyledTag = styled(Link)`
   border-radius: 0.25rem;
   margin-bottom: 0.25rem;
   margin-right: 0.25rem;
-  box-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5),
-              -0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 8px #332E4A,
+              -2px -2px 8px #332E4A,
+              -2px 2px 8px #332E4A,
+              2px -2px 8px #332E4A;
   transition: all 0.25s ease-in;
 
   &:hover {
     text-decoration: none;
     background-color: #fffacd;
-    box-shadow: 0.0625rem 0.0625rem 0 rgba(0,0,0,0.5),
-                -0.0625rem 0.0625rem 0 rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 4px #332E4A,
+                -1px -1px 4px #332E4A,
+                -1px 1px 4px #332E4A,
+                1px -1px 4px #332E4A;
     transition: all 0.25s ease-in;
   }
   
@@ -35,8 +39,8 @@ const StyledTag = styled(Link)`
   }
 `;
 
-const Tag = ({ children }) => (
-  <StyledTag>
+const Tag = ({ to, children }) => (
+  <StyledTag to={to}>
     {children}
   </StyledTag>
 );

@@ -46,9 +46,8 @@ const HomeTemplate = () => {
 
       <Screen
         ref={refs[refs.length - 1]}
-        backToTop
-        className={classnames[(introData.length + 1) % 4]}
-        onClick={() => scroll(refHero)}
+        noIcon
+        style={{ height: '75vh' }}
       >
         <CallToAction />
       </Screen>

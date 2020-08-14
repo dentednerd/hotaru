@@ -1,34 +1,15 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import Layout from '../templates/Layout';
-import JournalWrapper from '../organisms/JournalWrapper';
-import LeftBar from '../molecules/LeftBar';
-import JournalPost from '../molecules/JournalPost';
-import RightBar from '../molecules/RightBar';
+import JournalPost from '../templates/PostPage/JournalPost';
+import JournalTemplate from '../templates/Journal';
 
-const Journal = ({ data: { posts, tags, categories } }) => {
-  const latestPost = posts.edges[0].node;
-
-  const JournalPostWrapper = styled('main')`
-    grid-column: 4 / 10;
-
-    @media(max-width: 767px) {
-      order: 1;
-      grid-column: 1 / 13;
-    }
-  `;
+const Journal = ({ data }) => {
+  const latestPost = data.posts.edges[0].node;
 
   return (
-    <Layout>
-      <JournalWrapper>
-        <LeftBar categories={categories.group} />
-        <JournalPostWrapper>
-          <JournalPost post={latestPost} />
-        </JournalPostWrapper>
-        <RightBar tags={tags} />
-      </JournalWrapper>
-    </Layout>
+    <JournalTemplate data={data}>
+      <JournalPost post={latestPost} />
+    </JournalTemplate>
   );
 };
 
@@ -61,34 +42,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    tags: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 2000
-    ) {
+    tags: allMarkdownRemark {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
-        nodes {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            featuredImage {
-              childImageSharp{
-                fluid(maxWidth: 630) {
-                  src
-                }
-              }
-            }
-            tags
-            category
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 90)
-          html
-        }
       }
     }
     categories: allMarkdownRemark(
