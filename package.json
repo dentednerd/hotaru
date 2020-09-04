@@ -61,7 +61,7 @@
   "license": "ISC",
   "scripts": {
     "build": "rm -rf .cache/* && gatsby build --prefix-paths",
-    "develop": "rm -rf .cache/* && gatsby develop",
+    "dev": "rm -rf .cache/* && gatsby develop",
     "format": "prettier --write '**/*.js'",
     "serve": "rm -rf .cache/* && gatsby build --prefix-paths && gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1",
