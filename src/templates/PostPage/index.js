@@ -1,14 +1,37 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import JournalTemplate from '../../templates/Journal';
+import JournalTemplate from '../Journal';
 import JournalPost from './JournalPost';
+import CTALink from '../../atoms/CTALink';
 
-export default ({ data }) => {
+const NextPrevious = styled('nav')`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  margin: 1rem 0;
+`;
+
+export default ({ data, pageContext }) => {
   const { post } = data;
 
   return (
-    <JournalTemplate data={data} >
+    <JournalTemplate data={data}>
       <JournalPost post={post} />
+      <NextPrevious>
+        {pageContext.previous && (
+          <CTALink to={pageContext.previous.fields.slug}>
+            &laquo;&nbsp;
+            {pageContext.previous.frontmatter.title}
+          </CTALink>
+        )}
+        {pageContext.next && (
+          <CTALink to={pageContext.next.fields.slug}>
+            {pageContext.next.frontmatter.title}
+            &nbsp;&raquo;
+          </CTALink>
+        )}
+      </NextPrevious>
     </JournalTemplate>
   );
 };

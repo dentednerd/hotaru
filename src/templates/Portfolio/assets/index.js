@@ -6,6 +6,7 @@ import NCNewsv2 from './NCNewsv2Shot.png';
 import Northwitter from './NorthwitterShot.png';
 import TrellJo from './TrellJoShot.png';
 import LAD from './LAD.png';
+import GAMING from './GAMING.png';
 import Tyla from './Tyla.png';
 import SPORT from './SPORT.png';
 import UNILAD from './UNILAD.png';
@@ -23,13 +24,14 @@ const assets = {
   Northwitter,
   TrellJo,
   LAD,
+  GAMING,
   Tyla,
   SPORT,
   UNILAD,
   LADAPP1,
   LADAPP2,
   PinpinDay,
-  PinpinDusk
+  PinpinDusk,
 };
 
-export { assets };
+export default assets;

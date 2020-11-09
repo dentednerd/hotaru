@@ -1,11 +1,35 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import { colors } from '../../tokens';
 
 const StyledTagCard = styled(Link)`
-  display: block;
-  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
   margin-bottom: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.0625rem rgba(51, 46, 74, 0.75);
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: none;
+    transition: box-shadow 0.2s;
+  }
+`;
+
+const PostContent = styled('div')`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 1rem;
+  font-weight: 200;
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  background-color: ${colors.yellow};
+  color: ${colors.darkpurple};
+  width: 40%;
 
   &:hover {
     text-decoration: none;
@@ -14,16 +38,16 @@ const StyledTagCard = styled(Link)`
 
 const TagCard = ({ post }) => {
   const PostTitle = styled('div')`
-    background-color: #332E4A;
+    background-color: ${colors.darkpurple};
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    height: calc((50vw / 16) * 4.5);
+    width: 60%;
     padding: 0;
     position: relative;
 
-      &:before {
+    &:before {
       position: absolute;
       top: 0;
       left: 0;
@@ -37,37 +61,20 @@ const TagCard = ({ post }) => {
       content: '';
       opacity: 0.5;
     }
-    
+
     h2 {
-      font-size: 2rem;
+      font-size: 1rem;
+      line-height: 1rem;
       color: #fff;
-      text-shadow: 3px 3px 6px #332E4A, -3px -3px 6px #332E4A, -3px 3px 6px #332E4A, 3px -3px 6px #332E4A;
+      text-shadow: 3px 3px 6px ${colors.darkpurple},
+                  -3px -3px 6px ${colors.darkpurple},
+                  -3px 3px 6px ${colors.darkpurple},
+                  3px -3px 6px ${colors.darkpurple};
       text-align: center;
-      line-height: 2rem;
       padding: 1rem;
       margin-bottom: 0;
       z-index: 2;
-    }
-
-    @media(max-width: 767px) {
-      height: calc((100vw / 16) * 9) ;
-
-      h2 {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-      }
-    }
-  `;
-
-  const PostContent = styled('div')`
-    padding: 1rem;
-    font-weight: 200;
-    background-color: #fffacd;
-    color: #7a7495;
-    line-height: 1.5rem;
-
-    &:hover {
-      text-decoration: none;
+      letter-spacing: 0;
     }
   `;
 
@@ -77,7 +84,6 @@ const TagCard = ({ post }) => {
         <h2>{post.frontmatter.title}</h2>
       </PostTitle>
       <PostContent
-        className="post-content"
         dangerouslySetInnerHTML={{ __html: post.excerpt }}
       />
     </StyledTagCard>

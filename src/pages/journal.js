@@ -1,17 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import JournalPost from '../templates/PostPage/JournalPost';
+import PageIntro from '../atoms/PageIntro';
 import JournalTemplate from '../templates/Journal';
+import JournalHome from '../templates/Journal/JournalHome';
 
-const Journal = ({ data }) => {
-  const latestPost = data.posts.edges[0].node;
-
-  return (
-    <JournalTemplate data={data}>
-      <JournalPost post={latestPost} />
-    </JournalTemplate>
-  );
-};
+const Journal = ({ data }) => (
+  <JournalTemplate>
+    <PageIntro
+      title="Journal"
+      text="Thoughts on coding, commentary on projects I've worked on and tech event reviews."
+    />
+    <JournalHome categories={data.categories.group} tags={data.tags.group} />
+  </JournalTemplate>
+);
 
 export default Journal;
 
@@ -19,6 +20,22 @@ export const pageQuery = graphql`
   query {
     posts: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
+        next {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+        previous {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
         node {
           id
           frontmatter {
@@ -39,6 +56,7 @@ export const pageQuery = graphql`
           }
           excerpt(pruneLength: 90)
           html
+
         }
       }
     }

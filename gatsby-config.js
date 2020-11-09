@@ -9,6 +9,15 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-emotion',
     'gatsby-plugin-feed',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.joanneimlay.dev',
+        sitemap: 'https://www.joanneimlay.dev/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -20,7 +29,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Josefin Sans', 'Josefin Slab', 'Sacramento', 'Ubuntu Mono'],
+          families: ['Zilla Slab', 'PT Serif', 'Raleway', 'Sacramento', 'Ubuntu Mono'],
         },
       },
     },

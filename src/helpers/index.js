@@ -1,17 +1,13 @@
-const stackMap = stack => stack.map((tech, index) => {
-  if (index === 0) {
-    return `${tech}`;
-  }
-  return ` » ${tech} `;
-});
+import React from 'react';
+import Tag from '../atoms/Tag';
 
-const classnames = [
-  'lemon',
-  'sky',
-  'pink',
-];
+const stackMap = stack => stack.map(tech => (
+  <Tag key={tech}>
+    {tech}
+  </Tag>
+));
+
 
 export {
-  stackMap,
-  classnames,
+  stackMap, // eslint-disable-line
 };

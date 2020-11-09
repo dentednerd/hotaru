@@ -2,17 +2,15 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
 import TagCard from './TagCard';
-import JournalTemplate from '../../templates/Journal';
+import JournalTemplate from '../Journal';
 
-const TagTitle = styled('h2')`
-  margin: 2rem 0;
-  text-align: right;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  text-shadow: 0.1rem 0.1rem 0.1rem #7a7495;
+const JournalGrid = styled('section')`
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem;
 
-  @media(max-width: 767px) {
-    padding: 0 1rem;
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
@@ -22,10 +20,12 @@ const TagPage = ({ pageContext, data }) => {
 
   return (
     <JournalTemplate data={data}>
-      <TagTitle>
-        {tag}
-      </TagTitle>
-      {edges.map(({ node }) => <TagCard post={node} key={node.fields.slug} />)}
+      <h2>
+        {`${tag} journal entries`}
+      </h2>
+      <JournalGrid>
+        {edges.map(({ node }) => <TagCard post={node} key={node.fields.slug} />)}
+      </JournalGrid>
     </JournalTemplate>
   );
 };
@@ -42,7 +42,7 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 90)
           fields {
             slug
           }

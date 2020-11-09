@@ -25,6 +25,22 @@ exports.createPages = async ({ graphql, actions }) => {
         limit: 2000
       ) {
         edges {
+          next {
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
+          previous {
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
           node {
           id
           frontmatter {
@@ -64,7 +80,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.postsRemark.edges;
 
   // Create post detail pages
-  posts.forEach(({ node }) => {
+  posts.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve('src/templates/PostPage/index.js'),
@@ -72,6 +88,8 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
+        next,
+        previous,
       },
     });
   });

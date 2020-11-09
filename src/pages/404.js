@@ -1,29 +1,24 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import Screen from '../organisms/Screen';
 import Layout from '../templates/Layout';
-import GlowHeading from '../atoms/GlowHeading';
-
-const Styled404 = styled('div')`
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  a {
-    color: #ffffff;
-  }
-`;
 
 export default () => (
   <Layout>
-    <Screen className="purple" noIcon>
-      <Styled404>
-        <GlowHeading text="Quoth the server, 404." />
-        <a href="/"><p>home</p></a>
-        <a href="/journal"><p>journal</p></a>
-      </Styled404>
-    </Screen>
+    <p>
+      &apos;Tis not possible!, I pleaded,
+      <br />
+      But my browser, so conceited,
+      <br />
+      Remained blank, I then repeated,
+      <br />
+      Just a blank and nothing more.
+    </p>
+    <p>
+      Then, in answer to my query,
+      <br />
+      Through the net I loved so dearly,
+      <br />
+      Came its answer, dark and dreary...
+    </p>
+    <h2>Quoth the server, 404.</h2>
   </Layout>
 );

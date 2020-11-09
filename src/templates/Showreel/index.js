@@ -1,51 +1,85 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import CTALink from '../../atoms/CTALink';
+import { colors } from '../../tokens';
 
-const videos = [
-  'https://youtube.com/embed/gk_5ezTqd3c',
-  'https://youtube.com/embed/l62-FZS5lGA',
-  'https://youtube.com/embed/3Ew5dfitW6g',
-  'https://youtube.com/embed/SsoueiuOUbc',
-  'https://youtube.com/embed/Ua4bVgMO8ls',
-  'https://youtube.com/embed/2bA0KAGYjIc',
-];
+const TV = styled('iframe')`
+  display: block;
+  width: calc(100vw - 2rem);
+  height: calc(56.25vw - 2rem);
+  margin: 0 auto 1rem;
+  border: solid 1px ${colors.darkpurple};
 
-const VideoContainer = styled('div')`
-  label: Showreel;
-  margin: 0;
-  width: calc(50vw - 2rem);
-  height: calc(28.125vw - 2rem);
-  background: rgba(0,0,0,0.25);
-
-  iframe {
-    width: calc(50vw - 2rem);
-    height: calc(28.125vw - 2rem);
-    margin-bottom: 0;
-    padding-bottom: 0;
+  @media (min-width: 800px) {
+    width: 50vw;
+    height: 28.125vw;
   }
 
-  @media (max-width: 768px) {
-    width: calc(100vw - 2rem);
-    max-width: calc(100vw - 2rem);
-    height: calc(56.25vw - 2rem);
-
-    iframe {
-      width: calc(100vw - 2rem);
-      height: calc(56.25vw - 2rem);
-    }
+  @media (min-width: 1024px) {
+    width: 40vw;
+    height: 22.5vw;
   }
 `;
 
-const showreel = videos.map(video => (
-  <VideoContainer>
-    <iframe
-      title="showreel"
-      src={video}
-      frameBorder="0"
-      allow="encrypted-media"
-      allowFullScreen
-    />
-  </VideoContainer>
-));
+const List = styled('ul')`
+  list-style: none;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+`;
 
-export default showreel;
+const videos = [
+  {
+    id: 'https://youtube.com/embed/gk_5ezTqd3c',
+    name: 'Automating BrowserStack screenshot generation with CircleCI',
+  },
+  {
+    id: 'https://youtube.com/embed/l62-FZS5lGA',
+    name: 'Careers in Coding - The Future of Work Webinar',
+  },
+  {
+    id: 'https://youtube.com/embed/3Ew5dfitW6g',
+    name: 'Northcoders: Jo | Student Stories',
+  },
+  {
+    id: 'https://youtube.com/embed/SsoueiuOUbc',
+    name: 'Northcoders: is coding for everyone?',
+  },
+  {
+    id: 'https://youtube.com/embed/Ua4bVgMO8ls',
+    name: 'Northcoders: a new opportunity',
+  },
+  {
+    id: 'https://youtube.com/embed/2bA0KAGYjIc',
+    name: 'Northcoders scholarship supports women programmers',
+  },
+];
+
+const ShowreelTemplate = () => {
+  const [currentVideo, setCurrentVideo] = useState('https://youtube.com/embed/gk_5ezTqd3c');
+
+  return (
+    <section>
+      <TV
+        title="showreel"
+        src={currentVideo}
+        frameBorder="0"
+        allow="encrypted-media"
+        allowFullScreen
+      />
+      <List>
+        {videos.map(video => (
+          <CTALink icon={faYoutube} onClick={() => setCurrentVideo(video.id)}>
+            {video.name}
+          </CTALink>
+        ))}
+      </List>
+    </section>
+  );
+};
+
+export default ShowreelTemplate;
