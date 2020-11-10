@@ -39,10 +39,6 @@ export default (props) => {
           name="description"
           content="Joey Imlay is a software engineer in Manchester, England."
         />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;500;700&family=PT+Serif:wght@400;700&family=Raleway:wght@500&family=Sacramento&family=Ubuntu+Mono&display=swap"
-        />
       </Helmet>
       <GlobalStyles />
       <Header />
