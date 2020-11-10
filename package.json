@@ -39,7 +39,7 @@
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.1.8",
     "gatsby-transformer-sharp": "^2.1.18",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "markdownlint": "^0.13.0",
     "prismjs": "^1.17.1",
     "react": "^16.5.1",
