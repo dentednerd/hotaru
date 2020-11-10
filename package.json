@@ -21,7 +21,7 @@
     "babel": "^6.23.0",
     "babel-eslint": "^10.1.0",
     "eslint-plugin-react-hooks": "^4.0.6",
-    "gatsby": "^2.8.6",
+    "gatsby": "^2.25.0",
     "gatsby-image": "^2.0.40",
     "gatsby-plugin-emotion": "^4.1.6",
     "gatsby-plugin-feed": "^2.5.11",
