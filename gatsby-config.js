@@ -97,28 +97,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          {
-            family: 'Zilla Slab',
-            variants: ['300', '500', '700'],
-          },
-          {
-            family: 'PT Serif',
-            variants: ['400', '700'],
-          },
-          {
-            family: 'Raleway',
-            variants: ['500'],
-          },
-          {
-            family: 'Sacramento',
-          },
-          {
-            family: 'Ubuntu Mono',
-          },
+          'Zilla Slab:300,500,700',
+          'PT Serif:400,700',
+          'Raleway',
+          'Sacramento',
+          'Ubuntu Mono',
         ],
+        display: 'swap',
       },
     },
   ],
