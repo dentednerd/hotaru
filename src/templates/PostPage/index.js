@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import JournalTemplate from '../Journal';
 import JournalPost from './JournalPost';
@@ -17,6 +18,21 @@ export default ({ data, pageContext }) => {
 
   return (
     <JournalTemplate data={data}>
+      <Helmet
+        htmlAttributes={{
+          lang: 'en',
+        }}
+      >
+        <title>{post.frontmatter.title}</title>
+        <meta
+          name="description"
+          content={post.excerpt}
+        />
+        <meta
+          name="author"
+          content="Joey Imlay"
+        />
+      </Helmet>
       <JournalPost post={post} />
       <NextPrevious>
         {pageContext.previous && (
@@ -40,6 +56,7 @@ export const query = graphql`
   query($slug: String!) {
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
         date(formatString: "DD MMMM, YYYY")
