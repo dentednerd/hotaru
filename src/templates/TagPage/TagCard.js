@@ -25,8 +25,7 @@ const PostContent = styled('div')`
   align-items: center;
   padding: 1rem;
   font-weight: 200;
-  font-size: 0.75rem;
-  line-height: 0.75rem;
+  line-height: 1.25rem;
   background-color: ${colors.yellow};
   color: ${colors.darkpurple};
   width: 40%;
@@ -53,18 +52,18 @@ const TagCard = ({ post }) => {
       left: 0;
       bottom: 0;
       right: 0;
-      background-image: url(${post.frontmatter.featuredImage.childImageSharp.fluid.src});
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-blend-mode: lighten;
+      ${post.frontmatter.featuredImage && `
+        background-image: url(${post.frontmatter.featuredImage.childImageSharp.fluid.src});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: lighten;
+      `}
       content: '';
       opacity: 0.5;
     }
 
     h2 {
-      font-size: 1rem;
-      line-height: 1rem;
       color: #fff;
       text-shadow: 3px 3px 6px ${colors.darkpurple},
                   -3px -3px 6px ${colors.darkpurple},

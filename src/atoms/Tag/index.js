@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import { colors, fonts } from '../../tokens';
+import { colors, fonts, shadows } from '../../tokens';
 
 const StyledTag = styled('div')`
   display: inline-block;
@@ -9,14 +9,15 @@ const StyledTag = styled('div')`
   line-height: 0.75rem;
   font-family: ${fonts.headline};
   font-weight: 500;
-  background-color: ${colors.yellow};
+  background-color: #fff;
   color: ${colors.darkpurple};
   padding: 0.25rem 0.5rem;
-  border-radius: 0.5rem;
-  margin-bottom: 0.25rem;
-  margin-right: 0.25rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
   transition: all 0.25s ease-in;
   text-decoration: none;
+  box-shadow: ${shadows.dropShadow};
 
   span {
     margin-left: 0.25rem;
@@ -30,6 +31,10 @@ const StyledTag = styled('div')`
 
   &:hover {
     text-decoration: none;
+    background-color: ${colors.yellow};
+    box-shadow: none;
+    transition: all 0.25s ease-in;
+    cursor: pointer;
   }
 `;
 
