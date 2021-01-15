@@ -18,7 +18,6 @@ const CTALink = ({
   const StyledCTALink = styled(Element)`
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
     align-items: center;
     background-color: ${colors.darkpurple};
     color: #fff;
