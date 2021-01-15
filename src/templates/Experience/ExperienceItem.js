@@ -3,30 +3,19 @@ import styled from '@emotion/styled';
 import { stackMap } from '../../helpers';
 import { colors, fonts } from '../../tokens';
 
-const ExperienceContainer = styled('section')`
-  margin: 0 0 1rem;
-  padding-bottom: 1rem;
+const Item = styled('section')`
+  margin-bottom: 1rem;
+  padding-bottom: 0;
   border-bottom: solid 1px ${colors.darkpurple};
 
-  p {
-    margin-bottom: 0.5rem;
-  }
-
   p.stack {
-    font-family: ${fonts.headline};
-  }
-
-  img {
-    max-width: 50%;
-  }
-
-  li {
     margin-bottom: 0.5rem;
+    font-family: ${fonts.headline};
   }
 `;
 
-const ExperienceScreen = ({ job }) => (
-  <ExperienceContainer>
+const ExperienceItem = ({ job }) => (
+  <Item>
     <h3>{`${job.companyName}: ${job.jobTitle}`}</h3>
     <h4>{job.dates}</h4>
     <ul>
@@ -37,7 +26,7 @@ const ExperienceScreen = ({ job }) => (
     <p className="stack">
       {stackMap(job.skills)}
     </p>
-  </ExperienceContainer>
+  </Item>
 );
 
-export default ExperienceScreen;
+export default ExperienceItem;

@@ -4,7 +4,7 @@ import timelineData from '../../data/timelineData';
 import educationData from '../../data/educationData';
 import interestsData from '../../data/interestsData';
 import ContactIcons from '../../molecules/ContactIcons';
-import ExperienceScreen from './ExperienceScreen';
+import ExperienceItem from './ExperienceItem';
 import { colors, fonts } from '../../tokens';
 
 const CVLayout = styled('section')`
@@ -22,9 +22,14 @@ const CVLayout = styled('section')`
 
   ul {
     list-style: none;
+    line-height: 1.25rem;
     max-width: 100%;
     margin: 0;
     padding: 0;
+
+    li {
+      margin-bottom: 1.25rem;
+    }
   }
 
   h3 {
@@ -106,7 +111,7 @@ const ExperienceTemplate = () => (
     <Experience>
       <h2>Experience</h2>
       {timelineData.map((job, index) => (
-        <ExperienceScreen job={job} index={index} />
+        <ExperienceItem job={job} index={index} />
       ))}
     </Experience>
     <Education>

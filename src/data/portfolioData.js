@@ -1,15 +1,15 @@
 export default [
   {
     title: 'LADbible (iOS/Android)',
-    caption: '<p>Delivering editorial and video content to iOS and Android devices.</p><p>We took our cues from a legacy app built in Swift, and rebuilt in React Native using Expo. For most of us on the team, this was our first experience with React Native and mobile development. It\'s been  - continues to be - a great learning experience, especially around performance across devices.</p>',
+    caption: '<p>Delivering editorial and video content to iOS and Android devices. We took our cues from a legacy app built in Swift, and rebuilt in React Native using Expo. For most of us on the team, this was our first experience with React Native and mobile development. It continues to be a great learning experience, especially as we work to optimise performance across devices.</p>',
     links: [
       {
         text: 'install LADbible on iOS',
         url: 'https://apple.co/2DDLgTu',
       },
       {
-        text: 'install LADbible on Android (soon)',
-        url: '',
+        text: 'install LADbible on Android',
+        url: 'https://play.google.com/store/apps/details?id=com.ladbiblegroup.LADbible',
       },
     ],
     images: ['LADAPP2', 'LADAPP1'],

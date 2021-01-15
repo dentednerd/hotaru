@@ -7,9 +7,9 @@ export default [
     jobDesc: [
       'Replatformed existing group websites in React: <a href="https://www.ladbible.com">LADbible</a>, <a href="https://www.sportbible.com">SPORTbible</a>, Pretty52, <a href="https://www.unilad.co.uk">UNILAD</a>',
       'Created new group websites in React: <a href="https://www.tyla.com">Tyla</a>, <a href="https://www.gamingbible.co.uk">GAMINGbible</a>',
-      'Developed a cross-platform mobile app in React Native: <a href="https://apple.co/2DDLgTu">iOS</a>',
-      'Wrote about regression testing for company Medium publication: <a href="https://medium.com/ladbiblegroup/automating-browserstack-screenshot-generation-with-circleci-502bad7dcb7d">Automating BrowserStack screenshot generation with CircleCI</a>',
-      'Presented a talk on regression testing: <a href="https://www.youtube.com/watch?v=gk_5ezTqd3c">Automating BrowserStack screenshot generation with CircleCI</a>',
+      'Developed a cross-platform mobile app in React Native: <a href="https://apple.co/2DDLgTu">iOS</a>, <a href="https://play.google.com/store/apps/details?id=com.ladbiblegroup.LADbible">Android</a>',
+      'Wrote articles for <a href="https://medium.com/ladbiblegroup">the team\'s Medium publication</a>',
+      'Presented <a href="https://www.youtube.com/watch?v=gk_5ezTqd3c">a talk on regression testing</a>',
       'Facilitated daily standups and monthly retros',
     ],
     skills: ['React', 'React Native', 'Storybook', 'Jest', 'Cypress', 'GraphQL', 'Docker', 'Kubernetes', 'CircleCI', 'Google Cloud Platform'],

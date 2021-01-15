@@ -7,7 +7,7 @@ const StyledFooter = styled('footer')`
   height: auto;
   padding: 2rem 0;
 
-  div {
+  section {
     border-top: solid 1px ${colors.purple};
     padding-top: 1rem;
     margin-top: 1rem;
@@ -24,19 +24,19 @@ const StyledFooter = styled('footer')`
   }
 `;
 
-const string = '"When people call people nerds, mostly what they\'re saying is \'you like stuff\', which is not a good insult at all."';
+const quote = '"When people call people nerds, mostly what they\'re saying is \'you like stuff\', which is not a good insult at all."';
 
 const Footer = () => (
   <StyledFooter>
     <ContactIcons />
-    <div>
-      <h2>joanneimlay.dev &copy; 2020</h2>
+    <section>
+      <h2>joeyimlay.dev &copy; 2020</h2>
       <p>
-        {string}
+        {quote}
         <br />
         -- John Green
       </p>
-    </div>
+    </section>
   </StyledFooter>
 );
 
