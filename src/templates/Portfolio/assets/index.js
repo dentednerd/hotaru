@@ -10,8 +10,11 @@ import GAMING from './GAMING.png';
 import Tyla from './Tyla.png';
 import SPORT from './SPORT.png';
 import UNILAD from './UNILAD.png';
-import LADAPP1 from './LADAPP1.png';
-import LADAPP2 from './LADAPP2.png';
+import BumblebeeArticles from './BumblebeeArticles.png';
+import BumblebeeBundles from './BumblebeeBundles.png';
+import BumblebeeBundleVideo from './BumblebeeBundleVideo.png';
+import BumblebeeHome from './BumblebeeHome.png';
+import BumblebeeVideos from './BumblebeeVideos.png';
 import PinpinDay from './PinpinDayShot.png';
 import PinpinDusk from './PinpinDuskShot.png';
 
@@ -28,8 +31,11 @@ const assets = {
   Tyla,
   SPORT,
   UNILAD,
-  LADAPP1,
-  LADAPP2,
+  BumblebeeArticles,
+  BumblebeeBundles,
+  BumblebeeBundleVideo,
+  BumblebeeHome,
+  BumblebeeVideos,
   PinpinDay,
   PinpinDusk,
 };

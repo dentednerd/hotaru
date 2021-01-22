@@ -29,12 +29,16 @@ const StyledRelatedPosts = styled('blockquote')`
 `;
 
 const Images = styled('div')`
-  ${props => props.length > 1 && 'display: grid;'}
-  ${props => `grid-template-columns: repeat(${props.length + 3}, 1fr);`}
-  ${props => `grid-template-rows: repeat(${props.length + 3}, 1fr);`}
-  ${props => props.mobile && 'grid-template-columns: repeat(auto-fit, 1fr);'}
-  ${props => props.mobile && 'grid-template-rows: 1fr;'}
-  ${props => props.mobile && 'column-gap: 1rem;'}
+  ${props => (props.length > 1 && !props.mobile) && `
+    display: grid;
+    grid-template-columns: repeat(${props.length + 3}, 1fr);
+    grid-template-rows: repeat(${props.length + 3}, 1fr);
+  `}
+  ${props => (props.length <= 1 || props.mobile) && `
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  `}
   width: 100%;
   margin: 2rem auto;
 `;
@@ -45,6 +49,7 @@ const Shot = styled('img')`
   ${props => !props.mobile && `grid-column: ${props.index + 1} / ${props.index + 5};`}
   ${props => !props.mobile && `grid-row: ${props.index + 1} / ${props.index + 5};`}
   object-fit: contain;
+  ${props => props.mobile && 'height: 14rem;'}
   max-width: 100%;
 `;
 

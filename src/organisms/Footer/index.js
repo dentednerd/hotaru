@@ -30,7 +30,7 @@ const Footer = () => (
   <StyledFooter>
     <ContactIcons />
     <div>
-      <h2>joanneimlay.dev &copy; 2020</h2>
+      <h2>joeyimlay.dev &copy; 2021</h2>
       <p>
         {string}
         <br />
