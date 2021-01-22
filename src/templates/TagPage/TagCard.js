@@ -37,43 +37,34 @@ const PostContent = styled('div')`
 
 const TagCard = ({ post }) => {
   const PostTitle = styled('div')`
-    background-color: ${colors.darkpurple};
+    // background-color: ${colors.darkpurple};
+    ${post.frontmatter.featuredImage && `
+      background-image: url(${post.frontmatter.featuredImage.childImageSharp.fluid.src});
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-blend-mode: lighten;
+    `}
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 50%;
     padding: 0;
     position: relative;
 
-    &:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      ${post.frontmatter.featuredImage && `
-        background-image: url(${post.frontmatter.featuredImage.childImageSharp.fluid.src});
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-blend-mode: lighten;
-      `}
-      content: '';
-      opacity: 0.5;
-    }
-
     h2 {
-      color: #fff;
-      text-shadow: 3px 3px 6px ${colors.darkpurple},
-                  -3px -3px 6px ${colors.darkpurple},
-                  -3px 3px 6px ${colors.darkpurple},
-                  3px -3px 6px ${colors.darkpurple};
+      color: ${colors.darkpurple};
+      text-shadow: 3px 3px 12px rgba(255,255,255,0.5),
+                  -3px -3px 12px rgba(255,255,255,0.5),
+                  -3px 3px 12px rgba(255,255,255,0.5),
+                  3px -3px 12px rgba(255,255,255,0.5),
+                  2px 2px 2px ${colors.backgroundpurple};
       text-align: center;
       padding: 1rem;
       margin-bottom: 0;
-      z-index: 2;
       letter-spacing: 0;
+      font-size: 24px;
     }
   `;
 

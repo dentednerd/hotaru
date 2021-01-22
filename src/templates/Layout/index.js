@@ -7,6 +7,7 @@ import Footer from '../../organisms/Footer';
 import { colors } from '../../tokens';
 
 const StyledLayout = styled('main')`
+  position: relative;
   background-color: #fff;
   max-width: 800px;
   margin: 0 auto;
