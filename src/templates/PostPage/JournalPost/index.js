@@ -68,7 +68,7 @@ const JournalPost = ({ post }) => {
       <PostTitle>{post.frontmatter.title}</PostTitle>
       <FeaturedImage
         src={post.frontmatter.featuredImage.childImageSharp.fluid.src}
-        alt={post.title}
+        alt={post.frontmatter.title}
       />
       <PostContent
         dangerouslySetInnerHTML={{ __html: post.html }}

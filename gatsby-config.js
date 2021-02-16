@@ -11,6 +11,13 @@ module.exports = {
     'gatsby-plugin-feed',
     'gatsby-plugin-sitemap',
     {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        devMode: true,
+        analyzerPort: '8008',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.joanneimlay.dev',

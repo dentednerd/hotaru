@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  faLaptopCode,
-  faHistory,
-  faPencilAlt,
-} from '@fortawesome/free-solid-svg-icons';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode';
+import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import CTALink from '../../atoms/CTALink';
 import introData from '../../data/introData';
 import * as images from '../../assets';

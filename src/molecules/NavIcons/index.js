@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import {
-  faCode,
-  faLaptopCode,
-  faHistory,
-  faPencilAlt,
-} from '@fortawesome/free-solid-svg-icons';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode';
+import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import FaIcon from '../../atoms/FaIcon';
 import { colors } from '../../tokens';
 

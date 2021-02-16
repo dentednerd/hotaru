@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import CTALink from '../../atoms/CTALink';
 import { colors } from '../../tokens';
 
