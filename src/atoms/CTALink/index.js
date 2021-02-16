@@ -49,7 +49,7 @@ const CTALink = ({
 
   return (
     <StyledCTALink to={to || null} href={href || null} onClick={() => onClick()}>
-      <FaIcon icon={icon} />
+      {icon && <FaIcon icon={icon} />}
       {children}
     </StyledCTALink>
   );

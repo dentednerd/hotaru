@@ -11,23 +11,14 @@ const StyledTag = styled('div')`
   font-weight: 500;
   background-color: #fff;
   color: ${colors.darkpurple};
-  padding: 0.25rem 0.5rem;
+  padding: 0;
   border-radius: 0.25rem;
-  margin-bottom: 0.5rem;
-  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+  margin-right: 0.25rem;
   transition: all 0.25s ease-in;
   text-decoration: none;
   box-shadow: ${shadows.dropShadow};
-
-  span {
-    margin-left: 0.25rem;
-    padding: 0.25rem;
-    display: inline-block;
-    background: ${colors.pink};
-    color: #fff;
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
-  }
+  overflow: hidden;
 
   &:hover {
     text-decoration: none;
@@ -38,11 +29,43 @@ const StyledTag = styled('div')`
   }
 `;
 
+const FlexWrapper = styled('div')`
+  display: flex;
+  flex-flow: row nowrap;
+
+  span {
+    padding: 0.25rem;
+    display: inline-block;
+    background: ${colors.pink};
+    color: #fff;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    height: 100%;
+  }
+`;
+
+const PadWrapper = styled('div')`
+  padding: 0.25rem;
+`;
+
 const Tag = ({ to, children }) => { // eslint-disable-line arrow-body-style
+  let tagName = null;
+  let tagCount = null;
+
+  if (typeof children === 'object') {
+    tagName = children[0]; // eslint-disable-line prefer-destructuring
+    tagCount = children[1]; // eslint-disable-line prefer-destructuring
+  } else {
+    tagName = children;
+  }
+
   return to ? (
     <Link to={to}>
       <StyledTag>
-        {children}
+        <FlexWrapper>
+          <PadWrapper>{tagName}</PadWrapper>
+          {tagCount && tagCount}
+        </FlexWrapper>
       </StyledTag>
     </Link>
   ) : (

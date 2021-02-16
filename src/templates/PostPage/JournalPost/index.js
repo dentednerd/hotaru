@@ -9,14 +9,17 @@ const JournalPost = ({ post }) => {
     padding: 0;
 
     p:first-child:first-letter {
-      font-size: 3.25rem;
-      line-height: 3rem;
+      font-family: ${fonts.headline};
+      font-size: 3.5rem;
+      line-height: 3.5rem;
       font-weight: 700;
       float: left;
       margin-right: 0.25rem;
     }
 
     blockquote p:first-child:first-letter {
+      font-family: inherit;
+      text-shadow: inherit;
       font-size: 1rem;
       line-height: 1.25rem;
       font-weight: 400;

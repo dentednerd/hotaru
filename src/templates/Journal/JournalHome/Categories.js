@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import TagCard from '../../TagPage/TagCard';
+import Card from '../../../molecules/Card';
 
 const Section = styled('section')`
   display: flex;
@@ -43,7 +43,7 @@ const Categories = ({ cat }) => {
       </h2>
       <JournalGrid>
         {cat.nodes.map(node => (
-          <TagCard post={node} key={node.id} backgroundColor={backgroundColor} />
+          <Card post={node} key={node.id} backgroundColor={backgroundColor} />
         ))}
       </JournalGrid>
     </Section>

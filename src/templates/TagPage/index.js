@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import TagCard from './TagCard';
+import Card from '../../molecules/Card';
 import JournalTemplate from '../Journal';
 
 const JournalGrid = styled('section')`
@@ -24,7 +24,7 @@ const TagPage = ({ pageContext, data }) => {
         {`${tag} journal entries`}
       </h2>
       <JournalGrid>
-        {edges.map(({ node }) => <TagCard post={node} key={node.fields.slug} />)}
+        {edges.map(({ node }) => <Card post={node} key={node.fields.slug} />)}
       </JournalGrid>
     </JournalTemplate>
   );
