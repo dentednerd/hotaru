@@ -76,7 +76,7 @@ const GlobalStyles = ({ children }) => (
       h3 {
         font-family: ${fonts.headline};
         font-weight: 500;
-        font-size: 1.25em;
+        font-size: 1.25rem;
         line-height: 1.25rem;
         margin: 0 0 1rem;
         letter-spacing: -0.05rem;
