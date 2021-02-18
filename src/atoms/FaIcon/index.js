@@ -13,6 +13,7 @@ const FaIcon = (props) => {
 
   return (
     <StyledIcon
+      {...props}
       icon={icon}
       onClick={onClick}
     />

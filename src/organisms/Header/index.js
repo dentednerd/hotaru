@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import MenuIcons from '../../molecules/MenuIcons';
-import FaIcon from '../../atoms/FaIcon';
 import { JoeySvg } from '../../assets';
 import { colors, fonts, shadows } from '../../tokens';
 
@@ -92,12 +90,58 @@ const Menu = styled('div')`
   }
 `;
 
-const MenuIcon = styled(FaIcon)`
-  transform: scale(1.25);
-  margin-right: 0.25rem;
+const MenuIcon = styled('div')`
+  width: 2rem;
+  height: 1rem;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
 
-  &:hover {
-    cursor: pointer;
+  span {
+    display: block;
+    position: absolute;
+    height: 0.25rem;
+    width: 100%;
+    background: ${colors.darkpurple};
+    border-radius: 0.125rem;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+
+  & span:nth-child(1) {
+    top: 0;
+  }
+
+  & span:nth-child(2),
+  & span:nth-child(3) {
+    top: 0.5rem;
+  }
+
+  & span:nth-child(4) {
+    top: 1rem;
+  }
+
+  &.open span:nth-child(1) {
+    top: 1rem;
+    width: 0%;
+    left: 50%;
+  }
+
+  &.open span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  &.open span:nth-child(4) {
+    top: 1rem;
+    width: 0%;
+    left: 50%;
   }
 `;
 
@@ -136,7 +180,12 @@ const Header = () => {
           <h1>Joey Imlay</h1>
         </Link>
       </Identity>
-      <MenuIcon icon={faBars} onClick={() => toggleIsOpen(!isOpen)} />
+      <MenuIcon onClick={() => toggleIsOpen(!isOpen)} className={headerClasses.join(' ')}>
+        <span />
+        <span />
+        <span />
+        <span />
+      </MenuIcon>
       <Menu className={headerClasses.join(' ')}>
         <MenuIcons />
       </Menu>
