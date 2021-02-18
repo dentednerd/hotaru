@@ -70,7 +70,7 @@ const Tag = ({ to, children }) => { // eslint-disable-line arrow-body-style
     </Link>
   ) : (
     <StyledTag>
-      {children}
+      <PadWrapper>{children}</PadWrapper>
     </StyledTag>
   );
 };
