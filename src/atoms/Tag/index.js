@@ -9,7 +9,7 @@ const StyledTag = styled('div')`
   line-height: 0.75rem;
   font-family: ${fonts.headline};
   font-weight: 500;
-  background-color: #fff;
+  background-color: ${colors.yellow};
   color: ${colors.darkpurple};
   padding: 0;
   border-radius: 0.25rem;
@@ -21,8 +21,6 @@ const StyledTag = styled('div')`
   overflow: hidden;
 
   &:hover {
-    text-decoration: none;
-    background-color: ${colors.yellow};
     box-shadow: none;
     transition: all 0.25s ease-in;
     cursor: pointer;

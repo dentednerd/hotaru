@@ -7,24 +7,38 @@ import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import FaIcon from '../../atoms/FaIcon';
-import { colors } from '../../tokens';
+import { colors, fonts } from '../../tokens';
 
 const Nav = styled('nav')`
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: column nowrap;
   padding: 0;
   color: ${colors.darkpurple};
+`;
 
-  a {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    color: ${colors.darkpurple};
-    margin-right: 0.5rem;
+const NavItem = styled(Link)`
+  display: grid;
+  grid-template-columns: 2rem auto;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-family: ${fonts.headline};
+  color: ${colors.darkpurple};
 
-    &:last-of-type {
-      margin-right: 0;
+  svg {
+    transform: scale(1.25);
+    color: inherit;
+    margin-right: 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: ${colors.link};
+
+    svg {
+      transform: scale(1.5);
+      color:${colors.link};
+      transition: all 0.2s ease-in-out;
     }
   }
 `;
@@ -57,14 +71,20 @@ const navItems = [
   },
 ];
 
-const NavIcons = () => (
+const MenuIcons = () => (
   <Nav>
     {navItems.map(item => (
-      <Link to={item.link} aria-label={item.ariaLabel} key={item.link}>
+      <NavItem
+        to={item.link}
+        aria-label={item.ariaLabel}
+        key={item.link}
+        style={{ marginBottom: '1rem' }}
+      >
         <FaIcon icon={item.icon} />
-      </Link>
+        {item.ariaLabel}
+      </NavItem>
     ))}
   </Nav>
 );
 
-export default NavIcons;
+export default MenuIcons;

@@ -13,9 +13,8 @@ const StyledIcon = styled(FontAwesomeIcon)`
     width: 2rem;
     margin: 0 1rem 0 0;
   `}
-
   ${props => props.inline && 'display: inline;'}
-  color: ${colors.darkpurple};
+  color: inherit;
 `;
 
 const FaIcon = (props) => {
