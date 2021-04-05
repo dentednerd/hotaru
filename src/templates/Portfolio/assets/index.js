@@ -17,6 +17,9 @@ import BumblebeeHome from './BumblebeeHome.png';
 import BumblebeeVideos from './BumblebeeVideos.png';
 import PinpinDay from './PinpinDayShot.png';
 import PinpinDusk from './PinpinDuskShot.png';
+import Stardew from './Stardew.png';
+import Frontend from './Frontend.png';
+import Blogr from './Blogr.png';
 
 const assets = {
   CodeNinjas,
@@ -38,6 +41,9 @@ const assets = {
   BumblebeeVideos,
   PinpinDay,
   PinpinDusk,
+  Stardew,
+  Frontend,
+  Blogr,
 };
 
 export default assets;
