@@ -21,23 +21,30 @@ const StyledProject = styled.section`
     text-decoration: none;
   }
 
-  div.screenshot {
+  a.screenshot {
+    display: block;
+    position: relative;
     width: 100%;
-    overflow: hidden;
-    border: solid 1px ${colors.darkpurple};
     margin-bottom: 1rem;
+    border: solid 1px ${colors.darkpurple};
+    overflow: hidden;
 
     @supports (aspect-ratio: 16/9) {
       aspect-ratio: 16/9;
     }
 
     @supports not (aspect-ratio: 16/9) {
+      height: 0;
       padding-top: 56.25%;
     }
 
     img {
-      max-height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 100%;
       min-width: 100%;
+      max-width: 100%;
       object-fit: cover;
     }
   }
@@ -86,11 +93,9 @@ const StyledProject = styled.section`
 export default ({ project }) => (
   <StyledProject>
     <div>
-      <div className="screenshot">
-        <a href={project.links[0].url}>
-          <img src={assets[project.images[0]]} alt={project.title} />
-        </a>
-      </div>
+      <a href={project.links[0].url} className="screenshot">
+        <img src={assets[project.images[0]]} alt={project.title} />
+      </a>
 
       <div className="meta">
         <a href={project.links[0].url}><h2>{project.title}</h2></a>
