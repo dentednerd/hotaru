@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const icons = [
   {
@@ -21,15 +21,16 @@ const icons = [
     image: 'github',
     alt: 'Github',
   },
-];
+]
 
-const ContactIcons = () => icons.map(icon => (
-  <a href={icon.link} key={icon.link}>
-    <img
-      src={`https://img.icons8.com/bubbles/64/000000/${icon.image}.png`}
-      alt={icon.alt}
-    />
-  </a>
-));
+const ContactIcons = () =>
+  icons.map(icon => (
+    <a href={icon.link} key={icon.link}>
+      <img
+        src={`https://img.icons8.com/bubbles/64/000000/${icon.image}.png`}
+        alt={icon.alt}
+      />
+    </a>
+  ))
 
-export default ContactIcons;
+export default ContactIcons

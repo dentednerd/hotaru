@@ -21,4 +21,4 @@ export default [
     content: '<h2>Take a look around.</h2>',
     image: 'MobileSvg',
   },
-];
+]

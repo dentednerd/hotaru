@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from '@emotion/styled';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
-import CTALink from '../../atoms/CTALink';
-import { colors } from '../../tokens';
+import React, { useState } from 'react'
+import styled from '@emotion/styled'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
+import CTALink from '../../atoms/CTALink'
+import { colors } from '../../tokens'
 
 const TV = styled('iframe')`
   display: block;
@@ -20,7 +20,7 @@ const TV = styled('iframe')`
     width: 40vw;
     height: 22.5vw;
   }
-`;
+`
 
 const List = styled('ul')`
   list-style: none;
@@ -30,7 +30,7 @@ const List = styled('ul')`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-`;
+`
 
 const videos = [
   {
@@ -57,12 +57,12 @@ const videos = [
     id: 'https://youtube.com/embed/2bA0KAGYjIc',
     name: 'Northcoders scholarship supports women programmers',
   },
-];
+]
 
 const ShowreelTemplate = () => {
   const [currentVideo, setCurrentVideo] = useState(
-    'https://youtube.com/embed/gk_5ezTqd3c',
-  );
+    'https://youtube.com/embed/gk_5ezTqd3c'
+  )
 
   return (
     <section>
@@ -81,7 +81,7 @@ const ShowreelTemplate = () => {
         ))}
       </List>
     </section>
-  );
-};
+  )
+}
 
-export default ShowreelTemplate;
+export default ShowreelTemplate

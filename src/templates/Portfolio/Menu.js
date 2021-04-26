@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import portfolioData from '../../data/portfolioData';
-import { fonts, colors } from '../../tokens';
+import React from 'react'
+import styled from '@emotion/styled'
+import portfolioData from '../../data/portfolioData'
+import { fonts, colors } from '../../tokens'
 
-const projectList = Object.keys(portfolioData);
+const projectList = Object.keys(portfolioData)
 const categories = {
   LBG: 'The LADbible Group',
   NC: 'Northcoders',
   JI: 'my own',
-};
+}
 
 const StyledMenu = styled.div`
   margin-bottom: 2rem;
@@ -34,7 +34,7 @@ const StyledMenu = styled.div`
       font-size: 0.7rem;
     }
   }
-`;
+`
 
 const Menu = ({ category, setCurrentProject }) => (
   <StyledMenu>
@@ -44,14 +44,15 @@ const Menu = ({ category, setCurrentProject }) => (
     </h3>
     <div className="grid">
       {projectList.map(
-        item => portfolioData[item].category === category && (
-        <button type="button" onClick={() => setCurrentProject(item)}>
-          {portfolioData[item].title}
-        </button>
-        ),
+        item =>
+          portfolioData[item].category === category && (
+            <button type="button" onClick={() => setCurrentProject(item)}>
+              {portfolioData[item].title}
+            </button>
+          )
       )}
     </div>
   </StyledMenu>
-);
+)
 
-export default Menu;
+export default Menu

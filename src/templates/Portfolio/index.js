@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import portfolioData from '../../data/portfolioData';
-import Project from './Project';
-import Menu from './Menu';
+import React, { useState } from 'react'
+import portfolioData from '../../data/portfolioData'
+import Project from './Project'
+import Menu from './Menu'
 
 const PortfolioTemplate = () => {
-  const [currentProject, setCurrentProject] = useState('ladbible');
-  const categories = ['LBG', 'NC', 'JI'];
+  const [currentProject, setCurrentProject] = useState('ladbible')
+  const categories = ['LBG', 'NC', 'JI']
 
   return (
     <>
@@ -16,7 +16,7 @@ const PortfolioTemplate = () => {
         ))}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PortfolioTemplate;
+export default PortfolioTemplate

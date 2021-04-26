@@ -29,4 +29,4 @@ export default [
     companyName: 'Wycombe High School',
     jobTitle: '4 A-levels, 9 GCSEs',
   },
-];
+]

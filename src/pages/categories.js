@@ -1,6 +1,6 @@
-import React from 'react';
-import kebabCase from 'lodash/kebabCase';
-import { Link, graphql } from 'gatsby';
+import React from 'react'
+import kebabCase from 'lodash/kebabCase'
+import { Link, graphql } from 'gatsby'
 
 const CategoriesPage = ({
   data: {
@@ -21,9 +21,9 @@ const CategoriesPage = ({
       </ul>
     </div>
   </div>
-);
+)
 
-export default CategoriesPage;
+export default CategoriesPage
 
 export const pageQuery = graphql`
   query {
@@ -34,4 +34,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

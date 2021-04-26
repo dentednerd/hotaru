@@ -1,8 +1,8 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import PageIntro from '../atoms/PageIntro';
-import JournalTemplate from '../templates/Journal';
-import JournalHome from '../templates/Journal/JournalHome';
+import React from 'react'
+import { graphql } from 'gatsby'
+import PageIntro from '../atoms/PageIntro'
+import JournalTemplate from '../templates/Journal'
+import JournalHome from '../templates/Journal/JournalHome'
 
 const Journal = ({ data }) => (
   <JournalTemplate>
@@ -12,9 +12,9 @@ const Journal = ({ data }) => (
     />
     <JournalHome categories={data.categories.group} tags={data.tags.group} />
   </JournalTemplate>
-);
+)
 
-export default Journal;
+export default Journal
 
 export const pageQuery = graphql`
   query {
@@ -98,4 +98,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

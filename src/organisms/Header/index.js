@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
-import styled from '@emotion/styled';
-import MenuIcons from '../../molecules/MenuIcons';
-import { JoeySvg } from '../../assets';
-import { colors, fonts, shadows } from '../../tokens';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'gatsby'
+import styled from '@emotion/styled'
+import MenuIcons from '../../molecules/MenuIcons'
+import { JoeySvg } from '../../assets'
+import { colors, fonts, shadows } from '../../tokens'
 
 const StyledHeader = styled('header')`
   position: relative;
@@ -26,7 +26,7 @@ const StyledHeader = styled('header')`
     z-index: 3;
     box-shadow: ${shadows.menuShadow};
   }
-`;
+`
 
 const Identity = styled('section')`
   display: flex;
@@ -55,7 +55,7 @@ const Identity = styled('section')`
       padding: 0;
     }
   }
-`;
+`
 
 const Menu = styled('div')`
   position: absolute;
@@ -88,7 +88,7 @@ const Menu = styled('div')`
     top: 70px;
     right: 0;
   }
-`;
+`
 
 const MenuIcon = styled('div')`
   width: 2rem;
@@ -143,33 +143,33 @@ const MenuIcon = styled('div')`
     width: 0%;
     left: 50%;
   }
-`;
+`
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [isOpen, toggleIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, toggleIsOpen] = useState(false)
 
   const handleScroll = () => {
-    const offset = window.scrollY;
+    const offset = window.scrollY
     if (offset > 112) {
-      setScrolled(true);
+      setScrolled(true)
     } else {
-      setScrolled(false);
+      setScrolled(false)
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-  });
+    window.addEventListener('scroll', handleScroll)
+  })
 
-  const headerClasses = [];
+  const headerClasses = []
 
   if (scrolled) {
-    headerClasses.push('scrolled');
+    headerClasses.push('scrolled')
   }
 
   if (isOpen) {
-    headerClasses.push('open');
+    headerClasses.push('open')
   }
 
   return (
@@ -193,7 +193,7 @@ const Header = () => {
         <MenuIcons />
       </Menu>
     </StyledHeader>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

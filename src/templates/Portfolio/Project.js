@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from '@emotion/styled';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
-import FaIcon from '../../atoms/FaIcon';
-import assets from './assets';
-import { stackMap } from '../../helpers';
-import { colors } from '../../tokens';
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from '@emotion/styled'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt'
+import FaIcon from '../../atoms/FaIcon'
+import assets from './assets'
+import { stackMap } from '../../helpers'
+import { colors } from '../../tokens'
 
 const StyledProject = styled.section`
   display: grid;
@@ -89,7 +89,7 @@ const StyledProject = styled.section`
       }
     }
   }
-`;
+`
 
 export default ({ project }) => (
   <StyledProject>
@@ -129,4 +129,4 @@ export default ({ project }) => (
       )}
     </div>
   </StyledProject>
-);
+)

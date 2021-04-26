@@ -5,4 +5,4 @@ export default [
     icon: 'work',
     jobTitle: 'Supply Primary Teacher',
   },
-];
+]

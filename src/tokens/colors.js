@@ -8,6 +8,6 @@ const colors = {
   lightpurple: '#9999cc',
   backgroundpurple: '#ccccff',
   link: '#8c3e65',
-};
+}
 
-export default colors;
+export default colors

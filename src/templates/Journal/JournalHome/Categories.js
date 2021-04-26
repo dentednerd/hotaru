@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import Card from '../../../molecules/Card';
+import React from 'react'
+import styled from '@emotion/styled'
+import Card from '../../../molecules/Card'
 
 const Section = styled('section')`
   display: flex;
   flex-flow: column nowrap;
-`;
+`
 
 const JournalGrid = styled('section')`
   display: grid;
@@ -15,23 +15,23 @@ const JournalGrid = styled('section')`
   @media (min-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
   }
-`;
+`
 
 const Categories = ({ cat }) => {
-  let backgroundColor;
+  let backgroundColor
   switch (cat.fieldValue) {
     case 'projects':
-      backgroundColor = '#d2ddcb';
-      break;
+      backgroundColor = '#d2ddcb'
+      break
     case 'programming':
-      backgroundColor = '#c2e4ff';
-      break;
+      backgroundColor = '#c2e4ff'
+      break
     case 'events':
-      backgroundColor = '#ffbfef';
-      break;
+      backgroundColor = '#ffbfef'
+      break
     default:
-      backgroundColor = '#666699';
-      break;
+      backgroundColor = '#666699'
+      break
   }
 
   return (
@@ -45,7 +45,7 @@ const Categories = ({ cat }) => {
         ))}
       </JournalGrid>
     </Section>
-  );
-};
+  )
+}
 
-export default Categories;
+export default Categories

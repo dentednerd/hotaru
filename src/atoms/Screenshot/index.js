@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import React from 'react'
+import styled from '@emotion/styled'
 
-export default (props) => {
-  const { src } = props;
+export default props => {
+  const { src } = props
 
   const Screenshot = styled('section')`
     position: relative;
@@ -24,7 +24,7 @@ export default (props) => {
     //   width: calc(100vw - 2rem);
     //   height: calc(((100vw - 2rem) / 16) * 9);
     // }
-  `;
+  `
 
-  return <Screenshot />;
-};
+  return <Screenshot />
+}

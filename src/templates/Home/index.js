@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode';
-import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
-import CTALink from '../../atoms/CTALink';
-import introData from '../../data/introData';
-import * as images from '../../assets';
-import { colors, fonts } from '../../tokens';
+import React from 'react'
+import styled from '@emotion/styled'
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode'
+import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory'
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
+import CTALink from '../../atoms/CTALink'
+import introData from '../../data/introData'
+import * as images from '../../assets'
+import { colors, fonts } from '../../tokens'
 
 const HomeSection = styled('section')`
   text-align: center;
@@ -63,7 +63,7 @@ const HomeSection = styled('section')`
       float: left;
     }
   }
-`;
+`
 
 const CallToAction = styled('section')`
   display: grid;
@@ -96,7 +96,7 @@ const CallToAction = styled('section')`
       text-decoration: none;
     }
   }
-`;
+`
 
 const navItems = [
   {
@@ -119,26 +119,27 @@ const navItems = [
     icon: faYoutube,
     text: 'Watch me talking tech.',
   },
-];
+]
 
-const HomeTemplate = () => introData.map((screen, index) => (
-  <HomeSection index={index}>
-    <img
-      className={screen.image}
-      src={images[screen.image]}
-      alt="Hello. I'm Joey."
-    />
-    <section dangerouslySetInnerHTML={{ __html: screen.content }} />
-    {index === introData.length - 1 && (
-    <CallToAction>
-      {navItems.map(item => (
-        <CTALink to={item.link} icon={item.icon}>
-          {item.text}
-        </CTALink>
-      ))}
-    </CallToAction>
-    )}
-  </HomeSection>
-));
+const HomeTemplate = () =>
+  introData.map((screen, index) => (
+    <HomeSection index={index}>
+      <img
+        className={screen.image}
+        src={images[screen.image]}
+        alt="Hello. I'm Joey."
+      />
+      <section dangerouslySetInnerHTML={{ __html: screen.content }} />
+      {index === introData.length - 1 && (
+        <CallToAction>
+          {navItems.map(item => (
+            <CTALink to={item.link} icon={item.icon}>
+              {item.text}
+            </CTALink>
+          ))}
+        </CallToAction>
+      )}
+    </HomeSection>
+  ))
 
-export default HomeTemplate;
+export default HomeTemplate

@@ -1,7 +1,7 @@
-import React from 'react';
-import PageIntro from '../atoms/PageIntro';
-import Layout from '../templates/Layout';
-import ShowreelTemplate from '../templates/Showreel';
+import React from 'react'
+import PageIntro from '../atoms/PageIntro'
+import Layout from '../templates/Layout'
+import ShowreelTemplate from '../templates/Showreel'
 
 const Showreel = () => (
   <Layout>
@@ -13,6 +13,6 @@ const Showreel = () => (
       <ShowreelTemplate />
     </div>
   </Layout>
-);
+)
 
-export default Showreel;
+export default Showreel

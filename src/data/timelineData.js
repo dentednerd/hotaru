@@ -43,4 +43,4 @@ export default [
     jobDesc: ['Currently under NDA'],
     skills: ['React', 'Redux', 'Redux-Saga', 'Storybook', 'Jest'],
   },
-];
+]

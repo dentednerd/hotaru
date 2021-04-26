@@ -4,6 +4,6 @@ const fonts = {
   cursive: '"Sacramento", cursive',
   code: '"Ubuntu Mono", Consolas, Monaco, "Andale Mono", monospace',
   contrast: '"Raleway", sans-serif',
-};
+}
 
-export default fonts;
+export default fonts

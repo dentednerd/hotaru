@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { stackMap } from '../../helpers';
-import { colors, fonts } from '../../tokens';
+import React from 'react'
+import styled from '@emotion/styled'
+import { stackMap } from '../../helpers'
+import { colors, fonts } from '../../tokens'
 
 const ExperienceContainer = styled('section')`
   margin: 0 0 1rem;
@@ -23,7 +23,7 @@ const ExperienceContainer = styled('section')`
   li {
     margin-bottom: 0.5rem;
   }
-`;
+`
 
 const ExperienceScreen = ({ job }) => (
   <ExperienceContainer>
@@ -36,6 +36,6 @@ const ExperienceScreen = ({ job }) => (
     </ul>
     <p className="stack">{stackMap(job.skills)}</p>
   </ExperienceContainer>
-);
+)
 
-export default ExperienceScreen;
+export default ExperienceScreen

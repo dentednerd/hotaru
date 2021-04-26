@@ -1,15 +1,13 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from '@emotion/styled';
-import FaIcon from '../FaIcon';
-import { colors, fonts, shadows } from '../../tokens';
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from '@emotion/styled'
+import FaIcon from '../FaIcon'
+import { colors, fonts, shadows } from '../../tokens'
 
-const CTALink = ({
-  to, href, icon, onClick, children,
-}) => {
-  let Element = 'section';
-  if (to) Element = Link;
-  if (href) Element = 'a';
+const CTALink = ({ to, href, icon, onClick, children }) => {
+  let Element = 'section'
+  if (to) Element = Link
+  if (href) Element = 'a'
 
   const StyledCTALink = styled(Element)`
     display: flex;
@@ -41,7 +39,7 @@ const CTALink = ({
       box-shadow: none;
       transition: box-shadow: 0.2s;
     }
-  `;
+  `
 
   return (
     <StyledCTALink
@@ -52,7 +50,7 @@ const CTALink = ({
       {icon && <FaIcon icon={icon} />}
       {children}
     </StyledCTALink>
-  );
-};
+  )
+}
 
-export default CTALink;
+export default CTALink

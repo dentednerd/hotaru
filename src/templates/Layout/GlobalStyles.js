@@ -1,9 +1,9 @@
-import React from 'react';
-import { Global, css } from '@emotion/core';
-import { config, dom } from '@fortawesome/fontawesome-svg-core';
-import { colors, fonts } from '../../tokens';
+import React from 'react'
+import { Global, css } from '@emotion/core'
+import { config, dom } from '@fortawesome/fontawesome-svg-core'
+import { colors, fonts } from '../../tokens'
 
-config.autoAddCss = false;
+config.autoAddCss = false
 
 const GlobalStyles = ({ children }) => (
   <Global
@@ -287,6 +287,6 @@ const GlobalStyles = ({ children }) => (
   >
     {children}
   </Global>
-);
+)
 
-export default GlobalStyles;
+export default GlobalStyles

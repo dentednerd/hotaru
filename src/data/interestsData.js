@@ -18,6 +18,6 @@ const interestsData = [
     content:
       'Panic! at the Disco, iDKHOW, System of a Down (ask me about my gaming soundtrack mega-playlist!)',
   },
-];
+]
 
-export default interestsData;
+export default interestsData

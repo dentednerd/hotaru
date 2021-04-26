@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from '@emotion/styled';
-import { colors, fonts, shadows } from '../../tokens';
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from '@emotion/styled'
+import { colors, fonts, shadows } from '../../tokens'
 
 const StyledTag = styled('div')`
   display: inline-block;
@@ -25,7 +25,7 @@ const StyledTag = styled('div')`
     transition: all 0.25s ease-in;
     cursor: pointer;
   }
-`;
+`
 
 const FlexWrapper = styled('div')`
   display: flex;
@@ -40,22 +40,22 @@ const FlexWrapper = styled('div')`
     border-bottom-right-radius: 0.25rem;
     height: 100%;
   }
-`;
+`
 
 const PadWrapper = styled('div')`
   padding: 0.25rem;
-`;
+`
 
 const Tag = ({ to, children }) => {
   // eslint-disable-line arrow-body-style
-  let tagName = null;
-  let tagCount = null;
+  let tagName = null
+  let tagCount = null
 
   if (typeof children === 'object') {
-    tagName = children[0]; // eslint-disable-line prefer-destructuring
-    tagCount = children[1]; // eslint-disable-line prefer-destructuring
+    tagName = children[0] // eslint-disable-line prefer-destructuring
+    tagCount = children[1] // eslint-disable-line prefer-destructuring
   } else {
-    tagName = children;
+    tagName = children
   }
 
   return to ? (
@@ -71,7 +71,7 @@ const Tag = ({ to, children }) => {
     <StyledTag>
       <PadWrapper>{children}</PadWrapper>
     </StyledTag>
-  );
-};
+  )
+}
 
-export default Tag;
+export default Tag

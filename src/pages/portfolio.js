@@ -1,7 +1,7 @@
-import React from 'react';
-import PageIntro from '../atoms/PageIntro';
-import Layout from '../templates/Layout';
-import PortfolioTemplate from '../templates/Portfolio';
+import React from 'react'
+import PageIntro from '../atoms/PageIntro'
+import Layout from '../templates/Layout'
+import PortfolioTemplate from '../templates/Portfolio'
 
 const Portfolio = () => (
   <Layout>
@@ -11,6 +11,6 @@ const Portfolio = () => (
     />
     <PortfolioTemplate />
   </Layout>
-);
+)
 
-export default Portfolio;
+export default Portfolio

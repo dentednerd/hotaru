@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import Helmet from 'react-helmet';
-import styled from '@emotion/styled';
-import GlobalStyles from './GlobalStyles';
-import Header from '../../organisms/Header';
-import Footer from '../../organisms/Footer';
-import { colors } from '../../tokens';
+import React, { useEffect } from 'react'
+import Helmet from 'react-helmet'
+import styled from '@emotion/styled'
+import GlobalStyles from './GlobalStyles'
+import Header from '../../organisms/Header'
+import Footer from '../../organisms/Footer'
+import { colors } from '../../tokens'
 
 const StyledLayout = styled('main')`
   position: relative;
@@ -19,14 +19,14 @@ const StyledLayout = styled('main')`
     margin: 2rem auto;
     border: solid 1px ${colors.darkpurple};
   }
-`;
+`
 
-export default (props) => {
-  const { children } = props;
+export default props => {
+  const { children } = props
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <StyledLayout>
@@ -46,5 +46,5 @@ export default (props) => {
       {children}
       <Footer />
     </StyledLayout>
-  );
-};
+  )
+}

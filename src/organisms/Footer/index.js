@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import ContactIcons from '../../molecules/ContactIcons';
-import { colors } from '../../tokens';
+import React from 'react'
+import styled from '@emotion/styled'
+import ContactIcons from '../../molecules/ContactIcons'
+import { colors } from '../../tokens'
 
 const StyledFooter = styled('footer')`
   height: auto;
@@ -22,9 +22,10 @@ const StyledFooter = styled('footer')`
     line-height: 1rem;
     margin: 0 auto;
   }
-`;
+`
 
-const string = "\"When people call people nerds, mostly what they're saying is 'you like stuff', which is not a good insult at all.\"";
+const string =
+  "\"When people call people nerds, mostly what they're saying is 'you like stuff', which is not a good insult at all.\""
 
 const Footer = () => (
   <StyledFooter>
@@ -38,6 +39,6 @@ const Footer = () => (
       </p>
     </div>
   </StyledFooter>
-);
+)
 
-export default Footer;
+export default Footer
