@@ -59,7 +59,7 @@ const Experience = styled('main')`
     margin-bottom: 0.5rem;
 
     &:before {
-      content: "» ";
+      content: '» ';
     }
   }
 `;
@@ -67,7 +67,8 @@ const Experience = styled('main')`
 const Education = styled('aside')`
   grid-column: 1 / 2;
 
-  h3, h4 {
+  h3,
+  h4 {
     color: ${colors.darkpurple};
   }
 
@@ -89,7 +90,7 @@ const Interests = styled('footer')`
     }
 
     &:before {
-      content: "» ";
+      content: '» ';
     }
   }
 `;
@@ -98,7 +99,10 @@ const ExperienceTemplate = () => (
   <CVLayout>
     <CVHeader>
       <h2>Joey Imlay is a software engineer in Manchester.</h2>
-      <p>Specialising in React, React Native and front end web development. Currently training for scrum master accreditation.</p>
+      <p>
+        Specialising in React, React Native and front end web development.
+        Currently training for scrum master accreditation.
+      </p>
       <div>
         <ContactIcons />
       </div>
@@ -136,6 +140,5 @@ const ExperienceTemplate = () => (
     </Interests>
   </CVLayout>
 );
-
 
 export default ExperienceTemplate;

@@ -60,7 +60,9 @@ const videos = [
 ];
 
 const ShowreelTemplate = () => {
-  const [currentVideo, setCurrentVideo] = useState('https://youtube.com/embed/gk_5ezTqd3c');
+  const [currentVideo, setCurrentVideo] = useState(
+    'https://youtube.com/embed/gk_5ezTqd3c',
+  );
 
   return (
     <section>

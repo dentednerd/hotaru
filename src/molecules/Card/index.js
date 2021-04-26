@@ -49,7 +49,10 @@ const CardTitle = styled('div')`
 
 const Card = ({ post }) => (
   <StyledCard to={post.fields.slug}>
-    <CardImage src={post.frontmatter.featuredImage.childImageSharp.fluid.src} alt={post.frontmatter.title} />
+    <CardImage
+      src={post.frontmatter.featuredImage.childImageSharp.fluid.src}
+      alt={post.frontmatter.title}
+    />
     <CardTitle>
       <h2>{post.frontmatter.title}</h2>
     </CardTitle>

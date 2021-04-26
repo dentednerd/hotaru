@@ -18,7 +18,9 @@ export default Journal;
 
 export const pageQuery = graphql`
   query {
-    posts: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    posts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         next {
           fields {
@@ -42,7 +44,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
-              childImageSharp{
+              childImageSharp {
                 fluid(maxWidth: 630) {
                   src
                 }
@@ -56,7 +58,6 @@ export const pageQuery = graphql`
           }
           excerpt(pruneLength: 90)
           html
-
         }
       }
     }
@@ -79,7 +80,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
-              childImageSharp{
+              childImageSharp {
                 fluid(maxWidth: 630) {
                   src
                 }

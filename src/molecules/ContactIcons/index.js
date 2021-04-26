@@ -25,7 +25,10 @@ const icons = [
 
 const ContactIcons = () => icons.map(icon => (
   <a href={icon.link} key={icon.link}>
-    <img src={`https://img.icons8.com/bubbles/64/000000/${icon.image}.png`} alt={icon.alt} />
+    <img
+      src={`https://img.icons8.com/bubbles/64/000000/${icon.image}.png`}
+      alt={icon.alt}
+    />
   </a>
 ));
 

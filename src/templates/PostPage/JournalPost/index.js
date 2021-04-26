@@ -35,7 +35,7 @@ const JournalPost = ({ post }) => {
       padding: 0;
 
       li:before {
-        content: "» ";
+        content: '» ';
       }
     }
   `;
@@ -70,12 +70,8 @@ const JournalPost = ({ post }) => {
         src={post.frontmatter.featuredImage.childImageSharp.fluid.src}
         alt={post.frontmatter.title}
       />
-      <PostContent
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
-      <Byline>
-        thanks for reading! Joey x
-      </Byline>
+      <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Byline>thanks for reading! Joey x</Byline>
       <Tags>
         {post.frontmatter.tags.map(tag => (
           <Tag to={`/tags/${kebabCase(tag)}/`} key={tag}>

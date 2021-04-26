@@ -35,9 +35,7 @@ const Categories = ({ cat }) => {
   }
 
   return (
-    <Section
-      key={cat.fieldValue}
-    >
+    <Section key={cat.fieldValue}>
       <h2>
         {cat.fieldValue.charAt(0).toUpperCase() + cat.fieldValue.substring(1)}
       </h2>

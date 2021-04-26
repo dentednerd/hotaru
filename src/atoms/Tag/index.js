@@ -46,7 +46,8 @@ const PadWrapper = styled('div')`
   padding: 0.25rem;
 `;
 
-const Tag = ({ to, children }) => { // eslint-disable-line arrow-body-style
+const Tag = ({ to, children }) => {
+  // eslint-disable-line arrow-body-style
   let tagName = null;
   let tagCount = null;
 

@@ -24,7 +24,7 @@ const StyledFooter = styled('footer')`
   }
 `;
 
-const string = '"When people call people nerds, mostly what they\'re saying is \'you like stuff\', which is not a good insult at all."';
+const string = "\"When people call people nerds, mostly what they're saying is 'you like stuff', which is not a good insult at all.\"";
 
 const Footer = () => (
   <StyledFooter>

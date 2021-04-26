@@ -8,7 +8,8 @@ config.autoAddCss = false;
 const GlobalStyles = ({ children }) => (
   <Global
     styles={css`
-      body, html {
+      body,
+      html {
         color: ${colors.purple};
         background-color: ${colors.backgroundpurple};
         font-family: ${fonts.body};
@@ -21,7 +22,8 @@ const GlobalStyles = ({ children }) => (
       }
 
       @media (min-width: 1024px) {
-        body, html {
+        body,
+        html {
           font-size: 20px;
           line-height: 36px;
         }
@@ -52,12 +54,14 @@ const GlobalStyles = ({ children }) => (
         border-radius: 1rem;
       }
 
-      ul, ol {
+      ul,
+      ol {
         padding-left: 1rem;
         margin: 0 auto 1rem;
       }
 
-      ul li, ol li {
+      ul li,
+      ol li {
         margin-bottom: 1rem;
       }
 
@@ -118,8 +122,8 @@ const GlobalStyles = ({ children }) => (
         width: 1rem;
       }
 
-      code[class*="language-"],
-      pre[class*="language-"] {
+      code[class*='language-'],
+      pre[class*='language-'] {
         color: #fff;
         background: none;
         font-family: ${fonts.code};
@@ -138,8 +142,8 @@ const GlobalStyles = ({ children }) => (
         hyphens: none;
       }
 
-      @media(max-width: 767px) {
-        code[class*="language-"] {
+      @media (max-width: 767px) {
+        code[class*='language-'] {
           font-size: 16px;
           line-height: 24px;
         }
@@ -151,7 +155,7 @@ const GlobalStyles = ({ children }) => (
       }
 
       /* Code blocks */
-      pre[class*="language-"] {
+      pre[class*='language-'] {
         padding: 1rem;
         margin: 1rem auto;
         width: 60%;
@@ -165,8 +169,8 @@ const GlobalStyles = ({ children }) => (
         word-break: break-all;
       }
 
-      @media(max-width: 767px) {
-        pre[class*="language-"] {
+      @media (max-width: 767px) {
+        pre[class*='language-'] {
           width: calc(100% - 2rem);
           font-size: 0.75rem;
           padding: 1rem;
@@ -177,13 +181,13 @@ const GlobalStyles = ({ children }) => (
         }
       }
 
-      :not(pre) > code[class*="language-"],
-      pre[class*="language-"] {
+      :not(pre) > code[class*='language-'],
+      pre[class*='language-'] {
         background-color: ${colors.darkpurple} !important;
       }
 
       /* Inline code */
-      :not(pre) > code[class*="language-"] {
+      :not(pre) > code[class*='language-'] {
         background-color: transparent !important;
         color: ${colors.darkpurple};
         font-size: 1rem;
@@ -279,7 +283,7 @@ const GlobalStyles = ({ children }) => (
       .token.inserted {
         color: ${colors.green};
       }
-  `}
+    `}
   >
     {children}
   </Global>

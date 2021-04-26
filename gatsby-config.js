@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Joanne Imlay',
     description: 'front end developer in Manchester, England',
-    siteUrl: 'https://www.joanneimlay.dev'
+    siteUrl: 'https://www.joanneimlay.dev',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -117,4 +117,4 @@ module.exports = {
       },
     },
   ],
-};
+}

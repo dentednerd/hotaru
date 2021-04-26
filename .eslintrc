@@ -21,6 +21,7 @@
   },
   "extends": [
     "airbnb",
-    "react-app"
+    "react-app",
+    "prettier"
   ]
 }

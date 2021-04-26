@@ -71,7 +71,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && yarn lint && git add -A ."
+      "pre-commit": "yarn lint && git add -A ."
     }
   },
   "devDependencies": {

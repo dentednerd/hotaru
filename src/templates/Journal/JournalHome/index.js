@@ -14,12 +14,14 @@ const JournalHome = React.memo(({ categories, tags }) => {
 
   return (
     <StyledJournalHome>
-      {sortedCategories.map(cat => <Categories cat={cat} key={cat.fieldValue} />)}
+      {sortedCategories.map(cat => (
+        <Categories cat={cat} key={cat.fieldValue} />
+      ))}
       <section>
-        <h2>
-          Tags
-        </h2>
-        {tags.map(thisTag => <JournalTag tag={thisTag} />)}
+        <h2>Tags</h2>
+        {tags.map(thisTag => (
+          <JournalTag tag={thisTag} />
+        ))}
       </section>
     </StyledJournalHome>
   );

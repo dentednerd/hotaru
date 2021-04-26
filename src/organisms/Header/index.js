@@ -180,7 +180,10 @@ const Header = () => {
           <h1>Joey Imlay</h1>
         </Link>
       </Identity>
-      <MenuIcon onClick={() => toggleIsOpen(!isOpen)} className={headerClasses.join(' ')}>
+      <MenuIcon
+        onClick={() => toggleIsOpen(!isOpen)}
+        className={headerClasses.join(' ')}
+      >
         <span />
         <span />
         <span />

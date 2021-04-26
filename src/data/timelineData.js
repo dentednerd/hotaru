@@ -12,7 +12,18 @@ export default [
       'Presented a talk on regression testing: <a href="https://www.youtube.com/watch?v=gk_5ezTqd3c">Automating BrowserStack screenshot generation with CircleCI</a>',
       'Facilitated daily standups and monthly retros',
     ],
-    skills: ['React', 'React Native', 'Storybook', 'Jest', 'Cypress', 'GraphQL', 'Docker', 'Kubernetes', 'CircleCI', 'Google Cloud Platform'],
+    skills: [
+      'React',
+      'React Native',
+      'Storybook',
+      'Jest',
+      'Cypress',
+      'GraphQL',
+      'Docker',
+      'Kubernetes',
+      'CircleCI',
+      'Google Cloud Platform',
+    ],
   },
   {
     link: 'https://www.northcoders.com',
@@ -29,9 +40,7 @@ export default [
     dates: 'Aug 2017 - Jul 2018',
     companyName: 'Careicon',
     jobTitle: 'Front End Developer',
-    jobDesc: [
-      'Currently under NDA',
-    ],
+    jobDesc: ['Currently under NDA'],
     skills: ['React', 'Redux', 'Redux-Saga', 'Storybook', 'Jest'],
   },
 ];

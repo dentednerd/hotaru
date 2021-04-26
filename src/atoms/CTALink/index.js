@@ -5,11 +5,7 @@ import FaIcon from '../FaIcon';
 import { colors, fonts, shadows } from '../../tokens';
 
 const CTALink = ({
-  to,
-  href,
-  icon,
-  onClick,
-  children,
+  to, href, icon, onClick, children,
 }) => {
   let Element = 'section';
   if (to) Element = Link;
@@ -48,7 +44,11 @@ const CTALink = ({
   `;
 
   return (
-    <StyledCTALink to={to || null} href={href || null} onClick={() => onClick()}>
+    <StyledCTALink
+      to={to || null}
+      href={href || null}
+      onClick={() => onClick()}
+    >
       {icon && <FaIcon icon={icon} />}
       {children}
     </StyledCTALink>

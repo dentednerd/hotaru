@@ -24,14 +24,8 @@ export default ({ data, pageContext }) => {
         }}
       >
         <title>{post.frontmatter.title}</title>
-        <meta
-          name="description"
-          content={post.excerpt}
-        />
-        <meta
-          name="author"
-          content="Joey Imlay"
-        />
+        <meta name="description" content={post.excerpt} />
+        <meta name="author" content="Joey Imlay" />
       </Helmet>
       <JournalPost post={post} />
       <NextPrevious>
@@ -62,7 +56,7 @@ export const query = graphql`
         date(formatString: "DD MMMM, YYYY")
         tags
         featuredImage {
-          childImageSharp{
+          childImageSharp {
             fluid(maxWidth: 1920) {
               src
             }
@@ -86,7 +80,7 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
-              childImageSharp{
+              childImageSharp {
                 fluid(maxWidth: 630) {
                   src
                 }
@@ -116,7 +110,7 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
-              childImageSharp{
+              childImageSharp {
                 fluid(maxWidth: 630) {
                   src
                 }

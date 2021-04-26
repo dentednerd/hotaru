@@ -14,12 +14,13 @@ const HomeSection = styled('section')`
   margin-bottom: 4rem;
 
   &::after {
-    content:"";
+    content: '';
     display: table;
     clear: both;
   }
 
-  section, p {
+  section,
+  p {
     text-align: left;
   }
 
@@ -38,7 +39,14 @@ const HomeSection = styled('section')`
 
   img.CodeSvg {
     float: left;
-    shape-outside: polygon(0% 0%, 0.29% 100%, 66.47% 100%, 77.94% 40.14%, 97.65% 39.91%, 97.94% 0.75%);
+    shape-outside: polygon(
+      0% 0%,
+      0.29% 100%,
+      66.47% 100%,
+      77.94% 40.14%,
+      97.65% 39.91%,
+      97.94% 0.75%
+    );
   }
 
   img.DeveloperSvg {
@@ -122,13 +130,13 @@ const HomeTemplate = () => introData.map((screen, index) => (
     />
     <section dangerouslySetInnerHTML={{ __html: screen.content }} />
     {index === introData.length - 1 && (
-      <CallToAction>
-        {navItems.map(item => (
-          <CTALink to={item.link} icon={item.icon}>
-            {item.text}
-          </CTALink>
-        ))}
-      </CallToAction>
+    <CallToAction>
+      {navItems.map(item => (
+        <CTALink to={item.link} icon={item.icon}>
+          {item.text}
+        </CTALink>
+      ))}
+    </CallToAction>
     )}
   </HomeSection>
 ));

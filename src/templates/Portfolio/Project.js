@@ -52,7 +52,8 @@ const StyledProject = styled.section`
   div.text {
     grid-column: 2/3;
 
-    p, blockquote {
+    p,
+    blockquote {
       font-size: 0.8rem;
       line-height: normal;
       margin-bottom: 0.8rem;
@@ -98,21 +99,24 @@ export default ({ project }) => (
       </a>
 
       <div className="meta">
-        <a href={project.links[0].url}><h2>{project.title}</h2></a>
+        <a href={project.links[0].url}>
+          <h2>{project.title}</h2>
+        </a>
         {project.links.map(link => (
           <a href={link.url} key={link.url}>
             {link.text}
             <FaIcon icon={faExternalLinkAlt} />
           </a>
         ))}
-        <div className="stack">
-          {stackMap(project.stack)}
-        </div>
+        <div className="stack">{stackMap(project.stack)}</div>
       </div>
     </div>
 
     <div className="text">
-      <div className="caption" dangerouslySetInnerHTML={{ __html: project.caption }} />
+      <div
+        className="caption"
+        dangerouslySetInnerHTML={{ __html: project.caption }}
+      />
       {project.relatedPosts && (
         <p>
           Read more in my journal:&nbsp;
@@ -124,7 +128,5 @@ export default ({ project }) => (
         </p>
       )}
     </div>
-
-
   </StyledProject>
 );

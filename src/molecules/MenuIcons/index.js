@@ -37,7 +37,7 @@ const NavItem = styled(Link)`
 
     svg {
       transform: scale(1.5);
-      color:${colors.link};
+      color: ${colors.link};
       transition: all 0.2s ease-in-out;
     }
   }

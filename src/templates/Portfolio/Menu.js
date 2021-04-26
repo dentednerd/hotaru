@@ -22,7 +22,7 @@ const StyledMenu = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
 
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
       grid-template-columns: repeat(5, 1fr);
     }
 
@@ -43,11 +43,13 @@ const Menu = ({ category, setCurrentProject }) => (
       &nbsp;projects:
     </h3>
     <div className="grid">
-      {projectList.map(item => portfolioData[item].category === category && (
+      {projectList.map(
+        item => portfolioData[item].category === category && (
         <button type="button" onClick={() => setCurrentProject(item)}>
           {portfolioData[item].title}
         </button>
-      ))}
+        ),
+      )}
     </div>
   </StyledMenu>
 );

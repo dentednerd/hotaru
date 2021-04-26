@@ -20,11 +20,11 @@ const TagPage = ({ pageContext, data }) => {
 
   return (
     <JournalTemplate data={data}>
-      <h2>
-        {`${tag} journal entries`}
-      </h2>
+      <h2>{`${tag} journal entries`}</h2>
       <JournalGrid>
-        {edges.map(({ node }) => <Card post={node} key={node.fields.slug} />)}
+        {edges.map(({ node }) => (
+          <Card post={node} key={node.fields.slug} />
+        ))}
       </JournalGrid>
     </JournalTemplate>
   );
@@ -78,7 +78,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
-              childImageSharp{
+              childImageSharp {
                 fluid(maxWidth: 630) {
                   src
                 }

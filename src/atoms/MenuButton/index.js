@@ -33,12 +33,8 @@ const MenuButton = ({ open, toggleOpen }) => {
   `;
 
   return (
-    <StyledMenuButton
-      onClick={() => toggleOpen(!open)}
-    >
-      <FontAwesomeIcon
-        icon={faBars}
-      />
+    <StyledMenuButton onClick={() => toggleOpen(!open)}>
+      <FontAwesomeIcon icon={faBars} />
     </StyledMenuButton>
   );
 };

@@ -34,9 +34,7 @@ const ExperienceScreen = ({ job }) => (
         <li dangerouslySetInnerHTML={{ __html: item }} />
       ))}
     </ul>
-    <p className="stack">
-      {stackMap(job.skills)}
-    </p>
+    <p className="stack">{stackMap(job.skills)}</p>
   </ExperienceContainer>
 );
 
