@@ -1,16 +1,18 @@
 export default [
   {
     link: 'http://www.ladbible.com',
-    dates: 'Jul 2018 - present',
+    dates: 'Jul 2018 - Jun 2021',
     companyName: 'LADbible Group',
     jobTitle: 'Software Engineer',
     jobDesc: [
       'Replatformed existing group websites in React: <a href="https://www.ladbible.com">LADbible</a>, <a href="https://www.sportbible.com">SPORTbible</a>, Pretty52, <a href="https://www.unilad.co.uk">UNILAD</a>',
       'Created new group websites in React: <a href="https://www.tyla.com">Tyla</a>, <a href="https://www.gamingbible.co.uk">GAMINGbible</a>',
       'Developed a cross-platform mobile app in React Native: <a href="https://apple.co/2DDLgTu">iOS</a>',
-      'Wrote about regression testing for company Medium publication: <a href="https://medium.com/ladbiblegroup/automating-browserstack-screenshot-generation-with-circleci-502bad7dcb7d">Automating BrowserStack screenshot generation with CircleCI</a>',
-      'Presented a talk on regression testing: <a href="https://www.youtube.com/watch?v=gk_5ezTqd3c">Automating BrowserStack screenshot generation with CircleCI</a>',
+      'Wrote articles for the <a href="https://medium.com/@jo.imlay">LADbible Medium publication</a>',
+      'Presented a talk on <a href="https://www.youtube.com/watch?v=gk_5ezTqd3c">automating BrowserStack screenshot generation with CircleCI</a> at Manchester Web Meetup',
+      'Presented a talk on a complex React component for the GAMINGbible site at ReactJS Girls Online #2',
       'Facilitated daily standups and monthly retros',
+      'Involved in several LAD social groups: food club, book club, LGBTQI+ & allies group',
     ],
     skills: [
       'React',

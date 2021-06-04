@@ -100,8 +100,17 @@ const ExperienceTemplate = () => (
     <CVHeader>
       <h2>Joey Imlay is a software engineer in Manchester.</h2>
       <p>
-        Specialising in React, React Native and front end web development.
-        Currently training for scrum master accreditation.
+        Specialist in&nbsp;
+        <a href="https://reactjs.org">React</a>
+        ,&nbsp;
+        <a href="https://reactnative.dev/">React Native</a>
+        &nbsp;and front end web development.
+        Speaker and author of several tech articles.
+        Facilitator of&nbsp;
+        <a href="https://www.scrum.org/resources/what-is-a-scrum-master">Scrum</a>
+        &nbsp;ceremonies.
+        Mentor, study organiser and author of educational resources.
+        Gamer, musician, and fan of cats.
       </p>
       <div>
         <ContactIcons />

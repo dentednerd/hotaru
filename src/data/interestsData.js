@@ -2,7 +2,7 @@ const interestsData = [
   {
     label: 'Video games',
     content:
-      "Before you ask me which side of the console wars I'm on: being primarily a PC player, I stay more or less neutral. I like old-school point-and-click puzzlers (I grew up on the Monkey Island series), and RPGs such as World of Warcraft and Skyrim.",
+      "I'm neutral in the console wars: I'm mainly a PC gamer. I like old-school point-and-click puzzlers (I grew up on the Monkey Island series), and RPGs such as World of Warcraft and Skyrim.",
   },
   {
     label: 'Crochet',
