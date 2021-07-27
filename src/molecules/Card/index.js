@@ -6,7 +6,7 @@ import { colors } from '../../tokens';
 const StyledCard = styled(Link)`
   display: flex;
   flex-flow: column nowrap;
-  background-color: ${colors.yellow};
+  background-color: ${colors.constants.yellow};
   margin-bottom: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.125rem 0.0625rem rgba(51, 46, 74, 0.75);
@@ -20,7 +20,7 @@ const StyledCard = styled(Link)`
   }
 
   h2 {
-    color: ${colors.darkpurple};
+    color: ${colors.constants.darkpurple};
     text-align: center;
     padding: 1rem;
     margin-bottom: 0;

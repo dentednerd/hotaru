@@ -4,9 +4,10 @@ import Categories from './Categories';
 import JournalTag from './JournalTag';
 
 const StyledJournalHome = styled('article')`
-  section {
-    margin: 1rem 0;
-  }
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const JournalHome = React.memo(({ categories, tags }) => {

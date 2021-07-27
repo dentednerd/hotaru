@@ -9,8 +9,8 @@ const StyledTag = styled('div')`
   line-height: 0.75rem;
   font-family: ${fonts.headline};
   font-weight: 500;
-  background-color: ${colors.yellow};
-  color: ${colors.darkpurple};
+  background-color: ${colors.constants.yellow};
+  color: ${colors.constants.darkpurple};
   padding: 0;
   border-radius: 0.25rem;
   margin-bottom: 0.25rem;
@@ -34,7 +34,7 @@ const FlexWrapper = styled('div')`
   span {
     padding: 0.25rem;
     display: inline-block;
-    background: ${colors.pink};
+    background: ${colors.constants.pink};
     color: #fff;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;

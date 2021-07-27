@@ -1,8 +1,7 @@
 import React from 'react';
-import Layout from '../templates/Layout';
 
 export default () => (
-  <Layout>
+  <>
     <p>
       &apos;Tis not possible!, I pleaded,
       <br />
@@ -20,5 +19,5 @@ export default () => (
       Came its answer, dark and dreary...
     </p>
     <h2>Quoth the server, 404.</h2>
-  </Layout>
+  </>
 );

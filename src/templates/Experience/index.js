@@ -28,7 +28,7 @@ const CVLayout = styled('section')`
   }
 
   h3, h4, ul li span {
-    color: ${colors.lightpurple};
+    color: var(--color-text);
   }
 
   h3 {
@@ -42,7 +42,7 @@ const CVHeader = styled('header')`
   grid-column: 1 / 3;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: solid 1px ${colors.darkpurple};
+  border-bottom: solid 1px ${colors.constants.darkpurple};
 
   div {
     text-align: center;

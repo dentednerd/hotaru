@@ -1,20 +1,26 @@
 const colors = {
-  pink: '#ff99cc',
-  yellow: '#ffffcc',
-  green: '#ccffff',
-  blue: '#99ccff',
-  purple: '#666699',
-  darkpurple: '#333366',
-  lightpurple: '#9999cc',
-  background:
-  '#161032',
-  // '#332E4A',
-  text: '#ffffff',
-  headline: '#ffff66',
-  link: '#77ccff',
-  footerbg:
-  '#04010e'
-  // '#161032'
+  dark: {
+    background: '#161032',
+    text: '#ffffff',
+    headline: '#ffff66',
+    link: 'hsl(60, 100%, 70%)',
+  },
+  light: {
+    text: '#666699',
+    background: '#ffffff',
+    headline: '#ffff66',
+    link: 'hsl(330, 100%, 40%)',
+  },
+  constants: {
+    pink: '#ff99cc',
+    yellow: '#ffffcc',
+    green: '#ccffff',
+    blue: '#99ccff',
+    purple: '#666699',
+    darkpurple: '#333366',
+    lightpurple: '#9999cc',
+    footerbg: '#04010e'
+  }
 };
 
 export default colors;

@@ -19,7 +19,7 @@ const CTALink = ({
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    background-color: ${colors.darkpurple};
+    background-color: ${colors.constants.darkpurple};
     color: #fff;
     font-family: ${fonts.contrast};
     padding: 0.5rem 1rem;

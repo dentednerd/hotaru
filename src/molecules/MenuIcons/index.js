@@ -33,11 +33,11 @@ const NavItem = styled(Link)`
 
   &:hover {
     text-decoration: none;
-    color: ${colors.link};
+    color: var(--color-link);
 
     svg {
       transform: scale(1.5);
-      color: ${colors.link};
+      color: var(--color-link);
       transition: all 0.2s ease-in-out;
     }
   }
@@ -71,7 +71,7 @@ const navItems = [
   },
 ];
 
-const MenuIcons = () => (
+const MenuIcons = ({ toggleIsOpen }) => (
   <Nav>
     {navItems.map(item => (
       <NavItem
@@ -79,6 +79,7 @@ const MenuIcons = () => (
         aria-label={item.ariaLabel}
         key={item.link}
         style={{ marginBottom: '1rem' }}
+        onClick={() => toggleIsOpen(false)}
       >
         <FaIcon icon={item.icon} />
         {item.ariaLabel}

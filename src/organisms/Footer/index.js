@@ -9,7 +9,7 @@ const StyledFooter = styled('footer')`
   left: 0;
   height: auto;
   padding: 1rem 1rem 2rem;
-  background-color: ${colors.footerbg};
+  color: #ffffff;
 
   div {
     max-width: 800px;
@@ -18,7 +18,7 @@ const StyledFooter = styled('footer')`
 
   div.content {
     padding-top: 1rem;
-    border-top: solid 1px ${colors.purple};
+    border-top: solid 1px ${colors.constants.purple};
   }
 
   h2 {

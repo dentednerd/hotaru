@@ -6,7 +6,7 @@ import { colors, fonts } from '../../tokens';
 const ExperienceContainer = styled('section')`
   margin: 0 0 1rem;
   padding-bottom: 1rem;
-  border-bottom: solid 1px ${colors.darkpurple};
+  border-bottom: solid 1px ${colors.constants.darkpurple};
 
   p {
     margin-bottom: 0.5rem;

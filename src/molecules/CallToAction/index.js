@@ -23,7 +23,7 @@ const CTAGrid = styled('section')`
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    background-color: ${colors.darkpurple};
+    background-color: ${colors.constants.darkpurple};
     color: #fff;
     font-family: ${fonts.contrast};
     font-size: 16px;

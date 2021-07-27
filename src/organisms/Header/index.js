@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import DarkToggle from '../../atoms/DarkToggle';
 import MenuIcons from '../../molecules/MenuIcons';
 import { JoeySvg } from '../../assets';
 import { colors, fonts, shadows } from '../../tokens';
@@ -13,22 +14,11 @@ const StyledHeader = styled('header')`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  background-color: ${colors.background};
+  background-color: var(--color-background);
   color: ${colors.text};
   padding: 0 1rem;
   margin-bottom: 1rem;
   box-shadow: ${shadows.darkShadow};
-
-  &.scrolled {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: calc(100% - 2rem);
-    background-color: ${colors.background};
-    padding: 0 1rem;
-    z-index: 3;
-    box-shadow: ${shadows.darkShadow};
-  }
 `;
 
 const Identity = styled('section')`
@@ -53,7 +43,7 @@ const Identity = styled('section')`
       font-size: 1.5rem;
       line-height: 1.5rem;
       font-family: ${fonts.cursive};
-      color: ${colors.text};
+      color: ${colors.constants.purple};
       margin: 1rem 0;
       padding: 0;
     }
@@ -64,7 +54,7 @@ const Menu = styled('div')`
   position: absolute;
   top: 56px;
   right: calc(-1rem - 1px);
-  background-color: ${colors.background};
+  background-color: var(--color-background);
   box-shadow: ${shadows.darkShadow};
   padding: 1rem;
   height: 13rem;
@@ -105,7 +95,7 @@ const MenuIcon = styled('div')`
     position: absolute;
     height: 0.25rem;
     width: 100%;
-    background: ${colors.text};
+    background: ${colors.constants.purple};
     border-radius: 0.125rem;
     opacity: 1;
     left: 0;
@@ -148,28 +138,8 @@ const MenuIcon = styled('div')`
 `;
 
 const Header = () => {
-  // const [scrolled, setScrolled] = useState(false)
   const [isOpen, toggleIsOpen] = useState(false);
-
-  // const handleScroll = () => {
-  //   const offset = window.scrollY
-  //   if (offset > 112) {
-  //     setScrolled(true)
-  //   } else {
-  //     setScrolled(false)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll)
-  // })
-
   const headerClasses = [];
-
-  // if (scrolled) {
-  //   headerClasses.push('scrolled')
-  // }
-
   if (isOpen) {
     headerClasses.push('open');
   }
@@ -181,6 +151,7 @@ const Header = () => {
         <Link to="/">
           <h1>Joey Imlay</h1>
         </Link>
+        <DarkToggle />
       </Identity>
       <MenuIcon
         onClick={() => toggleIsOpen(!isOpen)}
@@ -192,7 +163,7 @@ const Header = () => {
         <span />
       </MenuIcon>
       <Menu className={headerClasses.join(' ')}>
-        <MenuIcons />
+        <MenuIcons toggleIsOpen={toggleIsOpen} />
       </Menu>
     </StyledHeader>
   );

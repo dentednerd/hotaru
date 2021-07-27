@@ -1,15 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../templates/Layout';
 import JournalHome from '../templates/Journal/JournalHome';
 
 const Journal = ({ data }) => (
-  <Layout>
-    <JournalHome
-      categories={data.categories.group}
-      tags={data.tags.group}
-    />
-  </Layout>
+  <JournalHome
+    categories={data.categories.group}
+    tags={data.tags.group}
+  />
 );
 
 export default Journal;

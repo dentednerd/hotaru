@@ -10,8 +10,8 @@ const GlobalStyles = ({ children }) => (
     styles={css`
       body,
       html {
-        color: ${colors.text};
-        background-color: ${colors.footerbg};
+        color: var(--color-text);
+        background-color: ${colors.constants.footerbg};
         font-family: ${fonts.body};
         font-size: 16px;
         line-height: 28px;
@@ -40,7 +40,7 @@ const GlobalStyles = ({ children }) => (
       }
 
       hr {
-        border-top: solid 1px ${colors.purple};
+        border-top: solid 1px ${colors.constants.purple};
         margin: 1rem 0;
       }
 
@@ -48,8 +48,8 @@ const GlobalStyles = ({ children }) => (
         width: 60%;
         padding: 1rem;
         margin: 1rem auto;
-        background-color: ${colors.green};
-        color: ${colors.darkpurple};
+        background-color: ${colors.constants.green};
+        color: ${colors.constants.darkpurple};
         border-radius: 1rem;
       }
 
@@ -82,7 +82,7 @@ const GlobalStyles = ({ children }) => (
         line-height: 2rem;
         margin: 0 0 1rem;
         letter-spacing: -0.05rem;
-        color: ${colors.darkpurple};
+        color: ${colors.constants.darkpurple};
       }
 
       h3 svg {
@@ -101,12 +101,12 @@ const GlobalStyles = ({ children }) => (
         line-height: 1rem;
         margin: 0 0 1rem;
         letter-spacing: -0.05rem;
-        color: ${colors.darkpurple};
+        color: ${colors.constants.darkpurple};
       }
 
       a {
         text-decoration: none;
-        color: ${colors.link};
+        color: var(--color-link);
         transition: 0.5s ease;
       }
 
@@ -181,12 +181,12 @@ const GlobalStyles = ({ children }) => (
 
       :not(pre) > code[class*='language-'],
       pre[class*='language-'] {
-        background-color: ${colors.darkpurple} !important;
+        background-color: ${colors.constants.darkpurple} !important;
       }
 
       /* Inline code */
       :not(pre) > code[class*='language-'] {
-        background-color: ${colors.darkpurple};
+        background-color: ${colors.constants.darkpurple};
         display: inline-block;
         padding: 0 0.125rem;
         border-radius: 0.125rem;
@@ -197,7 +197,7 @@ const GlobalStyles = ({ children }) => (
       }
 
       .token.parameter {
-        color: ${colors.yellow};
+        color: ${colors.constants.yellow};
         font-style: italic;
       }
 
@@ -220,28 +220,28 @@ const GlobalStyles = ({ children }) => (
       .token.unit,
       .token.hexcode,
       .token.deleted {
-        color: ${colors.pink};
+        color: ${colors.constants.pink};
       }
 
       .token.property,
       .token.selector {
-        color: ${colors.green};
+        color: ${colors.constants.green};
       }
 
       .token.function-name,
       .token.boolean,
       .token.selector .token.id,
       .token.function {
-        color: ${colors.blue};
+        color: ${colors.constants.blue};
       }
 
       .token.class-name {
-        color: ${colors.yellow};
+        color: ${colors.constants.yellow};
       }
 
       .token.constant,
       .token.symbol {
-        color: ${colors.pink};
+        color: ${colors.constants.pink};
       }
 
       .token.important,
@@ -249,7 +249,7 @@ const GlobalStyles = ({ children }) => (
       .token.keyword,
       .token.selector .token.class,
       .token.builtin {
-        color: ${colors.yellow};
+        color: ${colors.constants.yellow};
         font-style: italic;
       }
 
@@ -258,13 +258,13 @@ const GlobalStyles = ({ children }) => (
       .token.attr-value,
       .token.regex,
       .token.variable {
-        color: ${colors.pink};
+        color: ${colors.constants.pink};
       }
 
       .token.operator,
       .token.entity,
       .token.url {
-        color: ${colors.blue};
+        color: ${colors.constants.blue};
       }
 
       .token.important,
@@ -281,7 +281,7 @@ const GlobalStyles = ({ children }) => (
       }
 
       .token.inserted {
-        color: ${colors.green};
+        color: ${colors.constants.green};
       }
     `}
   >

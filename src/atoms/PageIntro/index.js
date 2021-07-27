@@ -5,7 +5,7 @@ import { colors } from '../../tokens';
 const StyledIntro = styled('section')`
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: solid 1px ${colors.darkpurple};
+  border-bottom: solid 1px ${colors.constants.darkpurple};
 `;
 
 const PageIntro = ({ title, text }) => (
