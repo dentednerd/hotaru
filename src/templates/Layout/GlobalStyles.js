@@ -53,6 +53,11 @@ const GlobalStyles = ({ children }) => (
         border-radius: 1rem;
       }
 
+      blockquote a {
+        color: ${colors.constants.darkpurple};
+        text-decoration: underline;
+      }
+
       ul,
       ol {
         padding-left: 1rem;

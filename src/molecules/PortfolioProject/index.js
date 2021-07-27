@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
 import CTALink from '../../atoms/CTALink';
-import assets from './assets';
+import assets from '../../assets/portfolioImages';
 import { stackMap } from '../../helpers';
 
 const StyledProject = styled.section`

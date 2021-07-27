@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import portfolioData from '../../data/portfolioData';
+import { portfolioData } from '../../data';
 import { fonts, colors } from '../../tokens';
 import CTALink from '../../atoms/CTALink';
 
@@ -33,7 +33,7 @@ const StyledMenu = styled.div`
   }
 `;
 
-const Menu = ({ category, setCurrentProject }) => (
+const PortfolioMenu = ({ category, setCurrentProject }) => (
   <StyledMenu>
     <div className="grid">
       {projectList.map(
@@ -48,4 +48,4 @@ const Menu = ({ category, setCurrentProject }) => (
   </StyledMenu>
 );
 
-export default Menu;
+export default PortfolioMenu;

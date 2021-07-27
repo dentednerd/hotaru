@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import JournalPost from './JournalPost';
 import CTALink from '../../atoms/CTALink';
-import Layout from '../Layout';
 
 const NextPrevious = styled('nav')`
   display: grid;
@@ -17,7 +16,7 @@ export default ({ data, pageContext }) => {
   const { post } = data;
 
   return (
-    <Layout>
+    <>
       <Helmet
         htmlAttributes={{
           lang: 'en',
@@ -42,7 +41,7 @@ export default ({ data, pageContext }) => {
           </CTALink>
         )}
       </NextPrevious>
-    </Layout>
+    </>
   );
 };
 

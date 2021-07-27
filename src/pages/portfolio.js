@@ -1,6 +1,26 @@
-import React from 'react';
-import PortfolioTemplate from '../templates/Portfolio';
+import React, { useState, useEffect } from 'react';
+import { portfolioData } from '../data';
+import Project from '../molecules/PortfolioProject';
+import PortfolioMenu from '../molecules/PortfolioMenu';
 
-const Portfolio = () => <PortfolioTemplate />;
+const PortfolioTemplate = () => {
+  const [currentProject, setCurrentProject] = useState('ladbible');
+  const categories = ['LBG', 'NC', 'JI'];
 
-export default Portfolio;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentProject]);
+
+  return (
+    <>
+      <Project project={portfolioData[currentProject]} />
+      <div>
+        {categories.map(cat => (
+          <PortfolioMenu category={cat} setCurrentProject={setCurrentProject} />
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default PortfolioTemplate;
