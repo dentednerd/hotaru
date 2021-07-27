@@ -294,4 +294,4 @@ export default {
     images: ['Blogr'],
     stack: ['Sass', 'JavaScript'],
   },
-}
+};

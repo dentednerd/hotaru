@@ -1,20 +1,20 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from '@emotion/styled'
-import { faCode } from '@fortawesome/free-solid-svg-icons/faCode'
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode'
-import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory'
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt'
-import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
-import FaIcon from '../../atoms/FaIcon'
-import { colors, fonts } from '../../tokens'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from '@emotion/styled';
+import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode';
+import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
+import FaIcon from '../../atoms/FaIcon';
+import { colors, fonts } from '../../tokens';
 
 const Nav = styled('nav')`
   display: flex;
   flex-flow: column nowrap;
   padding: 0;
-  color: ${colors.darkpurple};
-`
+  color: inherit;
+`;
 
 const NavItem = styled(Link)`
   display: grid;
@@ -22,7 +22,7 @@ const NavItem = styled(Link)`
   align-items: center;
   margin-bottom: 1rem;
   font-family: ${fonts.headline};
-  color: ${colors.darkpurple};
+  color: inherit;
 
   svg {
     transform: scale(1.25);
@@ -41,7 +41,7 @@ const NavItem = styled(Link)`
       transition: all 0.2s ease-in-out;
     }
   }
-`
+`;
 
 const navItems = [
   {
@@ -69,7 +69,7 @@ const navItems = [
     icon: faYoutube,
     ariaLabel: 'Showreel',
   },
-]
+];
 
 const MenuIcons = () => (
   <Nav>
@@ -85,6 +85,6 @@ const MenuIcons = () => (
       </NavItem>
     ))}
   </Nav>
-)
+);
 
-export default MenuIcons
+export default MenuIcons;

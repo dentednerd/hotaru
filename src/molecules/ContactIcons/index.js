@@ -1,36 +1,50 @@
-import React from 'react'
+import React from 'react';
+import styled from '@emotion/styled';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import FaIcon from '../../atoms/FaIcon';
+
+const StyledContactIcons = styled.div`
+  display: flex;
+
+  a {
+    margin-right: 1rem;
+
+    svg {
+      color: #fff;
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+`;
 
 const icons = [
   {
-    link: 'mailto:jo.imlay@gmail.com',
-    image: 'new-post',
-    alt: 'Mail',
-  },
-  {
     link: 'https://twitter.com/dentednerd',
-    image: 'twitter-circled',
+    image: faTwitter,
     alt: 'Twitter',
   },
   {
     link: 'https://www.linkedin.com/in/joanne-imlay-4a7a7056/',
-    image: 'linkedin',
+    image: faLinkedin,
     alt: 'LinkedIn',
   },
   {
     link: 'https://github.com/dentednerd',
-    image: 'github',
+    image: faGithub,
     alt: 'Github',
   },
-]
+];
 
-const ContactIcons = () =>
-  icons.map(icon => (
-    <a href={icon.link} key={icon.link}>
-      <img
-        src={`https://img.icons8.com/bubbles/64/000000/${icon.image}.png`}
-        alt={icon.alt}
-      />
-    </a>
-  ))
+const ContactIcons = () => (
+  <StyledContactIcons>
+    {icons.map(icon => (
+      <a href={icon.link} key={icon.link}>
+        <FaIcon icon={icon.image} size="2x" />
+      </a>
+    ))}
+  </StyledContactIcons>
+);
 
-export default ContactIcons
+export default ContactIcons;

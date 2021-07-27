@@ -1,5 +1,15 @@
 export default [
   {
+    link: 'https://www.northcoders.com',
+    dates: 'Jun 2021 - present',
+    companyName: 'Northcoders',
+    jobTitle: 'Software Engineer & Mentor',
+    jobDesc: [
+      'Supporting students on the bootcamp via helpdesk', 'Updating and maintaining sprints, solutions and educational resources'
+    ],
+    skills: ['NodeJS', 'Express', 'SQL', 'React', 'HTML', 'CSS'],
+  },
+  {
     link: 'http://www.ladbible.com',
     dates: 'Jul 2018 - Jun 2021',
     companyName: 'LADbible Group',
@@ -10,7 +20,7 @@ export default [
       'Developed a cross-platform mobile app in React Native: <a href="https://apple.co/2DDLgTu">iOS</a>',
       'Wrote articles for the <a href="https://medium.com/@jo.imlay">LADbible Medium publication</a>',
       'Presented a talk on <a href="https://www.youtube.com/watch?v=gk_5ezTqd3c">automating BrowserStack screenshot generation with CircleCI</a> at Manchester Web Meetup',
-      'Presented a talk on a complex React component for the GAMINGbible site at ReactJS Girls Online #2',
+      'Presented a talk on <a href="https://www.youtube.com/watch?v=eaY8ovn1FzI&t=4097s">a complex React component for the GAMINGbible site</a> at ReactJS Girls Online #2',
       'Facilitated daily standups and monthly retros',
       'Involved in several LAD social groups: food club, book club, LGBTQI+ & allies group',
     ],
@@ -33,7 +43,7 @@ export default [
     companyName: 'Northcoders',
     jobTitle: 'Tutor (Saturdays)',
     jobDesc: [
-      'Supporting <a href="https://northcoders.com/">Northcoders</a> students on the part-time course in their front end development studies',
+      'Supporting students on the part-time course in their front end development studies',
     ],
     skills: ['React', 'HTML', 'CSS'],
   },
@@ -45,4 +55,4 @@ export default [
     jobDesc: ['Currently under NDA'],
     skills: ['React', 'Redux', 'Redux-Saga', 'Storybook', 'Jest'],
   },
-]
+];

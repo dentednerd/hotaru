@@ -1,32 +1,35 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
-import styled from '@emotion/styled'
-import MenuIcons from '../../molecules/MenuIcons'
-import { JoeySvg } from '../../assets'
-import { colors, fonts, shadows } from '../../tokens'
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import styled from '@emotion/styled';
+import MenuIcons from '../../molecules/MenuIcons';
+import { JoeySvg } from '../../assets';
+import { colors, fonts, shadows } from '../../tokens';
 
 const StyledHeader = styled('header')`
-  position: relative;
+  position: fixed;
+  z-index: 9;
+  width: calc(100% - 2rem);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  color: ${colors.darkpurple};
-  background-color: #fff;
-  padding: 0;
-  border-bottom: solid 1px ${colors.darkpurple};
+  background-color: ${colors.background};
+  color: ${colors.text};
+  padding: 0 1rem;
   margin-bottom: 1rem;
+  box-shadow: ${shadows.darkShadow};
 
   &.scrolled {
     position: fixed;
     top: 0;
     left: 0;
     width: calc(100% - 2rem);
+    background-color: ${colors.background};
     padding: 0 1rem;
     z-index: 3;
-    box-shadow: ${shadows.menuShadow};
+    box-shadow: ${shadows.darkShadow};
   }
-`
+`;
 
 const Identity = styled('section')`
   display: flex;
@@ -50,20 +53,19 @@ const Identity = styled('section')`
       font-size: 1.5rem;
       line-height: 1.5rem;
       font-family: ${fonts.cursive};
-      color: ${colors.darkpurple};
+      color: ${colors.text};
       margin: 1rem 0;
       padding: 0;
     }
   }
-`
+`;
 
 const Menu = styled('div')`
   position: absolute;
   top: 56px;
   right: calc(-1rem - 1px);
-  background-color: #fff;
-  border: solid 1px ${colors.darkpurple};
-  border-top: none;
+  background-color: ${colors.background};
+  box-shadow: ${shadows.darkShadow};
   padding: 1rem;
   height: 13rem;
   width: 8rem;
@@ -80,7 +82,7 @@ const Menu = styled('div')`
 
   &.scrolled {
     border-right: none;
-    box-shadow: ${shadows.menuShadow};
+    box-shadow: ${shadows.darkShadow};
     right: 0;
   }
 
@@ -88,7 +90,7 @@ const Menu = styled('div')`
     top: 70px;
     right: 0;
   }
-`
+`;
 
 const MenuIcon = styled('div')`
   width: 2rem;
@@ -103,7 +105,7 @@ const MenuIcon = styled('div')`
     position: absolute;
     height: 0.25rem;
     width: 100%;
-    background: ${colors.darkpurple};
+    background: ${colors.text};
     border-radius: 0.125rem;
     opacity: 1;
     left: 0;
@@ -111,65 +113,65 @@ const MenuIcon = styled('div')`
     transition: 0.25s ease-in-out;
   }
 
-  & span:nth-child(1) {
+  & span:nth-of-type(1) {
     top: 0;
   }
 
-  & span:nth-child(2),
-  & span:nth-child(3) {
+  & span:nth-of-type(2),
+  & span:nth-of-type(3) {
     top: 0.5rem;
   }
 
-  & span:nth-child(4) {
+  & span:nth-of-type(4) {
     top: 1rem;
   }
 
-  &.open span:nth-child(1) {
+  &.open span:nth-of-type(1) {
     top: 1rem;
     width: 0%;
     left: 50%;
   }
 
-  &.open span:nth-child(2) {
+  &.open span:nth-of-type(2) {
     transform: rotate(45deg);
   }
 
-  &.open span:nth-child(3) {
+  &.open span:nth-of-type(3) {
     transform: rotate(-45deg);
   }
 
-  &.open span:nth-child(4) {
+  &.open span:nth-of-type(4) {
     top: 1rem;
     width: 0%;
     left: 50%;
   }
-`
+`;
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false)
-  const [isOpen, toggleIsOpen] = useState(false)
+  // const [scrolled, setScrolled] = useState(false)
+  const [isOpen, toggleIsOpen] = useState(false);
 
-  const handleScroll = () => {
-    const offset = window.scrollY
-    if (offset > 112) {
-      setScrolled(true)
-    } else {
-      setScrolled(false)
-    }
-  }
+  // const handleScroll = () => {
+  //   const offset = window.scrollY
+  //   if (offset > 112) {
+  //     setScrolled(true)
+  //   } else {
+  //     setScrolled(false)
+  //   }
+  // }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-  })
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+  // })
 
-  const headerClasses = []
+  const headerClasses = [];
 
-  if (scrolled) {
-    headerClasses.push('scrolled')
-  }
+  // if (scrolled) {
+  //   headerClasses.push('scrolled')
+  // }
 
   if (isOpen) {
-    headerClasses.push('open')
+    headerClasses.push('open');
   }
 
   return (
@@ -193,7 +195,7 @@ const Header = () => {
         <MenuIcons />
       </Menu>
     </StyledHeader>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

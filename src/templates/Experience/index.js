@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import timelineData from '../../data/timelineData'
-import educationData from '../../data/educationData'
-import interestsData from '../../data/interestsData'
-import ContactIcons from '../../molecules/ContactIcons'
-import ExperienceScreen from './ExperienceScreen'
-import { colors, fonts } from '../../tokens'
+import React from 'react';
+import styled from '@emotion/styled';
+import timelineData from '../../data/timelineData';
+import educationData from '../../data/educationData';
+import interestsData from '../../data/interestsData';
+import ContactIcons from '../../molecules/ContactIcons';
+import ExperienceScreen from './ExperienceScreen';
+import { colors, fonts } from '../../tokens';
 
 const CVLayout = styled('section')`
   display: grid;
@@ -27,10 +27,16 @@ const CVLayout = styled('section')`
     padding: 0;
   }
 
+  h3, h4, ul li span {
+    color: ${colors.lightpurple};
+  }
+
   h3 {
     margin-bottom: 0;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
   }
-`
+`;
 
 const CVHeader = styled('header')`
   grid-column: 1 / 3;
@@ -50,9 +56,9 @@ const CVHeader = styled('header')`
       padding: 0 0.5rem 0 0.25rem;
     }
   }
-`
+`;
 
-const Experience = styled('main')`
+const Experience = styled('section')`
   grid-column: 1 / 2;
 
   li {
@@ -62,20 +68,20 @@ const Experience = styled('main')`
       content: '» ';
     }
   }
-`
+`;
 
 const Education = styled('aside')`
   grid-column: 1 / 2;
 
   h3,
   h4 {
-    color: ${colors.darkpurple};
+    color: ${colors.text};
   }
 
   @media (min-width: 480px) {
     grid-column: 2 / 3;
   }
-`
+`;
 
 const Interests = styled('footer')`
   grid-column: 1 / 3;
@@ -85,7 +91,7 @@ const Interests = styled('footer')`
 
     span {
       font-family: ${fonts.headline};
-      color: ${colors.darkpurple};
+      color: ${colors.text};
       font-weight: 500;
     }
 
@@ -93,7 +99,7 @@ const Interests = styled('footer')`
       content: '» ';
     }
   }
-`
+`;
 
 const ExperienceTemplate = () => (
   <CVLayout>
@@ -148,6 +154,6 @@ const ExperienceTemplate = () => (
       </ul>
     </Interests>
   </CVLayout>
-)
+);
 
-export default ExperienceTemplate
+export default ExperienceTemplate;

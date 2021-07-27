@@ -1,23 +1,23 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import JournalTemplate from '../Journal'
-import JournalPost from './JournalPost'
-import CTALink from '../../atoms/CTALink'
+import React from 'react';
+import styled from '@emotion/styled';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import JournalPost from './JournalPost';
+import CTALink from '../../atoms/CTALink';
+import Layout from '../Layout';
 
 const NextPrevious = styled('nav')`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 1rem;
   margin: 1rem 0;
-`
+`;
 
 export default ({ data, pageContext }) => {
-  const { post } = data
+  const { post } = data;
 
   return (
-    <JournalTemplate data={data}>
+    <Layout>
       <Helmet
         htmlAttributes={{
           lang: 'en',
@@ -42,9 +42,9 @@ export default ({ data, pageContext }) => {
           </CTALink>
         )}
       </NextPrevious>
-    </JournalTemplate>
-  )
-}
+    </Layout>
+  );
+};
 
 export const query = graphql`
   query($slug: String!) {
@@ -128,4 +128,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

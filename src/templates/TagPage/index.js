@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { graphql } from 'gatsby'
-import Card from '../../molecules/Card'
-import JournalTemplate from '../Journal'
+import React from 'react';
+import styled from '@emotion/styled';
+import { graphql } from 'gatsby';
+import Card from '../../molecules/Card';
+import Layout from '../Layout';
 
 const JournalGrid = styled('section')`
   display: grid;
@@ -12,25 +12,25 @@ const JournalGrid = styled('section')`
   @media (min-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
   }
-`
+`;
 
 const TagPage = ({ pageContext, data }) => {
-  const { tag } = pageContext
-  const { edges } = data.taggedPosts
+  const { tag } = pageContext;
+  const { edges } = data.taggedPosts;
 
   return (
-    <JournalTemplate data={data}>
+    <Layout>
       <h2>{`${tag} journal entries`}</h2>
       <JournalGrid>
         {edges.map(({ node }) => (
           <Card post={node} key={node.fields.slug} />
         ))}
       </JournalGrid>
-    </JournalTemplate>
-  )
-}
+    </Layout>
+  );
+};
 
-export default TagPage
+export default TagPage;
 
 export const pageQuery = graphql`
   query($tag: String) {
@@ -96,4 +96,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

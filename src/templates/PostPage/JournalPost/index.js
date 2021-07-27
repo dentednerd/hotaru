@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import kebabCase from 'lodash/kebabCase'
-import Tag from '../../../atoms/Tag'
-import { colors, fonts } from '../../../tokens'
+import React from 'react';
+import styled from '@emotion/styled';
+import kebabCase from 'lodash/kebabCase';
+import Tag from '../../../atoms/Tag';
+import { colors, fonts } from '../../../tokens';
 
 const JournalPost = ({ post }) => {
   const PostContent = styled('div')`
@@ -38,30 +38,29 @@ const JournalPost = ({ post }) => {
         content: '» ';
       }
     }
-  `
+  `;
 
   const PostTitle = styled('h2')`
-    border-bottom: solid 1px ${colors.darkpurple};
+    border-bottom: solid 1px ${colors.text};
     padding-bottom: 1rem;
-  `
+  `;
 
   const Byline = styled('p')`
     font-family: ${fonts.cursive};
     font-size: 2rem;
     margin: 2rem 0;
-    color: ${colors.darkpurple};
-  `
+    color: ${colors.text};
+  `;
 
   const Tags = styled('section')`
     z-index: 2;
-  `
+  `;
 
   const FeaturedImage = styled('img')`
     float: right;
     width: 50%;
     margin: 0.25rem 0 0.25rem 0.5rem;
-    border: solid 1px ${colors.darkpurple};
-  `
+  `;
 
   return (
     <article>
@@ -80,7 +79,7 @@ const JournalPost = ({ post }) => {
         ))}
       </Tags>
     </article>
-  )
-}
+  );
+};
 
-export default JournalPost
+export default JournalPost;

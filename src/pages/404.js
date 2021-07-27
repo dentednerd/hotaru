@@ -1,5 +1,5 @@
-import React from 'react'
-import Layout from '../templates/Layout'
+import React from 'react';
+import Layout from '../templates/Layout';
 
 export default () => (
   <Layout>
@@ -21,4 +21,4 @@ export default () => (
     </p>
     <h2>Quoth the server, 404.</h2>
   </Layout>
-)
+);

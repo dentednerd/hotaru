@@ -1,20 +1,18 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import PageIntro from '../atoms/PageIntro'
-import JournalTemplate from '../templates/Journal'
-import JournalHome from '../templates/Journal/JournalHome'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../templates/Layout';
+import JournalHome from '../templates/Journal/JournalHome';
 
 const Journal = ({ data }) => (
-  <JournalTemplate>
-    <PageIntro
-      title="Journal"
-      text="Thoughts on coding, commentary on projects I've worked on and tech event reviews."
+  <Layout>
+    <JournalHome
+      categories={data.categories.group}
+      tags={data.tags.group}
     />
-    <JournalHome categories={data.categories.group} tags={data.tags.group} />
-  </JournalTemplate>
-)
+  </Layout>
+);
 
-export default Journal
+export default Journal;
 
 export const pageQuery = graphql`
   query {
@@ -98,4 +96,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

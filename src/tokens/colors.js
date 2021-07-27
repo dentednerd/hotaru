@@ -6,8 +6,15 @@ const colors = {
   purple: '#666699',
   darkpurple: '#333366',
   lightpurple: '#9999cc',
-  backgroundpurple: '#ccccff',
-  link: '#8c3e65',
-}
+  background:
+  '#161032',
+  // '#332E4A',
+  text: '#ffffff',
+  headline: '#ffff66',
+  link: '#77ccff',
+  footerbg:
+  '#04010e'
+  // '#161032'
+};
 
-export default colors
+export default colors;

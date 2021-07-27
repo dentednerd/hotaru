@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from '@emotion/styled'
-import { colors } from '../../tokens'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from '@emotion/styled';
+import { colors } from '../../tokens';
 
 const StyledCard = styled(Link)`
   display: flex;
@@ -28,7 +28,7 @@ const StyledCard = styled(Link)`
     font-size: 1rem;
     line-height: 1.25rem;
   }
-`
+`;
 
 const CardImage = styled('img')`
   width: 100%;
@@ -36,7 +36,7 @@ const CardImage = styled('img')`
   padding: 0;
   position: relative;
   object-fit: cover;
-`
+`;
 
 const CardTitle = styled('div')`
   height: 4rem;
@@ -45,7 +45,7 @@ const CardTitle = styled('div')`
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const Card = ({ post }) => (
   <StyledCard to={post.fields.slug}>
@@ -57,6 +57,6 @@ const Card = ({ post }) => (
       <h2>{post.frontmatter.title}</h2>
     </CardTitle>
   </StyledCard>
-)
+);
 
-export default Card
+export default Card;

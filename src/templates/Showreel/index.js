@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
-import styled from '@emotion/styled'
-import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
-import CTALink from '../../atoms/CTALink'
-import { colors } from '../../tokens'
+import React, { useState } from 'react';
+import styled from '@emotion/styled';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
+import CTALink from '../../atoms/CTALink';
+import { colors } from '../../tokens';
+
+const StyledShowreel = styled.section`
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 6rem);
+`;
 
 const TV = styled('iframe')`
   display: block;
   width: calc(100vw - 2rem);
   height: calc(56.25vw - 2rem);
   margin: 0 auto 1rem;
-  border: solid 1px ${colors.darkpurple};
 
   @media (min-width: 800px) {
     width: 50vw;
@@ -20,7 +27,7 @@ const TV = styled('iframe')`
     width: 40vw;
     height: 22.5vw;
   }
-`
+`;
 
 const List = styled('ul')`
   list-style: none;
@@ -30,9 +37,13 @@ const List = styled('ul')`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-`
+`;
 
 const videos = [
+  {
+    id: 'https://www.youtube.com/embed/eaY8ovn1FzI',
+    name: 'Let\'s go, gamers: how we built the GAMINGbible menu'
+  },
   {
     id: 'https://youtube.com/embed/gk_5ezTqd3c',
     name: 'Automating BrowserStack screenshot generation with CircleCI',
@@ -56,16 +67,16 @@ const videos = [
   {
     id: 'https://youtube.com/embed/2bA0KAGYjIc',
     name: 'Northcoders scholarship supports women programmers',
-  },
-]
+  }
+];
 
 const ShowreelTemplate = () => {
   const [currentVideo, setCurrentVideo] = useState(
-    'https://youtube.com/embed/gk_5ezTqd3c'
-  )
+    'https://www.youtube.com/embed/eaY8ovn1FzI'
+  );
 
   return (
-    <section>
+    <StyledShowreel>
       <TV
         title="showreel"
         src={currentVideo}
@@ -80,8 +91,8 @@ const ShowreelTemplate = () => {
           </CTALink>
         ))}
       </List>
-    </section>
-  )
-}
+    </StyledShowreel>
+  );
+};
 
-export default ShowreelTemplate
+export default ShowreelTemplate;

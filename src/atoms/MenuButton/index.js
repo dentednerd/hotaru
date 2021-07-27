@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
+import React from 'react';
+import styled from '@emotion/styled';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 
 const MenuButton = ({ open, toggleOpen }) => {
   const StyledMenuButton = styled('div')`
@@ -30,13 +30,13 @@ const MenuButton = ({ open, toggleOpen }) => {
       width: 2rem;
       filter: drop-shadow(-2px 2px 2px #6e6191);
     }
-  `
+  `;
 
   return (
     <StyledMenuButton onClick={() => toggleOpen(!open)}>
       <FontAwesomeIcon icon={faBars} />
     </StyledMenuButton>
-  )
-}
+  );
+};
 
-export default MenuButton
+export default MenuButton;

@@ -1,32 +1,38 @@
-import React, { useEffect } from 'react'
-import Helmet from 'react-helmet'
-import styled from '@emotion/styled'
-import GlobalStyles from './GlobalStyles'
-import Header from '../../organisms/Header'
-import Footer from '../../organisms/Footer'
-import { colors } from '../../tokens'
+import React, { useEffect } from 'react';
+import Helmet from 'react-helmet';
+import styled from '@emotion/styled';
+import GlobalStyles from './GlobalStyles';
+import Header from '../../organisms/Header';
+import Footer from '../../organisms/Footer';
+import { colors, shadows } from '../../tokens';
 
-const StyledLayout = styled('main')`
+const StyledLayout = styled('div')`
   position: relative;
-  background-color: #fff;
-  max-width: 800px;
   margin: 0 auto;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  padding: 0 1rem;
+  padding: 0;
 
-  @media (min-width: 800px) {
-    margin: 2rem auto;
-    border: solid 1px ${colors.darkpurple};
+  main {
+    background-color: ${colors.background};
+    color: ${colors.text};
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    box-shadow: ${shadows.darkShadow};
+    padding: 5rem 1rem 1rem;
   }
-`
+
+  div.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+`;
 
 export default props => {
-  const { children } = props
+  const { children } = props;
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <StyledLayout>
@@ -43,8 +49,12 @@ export default props => {
       </Helmet>
       <GlobalStyles />
       <Header />
-      {children}
+      <main>
+        <div className="container">
+          {children}
+        </div>
+      </main>
       <Footer />
     </StyledLayout>
-  )
-}
+  );
+};

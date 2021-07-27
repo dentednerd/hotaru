@@ -1,22 +1,21 @@
-import React from 'react'
-import { Global, css } from '@emotion/core'
-import { config, dom } from '@fortawesome/fontawesome-svg-core'
-import { colors, fonts } from '../../tokens'
+import React from 'react';
+import { Global, css } from '@emotion/core';
+import { config, dom } from '@fortawesome/fontawesome-svg-core';
+import { colors, fonts } from '../../tokens';
 
-config.autoAddCss = false
+config.autoAddCss = false;
 
 const GlobalStyles = ({ children }) => (
   <Global
     styles={css`
       body,
       html {
-        color: ${colors.purple};
-        background-color: ${colors.backgroundpurple};
+        color: ${colors.text};
+        background-color: ${colors.footerbg};
         font-family: ${fonts.body};
         font-size: 16px;
         line-height: 28px;
         font-weight: 400;
-        overflow-x: hidden;
         margin: 0;
         padding: 0;
       }
@@ -70,18 +69,17 @@ const GlobalStyles = ({ children }) => (
       h2 {
         font-family: ${fonts.headline};
         font-weight: 700;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 2rem;
+        line-height: 2.25rem;
         margin: 0 0 1rem;
-        letter-spacing: -0.05rem;
-        color: ${colors.darkpurple};
+        color: ${colors.headline};
       }
 
       h3 {
         font-family: ${fonts.headline};
         font-weight: 500;
-        font-size: 1.25rem;
-        line-height: 1.25rem;
+        font-size: 1.75rem;
+        line-height: 2rem;
         margin: 0 0 1rem;
         letter-spacing: -0.05rem;
         color: ${colors.darkpurple};
@@ -188,12 +186,14 @@ const GlobalStyles = ({ children }) => (
 
       /* Inline code */
       :not(pre) > code[class*='language-'] {
-        background-color: transparent !important;
-        color: ${colors.darkpurple};
+        background-color: ${colors.darkpurple};
+        display: inline-block;
+        padding: 0 0.125rem;
+        border-radius: 0.125rem;
+        color: ${colors.text};
         font-size: 1rem;
         line-height: 1.5rem;
         margin: 0 0.125rem;
-        text-shadow: 0 0 0.125rem ${colors.blue};
       }
 
       .token.parameter {
@@ -287,6 +287,6 @@ const GlobalStyles = ({ children }) => (
   >
     {children}
   </Global>
-)
+);
 
-export default GlobalStyles
+export default GlobalStyles;

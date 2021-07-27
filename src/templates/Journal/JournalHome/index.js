@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import Categories from './Categories'
-import JournalTag from './JournalTag'
+import React from 'react';
+import styled from '@emotion/styled';
+import Categories from './Categories';
+import JournalTag from './JournalTag';
 
 const StyledJournalHome = styled('article')`
   section {
     margin: 1rem 0;
   }
-`
+`;
 
 const JournalHome = React.memo(({ categories, tags }) => {
-  const sortedCategories = [...categories].reverse()
+  const sortedCategories = [...categories].reverse();
 
   return (
     <StyledJournalHome>
@@ -24,7 +24,7 @@ const JournalHome = React.memo(({ categories, tags }) => {
         ))}
       </section>
     </StyledJournalHome>
-  )
-})
+  );
+});
 
-export default JournalHome
+export default JournalHome;
