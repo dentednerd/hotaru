@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import Layout from '../Layout';
 import JournalPost from './JournalPost';
 import CTALink from '../../atoms/CTALink';
 
@@ -16,7 +17,7 @@ export default ({ data, pageContext }) => {
   const { post } = data;
 
   return (
-    <>
+    <Layout>
       <Helmet
         htmlAttributes={{
           lang: 'en',
@@ -41,7 +42,7 @@ export default ({ data, pageContext }) => {
           </CTALink>
         )}
       </NextPrevious>
-    </>
+    </Layout>
   );
 };
 

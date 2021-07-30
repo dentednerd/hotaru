@@ -5,6 +5,7 @@ import kebabCase from 'lodash/kebabCase';
 import Tag from '../atoms/Tag';
 import CTALink from '../atoms/CTALink';
 import PageHeader from '../molecules/PageHeader';
+import Layout from '../templates/Layout';
 import { Engineer } from '../assets/undraws';
 
 const StyledJournalHome = styled('article')`
@@ -26,36 +27,39 @@ const Journal = React.memo(({ data }) => {
   const sortedCategories = categories.group.reverse();
 
   return (
-    <StyledJournalHome>
-      <PageHeader>
-        <Engineer />
-        <>
-          <p>This is the place in which I collect my thoughts on tech - the projects I&apos;ve worked on, events I&apos;ve attended, and the cool things I&apos;ve learned along the way.</p>
-          <h2>Journal</h2>
-        </>
-      </PageHeader>
-      {sortedCategories.map(cat => (
-        <Section key={cat.fieldValue}>
-          <h3>
-            {cat.fieldValue.charAt(0).toUpperCase() + cat.fieldValue.substring(1)}
-          </h3>
-          {cat.nodes.map(node => (
-            <CTALink to={node.fields.slug} key={node.id} style={{ margin: '0 0 1rem' }}>
-              {node.frontmatter.title}
-            </CTALink>
-          ))}
-        </Section>
-      ))}
-      <section>
-        <h3>Tags</h3>
-        {tags.group.map(thisTag => (
-          <Tag to={`/tags/${kebabCase(thisTag.fieldValue)}/`} key={thisTag.fieldValue}>
-            {thisTag.fieldValue}
-            <span>{thisTag.totalCount}</span>
-          </Tag>
+    <Layout>
+
+      <StyledJournalHome>
+        <PageHeader>
+          <Engineer />
+          <>
+            <p>This is the place in which I collect my thoughts on tech - the projects I&apos;ve worked on, events I&apos;ve attended, and the cool things I&apos;ve learned along the way.</p>
+            <h2>Journal</h2>
+          </>
+        </PageHeader>
+        {sortedCategories.map(cat => (
+          <Section key={cat.fieldValue}>
+            <h3>
+              {cat.fieldValue.charAt(0).toUpperCase() + cat.fieldValue.substring(1)}
+            </h3>
+            {cat.nodes.map(node => (
+              <CTALink to={node.fields.slug} key={node.id} style={{ margin: '0 0 1rem' }}>
+                {node.frontmatter.title}
+              </CTALink>
+            ))}
+          </Section>
         ))}
-      </section>
-    </StyledJournalHome>
+        <section>
+          <h3>Tags</h3>
+          {tags.group.map(thisTag => (
+            <Tag to={`/tags/${kebabCase(thisTag.fieldValue)}/`} key={thisTag.fieldValue}>
+              {thisTag.fieldValue}
+              <span>{thisTag.totalCount}</span>
+            </Tag>
+          ))}
+        </section>
+      </StyledJournalHome>
+    </Layout>
   );
 });
 

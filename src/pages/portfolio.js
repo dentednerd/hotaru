@@ -3,6 +3,7 @@ import { portfolioData } from '../data';
 import Project from '../molecules/PortfolioProject';
 import PortfolioMenu from '../molecules/PortfolioMenu';
 import PageHeader from '../molecules/PageHeader';
+import Layout from '../templates/Layout';
 import { Late } from '../assets/undraws';
 
 const PortfolioTemplate = () => {
@@ -14,7 +15,7 @@ const PortfolioTemplate = () => {
   }, [currentProject]);
 
   return (
-    <>
+    <Layout>
       <PageHeader>
         <Late />
         <>
@@ -28,7 +29,7 @@ const PortfolioTemplate = () => {
           <PortfolioMenu category={cat} setCurrentProject={setCurrentProject} />
         ))}
       </div>
-    </>
+    </Layout>
   );
 };
 

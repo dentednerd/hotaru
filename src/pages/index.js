@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import CTALink from '../atoms/CTALink';
 import introData from '../data/introData';
+import Layout from '../templates/Layout';
 import { colors } from '../tokens';
 
 const HomeSection = styled('section')`
@@ -47,16 +48,20 @@ const HomeSection = styled('section')`
   }
 `;
 
-const HomePage = () => introData.map((entry, index) => (
-  <HomeSection index={index}>
-    <section className="content" dangerouslySetInnerHTML={{ __html: entry.content }} />
-    <div>
-      {entry.svg}
-      <CTALink to={entry.link} icon={entry.icon}>
-        {entry.text}
-      </CTALink>
-    </div>
-  </HomeSection>
-));
+const HomePage = () => (
+  <Layout>
+    {introData.map((entry, index) => (
+      <HomeSection index={index}>
+        <section className="content" dangerouslySetInnerHTML={{ __html: entry.content }} />
+        <div>
+          {entry.svg}
+          <CTALink to={entry.link} icon={entry.icon}>
+            {entry.text}
+          </CTALink>
+        </div>
+      </HomeSection>
+    ))}
+  </Layout>
+);
 
 export default HomePage;

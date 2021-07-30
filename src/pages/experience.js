@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { timelineData, educationData, interestsData } from '../data';
 import ExperienceScreen from '../molecules/ExperienceScreen';
 import PageHeader from '../molecules/PageHeader';
+import Layout from '../templates/Layout';
 import { Remote } from '../assets/undraws';
 import { colors, fonts } from '../tokens';
 
@@ -34,26 +35,6 @@ const CVLayout = styled('section')`
     margin-bottom: 0;
     font-size: 1.25rem;
     line-height: 1.5rem;
-  }
-`;
-
-const CVHeader = styled('header')`
-  grid-column: 1 / 3;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: solid 1px ${colors.constants.darkpurple};
-
-  div {
-    text-align: center;
-  }
-
-  span {
-    display: none;
-
-    @media (min-width: 800px) {
-      display: block;
-      padding: 0 0.5rem 0 0.25rem;
-    }
   }
 `;
 
@@ -101,56 +82,59 @@ const Interests = styled('footer')`
 `;
 
 const ExperienceTemplate = () => (
-  <CVLayout>
-    <PageHeader style={{ gridColumn: '1 / 3' }}>
-      <Remote />
-      <>
-        <p>
-          Specialist in&nbsp;
-          <a href="https://reactjs.org">React</a>
-          ,&nbsp;
-          <a href="https://reactnative.dev/">React Native</a>
-          &nbsp;and front end web development.
-          Mentor, speaker and tech writer.
-          Facilitator of&nbsp;
-          <a href="https://www.scrum.org/resources/what-is-a-scrum-master">Scrum</a>
-          &nbsp;ceremonies.
-        </p>
-        <h2>Experience</h2>
-      </>
-    </PageHeader>
-    <Experience>
-      <h2>History</h2>
-      {timelineData.map((job, index) => (
-        <ExperienceScreen job={job} index={index} />
-      ))}
-    </Experience>
-    <Education>
-      <h2>Education</h2>
-      <ul>
-        {educationData.map(job => (
-          <li>
-            <h3>{`${job.companyName}: ${job.jobTitle}`}</h3>
-            <h4>{job.dates}</h4>
-          </li>
+  <Layout>
+
+    <CVLayout>
+      <PageHeader style={{ gridColumn: '1 / 3' }}>
+        <Remote />
+        <>
+          <p>
+            Specialist in&nbsp;
+            <a href="https://reactjs.org">React</a>
+            ,&nbsp;
+            <a href="https://reactnative.dev/">React Native</a>
+            &nbsp;and front end web development.
+            Mentor, speaker and tech writer.
+            Facilitator of&nbsp;
+            <a href="https://www.scrum.org/resources/what-is-a-scrum-master">Scrum</a>
+            &nbsp;ceremonies.
+          </p>
+          <h2>Experience</h2>
+        </>
+      </PageHeader>
+      <Experience>
+        <h2>History</h2>
+        {timelineData.map((job, index) => (
+          <ExperienceScreen job={job} index={index} />
         ))}
-      </ul>
-    </Education>
-    <Interests>
-      <h2>Interests</h2>
-      <ul>
-        {interestsData.map(interest => (
-          <li>
-            <span>
-              {interest.label}
-              :&nbsp;
-            </span>
-            {interest.content}
-          </li>
-        ))}
-      </ul>
-    </Interests>
-  </CVLayout>
+      </Experience>
+      <Education>
+        <h2>Education</h2>
+        <ul>
+          {educationData.map(job => (
+            <li>
+              <h3>{`${job.companyName}: ${job.jobTitle}`}</h3>
+              <h4>{job.dates}</h4>
+            </li>
+          ))}
+        </ul>
+      </Education>
+      <Interests>
+        <h2>Interests</h2>
+        <ul>
+          {interestsData.map(interest => (
+            <li>
+              <span>
+                {interest.label}
+                :&nbsp;
+              </span>
+              {interest.content}
+            </li>
+          ))}
+        </ul>
+      </Interests>
+    </CVLayout>
+  </Layout>
 );
 
 export default ExperienceTemplate;
