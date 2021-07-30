@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import FaIcon from '../FaIcon';
-import { colors, fonts, shadows } from '../../tokens';
+import { fonts, shadows } from '../../tokens';
 
 const CTALink = ({
   to,
@@ -19,12 +19,11 @@ const CTALink = ({
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    background-color: ${colors.constants.darkpurple};
-    color: #fff;
+    background-color: var(--color-link);
+    color: var(--color-background);
     font-family: ${fonts.contrast};
     padding: 0.5rem 1rem;
     border-radius: 1rem;
-    color: #fff;
     text-align: left;
     margin: 0;
     font-size: 0.75rem;
@@ -35,7 +34,7 @@ const CTALink = ({
     cursor: pointer;
 
     svg {
-      color: #fff;
+      color: var(--color-background);
       width: 1rem;
       margin-right: 1rem;
     }

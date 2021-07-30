@@ -54,6 +54,11 @@ const StyledProject = styled.section`
     div.stack {
       margin: 1rem 0;
     }
+
+    blockquote {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
   }
 `;
 
@@ -73,14 +78,16 @@ export default ({ project }) => (
           dangerouslySetInnerHTML={{ __html: project.caption }}
         />
         {project.relatedPosts && (
-        <p>
-          Read more in my journal:&nbsp;
-          {project.relatedPosts.map(link => (
-            <Link to={link.slug} key={link.name}>
-              {link.name}
-            </Link>
-          ))}
-        </p>
+          <blockquote>
+            <p>
+              Read more in my journal:&nbsp;
+              {project.relatedPosts.map(link => (
+                <Link to={link.slug} key={link.name}>
+                  {link.name}
+                </Link>
+              ))}
+            </p>
+          </blockquote>
       )}
         {project.links.map(link => (
           <CTALink href={link.url} key={link.url} icon={faExternalLinkAlt} style={{ marginBottom: '1rem' }}>

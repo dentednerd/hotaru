@@ -14,7 +14,7 @@ const DarkToggle = () => {
   };
 
   return (
-    <FaIcon icon={colorMode === 'light' ? faMoon : faSun} size="3x" onClick={handleClick} style={{ color: colors.constants.purple }} />
+    <FaIcon icon={colorMode === 'light' ? faMoon : faSun} size="3x" onClick={handleClick} style={{ color: colors.constants.purple, cursor: 'pointer' }} />
   );
 };
 

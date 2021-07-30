@@ -1,15 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import CallToAction from '../molecules/CallToAction';
+import CTALink from '../atoms/CTALink';
 import introData from '../data/introData';
 import { colors } from '../tokens';
 
 const HomeSection = styled('section')`
   background-color: ${colors.background};
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  place-items: center;
+
+  @media(min-width: 800px) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1rem;
+    row-gap: 0;
+  }
 
   &::after {
     content: '';
@@ -22,8 +31,15 @@ const HomeSection = styled('section')`
     text-align: left;
   }
 
+  svg {
+    max-height: 10rem;
+    width: auto;
+  }
+
   section.content {
-    max-width: 800px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
   }
 
   section.cta {
@@ -31,18 +47,16 @@ const HomeSection = styled('section')`
   }
 `;
 
-const HomePage = () =>
-  introData.map((screen, index) => (
-    <HomeSection index={index}>
-      <section className="content" dangerouslySetInnerHTML={{ __html: screen.content }} />
-    </HomeSection>
-  )).concat((
-    <HomeSection>
-      <section className="content cta">
-        <h2>Take a look around.</h2>
-        <CallToAction />
-      </section>
-    </HomeSection>
-  ));
+const HomePage = () => introData.map((entry, index) => (
+  <HomeSection index={index}>
+    <section className="content" dangerouslySetInnerHTML={{ __html: entry.content }} />
+    <div>
+      {entry.svg}
+      <CTALink to={entry.link} icon={entry.icon}>
+        {entry.text}
+      </CTALink>
+    </div>
+  </HomeSection>
+));
 
 export default HomePage;

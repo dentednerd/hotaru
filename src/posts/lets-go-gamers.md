@@ -12,6 +12,8 @@ We had a lot of fun both building the menu and writing about it afterwards. Ther
 
 A huge shoutout to our team mate in UX, Holly Sunderland (why don't I have you on socials yet, aaaa) who designed [GAMINGbible](https://www.gamingbible.co.uk). The whole site, menu included, was a blast to build, and it's a joy to see it live.
 
+**UPDATE**: At [ReactJS Girls](https://reactjsgirls.com/) Online #2 in April 2021, my fabulous colleague Paulina Orawczak and I delivered a talk on this very subject, with a lot more in-depth explanation of our choices. [Now you can watch our talk on Youtube!](https://youtu.be/eaY8ovn1FzI)
+
 ## Further reading
 
 - [Let's go, gamers: how we built the GAMINGbible menu](https://medium.com/ladbiblegroup/lets-go-gamers-how-we-made-the-gamingbible-menu-d33115c86e28)
