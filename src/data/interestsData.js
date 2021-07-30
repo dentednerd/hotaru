@@ -2,7 +2,7 @@ const interestsData = [
   {
     label: 'Video games',
     content:
-      "I'm neutral in the console wars: I'm mainly a PC gamer. I like old-school point-and-click puzzlers (I grew up on the Monkey Island series), and RPGs such as World of Warcraft and Skyrim.",
+      "I'm neutral in the console wars: I'm mainly a PC gamer. I like old-school point-and-click puzzlers (I grew up on the Monkey Island series, and recently I've loved played Disco Elysium), and games that reward exploration and curiosity. (Yes, I've played a lot of Skyrim.)",
   },
   {
     label: 'Crochet',

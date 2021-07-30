@@ -77,17 +77,15 @@ const GlobalStyles = ({ children }) => (
         font-size: 2rem;
         line-height: 2.25rem;
         margin: 0 0 1rem;
-        color: ${colors.headline};
       }
 
       h3 {
         font-family: ${fonts.headline};
-        font-weight: 500;
+        font-weight: 700;
         font-size: 1.75rem;
         line-height: 2rem;
         margin: 0 0 1rem;
-        letter-spacing: -0.05rem;
-        color: ${colors.constants.darkpurple};
+        opacity: 0.8;
       }
 
       h3 svg {

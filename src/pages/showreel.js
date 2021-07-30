@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import CTALink from '../atoms/CTALink';
+import PageHeader from '../molecules/PageHeader';
+import { Programmer } from '../assets/undraws';
 
 const StyledShowreel = styled.section`
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 6rem);
 `;
 
 const TV = styled('iframe')`
@@ -76,6 +77,13 @@ const ShowreelTemplate = () => {
 
   return (
     <StyledShowreel>
+      <PageHeader>
+        <Programmer />
+        <>
+          <p>Sometimes folks like to get me on camera saying nice things about tech. What they don&apos;t always know is that I love talking about tech, and I&apos;d talk for hours if they&apos;d let me.</p>
+          <h2>Showreel</h2>
+        </>
+      </PageHeader>
       <TV
         title="showreel"
         src={currentVideo}

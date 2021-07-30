@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode';
 import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
@@ -14,6 +13,15 @@ const Nav = styled('nav')`
   flex-flow: column nowrap;
   padding: 0;
   color: inherit;
+
+  @media(min-width: 1024px) {
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const NavItem = styled(Link)`
@@ -23,6 +31,16 @@ const NavItem = styled(Link)`
   margin-bottom: 1rem;
   font-family: ${fonts.headline};
   color: inherit;
+
+  @media(min-width: 1024px) {
+    padding: 0 1rem;
+    margin-bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: ${colors.constants.purple};
+  }
 
   svg {
     transform: scale(1.25);
@@ -44,11 +62,6 @@ const NavItem = styled(Link)`
 `;
 
 const navItems = [
-  {
-    link: '/',
-    icon: faCode,
-    ariaLabel: 'Home',
-  },
   {
     link: '/portfolio',
     icon: faLaptopCode,
@@ -78,7 +91,6 @@ const MenuIcons = ({ toggleIsOpen }) => (
         to={item.link}
         aria-label={item.ariaLabel}
         key={item.link}
-        style={{ marginBottom: '1rem' }}
         onClick={() => toggleIsOpen(false)}
       >
         <FaIcon icon={item.icon} />

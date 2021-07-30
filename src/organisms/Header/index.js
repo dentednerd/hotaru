@@ -28,7 +28,7 @@ const Menu = styled('div')`
   background-color: var(--color-background);
   box-shadow: ${shadows.darkShadow};
   padding: 1rem;
-  height: 13rem;
+  height: 10rem;
   width: 8rem;
   transform: scaleY(0);
   transition: transform 0.2s ease-in-out;
@@ -53,6 +53,26 @@ const Menu = styled('div')`
   }
 `;
 
+const DesktopNav = styled('nav')`
+  display: none;
+
+  @media(min-width: 1024px) {
+    display: inline-block;
+    flex: 1;
+  }
+`;
+
+const MobileNav = styled('nav')`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  @media(min-width: 1024px) {
+    display: none;
+  }
+`;
+
 const Header = () => {
   const [isOpen, toggleIsOpen] = useState(false);
   const headerClasses = [];
@@ -63,15 +83,20 @@ const Header = () => {
   return (
     <StyledHeader className={headerClasses.join(' ')}>
       <Identity />
+      <DesktopNav>
+        <MenuIcons />
+      </DesktopNav>
       <DarkToggle />
-      <MenuIcon
-        isOpen={isOpen}
-        toggleIsOpen={toggleIsOpen}
-        headerClasses={headerClasses}
-      />
-      <Menu className={headerClasses.join(' ')}>
-        <MenuIcons toggleIsOpen={toggleIsOpen} />
-      </Menu>
+      <MobileNav>
+        <MenuIcon
+          isOpen={isOpen}
+          toggleIsOpen={toggleIsOpen}
+          headerClasses={headerClasses}
+        />
+        <Menu className={headerClasses.join(' ')}>
+          <MenuIcons toggleIsOpen={toggleIsOpen} />
+        </Menu>
+      </MobileNav>
     </StyledHeader>
   );
 };

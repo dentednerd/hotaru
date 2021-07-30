@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { timelineData, educationData, interestsData } from '../data';
-import ContactIcons from '../molecules/ContactIcons';
 import ExperienceScreen from '../molecules/ExperienceScreen';
+import PageHeader from '../molecules/PageHeader';
+import { Remote } from '../assets/undraws';
 import { colors, fonts } from '../tokens';
 
 const CVLayout = styled('section')`
@@ -101,27 +102,25 @@ const Interests = styled('footer')`
 
 const ExperienceTemplate = () => (
   <CVLayout>
-    <CVHeader>
-      <h2>Joey Imlay is a software engineer in Manchester.</h2>
-      <p>
-        Specialist in&nbsp;
-        <a href="https://reactjs.org">React</a>
-        ,&nbsp;
-        <a href="https://reactnative.dev/">React Native</a>
-        &nbsp;and front end web development.
-        Speaker and tech writer.
-        Facilitator of&nbsp;
-        <a href="https://www.scrum.org/resources/what-is-a-scrum-master">Scrum</a>
-        &nbsp;ceremonies.
-        Mentor, study organiser and creator of educational resources.
-        Gamer, musician, and fan of cats.
-      </p>
-      <div>
-        <ContactIcons />
-      </div>
-    </CVHeader>
+    <PageHeader style={{ gridColumn: '1 / 3' }}>
+      <Remote />
+      <>
+        <p>
+          Specialist in&nbsp;
+          <a href="https://reactjs.org">React</a>
+          ,&nbsp;
+          <a href="https://reactnative.dev/">React Native</a>
+          &nbsp;and front end web development.
+          Mentor, speaker and tech writer.
+          Facilitator of&nbsp;
+          <a href="https://www.scrum.org/resources/what-is-a-scrum-master">Scrum</a>
+          &nbsp;ceremonies.
+        </p>
+        <h2>Experience</h2>
+      </>
+    </PageHeader>
     <Experience>
-      <h2>Experience</h2>
+      <h2>History</h2>
       {timelineData.map((job, index) => (
         <ExperienceScreen job={job} index={index} />
       ))}

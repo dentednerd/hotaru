@@ -41,7 +41,7 @@ const JournalPost = ({ post }) => {
   `;
 
   const PostTitle = styled('h2')`
-    border-bottom: solid 1px ${colors.text};
+    border-bottom: solid 1px ${colors.constants.purple};
     padding-bottom: 1rem;
   `;
 

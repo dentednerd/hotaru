@@ -18,6 +18,7 @@ const StyledIdentity = styled('section')`
 
   a {
     text-decoration: none;
+    color: ${colors.constants.purple};
 
     h1 {
       display: flex;
@@ -27,9 +28,12 @@ const StyledIdentity = styled('section')`
       font-size: 1.5rem;
       line-height: 1.5rem;
       font-family: ${fonts.cursive};
-      color: ${colors.constants.purple};
       margin: 1rem 0;
       padding: 0;
+    }
+
+    &:hover {
+      color: var(--color-link);
     }
   }
 `;
