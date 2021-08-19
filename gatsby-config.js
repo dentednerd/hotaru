@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Joanne Imlay',
+    title: 'Joey Imlay',
     description: 'front end developer in Manchester, England',
-    siteUrl: 'https://www.joanneimlay.dev',
+    siteUrl: 'https://www.joeyimlay.dev',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.joanneimlay.dev',
-        sitemap: 'https://www.joanneimlay.dev/sitemap.xml',
+        host: 'https://www.joeyimlay.dev',
+        sitemap: 'https://www.joeyimlay.dev/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
@@ -93,8 +93,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'joanneimlay.dev',
-        short_name: 'joanneimlay.dev',
+        name: 'joeyimlay.dev',
+        short_name: 'joeyimlay.dev',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#333366',
