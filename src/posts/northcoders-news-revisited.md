@@ -28,7 +28,7 @@ app.use('/', express.static(
 
 ## Sowing the seeds
 
-As with my final NC project, [Code Ninjas](https://joanneimlay.dev/posts/code-ninjas/), I needed a way to host my Mongo database. [mLab](https://mlab.com) is MongoDB's database-as-a-service that offers a free "sandbox" plan - a single database, with 0.5GB storage on a shared server. It's way more than this project required. Setup was nice and easy, and seeding the database was painless - I changed my dev database URL in `config.js` to the mLab database, then ran my seed script.
+As with my final NC project, [Code Ninjas](https://joeyimlay.dev/posts/code-ninjas/), I needed a way to host my Mongo database. [mLab](https://mlab.com) is MongoDB's database-as-a-service that offers a free "sandbox" plan - a single database, with 0.5GB storage on a shared server. It's way more than this project required. Setup was nice and easy, and seeding the database was painless - I changed my dev database URL in `config.js` to the mLab database, then ran my seed script.
 
 One thing I figured out quite early on was to leave the test database URL alone - otherwise, when running tests, the mLab database would be seeded with test data and break the website. Yikes!
 

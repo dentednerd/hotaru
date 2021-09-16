@@ -1,22 +1,4 @@
 export default {
-  // ladapp: {
-  //   title: 'LADbible (iOS/Android)',
-  //   caption: '<p>Delivering editorial and video content to iOS and Android devices.</p><p>We took our cues from a legacy app built in Swift, and rebuilt in React Native using Expo. For most of us on the team, this was our first experience with React Native and mobile development. It\'s been  - continues to be - a great learning experience, especially around performance across devices.</p>',
-  //   links: [
-  //     {
-  //       text: 'install LADbible on iOS',
-  //       url: 'https://apple.co/2DDLgTu',
-  //     },
-  //     {
-  //       text: 'install LADbible on Android',
-  //       url: 'https://play.google.com/store/apps/details?id=com.ladbiblegroup.LADbible',
-  //     },
-  //   ],
-  //   images: ['BumblebeeHome', 'BumblebeeArticles', 'BumblebeeVideos', 'BumblebeeBundles', 'BumblebeeBundleVideo'],
-  //   stack: ['React Native', 'GraphQL'],
-  //   mobile: true,
-  // },
-
   ladbible: {
     title: 'LADbible',
     category: 'LBG',
@@ -131,8 +113,16 @@ export default {
     title: 'Northcoders News',
     category: 'NC',
     caption:
-      "<p>A MERN-stack Reddit clone, created over two sprints at Northcoders.</p><p>The first version, created near the end of the course, was styled with Bulma. This experience taught me that I prefer not to use CSS frameworks whenever possible. No disrespect to Bulma users, obviously! But it's not for me.</p><p>Much later, I used this project to demonstrate Docker containerisation to some colleagues, and I took the opportunity to add new functionality, refactor, redesign (without Bulma this time), and redeploy.</p>",
+      "<p>An ERN-stack Reddit clone, created over two sprints at Northcoders.</p><p>The first version of the front end, created near the end of the course, was styled with Bulma. This experience taught me that I prefer not to use CSS frameworks whenever possible. No disrespect to Bulma users, obviously! But it's not for me.</p><p>In version 2, I used this project to demonstrate Docker containerisation to some colleagues, and I took the opportunity to add new functionality, refactor, redesign (replacing Bulma with styled-components), and redeploy.</p><p>In version 3, I completely rebuilt the API in PostgreSQL instead of MongoDB, and also rebuilt the front end using hooks and context instead of Redux, and Stitches instead of styled-components.</p>",
     links: [
+      {
+        text: 'Northcoders News',
+        url: 'https://dentednerds-northcoders-news.netlify.app/',
+      },
+      {
+        text: 'v3 code on Github',
+        url: 'https://github.com/dentednerd/nc-news-3'
+      },
       {
         text: 'v2 code on Github',
         url: 'https://github.com/dentednerd/NorthcodersNewsDocker',
@@ -142,16 +132,43 @@ export default {
         url: 'https://github.com/dentednerd/NorthcodersNews',
       },
     ],
-    images: ['NCNewsv2', 'NCNews'],
-    stack: ['React', 'Redux', 'Bulma', 'Express', 'MongoDB'],
+    images: ['NCNewsv3', 'NCNewsv2', 'NCNews'],
+    stack: ['React', 'Redux', 'Bulma', 'styled-components', 'Stitches', 'Express', 'MongoDB', 'PostgreSQL'],
     relatedPosts: [
       {
         name: 'Northcoders News, revisited',
         slug: '/posts/northcoders-news-revisited/',
       },
+      {
+        name: 'The Return of Northcoders News',
+        slug: '/posts/the-return-of-northcoders-news/',
+      }
     ],
   },
-
+  houseofgames: {
+    title: 'House of Games',
+    category: 'NC',
+    caption:
+      "<p>Nowadays at Northcoders, the NC News sprint comes in two flavours: the news aggregation site that we all know and love, and a games rating and discussion site. However, the building of either of these projects is now very different to the stack we used when I was on the bootcamp. Instead of a MongoDB database, students now use PostgreSQL. On the front end, React hooks are much easier to grasp than Redux. </p><p>So I took the opportunity to build dentednerd's House of Games, getting more comfortable with SQL in the process, and using a CSS-in-JS library named Stitches for the first time on the front end. This was so successful that I went back and rebuilt NC News for the third time!</p>",
+    links: [
+      {
+        text: "dentednerd's House of Games",
+        url: 'https://dentednerds-house-of-games.netlify.app/',
+      },
+      {
+        text: 'code on Github',
+        url: 'https://github.com/dentednerd/house-of-games'
+      },
+    ],
+    images: ['HouseOfGames'],
+    stack: ['React', 'Stitches', 'Express', 'PostgreSQL'],
+    relatedPosts: [
+      {
+        name: 'The Return of Northcoders News',
+        slug: '/posts/the-return-of-northcoders-news/',
+      }
+    ],
+  },
   trelljo: {
     title: 'TrellJo',
     category: 'NC',

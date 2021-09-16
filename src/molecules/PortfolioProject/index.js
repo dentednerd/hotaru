@@ -81,10 +81,13 @@ export default ({ project }) => (
           <blockquote>
             <p>
               Read more in my journal:&nbsp;
-              {project.relatedPosts.map(link => (
-                <Link to={link.slug} key={link.name}>
-                  {link.name}
-                </Link>
+              {project.relatedPosts.map((link, index) => (
+                <>
+                  <Link to={link.slug} key={link.name}>
+                    {link.name}
+                  </Link>
+                  {(project.relatedPosts.length > 1 && index < (project.relatedPosts.length - 1)) && '; '}
+                </>
               ))}
             </p>
           </blockquote>
