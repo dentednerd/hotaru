@@ -91,13 +91,17 @@ export default {
       '<p>An educational multiple-choice game, created during the final project phase at Northcoders in a team of four. Accessibility was important to our design approach.</p><p>I tried to keep that approach to accessibility in the second version, whilst implementing a cleaner, slicker design, and adding new features such as level select, a progress bar for each level, and more ninja-themed assets!</p>',
     links: [
       {
-        text: 'v2 code on Github',
-        url: 'https://github.com/dentednerd/CodeNinjasv2',
+        text: 'Code Ninjas v2 (after Northcoders)',
+        url: 'https://codeninjas-v2.herokuapp.com/',
       },
       {
-        text: 'v1 code on Github',
-        url: 'https://github.com/dentednerd/CodeNinjas',
+        text: 'Code Ninjas v1 (Northcoders)',
+        url: 'https://codeninjas-nc5.herokuapp.com/',
       },
+      {
+        text: 'Code Ninjas API',
+        url: 'https://codeninjas-api.herokuapp.com/api'
+      }
     ],
     images: ['CodeNinjas2', 'CodeNinjas'],
     relatedPosts: [
