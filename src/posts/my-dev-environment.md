@@ -6,9 +6,11 @@ category: "programming"
 tags: ["Visual Studio Code", "iTerm2", "zsh"]
 ---
 
-Most of my life as a developer is wrapped up in [Visual Studio Code](https://code.visualstudio.com/). I love it - it's endlessly customisable and extendable, which is great when you have a burning need to impress your own personality upon your immediate environment. (Hi. I'm Joey. If I can customise it, I will.)
+Most of my life as a developer is wrapped up in [Visual Studio Code](https://code.visualstudio.com/). I love it - it's endlessly customisable and extendable, which is great when you have a burning need to impress your own personality upon your immediate environment.
 
 Below I've linked to the VSCode extensions I use on the daily, along with the relevant settings from my `settings.json`. [Let me know](https://www.twitter.com/dentednerd) if any of these are useful to you!
+
+> Because so many Northcoders students have been asking me about my theme, I've updated this post just for you!
 
 ## Colours
 
@@ -18,7 +20,7 @@ I'm not a super girly girl, but in certain situations, cute is very much my aest
 "workbench.colorTheme": "fairyfloss"
 ```
 
-You might have guessed that I've based the colours of this very site on this theme too. What can I say? Watashi wa bishoujo senshi.
+You might have guessed that I've based the colours of this very site on this theme too. What can I say? I just really like this colour palette.
 
 To easily differentiate between repos, I use [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) to change the colour of the workspace. I keep it subtle though - just enough colour to know which repo I'm working in at a glance, but not so much that it's distracting. I've set the colours to match the fairyfloss theme - it's all in the details.
 
@@ -54,6 +56,8 @@ To easily differentiate between repos, I use [Peacock](https://marketplace.visua
 ]
 ```
 
+> Update: Peacock was super helpful in my work at LADbible, where I was working with a handful of repos. At Northcoders, I'm jumping in and out of hundreds of repos, so setting a Peacock colour for every repo would be troublesome! But I'm leaving these settings here in case you find them useful.
+
 Here are some further customisations I've made to the colours in VSCode, in keeping with the theme but also maximising readability:
 
 ```json
@@ -79,6 +83,8 @@ Here are some further customisations I've made to the colours in VSCode, in keep
 
 Lately, however, I've been trying out [Jetbrains Mono](https://www.jetbrains.com/lp/mono/), which has been specifically designed to decrease eye strain. It also has ligatures, and uses taller letter formation.
 
+> Update: I've stuck with Jetbrains Mono, simply because it's easier on the eyes.
+
 If you struggle to follow indentations every now and then, [Indent-Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) colorizes each step of indentation in your code. I use a rotation of five custom colours to match the fairyfloss theme.
 
 ```json
@@ -91,7 +97,9 @@ If you struggle to follow indentations every now and then, [Indent-Rainbow](http
 ]
 ```
 
-I've customised some of the CSS in [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) to better highlight the section of code I'm currently working in. I thought about matching the bracket colours to the Fairyfloss theme, but a) the automatic colours with BPC don't look out of place with the theme, and b) the slight distinction makes them easier to keep track of anyways. BPC is an invaluable extension to help you avoid errors from functions that haven't closed properly. I can't recommend it enough.
+Painting rainbows in your IDE whilst you're coding feels like you're using those magical girl powers.
+
+I've customised some of the CSS in [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) to better highlight the section of code I'm currently working in. I thought about matching the bracket colours to the fairyfloss theme, but a) the automatic colours with BPC don't look out of place with the theme, and b) the slight distinction makes them easier to keep track of anyways. BPC is an invaluable extension to help you avoid errors from functions that haven't closed properly. I can't recommend it enough.
 
 ```json
 "bracketPairColorizer.scopeLineCSS": [
@@ -102,6 +110,8 @@ I've customised some of the CSS in [Bracket Pair Colorizer](https://marketplace.
 ]
 ```
 
+> Update: This functionality is now [native in VSCode](https://dev.to/nickytonline/native-bracket-pair-colourization-in-vs-code-3f1n)!
+
 ## Terminal
 
 Let me head this section up with another recommendation - the [Command Line Power User](https://commandlinepoweruser.com/) video series by Wes Bos. It's been a big inspiration to me in achieving terminal zen. Here's a quick rundown of my setup:
@@ -110,9 +120,11 @@ Let me head this section up with another recommendation - the [Command Line Powe
 - zsh and [Oh My ZSH!](https://ohmyz.sh/)
 - Agnoster theme for Oh My ZSH!
 - Fira Code font (any [Powerline patched font](https://github.com/powerline/fonts) will have the nifty special characters used by Agnoster)
-- [fairyfloss theme](https://github.com/aquartier/fairyfloss) for iTerm2, lightly customised for a darker background
+- [fairyfloss theme](https://github.com/aquartier/fairyfloss) for iTerm2, lightly customised for a darker background (unsure if this has been ported to Terminator)
 
 In iTerm2, I've split up my default window into four panes, one for each of the repos I work with most often. I've set them up to run immediately on startup - one click to open iTerm, and a few seconds later all my Docker containers are up and running. No typing. Terminal zen.
+
+> Update: Again, this was super useful at LAD; I only use a single pane at Northcoders.
 
 Replicating this level of zen in VSCode's integrated terminal requires a few extra settings. To get VSCode to use iTerm, add these settings:
 
@@ -121,7 +133,7 @@ Replicating this level of zen in VSCode's integrated terminal requires a few ext
 "terminal.explorerKind": "external",
 ```
 
-With this, your integrated terminal will happily use zsh, Oh My ZSH and your chosen OMZ theme, but it's likely that if you're using a colour scheme in iTerm, your integrated terminal colours won't match yet. Don't worry, because there are settings for those too. A looot of settings...
+With this, your integrated terminal will happily use zsh, Oh My ZSH and your chosen OMZ theme, but it's likely that if you're using a colour scheme in iTerm, your integrated terminal colours won't match yet. Don't worry, because there are settings for those too. A *lot* of settings...
 
 ```json
 "workbench.colorCustomizations" : {
@@ -149,4 +161,4 @@ With this, your integrated terminal will happily use zsh, Oh My ZSH and your cho
 
 One final recommendation:  [VSCode can do that?!](https://vscodecandothat.com/) lists a ton of features and extensions for VSCode that might make your dev life a little easier.
 
-Has my obsessive attention to detail inspired you to upgrade your dev environment? [Drop me a tweet](https://www.twitter.com/dentednerd) if you found this post helpful!
+Has this inspired you to upgrade your dev environment? Do you also find the fairyfloss palette great for coding? [Drop me a tweet](https://www.twitter.com/dentednerd) if you found this post helpful!
