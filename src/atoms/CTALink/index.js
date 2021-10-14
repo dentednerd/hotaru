@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import FaIcon from '../FaIcon';
-import { fonts, shadows } from '../../tokens';
+import { colors, fonts, shadows } from '../../tokens';
 
 const CTALink = ({
   to,
@@ -18,31 +18,39 @@ const CTALink = ({
   const StyledCTALink = styled(Element)`
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
     align-items: center;
-    background-color: var(--color-link);
-    color: var(--color-background);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    width: calc(100% - 2rem);
+    height: auto;
     font-family: ${fonts.contrast};
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    text-align: left;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
     margin: 0;
-    font-size: 0.75rem;
-    line-height: 0.75rem;
-    letter-spacing: 0.05rem;
-    box-shadow: ${shadows.darkShadow};
-    transition: box-shadow 0.2s;
+    padding: 0.5rem;
+    border: solid 0.25rem var(--color-text);
+    box-shadow: ${shadows.ctaShadow};
+    transition: all 0.2s;
     cursor: pointer;
 
+    section.center-text {
+      width: 100%;
+      text-align: center;
+    }
+
     svg {
-      color: var(--color-background);
+      grid-column: 1;
+      color: var(--color-text);
       width: 1rem;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
     }
 
     &:hover {
+      color: ${colors.constants.lightpurple};
       text-decoration: none;
-      box-shadow: ${shadows.slimShadow};
-      transition: box-shadow: 0.2s;
+      box-shadow: ${shadows.ctaHoverShadow};
+      transition: all 0.2s;
     }
   `;
 
@@ -53,8 +61,10 @@ const CTALink = ({
       onClick={() => onClick()}
       style={style}
     >
-      {icon && <FaIcon icon={icon} />}
-      {children}
+      {icon ? <FaIcon icon={icon} /> : null}
+      <section className="center-text">
+        {children}
+      </section>
     </StyledCTALink>
   );
 };

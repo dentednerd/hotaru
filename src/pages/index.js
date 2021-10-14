@@ -8,6 +8,7 @@ import { colors } from '../tokens';
 const HomeSection = styled('section')`
   background-color: ${colors.background};
   height: 100vh;
+  max-width: calc(100vw - 2rem);
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: 1fr;

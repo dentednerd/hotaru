@@ -17,10 +17,15 @@ const StyledMenu = styled.div`
   div.grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 1rem;
+    max-width: calc(100vw - 2rem);
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(5, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      gap: 0.5rem;
     }
 
     button {

@@ -5,10 +5,12 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalL
 import CTALink from '../../atoms/CTALink';
 import assets from '../../assets/portfolioImages';
 import { stackMap } from '../../helpers';
+import { colors } from '../../tokens';
 
 const StyledProject = styled.section`
-  margin: 0;
+  margin: 0 0 1rem;
   padding: 0;
+  border-bottom: solid 1px ${colors.constants.purple};
 
   a:hover {
     text-decoration: none;
@@ -52,11 +54,12 @@ const StyledProject = styled.section`
     align-items: flex-start;
 
     div.stack {
-      margin: 1rem 0;
+      margin: 0.5rem 0;
     }
 
     blockquote {
       width: 100%;
+      max-width: calc(100vw - 4rem);
       margin-bottom: 3rem;
     }
   }
@@ -93,7 +96,7 @@ export default ({ project }) => (
           </blockquote>
       )}
         {project.links.map(link => (
-          <CTALink href={link.url} key={link.url} icon={faExternalLinkAlt} style={{ marginBottom: '1rem' }}>
+          <CTALink href={link.url} key={link.url} icon={faExternalLinkAlt} style={{ marginBottom: '1rem', width: 'fit-content' }}>
             {link.text}
           </CTALink>
         ))}

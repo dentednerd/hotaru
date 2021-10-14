@@ -32,12 +32,17 @@ const TV = styled('iframe')`
 
 const List = styled('ul')`
   list-style: none;
-  max-width: 100%;
-  margin: 0;
+  width: 100%;
+  max-width: calc(100vw - 2rem);
+  margin: 0 0 1rem 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1rem;
+
+  @media(min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const videos = [

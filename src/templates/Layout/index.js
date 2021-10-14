@@ -16,6 +16,7 @@ const StyledLayout = styled('div')`
     background-color: var(--color-background);
     color: ${colors.text};
     min-height: 100vh;
+    max-width: 100vw;
     position: relative;
     z-index: 1;
     box-shadow: ${shadows.darkShadow};
