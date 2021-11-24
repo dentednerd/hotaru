@@ -27,8 +27,8 @@ const ExperienceContainer = styled('section')`
 
 const ExperienceScreen = ({ job }) => (
   <ExperienceContainer>
-    <h3>{`${job.companyName}: ${job.jobTitle}`}</h3>
-    <h4>{job.dates}</h4>
+    <h4>{`${job.companyName}: ${job.jobTitle}`}</h4>
+    <p className="date">{job.dates}</p>
     <ul>
       {job.jobDesc.map(item => (
         <li dangerouslySetInnerHTML={{ __html: item }} />

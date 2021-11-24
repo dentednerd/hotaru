@@ -85,7 +85,6 @@ const GlobalStyles = ({ children }) => (
         font-size: 1.75rem;
         line-height: 2rem;
         margin: 0 0 1rem;
-        opacity: 0.8;
       }
 
       h3 svg {

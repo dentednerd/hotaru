@@ -32,22 +32,44 @@ const CVLayout = styled('section')`
   }
 
   h3 {
-    margin-bottom: 0;
+    font-family: ${fonts.contrast};
     font-size: 1.25rem;
     line-height: 1.5rem;
   }
-`;
 
-const Experience = styled('section')`
-  grid-column: 1 / 2;
+  h4 {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  p.date {
+    font-family: ${fonts.headline};
+    font-weight: 300;
+    letter-spacing: -0.05rem;
+    font-size: 1rem;
+    line-height: 1rem;
+  }
 
   li {
-    margin-bottom: 0.5rem;
+    line-height: 1.25rem;
+    margin-bottom: 1rem;
+
+    span {
+      font-family: ${fonts.headline};
+      color: ${colors.text};
+      font-weight: 700;
+    }
 
     &:before {
       content: '» ';
     }
   }
+`;
+
+const Experience = styled('section')`
+  grid-column: 1 / 2;
 `;
 
 const Education = styled('aside')`
@@ -58,6 +80,11 @@ const Education = styled('aside')`
     color: ${colors.text};
   }
 
+  li:before {
+    content: "";
+    display: none;
+  }
+
   @media (min-width: 480px) {
     grid-column: 2 / 3;
   }
@@ -65,20 +92,6 @@ const Education = styled('aside')`
 
 const Interests = styled('footer')`
   grid-column: 1 / 3;
-
-  li {
-    margin-bottom: 0.5rem;
-
-    span {
-      font-family: ${fonts.headline};
-      color: ${colors.text};
-      font-weight: 500;
-    }
-
-    &:before {
-      content: '» ';
-    }
-  }
 `;
 
 const ExperienceTemplate = () => (
@@ -103,24 +116,24 @@ const ExperienceTemplate = () => (
         </>
       </PageHeader>
       <Experience>
-        <h2>History</h2>
+        <h3>History</h3>
         {timelineData.map((job, index) => (
           <ExperienceScreen job={job} index={index} />
         ))}
       </Experience>
       <Education>
-        <h2>Education</h2>
+        <h3>Education</h3>
         <ul>
           {educationData.map(job => (
             <li>
-              <h3>{`${job.companyName}: ${job.jobTitle}`}</h3>
-              <h4>{job.dates}</h4>
+              <h4>{`${job.companyName}: ${job.jobTitle}`}</h4>
+              <p className="date">{job.dates}</p>
             </li>
           ))}
         </ul>
       </Education>
       <Interests>
-        <h2>Interests</h2>
+        <h3>Interests</h3>
         <ul>
           {interestsData.map(interest => (
             <li>
