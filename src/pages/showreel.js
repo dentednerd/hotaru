@@ -47,6 +47,10 @@ const List = styled('ul')`
 
 const videos = [
   {
+    id: 'https://www.youtube.com/embed/hmOmKOoF9PU',
+    name: 'Northcoders Lightning Talks 31/3/22'
+  },
+  {
     id: 'https://www.youtube.com/embed/eaY8ovn1FzI',
     name: 'Let\'s go, gamers: how we built the GAMINGbible menu'
   },
@@ -78,12 +82,11 @@ const videos = [
 
 const ShowreelTemplate = () => {
   const [currentVideo, setCurrentVideo] = useState(
-    'https://www.youtube.com/embed/eaY8ovn1FzI'
+    'https://www.youtube.com/embed/hmOmKOoF9PU'
   );
 
   return (
     <Layout>
-
       <StyledShowreel>
         <PageHeader>
           <Programmer />
