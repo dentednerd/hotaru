@@ -1,11 +1,23 @@
 export default [
   {
+    link: 'https://www.infinityworks.com/',
+    dates: 'Aug 2022 - present',
+    companyName: 'Infinity Works',
+    jobTitle: 'Consultant',
+    jobDesc: [
+      'Providing consultancy services to clients', 'Undertaking AWS Developer Certificate training'
+    ],
+    skills: [
+      'NodeJS', 'Express', 'SQL', 'React', 'HTML', 'CSS', 'AWS'
+    ]
+  },
+  {
     link: 'https://www.northcoders.com',
-    dates: 'Jun 2021 - present',
+    dates: 'Jun 2021 - Aug 2022',
     companyName: 'Northcoders',
     jobTitle: 'Software Engineer & Mentor',
     jobDesc: [
-      'Supporting students on the bootcamp via helpdesk', 'Updating and maintaining sprints, solutions and educational resources'
+      'Supporting students on the bootcamp via helpdesk', 'Updating and maintaining sprints, solutions and educational resources', 'Involved in the WeCode and charity committees'
     ],
     skills: ['NodeJS', 'Express', 'SQL', 'React', 'HTML', 'CSS'],
   },

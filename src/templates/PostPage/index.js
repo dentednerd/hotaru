@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { graphql } from 'gatsby';
 import Layout from '../Layout';
 import JournalPost from './JournalPost';

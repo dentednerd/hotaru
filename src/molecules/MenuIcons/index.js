@@ -91,7 +91,7 @@ const MenuIcons = ({ toggleIsOpen }) => (
         to={item.link}
         aria-label={item.ariaLabel}
         key={item.link}
-        onClick={() => toggleIsOpen(false)}
+        onClick={() => toggleIsOpen ? toggleIsOpen(false) : {}}
       >
         <FaIcon icon={item.icon} />
         {item.ariaLabel}

@@ -47,6 +47,10 @@ const List = styled('ul')`
 
 const videos = [
   {
+    id: 'https://www.youtube.com/embed/_xPTMGeWW2A',
+    name: 'Unconscious Mentoring'
+  },
+  {
     id: 'https://www.youtube.com/embed/hmOmKOoF9PU',
     name: 'Northcoders Lightning Talks 31/3/22'
   },
@@ -82,7 +86,7 @@ const videos = [
 
 const ShowreelTemplate = () => {
   const [currentVideo, setCurrentVideo] = useState(
-    'https://www.youtube.com/embed/hmOmKOoF9PU'
+    'https://www.youtube.com/embed/_xPTMGeWW2A'
   );
 
   return (
@@ -104,7 +108,7 @@ const ShowreelTemplate = () => {
         />
         <List>
           {videos.map(video => (
-            <CTALink icon={faYoutube} onClick={() => setCurrentVideo(video.id)}>
+            <CTALink icon={faYoutube} onClick={() => setCurrentVideo(video.id)} key={video.name}>
               {video.name}
             </CTALink>
           ))}

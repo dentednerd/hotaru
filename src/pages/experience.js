@@ -118,14 +118,14 @@ const ExperienceTemplate = () => (
       <Experience>
         <h3>History</h3>
         {timelineData.map((job, index) => (
-          <ExperienceScreen job={job} index={index} />
+          <ExperienceScreen job={job} index={index} key={job.dates + job.companyName} />
         ))}
       </Experience>
       <Education>
         <h3>Education</h3>
         <ul>
           {educationData.map(job => (
-            <li>
+            <li key={job.dates + job.companyName}>
               <h4>{`${job.companyName}: ${job.jobTitle}`}</h4>
               <p className="date">{job.dates}</p>
             </li>
@@ -136,7 +136,7 @@ const ExperienceTemplate = () => (
         <h3>Interests</h3>
         <ul>
           {interestsData.map(interest => (
-            <li>
+            <li key={interest.label}>
               <span>
                 {interest.label}
                 :&nbsp;

@@ -26,7 +26,7 @@ const PortfolioTemplate = () => {
       <Project project={portfolioData[currentProject]} />
       <div>
         {categories.map(cat => (
-          <PortfolioMenu category={cat} setCurrentProject={setCurrentProject} />
+          <PortfolioMenu category={cat} setCurrentProject={setCurrentProject} key={cat} />
         ))}
       </div>
     </Layout>

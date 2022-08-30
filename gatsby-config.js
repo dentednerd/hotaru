@@ -1,11 +1,14 @@
 module.exports = {
+  flags: {
+    DEV_SSR: false
+  },
   siteMetadata: {
     title: 'Joey Imlay',
     description: 'front end developer in Manchester, England',
     siteUrl: 'https://www.joeyimlay.dev',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-react-helmet-async',
     'gatsby-plugin-offline',
     'gatsby-plugin-emotion',
     'gatsby-plugin-feed',
@@ -17,14 +20,14 @@ module.exports = {
         analyzerPort: '8008',
       },
     },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://www.joeyimlay.dev',
-        sitemap: 'https://www.joeyimlay.dev/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-robots-txt',
+    //   options: {
+    //     host: 'https://www.joeyimlay.dev',
+    //     sitemap: 'https://www.joeyimlay.dev/sitemap.xml',
+    //     policy: [{ userAgent: '*', allow: '/' }],
+    //   },
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

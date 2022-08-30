@@ -44,7 +44,7 @@ const PortfolioMenu = ({ category, setCurrentProject }) => (
       {projectList.map(
         item =>
           portfolioData[item].category === category && (
-            <CTALink onClick={() => setCurrentProject(item)}>
+            <CTALink onClick={() => setCurrentProject(item)} key={item}>
               {portfolioData[item].title}
             </CTALink>
           )

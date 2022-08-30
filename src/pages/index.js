@@ -52,7 +52,7 @@ const HomeSection = styled('section')`
 const HomePage = () => (
   <Layout>
     {introData.map((entry, index) => (
-      <HomeSection index={index}>
+      <HomeSection index={index} key={entry.text}>
         <section className="content" dangerouslySetInnerHTML={{ __html: entry.content }} />
         <div>
           {entry.svg}

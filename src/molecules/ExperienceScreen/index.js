@@ -12,7 +12,7 @@ const ExperienceContainer = styled('section')`
     margin-bottom: 0.5rem;
   }
 
-  p.stack {
+  div.stack {
     font-family: ${fonts.headline};
   }
 
@@ -31,10 +31,10 @@ const ExperienceScreen = ({ job }) => (
     <p className="date">{job.dates}</p>
     <ul>
       {job.jobDesc.map(item => (
-        <li dangerouslySetInnerHTML={{ __html: item }} />
+        <li dangerouslySetInnerHTML={{ __html: item }} key={item} />
       ))}
     </ul>
-    <p className="stack">{stackMap(job.skills)}</p>
+    <div className="stack">{stackMap(job.skills)}</div>
   </ExperienceContainer>
 );
 
