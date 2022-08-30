@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import { useTheme } from '@emotion/react';
 import FaIcon from '../FaIcon';
 import { colors, fonts, shadows } from '../../tokens';
 
@@ -15,13 +16,15 @@ const CTALink = ({
   if (to) Element = Link;
   if (href) Element = 'a';
 
+  const theme = useTheme();
+
   const StyledCTALink = styled(Element)`
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: ${theme.background};
+    color: ${theme.text};
     width: calc(100% - 2rem);
     height: auto;
     font-family: ${fonts.contrast};
@@ -29,7 +32,7 @@ const CTALink = ({
     line-height: 1.125rem;
     margin: 0;
     padding: 0.5rem;
-    border: solid 0.25rem var(--color-text);
+    border: solid 0.25rem ${theme.text};
     box-shadow: ${shadows.ctaShadow};
     transition: all 0.2s;
     cursor: pointer;
@@ -41,7 +44,7 @@ const CTALink = ({
 
     svg {
       grid-column: 1;
-      color: var(--color-text);
+      color: ${theme.text};
       width: 1rem;
       margin-right: 0.5rem;
     }

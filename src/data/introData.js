@@ -23,7 +23,7 @@ export default [
   },
   {
     content:
-      "<h2>I was a teacher. Then I wasn't. Now I am again.</h2><p>In 2017, I decided to switch away from an unhappy career in primary school teaching to working in tech. I won a women in tech scholarship to <a href='http://www.northcoders.com'>Northcoders</a>, and trained as a JavaScript developer. It was the most intense three months of my life, and the experience immeasurably changed my life for the better. Now everything has come full circle, and I'm back at Northcoders as a mentor.</p>",
+      "<h2>I was a teacher. Then I wasn't. Now I am again.</h2><p>In 2017, I decided to switch away from an unhappy career in primary school teaching to working in tech. I won a women in tech scholarship to <a href='http://www.northcoders.com'>Northcoders</a>, and trained as a JavaScript developer. It was the most intense three months of my life, and the experience immeasurably changed my life for the better. These days, I'm a consultant with Infinity Works.</p>",
       link: '/showreel',
       icon: faYoutube,
       text: 'Watch me talking tech.',

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { useTheme } from '@emotion/react';
 import Identity from '../../atoms/Identity';
 import MenuIcon from '../../atoms/MenuIcon';
 import DarkToggle from '../../atoms/DarkToggle';
 import MenuIcons from '../../molecules/MenuIcons';
-import { colors, shadows } from '../../tokens';
+import { shadows } from '../../tokens';
 
 const StyledHeader = styled('header')`
   position: fixed;
@@ -14,8 +15,8 @@ const StyledHeader = styled('header')`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-background);
-  color: ${colors.text};
+  background-color: ${props => props.theme.background};
+  color: ${props => props.theme.text};
   padding: 0 1rem;
   margin-bottom: 1rem;
   box-shadow: ${shadows.darkShadow};
@@ -25,7 +26,7 @@ const Menu = styled('div')`
   position: absolute;
   top: 56px;
   right: calc(-1rem - 1px);
-  background-color: var(--color-background);
+  background-color: ${props => props.theme.background};
   box-shadow: ${shadows.darkShadow};
   padding: 1rem;
   height: 10rem;
@@ -67,33 +68,36 @@ const MobileNav = styled('nav')`
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  background-color: ${props => props.theme.background};
 
   @media(min-width: 1024px) {
     display: none;
   }
 `;
 
-const Header = () => {
+const Header = ({ darkMode }) => {
   const [isOpen, toggleIsOpen] = useState(false);
   const headerClasses = [];
   if (isOpen) {
     headerClasses.push('open');
   }
 
+  const theme = useTheme();
+
   return (
-    <StyledHeader className={headerClasses.join(' ')}>
+    <StyledHeader className={headerClasses.join(' ')} theme={theme}>
       <Identity />
       <DesktopNav>
         <MenuIcons />
       </DesktopNav>
-      <DarkToggle />
+      <DarkToggle darkMode={darkMode} />
       <MobileNav>
         <MenuIcon
           isOpen={isOpen}
           toggleIsOpen={toggleIsOpen}
           headerClasses={headerClasses}
         />
-        <Menu className={headerClasses.join(' ')}>
+        <Menu className={headerClasses.join(' ')} theme={theme}>
           <MenuIcons toggleIsOpen={toggleIsOpen} />
         </Menu>
       </MobileNav>

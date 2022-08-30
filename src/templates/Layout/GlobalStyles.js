@@ -8,9 +8,7 @@ config.autoAddCss = false;
 const GlobalStyles = ({ children }) => (
   <Global
     styles={css`
-      body,
-      html {
-        color: var(--color-text);
+      body {
         background-color: ${colors.constants.footerbg};
         font-family: ${fonts.body};
         font-size: 16px;
@@ -21,8 +19,7 @@ const GlobalStyles = ({ children }) => (
       }
 
       @media (min-width: 1024px) {
-        body,
-        html {
+        body {
           font-size: 20px;
           line-height: 36px;
         }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode';
 import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory';
@@ -13,6 +14,7 @@ const Nav = styled('nav')`
   flex-flow: column nowrap;
   padding: 0;
   color: inherit;
+  background-color: ${props => props.theme.background};
 
   @media(min-width: 1024px) {
     flex: 1;
@@ -51,11 +53,11 @@ const NavItem = styled(Link)`
 
   &:hover {
     text-decoration: none;
-    color: var(--color-link);
+    color: ${props => props.theme.link};
 
     svg {
       transform: scale(1.5);
-      color: var(--color-link);
+      color: ${props => props.theme.link};
       transition: all 0.2s ease-in-out;
     }
   }
@@ -84,20 +86,25 @@ const navItems = [
   },
 ];
 
-const MenuIcons = ({ toggleIsOpen }) => (
-  <Nav>
-    {navItems.map(item => (
-      <NavItem
-        to={item.link}
-        aria-label={item.ariaLabel}
-        key={item.link}
-        onClick={() => toggleIsOpen ? toggleIsOpen(false) : {}}
-      >
-        <FaIcon icon={item.icon} />
-        {item.ariaLabel}
-      </NavItem>
-    ))}
-  </Nav>
-);
+const MenuIcons = ({ toggleIsOpen }) => {
+  const theme = useTheme();
+
+  return (
+    <Nav theme={theme}>
+      {navItems.map(item => (
+        <NavItem
+          to={item.link}
+          aria-label={item.ariaLabel}
+          key={item.link}
+          onClick={() => toggleIsOpen ? toggleIsOpen(false) : {}}
+          theme={theme}
+        >
+          <FaIcon icon={item.icon} />
+          {item.ariaLabel}
+        </NavItem>
+      ))}
+    </Nav>
+  );
+};
 
 export default MenuIcons;

@@ -14,20 +14,21 @@ module.exports = {
     'gatsby-plugin-feed',
     'gatsby-plugin-sitemap',
     {
+      resolve: 'gatsby-plugin-use-dark-mode',
+      options: {
+        classNameDark: 'dark-mode',
+        classNameLight: 'light-mode',
+        storageKey: 'darkMode',
+        minify: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         devMode: true,
         analyzerPort: '8008',
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-robots-txt',
-    //   options: {
-    //     host: 'https://www.joeyimlay.dev',
-    //     sitemap: 'https://www.joeyimlay.dev/sitemap.xml',
-    //     policy: [{ userAgent: '*', allow: '/' }],
-    //   },
-    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -120,4 +121,4 @@ module.exports = {
       },
     },
   ],
-}
+};

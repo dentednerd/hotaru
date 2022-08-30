@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import { useTheme } from '@emotion/react';
 import Remote from '../../assets/undraws/remote';
 import { colors, fonts } from '../../tokens';
 
@@ -25,6 +26,7 @@ const StyledIdentity = styled('section')`
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
+      color: ${props => props.theme.link};
       font-size: 1.5rem;
       line-height: 1.5rem;
       font-family: ${fonts.cursive};
@@ -33,18 +35,22 @@ const StyledIdentity = styled('section')`
     }
 
     &:hover {
-      color: var(--color-link);
+      color:${props => props.theme.link};
     }
   }
 `;
 
-const Identity = () => (
-  <StyledIdentity>
-    <Remote />
-    <Link to="/">
-      <h1>Joey Imlay</h1>
-    </Link>
-  </StyledIdentity>
-);
+const Identity = () => {
+  const theme = useTheme();
+
+  return (
+    <StyledIdentity theme={theme}>
+      <Remote />
+      <Link to="/">
+        <h1>Joey Imlay</h1>
+      </Link>
+    </StyledIdentity>
+  );
+};
 
 export default Identity;

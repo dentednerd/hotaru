@@ -3,13 +3,12 @@ const colors = {
     background: '#161032',
     text: '#ffffff',
     headline: '#ffff66',
-    link: 'hsl(60, 100%, 70%)',
+    link: '#ffff66',
   },
   light: {
     text: '#666699',
     background: '#ffffff',
     headline: '#ffff66',
-    // link: 'hsl(330, 100%, 40%)',
     link: '#ff66b3',
   },
   constants: {
