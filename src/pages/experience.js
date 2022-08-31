@@ -35,13 +35,15 @@ const CVLayout = styled('section')`
     font-family: ${fonts.contrast};
     font-size: 1.25rem;
     line-height: 1.5rem;
+    padding-bottom: 1rem;
+    // border-bottom: solid 1px ${colors.constants.purple};
   }
 
   h4 {
-    font-size: 1.25rem;
-    line-height: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
   }
 
   p.date {
@@ -53,7 +55,6 @@ const CVLayout = styled('section')`
   }
 
   li {
-    line-height: 1.25rem;
     margin-bottom: 1rem;
 
     span {
@@ -80,6 +81,10 @@ const Education = styled('aside')`
     color: ${colors.text};
   }
 
+  h4 {
+    font-size: 1.25rem;
+  }
+
   li:before {
     content: "";
     display: none;
@@ -96,7 +101,6 @@ const Interests = styled('footer')`
 
 const ExperienceTemplate = () => (
   <Layout>
-
     <CVLayout>
       <PageHeader style={{ gridColumn: '1 / 3' }}>
         <Remote />
