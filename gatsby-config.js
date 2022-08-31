@@ -117,7 +117,7 @@ module.exports = {
           'Sacramento',
           'Ubuntu Mono',
         ],
-        display: 'swap',
+        display: 'block',
       },
     },
   ],
