@@ -13,7 +13,7 @@ const NextPrevious = styled('nav')`
   margin: 1rem 0;
 `;
 
-export default ({ data, pageContext }) => {
+const PostPage = ({ data, pageContext }) => {
   const { post } = data;
 
   return (
@@ -46,6 +46,8 @@ export default ({ data, pageContext }) => {
   );
 };
 
+export default PostPage;
+
 export const query = graphql`
   query($slug: String!) {
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -57,9 +59,7 @@ export const query = graphql`
         tags
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 1920) {
-              src
-            }
+            gatsbyImageData
           }
         }
       }
@@ -81,9 +81,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 630) {
-                  src
-                }
+                gatsbyImageData
               }
             }
             tags
@@ -111,9 +109,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 630) {
-                  src
-                }
+                gatsbyImageData
               }
             }
             tags

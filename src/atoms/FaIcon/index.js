@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledIcon = styled(FontAwesomeIcon)`
   margin: 0;
-  // display: inline-block;
   color: inherit;
 `;
 

@@ -1,9 +1,9 @@
-export default {
+const portfolioData = {
   ladbible: {
     title: 'LADbible',
     category: 'LBG',
     caption:
-      "<p>A single dynamic React-based platform powers the whole LADbible family of websites.</p><p>Different variants of the LADbible homepage are displayed to viewers in Australia and Ireland. Since GAMINGbible's success in displaying five articles per page, we've recently implemented it for LADbible articles too.</p>",
+      "<p>A single dynamic React-based platform powers the whole LADbible family of websites.</p><p>Different variants of the LADbible homepage are displayed to viewers in Australia and Ireland. After GAMINGbible's success in displaying five articles per page, we implemented it for LADbible articles too.</p>",
     links: [
       {
         text: 'LADbible',
@@ -33,7 +33,7 @@ export default {
     title: 'GAMINGbible',
     category: 'LBG',
     caption:
-      '<p>A single dynamic React-based platform powers the whole LADbible family of websites.</p><p>GAMINGbible is our most recent project, bringing in new features such as multiple articles per screen whose adverts update on scroll, and a fully animated menu on mobile devices.</p>',
+      '<p>A single dynamic React-based platform powers the whole LADbible family of websites.</p><p>GAMINGbible is the most recent addition to the LADbible Group websites, bringing in new features such as multiple articles per screen whose adverts update on scroll, and a fully animated menu on mobile devices.</p>',
     links: [
       {
         text: 'GAMINGbible',
@@ -316,3 +316,5 @@ export default {
     stack: ['Sass', 'JavaScript'],
   },
 };
+
+export default portfolioData;

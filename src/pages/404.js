@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => (
+const Four0Four = () => (
   <>
     <p>
       &apos;Tis not possible!, I pleaded,
@@ -21,3 +21,5 @@ export default () => (
     <h2>Quoth the server, 404.</h2>
   </>
 );
+
+export default Four0Four;

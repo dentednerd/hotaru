@@ -1,4 +1,4 @@
-export default [
+const educationData = [
   {
     dates: 'May - Aug 2017',
     companyName: 'Northcoders',
@@ -30,3 +30,5 @@ export default [
     jobTitle: '4 A-levels, 9 GCSEs',
   },
 ];
+
+export default educationData;

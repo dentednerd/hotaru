@@ -1,4 +1,4 @@
-export default [
+const timelineOldData = [
   {
     dates: '2016 - 2017',
     companyName: 'Just Teachers',
@@ -6,3 +6,5 @@ export default [
     jobTitle: 'Supply Primary Teacher',
   },
 ];
+
+export default timelineOldData;

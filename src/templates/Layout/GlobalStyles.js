@@ -1,5 +1,5 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 import { config, dom } from '@fortawesome/fontawesome-svg-core';
 import { colors, fonts } from '../../tokens';
 

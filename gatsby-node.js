@@ -2,6 +2,10 @@ const path = require('path');
 const _ = require('lodash');
 const { createFilePath } = require('gatsby-source-filesystem');
 
+exports.onPostBuild = ({ reporter }) => {
+  reporter.info(`Your Gatsby site has been built!`)
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
@@ -22,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     {
       postsRemark: allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
+        sort: {order: DESC, fields: [frontmatter___date]}
         limit: 2000
       ) {
         edges {
@@ -49,9 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
               date(formatString: "DD MMMM, YYYY")
               featuredImage {
                 childImageSharp {
-                  sizes(maxWidth: 630) {
-                    src
-                  }
+                  gatsbyImageData
                 }
               }
               tags
@@ -64,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      tagsGroup: allMarkdownRemark(limit: 2000) {
+      tagsRemark: allMarkdownRemark(limit: 2000) {
         group(field: frontmatter___tags) {
           fieldValue
         }
@@ -80,14 +82,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const posts = result.data.postsRemark.edges;
 
-  // Create post detail pages
   posts.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve('src/templates/PostPage/index.js'),
       context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
         slug: node.fields.slug,
         next,
         previous,
@@ -95,8 +94,8 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  const tags = result.data.tagsGroup.group;
-  // Make tag pages
+  const tags = result.data.tagsRemark.group;
+
   tags.forEach(tag => {
     createPage({
       path: `/tags/${_.kebabCase(tag.fieldValue)}/`,

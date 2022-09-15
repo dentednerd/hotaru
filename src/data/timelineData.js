@@ -1,4 +1,4 @@
-export default [
+const timelineData = [
   {
     link: 'https://www.infinityworks.com/',
     dates: 'Aug 2022 - present',
@@ -68,3 +68,5 @@ export default [
     skills: ['React', 'Redux', 'Redux-Saga', 'Storybook', 'Jest'],
   },
 ];
+
+export default timelineData;

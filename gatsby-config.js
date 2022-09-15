@@ -10,9 +10,19 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet-async',
     'gatsby-plugin-offline',
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-feed',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-image',
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
+        // The values for each key in this example are the defaults the plugin uses.
+        sourceMap: true,
+        autoLabel: "dev-only",
+        labelFormat: `[local]`,
+        cssPropOptimization: true,
+      },
+    },
     {
       resolve: 'gatsby-plugin-use-dark-mode',
       options: {
@@ -20,13 +30,6 @@ module.exports = {
         classNameLight: 'light-mode',
         storageKey: 'darkMode',
         minify: true,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-      options: {
-        devMode: true,
-        analyzerPort: '8008',
       },
     },
     {

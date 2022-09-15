@@ -39,7 +39,7 @@ const Footer = () => (
   <StyledFooter>
     <ContactIcons />
     <div className="content">
-      <h2>joeyimlay.dev &copy; 2021</h2>
+      <h2>joeyimlay.dev</h2>
       <p>
         {string}
         <br />

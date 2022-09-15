@@ -15,20 +15,22 @@ const StyledJournalHome = styled('article')`
   align-items: center;
 `;
 
-const Section = styled('section')`
-  display: flex;
-  flex-flow: column nowrap;
-  margin-bottom: 1rem;
-  width: 100%;
+const JournalGrid = styled('section')`
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const Journal = React.memo(({ data }) => {
-  const { categories, tags } = data;
-  const sortedCategories = categories.group.reverse();
+  const { posts, tags } = data;
 
   return (
     <Layout>
-
       <StyledJournalHome>
         <PageHeader>
           <Engineer />
@@ -37,20 +39,14 @@ const Journal = React.memo(({ data }) => {
             <h2>Journal</h2>
           </>
         </PageHeader>
-        {sortedCategories.map(cat => (
-          <Section key={cat.fieldValue}>
-            <h3>
-              {cat.fieldValue.charAt(0).toUpperCase() + cat.fieldValue.substring(1)}
-            </h3>
-            {cat.nodes.map(node => (
-              <CTALink to={node.fields.slug} key={node.id} style={{ margin: '0 0 1rem' }}>
-                {node.frontmatter.title}
-              </CTALink>
-            ))}
-          </Section>
-        ))}
+        <JournalGrid>
+          {posts.edges.map(({ node }) => (
+            <CTALink to={node.fields.slug} key={node.id} style={{ margin: '0 0 1rem' }}>
+              {node.frontmatter.title}
+            </CTALink>
+          ))}
+        </JournalGrid>
         <section>
-          <h3>Tags</h3>
           {tags.group.map(thisTag => (
             <Tag to={`/tags/${kebabCase(thisTag.fieldValue)}/`} key={thisTag.fieldValue}>
               {thisTag.fieldValue}
@@ -94,9 +90,7 @@ export const pageQuery = graphql`
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 630) {
-                  src
-                }
+                gatsbyImageData
               }
             }
             tags
@@ -114,36 +108,6 @@ export const pageQuery = graphql`
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
-      }
-    }
-    categories: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 2000
-    ) {
-      group(field: frontmatter___category) {
-        fieldValue
-        totalCount
-        nodes {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 630) {
-                  src
-                }
-              }
-            }
-            tags
-            category
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 90)
-          html
-        }
       }
     }
   }

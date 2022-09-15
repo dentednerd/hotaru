@@ -4,7 +4,7 @@ import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import { Late, Remote, Programmer } from '../assets/undraws';
 
-export default [
+const introData = [
   {
     content:
       "<h2>Hello, I'm Joey.</h2><p>I'm a software engineer, specialising in React and React Native. My favourite thing about web development is that there's always something new to learn. Every day's a school day.</p>",
@@ -23,10 +23,12 @@ export default [
   },
   {
     content:
-      "<h2>I was a teacher. Then I wasn't. Now I am again.</h2><p>In 2017, I decided to switch away from an unhappy career in primary school teaching to working in tech. I won a women in tech scholarship to <a href='http://www.northcoders.com'>Northcoders</a>, and trained as a JavaScript developer. It was the most intense three months of my life, and the experience immeasurably changed my life for the better. These days, I'm a consultant with Infinity Works.</p>",
+      "<h2>I'm a career changer.</h2><p>In 2017, I decided to switch away from an unhappy career in primary school teaching to working in tech. I won a women in tech scholarship to <a href='http://www.northcoders.com'>Northcoders</a>, and trained as a JavaScript developer. It was the most intense three months of my life, and the experience immeasurably changed my life for the better. These days, I'm a consultant with Infinity Works.</p>",
       link: '/showreel',
       icon: faYoutube,
       text: 'Watch me talking tech.',
       svg: <Late />,
   },
 ];
+
+export default introData;

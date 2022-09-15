@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
@@ -65,43 +65,50 @@ const StyledProject = styled.section`
   }
 `;
 
-export default ({ project }) => (
-  <StyledProject>
-    <div>
-      <a href={project.links[0].url} className="screenshot">
-        <img src={assets[project.images[0]]} alt={project.title} />
-      </a>
+const Project = ({ project }) => {
+  const thisImage = assets[project.images[0]];
+  if (!thisImage) return null;
 
-      <div className="text">
-        <a href={project.links[0].url}>
-          <h2>{project.title}</h2>
+  return (
+    <StyledProject>
+      <div>
+        <a href={project.links[0].url} className="screenshot">
+          <img src={thisImage} alt={project.title} />
         </a>
-        <div
-          className="caption"
-          dangerouslySetInnerHTML={{ __html: project.caption }}
-        />
-        {project.relatedPosts && (
-          <blockquote>
-            <p>
-              Read more in my journal:&nbsp;
-              {project.relatedPosts.map((link, index) => (
-                <>
-                  <Link to={link.slug} key={link.name}>
-                    {link.name}
-                  </Link>
-                  {(project.relatedPosts.length > 1 && index < (project.relatedPosts.length - 1)) && '; '}
-                </>
-              ))}
-            </p>
-          </blockquote>
-      )}
-        {project.links.map(link => (
-          <CTALink href={link.url} key={link.url} icon={faExternalLinkAlt} style={{ marginBottom: '1rem', width: 'fit-content' }}>
-            {link.text}
-          </CTALink>
-        ))}
-        <div className="stack">{stackMap(project.stack)}</div>
+
+        <div className="text">
+          <a href={project.links[0].url}>
+            <h2>{project.title}</h2>
+          </a>
+          <div
+            className="caption"
+            dangerouslySetInnerHTML={{ __html: project.caption }}
+          />
+          {project.relatedPosts && (
+            <blockquote>
+              <p>
+                Read more in my journal:&nbsp;
+                {project.relatedPosts.map((link, index) => (
+                  <Fragment key={link.name}>
+                    <Link to={link.slug} >
+                      {link.name}
+                    </Link>
+                    {(project.relatedPosts.length > 1 && index < (project.relatedPosts.length - 1)) && '; '}
+                  </Fragment>
+                ))}
+              </p>
+            </blockquote>
+        )}
+          {project.links.map(link => (
+            <CTALink href={link.url} key={link.url} icon={faExternalLinkAlt} style={{ marginBottom: '1rem', width: 'fit-content' }}>
+              {link.text}
+            </CTALink>
+          ))}
+          <div className="stack">{stackMap(project.stack)}</div>
+        </div>
       </div>
-    </div>
-  </StyledProject>
-);
+    </StyledProject>
+  );
+};
+
+export default Project;

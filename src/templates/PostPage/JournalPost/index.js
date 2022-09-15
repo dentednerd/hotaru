@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import kebabCase from 'lodash/kebabCase';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Tag from '../../../atoms/Tag';
 import { colors, fonts } from '../../../tokens';
 
 const JournalPost = ({ post }) => {
+  if(!post) return null;
+
   const PostContent = styled('div')`
     padding: 0;
 
-    p:first-child:first-letter {
+    p:first-of-type:first-letter {
       font-family: ${fonts.headline};
       font-size: 3.5rem;
       line-height: 3.5rem;
@@ -17,7 +20,7 @@ const JournalPost = ({ post }) => {
       margin-right: 0.25rem;
     }
 
-    blockquote p:first-child:first-letter {
+    blockquote p:first-of-type:first-letter {
       font-family: inherit;
       text-shadow: inherit;
       font-size: 1rem;
@@ -56,17 +59,19 @@ const JournalPost = ({ post }) => {
     z-index: 2;
   `;
 
-  const FeaturedImage = styled('img')`
+  const FeaturedImage = styled(GatsbyImage)`
     float: right;
     width: 50%;
     margin: 0.25rem 0 0.25rem 0.5rem;
   `;
 
+  const thisFeaturedImage = getImage(post.frontmatter.featuredImage);
+
   return (
     <article>
       <PostTitle>{post.frontmatter.title}</PostTitle>
       <FeaturedImage
-        src={post.frontmatter.featuredImage.childImageSharp.fluid.src}
+        image={thisFeaturedImage}
         alt={post.frontmatter.title}
       />
       <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
