@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
 import CTALink from '../../atoms/CTALink';
-import assets from '../../assets/portfolioImages';
 import { stackMap } from '../../helpers';
 import { colors } from '../../tokens';
 
@@ -66,14 +66,29 @@ const StyledProject = styled.section`
 `;
 
 const Project = ({ project }) => {
-  const thisImage = assets[project.images[0]];
-  if (!thisImage) return null;
+  const { allImageSharp: { edges } } = useStaticQuery(graphql`
+    query {
+      allImageSharp {
+        edges {
+          node {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  `);
+
+  const imgFilename = `${project.title.replace(/ /g, '')}.png`;
+
+  const projectImage = edges.filter(img => {
+    return img.node.gatsbyImageData.images.fallback.src.split("/")[4] === imgFilename}
+  )[0].node.gatsbyImageData;
 
   return (
     <StyledProject>
       <div>
         <a href={project.links[0].url} className="screenshot">
-          <img src={thisImage} alt={project.title} />
+          <GatsbyImage image={projectImage} alt={project.title} />
         </a>
 
         <div className="text">

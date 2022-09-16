@@ -10,7 +10,6 @@ const portfolioData = {
         url: 'https://www.ladbible.com',
       },
     ],
-    images: ['LAD'],
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
@@ -25,7 +24,6 @@ const portfolioData = {
         url: 'https://www.unilad.co.uk',
       },
     ],
-    images: ['UNILAD'],
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
@@ -46,7 +44,6 @@ const portfolioData = {
         slug: '/posts/lets-go-gamers/',
       },
     ],
-    images: ['GAMING'],
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
@@ -65,7 +62,6 @@ const portfolioData = {
         url: 'https://codepen.io/dentednerd/pen/WNNbwEo',
       },
     ],
-    images: ['Tyla'],
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
@@ -80,7 +76,6 @@ const portfolioData = {
         url: 'https://www.sportbible.com',
       },
     ],
-    images: ['SPORT', 'Tyla', 'UNILAD', 'GAMING', 'LAD'],
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
@@ -103,7 +98,6 @@ const portfolioData = {
         url: 'https://codeninjas-api.herokuapp.com/api'
       }
     ],
-    images: ['CodeNinjas2', 'CodeNinjas'],
     relatedPosts: [
       {
         name: 'Code Ninjas: revisiting Northcoders project phase',
@@ -136,7 +130,6 @@ const portfolioData = {
         url: 'https://github.com/dentednerd/NorthcodersNews',
       },
     ],
-    images: ['NCNewsv3', 'NCNewsv2', 'NCNews'],
     stack: ['React', 'Redux', 'Bulma', 'styled-components', 'Stitches', 'Express', 'MongoDB', 'PostgreSQL'],
     relatedPosts: [
       {
@@ -164,7 +157,6 @@ const portfolioData = {
         url: 'https://github.com/dentednerd/house-of-games'
       },
     ],
-    images: ['HouseOfGames'],
     stack: ['React', 'Stitches', 'Express', 'PostgreSQL'],
     relatedPosts: [
       {
@@ -188,7 +180,6 @@ const portfolioData = {
         url: 'https://github.com/dentednerd/Trell-Jo',
       },
     ],
-    images: ['TrellJo'],
     stack: ['React', 'Bulma'],
   },
 
@@ -207,7 +198,6 @@ const portfolioData = {
         url: 'https://github.com/dentednerd/Northwitter',
       },
     ],
-    images: ['Northwitter'],
     stack: ['React', 'Bootstrap'],
   },
 
@@ -230,7 +220,6 @@ const portfolioData = {
         url: 'https://sundaetimes-theme.tumblr.com/',
       },
     ],
-    images: ['DNReviews'],
     stack: ['HTML', 'CSS', 'jQuery'],
   },
 
@@ -249,7 +238,6 @@ const portfolioData = {
         url: 'https://github.com/dentednerd/pinpin',
       },
     ],
-    images: ['PinpinDay', 'PinpinDusk'],
     relatedPosts: [
       {
         name: 'Pinpin: a calming new tab for Chrome',
@@ -274,12 +262,11 @@ const portfolioData = {
         url: 'https://github.com/dentednerd/stardew-birthdays',
       },
     ],
-    images: ['Stardew'],
     stack: ['React'],
   },
 
   frontend: {
-    title: 'FM: Solutions',
+    title: 'FM Solutions',
     category: 'JI',
     caption:
       '<p><a href="https://www.frontendmentor.io/">Frontend Mentor</a> is a great resource for frontend developers at all levels. They provide challenges with designs, assets and style guides, and your job is to build them. The newbie-level challenges lend themselves to being individual components rather than full pages in their own right, so I\'ve collected my solutions into a single app.</p><p>Each of the challenges has their own repo and deployment; you\'ll be able to find the links in the app.</p>',
@@ -293,12 +280,11 @@ const portfolioData = {
         url: 'https://www.frontendmentor.io/profile/dentednerd',
       },
     ],
-    images: ['Frontend'],
     stack: ['React'],
   },
 
   blogr: {
-    title: 'FM: Blogr',
+    title: 'FM Blogr',
     category: 'JI',
     caption:
       '<p>This is another <a href="https://www.frontendmentor.io/">Frontend Mentor</a> solution, this time for a publishing platform landing page. It was a good opportunity to practise with CSS Grid. The hardest part was positioning that background image inside the header whilst keeping it responsive!</p>',
@@ -312,7 +298,6 @@ const portfolioData = {
         url: 'https://github.com/dentednerd/fm-blogr-sass',
       },
     ],
-    images: ['Blogr'],
     stack: ['Sass', 'JavaScript'],
   },
 };
