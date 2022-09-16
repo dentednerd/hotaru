@@ -113,7 +113,11 @@ const Project = ({ project, images }) => {
           )}
           <StackGrid>
             {project.links.map(link => (
-              <CTALink href={link.url} key={link.url} icon={faExternalLinkAlt}>
+              <CTALink
+                href={link.url}
+                key={link.url}
+                icon={faExternalLinkAlt}
+              >
                 {link.text}
               </CTALink>
             ))}

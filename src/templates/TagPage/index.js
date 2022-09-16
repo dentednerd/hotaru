@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import Layout from '../Layout';
 import PageHeader from '../../molecules/PageHeader';
 import CTALink from '../../atoms/CTALink';
+import HoverCard from '../../atoms/HoverCard';
 import Tag from '../../atoms/Tag';
 import { Engineer } from '../../assets/undraws';
 
 const JournalGrid = styled('section')`
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 1rem;
+  gap: 1rem;
   margin-bottom: 2rem;
 
   @media (min-width: 480px) {
@@ -36,9 +37,13 @@ const TagPage = ({ pageContext, data }) => {
       <h2>{`entries about ${tag}`}</h2>
       <JournalGrid>
         {edges.map(({ node }) => (
-          <CTALink to={node.fields.slug} key={node.id} style={{ margin: '0 0 1rem' }}>
-            {node.frontmatter.title}
-          </CTALink>
+          <Link to={node.fields.slug}>
+            <HoverCard
+              text={node.frontmatter.title}
+              image={node.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
+              onClick={(e) => e.stopPropagation()}
+            />
+          </Link>
         ))}
       </JournalGrid>
       <section>
@@ -49,6 +54,9 @@ const TagPage = ({ pageContext, data }) => {
           </Tag>
         ))}
       </section>
+      <CTALink to="/journal">
+        &laquo; back to journal
+      </CTALink>
     </Layout>
   );
 };

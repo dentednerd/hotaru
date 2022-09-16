@@ -33,6 +33,11 @@ exports.createPages = async ({ graphql, actions }) => {
           next {
             frontmatter {
               title
+              featuredImage {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             fields {
               slug
@@ -41,6 +46,11 @@ exports.createPages = async ({ graphql, actions }) => {
           previous {
             frontmatter {
               title
+              featuredImage {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             fields {
               slug

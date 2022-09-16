@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import Tag from '../atoms/Tag';
-import CTALink from '../atoms/CTALink';
+import HoverCard from '../atoms/HoverCard';
 import PageHeader from '../molecules/PageHeader';
 import Layout from '../templates/Layout';
 import { Engineer } from '../assets/undraws';
@@ -18,7 +18,7 @@ const StyledJournalHome = styled('article')`
 const JournalGrid = styled('section')`
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 1rem;
+  gap: 1rem;
   margin-bottom: 2rem;
 
   @media (min-width: 480px) {
@@ -41,9 +41,13 @@ const Journal = React.memo(({ data }) => {
         </PageHeader>
         <JournalGrid>
           {posts.edges.map(({ node }) => (
-            <CTALink to={node.fields.slug} key={node.id} style={{ margin: '0 0 1rem' }}>
-              {node.frontmatter.title}
-            </CTALink>
+            <Link to={node.fields.slug} key={node.fields.slug}>
+              <HoverCard
+                text={node.frontmatter.title}
+                image={node.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </Link>
           ))}
         </JournalGrid>
         <section>
@@ -73,6 +77,11 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
         }
         previous {
@@ -81,6 +90,11 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
         }
         node {

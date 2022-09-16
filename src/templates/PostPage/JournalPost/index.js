@@ -8,6 +8,12 @@ import { colors, fonts } from '../../../tokens';
 const JournalPost = ({ post }) => {
   if(!post) return null;
 
+  const StyledJournalPost = styled('article')`
+    position: relative;
+    max-width: 800px;
+    margin: 50vh auto 0;
+  `;
+
   const PostContent = styled('div')`
     padding: 0;
 
@@ -59,21 +65,9 @@ const JournalPost = ({ post }) => {
     z-index: 2;
   `;
 
-  const FeaturedImage = styled(GatsbyImage)`
-    float: right;
-    width: 50%;
-    margin: 0.25rem 0 0.25rem 0.5rem;
-  `;
-
-  const thisFeaturedImage = getImage(post.frontmatter.featuredImage);
-
   return (
-    <article>
+    <StyledJournalPost>
       <PostTitle>{post.frontmatter.title}</PostTitle>
-      <FeaturedImage
-        image={thisFeaturedImage}
-        alt={post.frontmatter.title}
-      />
       <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
       <Byline>thanks for reading! Joey x</Byline>
       <Tags>
@@ -83,7 +77,7 @@ const JournalPost = ({ post }) => {
           </Tag>
         ))}
       </Tags>
-    </article>
+    </StyledJournalPost>
   );
 };
 

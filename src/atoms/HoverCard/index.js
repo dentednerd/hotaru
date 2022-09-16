@@ -46,6 +46,7 @@ const HoverCard = ({ text, image, onClick }) => {
       left:0;
       background-image: linear-gradient(to bottom, transparent, ${theme.background} 100%);
       text-align: center;
+      padding: 1rem;
 
       @media(hover: hover) {
         transform: translateY(100%);

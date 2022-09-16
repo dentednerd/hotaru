@@ -10,6 +10,6 @@ const getProjectImage = (project, images) => {
 }
 
 export {
-  stackMap, // eslint-disable-line
+  stackMap,
   getProjectImage
 };
