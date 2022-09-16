@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
 import CTALink from '../../atoms/CTALink';
-import { stackMap } from '../../helpers';
+import { stackMap, getProjectImage } from '../../helpers';
 import { colors } from '../../tokens';
 
 const StyledProject = styled.section`
@@ -65,24 +65,21 @@ const StyledProject = styled.section`
   }
 `;
 
-const Project = ({ project }) => {
-  const { allImageSharp: { edges } } = useStaticQuery(graphql`
-    query {
-      allImageSharp {
-        edges {
-          node {
-            gatsbyImageData
-          }
-        }
-      }
-    }
-  `);
+const StackGrid = styled.section`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  place-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
 
-  const imgFilename = `${project.title.replace(/ /g, '')}.png`;
+  @media(min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
 
-  const projectImage = edges.filter(img => {
-    return img.node.gatsbyImageData.images.fallback.src.split("/")[4] === imgFilename}
-  )[0].node.gatsbyImageData;
+const Project = ({ project, images }) => {
+  const projectImage = getProjectImage(project, images);
 
   return (
     <StyledProject>
@@ -113,12 +110,14 @@ const Project = ({ project }) => {
                 ))}
               </p>
             </blockquote>
-        )}
-          {project.links.map(link => (
-            <CTALink href={link.url} key={link.url} icon={faExternalLinkAlt} style={{ marginBottom: '1rem', width: 'fit-content' }}>
-              {link.text}
-            </CTALink>
-          ))}
+          )}
+          <StackGrid>
+            {project.links.map(link => (
+              <CTALink href={link.url} key={link.url} icon={faExternalLinkAlt}>
+                {link.text}
+              </CTALink>
+            ))}
+          </StackGrid>
           <div className="stack">{stackMap(project.stack)}</div>
         </div>
       </div>

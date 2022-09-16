@@ -23,6 +23,7 @@ const CTALink = ({
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 1;
     background-color: ${theme.background};
     color: ${theme.text};
     width: calc(100% - 2rem);

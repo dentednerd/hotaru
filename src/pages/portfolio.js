@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { portfolioData } from '../data';
 import Project from '../molecules/PortfolioProject';
 import PortfolioMenu from '../molecules/PortfolioMenu';
@@ -14,6 +15,18 @@ const PortfolioTemplate = () => {
     window.scrollTo(0, 0);
   }, [currentProject]);
 
+  const { allImageSharp: { edges } } = useStaticQuery(graphql`
+    query {
+      allImageSharp {
+        edges {
+          node {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Layout>
       <PageHeader>
@@ -23,11 +36,9 @@ const PortfolioTemplate = () => {
           <h2>Portfolio</h2>
         </>
       </PageHeader>
-      <Project project={portfolioData[currentProject]} />
+      <Project project={portfolioData[currentProject]} images={edges} />
       <div>
-        {categories.map(cat => (
-          <PortfolioMenu category={cat} setCurrentProject={setCurrentProject} key={cat} />
-        ))}
+        <PortfolioMenu setCurrentProject={setCurrentProject} images={edges} />
       </div>
     </Layout>
   );

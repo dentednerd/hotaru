@@ -3,6 +3,13 @@ import Tag from '../atoms/Tag';
 
 const stackMap = stack => stack.map(tech => <Tag key={tech}>{tech}</Tag>);
 
+const getProjectImage = (project, images) => {
+  const imgFilename = `${project.title.replace(/ /g, '')}.png`;
+  const projectImage = images.filter(img => img.node.gatsbyImageData.images.fallback.src.split("/")[4] === imgFilename)[0].node.gatsbyImageData;
+  return projectImage;
+}
+
 export {
   stackMap, // eslint-disable-line
+  getProjectImage
 };

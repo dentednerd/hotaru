@@ -2,7 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { portfolioData } from '../../data';
 import { fonts, colors } from '../../tokens';
-import CTALink from '../../atoms/CTALink';
+import HoverCard from '../../atoms/HoverCard';
+import { getProjectImage } from '../../helpers';
 
 const projectList = Object.keys(portfolioData);
 
@@ -21,11 +22,7 @@ const StyledMenu = styled.div`
     max-width: calc(100vw - 2rem);
 
     @media (min-width: 768px) {
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    @media (min-width: 1024px) {
-      gap: 0.5rem;
+      grid-template-columns: repeat(3, 1fr);
     }
 
     button {
@@ -38,16 +35,22 @@ const StyledMenu = styled.div`
   }
 `;
 
-const PortfolioMenu = ({ category, setCurrentProject }) => (
+const PortfolioMenu = ({ setCurrentProject, images }) => (
   <StyledMenu>
     <div className="grid">
-      {projectList.map(
-        item =>
-          portfolioData[item].category === category && (
-            <CTALink onClick={() => setCurrentProject(item)} key={item}>
-              {portfolioData[item].title}
-            </CTALink>
+      {projectList.sort().map(
+        item => {
+          const project = portfolioData[item];
+          const projectImage = getProjectImage(project, images);
+          return (
+            <HoverCard
+              text={project.title}
+              image={projectImage}
+              onClick={() => setCurrentProject(item)}
+              key={item}
+            />
           )
+        }
       )}
     </div>
   </StyledMenu>
