@@ -35,25 +35,29 @@ const StyledMenu = styled.div`
   }
 `;
 
-const PortfolioMenu = ({ setCurrentProject, images }) => (
-  <StyledMenu>
-    <div className="grid">
-      {projectList.sort().map(
-        item => {
-          const project = portfolioData[item];
-          const projectImage = getProjectImage(project, images);
-          return (
-            <HoverCard
-              text={project.title}
-              image={projectImage}
-              onClick={() => setCurrentProject(item)}
-              key={item}
-            />
-          )
-        }
-      )}
-    </div>
-  </StyledMenu>
-);
+const PortfolioMenu = ({ setCurrentProject, images }) => {
+  if (!images) return null;
+
+  return (
+    <StyledMenu>
+      <div className="grid">
+        {projectList.sort().map(
+          item => {
+            const project = portfolioData[item];
+            const projectImage = getProjectImage(project, images);
+            return (
+              <HoverCard
+                text={project.title}
+                image={projectImage}
+                onClick={() => setCurrentProject(item)}
+                key={item}
+              />
+            );
+          }
+        )}
+      </div>
+    </StyledMenu>
+  );
+};
 
 export default PortfolioMenu;

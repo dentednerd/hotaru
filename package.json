@@ -20,12 +20,13 @@
   ],
   "license": "ISC",
   "scripts": {
-    "build": "rm -rf .cache/* && gatsby build --prefix-paths",
-    "dev": "rm -rf .cache/* && gatsby develop",
+    "build": "gatsby build --prefix-paths",
+    "dev": "gatsby develop",
     "format": "prettier --write '**/*.js'",
-    "serve": "rm -rf .cache/* && gatsby build --prefix-paths && gatsby serve",
+    "serve": "gatsby build --prefix-paths && gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "postinstall": "husky install"
   },
   "husky": {
     "hooks": {
@@ -92,6 +93,7 @@
     "eslint-plugin-react": "^7.31.8",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
+    "pinst": "^3.0.0",
     "prettier": "^2.7.1",
     "prop-types": "^15.5.10",
     "react-scripts": "^5.0.1"

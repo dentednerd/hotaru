@@ -85,10 +85,10 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   // handle errors
-  // if (result.errors) {
-  //   reporter.panicOnBuild(`Error while running GraphQL query.`);
-  //   return;
-  // }
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
+  }
 
   const posts = result.data.postsRemark.edges;
 

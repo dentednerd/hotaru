@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { useTheme } from '@emotion/react';
@@ -75,6 +76,6 @@ const HoverCard = ({ text, image, onClick }) => {
       </div>
     </StyledHoverCard>
   );
-}
+};
 
 export default HoverCard;

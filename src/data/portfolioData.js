@@ -1,5 +1,5 @@
 const portfolioData = {
-  ladbible: {
+  LADbible: {
     title: 'LADbible',
     category: 'LBG',
     caption:
@@ -13,7 +13,7 @@ const portfolioData = {
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
-  unilad: {
+  UNILAD: {
     title: 'UNILAD',
     category: 'LBG',
     caption:
@@ -27,7 +27,7 @@ const portfolioData = {
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
-  gamingbible: {
+  GAMINGbible: {
     title: 'GAMINGbible',
     category: 'LBG',
     caption:
@@ -47,7 +47,7 @@ const portfolioData = {
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
-  tyla: {
+  Tyla: {
     title: 'Tyla',
     category: 'LBG',
     caption:
@@ -65,7 +65,7 @@ const portfolioData = {
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
-  sportbible: {
+  SPORTbible: {
     title: 'SPORTbible',
     category: 'LBG',
     caption:
@@ -79,7 +79,7 @@ const portfolioData = {
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
-  codeninjas: {
+  CodeNinjas: {
     title: 'Code Ninjas',
     category: 'NC',
     caption:
@@ -107,7 +107,7 @@ const portfolioData = {
     stack: ['React', 'Redux', 'Express', 'MongoDB'],
   },
 
-  ncnews: {
+  NorthcodersNews: {
     title: 'Northcoders News',
     category: 'NC',
     caption:
@@ -142,7 +142,7 @@ const portfolioData = {
       }
     ],
   },
-  houseofgames: {
+  HouseofGames: {
     title: 'House of Games',
     category: 'NC',
     caption:
@@ -165,7 +165,7 @@ const portfolioData = {
       }
     ],
   },
-  trelljo: {
+  TrellJo: {
     title: 'TrellJo',
     category: 'NC',
     caption:
@@ -183,7 +183,7 @@ const portfolioData = {
     stack: ['React', 'Bulma'],
   },
 
-  northwitter: {
+  Northwitter: {
     title: 'Northwitter',
     category: 'NC',
     caption:
@@ -201,7 +201,7 @@ const portfolioData = {
     stack: ['React', 'Bootstrap'],
   },
 
-  dnreviews: {
+  DentedNerdReviews: {
     title: 'Dented Nerd Reviews',
     category: 'NC',
     caption:
@@ -223,7 +223,7 @@ const portfolioData = {
     stack: ['HTML', 'CSS', 'jQuery'],
   },
 
-  pinpin: {
+  Pinpin: {
     title: 'Pinpin',
     category: 'JI',
     caption:
@@ -247,7 +247,7 @@ const portfolioData = {
     stack: ['React'],
   },
 
-  stardew: {
+  StardewBirthdays: {
     title: 'Stardew Birthdays',
     category: 'JI',
     caption:
@@ -265,7 +265,7 @@ const portfolioData = {
     stack: ['React'],
   },
 
-  frontend: {
+  FMSolutions: {
     title: 'FM Solutions',
     category: 'JI',
     caption:
@@ -283,7 +283,7 @@ const portfolioData = {
     stack: ['React'],
   },
 
-  blogr: {
+  FMBlogr: {
     title: 'FM Blogr',
     category: 'JI',
     caption:

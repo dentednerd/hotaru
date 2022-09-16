@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import kebabCase from 'lodash/kebabCase';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Tag from '../../../atoms/Tag';
 import { colors, fonts } from '../../../tokens';
 

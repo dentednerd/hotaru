@@ -6,10 +6,10 @@ import PortfolioMenu from '../molecules/PortfolioMenu';
 import PageHeader from '../molecules/PageHeader';
 import Layout from '../templates/Layout';
 import { Late } from '../assets/undraws';
+import { getProjectImage } from '../helpers';
 
 const PortfolioTemplate = () => {
-  const [currentProject, setCurrentProject] = useState('ladbible');
-  const categories = ['LBG', 'NC', 'JI'];
+  const [currentProject, setCurrentProject] = useState('LADbible');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,6 +27,8 @@ const PortfolioTemplate = () => {
     }
   `);
 
+  const projectImage = getProjectImage(portfolioData[currentProject], edges);
+
   return (
     <Layout>
       <PageHeader>
@@ -36,10 +38,8 @@ const PortfolioTemplate = () => {
           <h2>Portfolio</h2>
         </>
       </PageHeader>
-      <Project project={portfolioData[currentProject]} images={edges} />
-      <div>
-        <PortfolioMenu setCurrentProject={setCurrentProject} images={edges} />
-      </div>
+      <Project project={portfolioData[currentProject]} image={projectImage} />
+      <PortfolioMenu setCurrentProject={setCurrentProject} images={edges} />
     </Layout>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
 import { GatsbyImage } from 'gatsby-plugin-image';
@@ -6,7 +6,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 const Hero = ({ image, alt }) => {
   const theme = useTheme();
 
-  const Hero = styled('header')`
+  const StyledHero = styled('header')`
     position: absolute;
     top: 3.5rem;
     left: 0;
@@ -32,7 +32,7 @@ const Hero = ({ image, alt }) => {
   `;
 
   return (
-    <Hero>
+    <StyledHero>
       <Overlay>
         &nbsp;
       </Overlay>
@@ -40,8 +40,8 @@ const Hero = ({ image, alt }) => {
         image={image}
         alt={alt}
       />
-    </Hero>
+    </StyledHero>
   );
-}
+};
 
 export default Hero;

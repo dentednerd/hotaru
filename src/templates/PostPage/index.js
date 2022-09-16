@@ -6,7 +6,6 @@ import { getImage } from 'gatsby-plugin-image';
 import Layout from '../Layout';
 import Hero from './Hero';
 import JournalPost from './JournalPost';
-import CTALink from '../../atoms/CTALink';
 import HoverCard from '../../atoms/HoverCard';
 
 const NextPrevious = styled('nav')`
@@ -26,11 +25,10 @@ const PostPage = ({ data, pageContext }) => {
   const { post } = data;
   const thisFeaturedImage = getImage(post.frontmatter.featuredImage);
   const { next, previous } = pageContext;
-  const nextImage = getImage(next.frontmatter.featuredImage.childImageSharp.gatsbyImageData);
-  const previousImage = getImage(previous.frontmatter.featuredImage.childImageSharp.gatsbyImageData);
+  const nextImage = next && getImage(next.frontmatter.featuredImage.childImageSharp.gatsbyImageData);
+  const previousImage = previous && getImage(previous.frontmatter.featuredImage.childImageSharp.gatsbyImageData);
 
   return (
-    <>
     <Layout>
       <Helmet
         htmlAttributes={{
@@ -64,7 +62,6 @@ const PostPage = ({ data, pageContext }) => {
         ) : (<p>&nbsp;</p>)}
       </NextPrevious>
     </Layout>
-    </>
   );
 };
 
