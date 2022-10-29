@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import FaIcon from '../../atoms/FaIcon';
@@ -21,12 +20,7 @@ const StyledContactIcons = styled.div`
 
 const icons = [
   {
-    link: 'https://twitter.com/dentednerd',
-    image: faTwitter,
-    alt: 'Twitter',
-  },
-  {
-    link: 'https://www.linkedin.com/in/joanne-imlay-4a7a7056/',
+    link: 'https://www.linkedin.com/in/joey-imlay-4a7a7056/',
     image: faLinkedin,
     alt: 'LinkedIn',
   },
