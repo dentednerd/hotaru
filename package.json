@@ -63,7 +63,7 @@
     "gatsby-remark-images": "^6.23.0",
     "gatsby-remark-prismjs": "^6.23.0",
     "gatsby-source-filesystem": "^4.23.0",
-    "gatsby-transformer-remark": "^5.23.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.23.0",
     "lodash": "^4.17.15",
     "markdownlint": "^0.26.2",
