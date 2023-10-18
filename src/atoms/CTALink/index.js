@@ -23,19 +23,26 @@ const CTALink = ({
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: ${theme.background};
-    color: ${theme.text};
-    width: calc(100% - 2rem);
-    height: auto;
-    font-family: ${fonts.contrast};
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    margin: 0;
+    background-color: ${theme.accentLight};
+    color: ${colors.constants.darkPurple};
+    width: fit-content;
+    height: 2.5rem;
+    font-family: ${fonts.headline};
+    font-size: 1.25rem;
+    line-height: 1;
+    margin: 0 auto;
     padding: 0.5rem;
-    border: solid 0.25rem ${theme.text};
     box-shadow: ${shadows.ctaShadow};
     transition: all 0.2s;
     cursor: pointer;
+
+    &.fill {
+      width: 100% !important;
+    }
+
+    @media(min-width: 1024px) {
+      margin: 0;
+    }
 
     section.center-text {
       width: 100%;
@@ -44,13 +51,14 @@ const CTALink = ({
 
     svg {
       grid-column: 1;
-      color: ${theme.text};
+      color: ${colors.constants.darkPurple};
       width: 1rem;
       margin-right: 0.5rem;
     }
 
     &:hover {
-      color: ${colors.constants.lightpurple};
+      transform: scale(1.1);
+      background-color: ${theme.accentBold};
       text-decoration: none;
       box-shadow: ${shadows.ctaHoverShadow};
       transition: all 0.2s;

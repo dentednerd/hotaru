@@ -23,15 +23,6 @@ const StyledProject = styled.section`
     margin-bottom: 1rem;
     overflow: hidden;
 
-    @supports (aspect-ratio: 16/9) {
-      aspect-ratio: 16/9;
-    }
-
-    @supports not (aspect-ratio: 16/9) {
-      height: 0;
-      padding-top: 56.25%;
-    }
-
     img {
       position: absolute;
       top: 0;
@@ -65,16 +56,19 @@ const StyledProject = styled.section`
   }
 `;
 
-const StackGrid = styled.section`
-  display: grid;
-  grid-template-columns: 1fr;
+const Links = styled.section`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   gap: 1rem;
-  place-items: center;
-  width: 100%;
   margin-bottom: 1rem;
 
-  @media(min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+  a {
+    margin: 0 !important;
+  }
+
+  @media(min-width: 1024px) {
+    flex-flow: row nowrap;
   }
 `;
 
@@ -87,7 +81,7 @@ const Project = ({ project, image }) => (
 
       <div className="text">
         <a href={project.links[0].url}>
-          <h2>{project.title}</h2>
+          <h3>{project.title}</h3>
         </a>
         <div
           className="caption"
@@ -108,7 +102,7 @@ const Project = ({ project, image }) => (
             </p>
           </blockquote>
         )}
-        <StackGrid>
+        <Links>
           {project.links.map(link => (
             <CTALink
               href={link.url}
@@ -118,7 +112,7 @@ const Project = ({ project, image }) => (
               {link.text}
             </CTALink>
           ))}
-        </StackGrid>
+        </Links>
         <div className="stack">{stackMap(project.stack)}</div>
       </div>
     </div>

@@ -2,10 +2,10 @@ const timelineData = [
   {
     link: 'https://www.infinityworks.com/',
     dates: 'Aug 2022 - present',
-    companyName: 'Infinity Works',
+    companyName: 'Accenture Next Gen Engineering (fka Infinity Works)',
     jobTitle: 'Consultant',
     jobDesc: [
-      'Providing consultancy services to clients', 'Undertaking AWS Developer Certificate training'
+      'Collaborating with clients on various public-facing projects, often working to tight deadlines', 'Improving standards in code quality, testing strategy and engineering culture for our clients', 'Gained AWS and PSM qualifications'
     ],
     skills: [
       'NodeJS', 'Express', 'SQL', 'React', 'HTML', 'CSS', 'AWS'

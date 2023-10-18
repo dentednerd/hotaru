@@ -25,8 +25,15 @@ const StyledLayout = styled('div')`
   }
 
   div.container {
-    max-width: 800px;
+    max-width: 425px;
     margin: 0 auto;
+  }
+
+  @media(min-width: 1024px) {
+    div.container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
   }
 `;
 
@@ -63,7 +70,7 @@ const Layout = (props) => {
             content="Joey Imlay is a software engineer in Manchester, England."
           />
         </Helmet>
-        <GlobalStyles />
+        <GlobalStyles theme={themeColors} />
         <Header darkMode={darkMode} />
         <main>
           <div className="container">

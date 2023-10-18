@@ -15,37 +15,45 @@ const StyledShowreel = styled.section`
 
 const TV = styled('iframe')`
   display: block;
-  width: calc(100vw - 2rem);
-  height: calc(56.25vw - 2rem);
-  margin: 0 auto 1rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 2rem auto 3rem;
+  border: 0;
 
-  @media (min-width: 800px) {
+  /* @media (min-width: 800px) {
     width: 50vw;
     height: 28.125vw;
-  }
+  } */
 
   @media (min-width: 1024px) {
-    width: 40vw;
-    height: 22.5vw;
+    width: 100%;
+    aspect-ratio: 16 / 9;
   }
 `;
 
 const List = styled('ul')`
   list-style: none;
   width: 100%;
-  max-width: calc(100vw - 2rem);
   margin: 0 0 1rem 0;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 
-  @media(min-width: 768px) {
+  section {
+    width: calc(100% - 1rem);
+  }
+
+  @media(min-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
 
 const videos = [
+  {
+    id: 'https://www.youtube.com/embed/locZbr8Dx1A',
+    name: 'Queer Coded - Joey Imlay'
+  },
   {
     id: 'https://www.youtube.com/embed/_xPTMGeWW2A',
     name: 'Unconscious Mentoring'
@@ -86,7 +94,7 @@ const videos = [
 
 const ShowreelTemplate = () => {
   const [currentVideo, setCurrentVideo] = useState(
-    'https://www.youtube.com/embed/_xPTMGeWW2A'
+    'https://www.youtube.com/embed/locZbr8Dx1A'
   );
 
   return (
@@ -102,13 +110,17 @@ const ShowreelTemplate = () => {
         <TV
           title="showreel"
           src={currentVideo}
-          frameBorder="0"
           allow="encrypted-media"
           allowFullScreen
         />
         <List>
           {videos.map(video => (
-            <CTALink icon={faYoutube} onClick={() => setCurrentVideo(video.id)} key={video.name}>
+            <CTALink
+              icon={faYoutube}
+              onClick={() => setCurrentVideo(video.id)}
+              key={video.name}
+              className="fill"
+            >
               {video.name}
             </CTALink>
           ))}

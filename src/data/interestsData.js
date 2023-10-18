@@ -2,12 +2,12 @@ const interestsData = [
   {
     label: 'Video games',
     content:
-      "I'm neutral in the console wars: I'm mainly a PC gamer. I like old-school point-and-click puzzlers (I grew up on the Monkey Island series, and recently I've loved Disco Elysium), and games that reward exploration and curiosity. (Yes, I've played a lot of Skyrim.)",
+      "I play games with a good narrative, old-school point-and-click puzzlers, and open-world games that reward exploration and curiosity. Favourites include Final Fantasy XIV, Disco Elysium, the Bioshock games, and the Monkey Island series.",
   },
   {
     label: 'Crochet',
     content:
-      "I got into crochet around ten years ago during a bout of illness, and it's helped me to stay sane ever since. Whenever I need a break from the screen, crochet helps me to regain focus. It's very meditative - all you have to do is get into the pattern of motions and counting - and you end up with a prize for relaxing your brain.",
+      "I got into crochet around ten years ago during a bout of illness. Its meditative nature helps me to regain focus - all you have to do is get into the pattern of motions and counting, and you end up with a prize for relaxing your brain.",
   },
   {
     label: 'Authors',
@@ -16,7 +16,7 @@ const interestsData = [
   {
     label: 'Music',
     content:
-      'Panic! at the Disco, iDKHOW, Måneskin, System of a Down (ask me about my gaming soundtrack mega-playlist!)',
+      'iDKHOW, Måneskin, System of a Down, Nobuo Uematsu',
   },
 ];
 

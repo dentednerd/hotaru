@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { useTheme } from '@emotion/react';
-import { fonts, shadows } from '../../tokens';
+import { colors, fonts } from '../../tokens';
 
 const HoverCard = ({ text, image, onClick }) => {
   const theme = useTheme();
@@ -55,14 +55,15 @@ const HoverCard = ({ text, image, onClick }) => {
       }
 
       span {
-        background-color: ${theme.background};
+        background-color: ${theme.accentLight};
         font-family: ${fonts.contrast};
         font-size: 0.875rem;
-        color: ${theme.text};
+        text-transform: uppercase;
+        letter-spacing: 0.125rem;
+        color: ${colors.constants.darkPurple};
         text-decoration: none;
-        border: solid 0.25rem ${theme.text};
-        box-shadow: ${shadows.ctaShadow};
-        line-height: 1.125rem;
+        border: solid 0.25rem ${colors.constants.darkPurple};
+        line-height: 1;
         padding: 0.5rem;
       }
     }

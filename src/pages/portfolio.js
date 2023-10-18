@@ -4,6 +4,7 @@ import { portfolioData } from '../data';
 import Project from '../molecules/PortfolioProject';
 import PortfolioMenu from '../molecules/PortfolioMenu';
 import PageHeader from '../molecules/PageHeader';
+import FindMe from '../molecules/FindMe';
 import Layout from '../templates/Layout';
 import { Late } from '../assets/undraws';
 import { getProjectImage } from '../helpers';
@@ -40,6 +41,7 @@ const PortfolioTemplate = () => {
       </PageHeader>
       <Project project={portfolioData[currentProject]} image={projectImage} />
       <PortfolioMenu setCurrentProject={setCurrentProject} images={edges} />
+      <FindMe />
     </Layout>
   );
 };

@@ -6,10 +6,17 @@ import { colors, fonts } from '../../tokens';
 const ExperienceContainer = styled('section')`
   margin: 0 0 1rem;
   padding-bottom: 1rem;
-  border-bottom: solid 1px ${colors.constants.darkpurple};
+  border-bottom: solid 1px ${colors.constants.purple};
 
   p {
     margin-bottom: 0.5rem;
+  }
+
+  .dates {
+    font-family: ${fonts.contrast};
+    font-size: 1rem;
+    line-height: 1;
+    letter-spacing: 0.125rem;
   }
 
   div.stack {
@@ -28,7 +35,7 @@ const ExperienceContainer = styled('section')`
 const ExperienceScreen = ({ job }) => (
   <ExperienceContainer>
     <h4>{`${job.companyName}: ${job.jobTitle}`}</h4>
-    <p className="date">{job.dates}</p>
+    <p className="dates">{job.dates}</p>
     <ul>
       {job.jobDesc.map(item => (
         <li dangerouslySetInnerHTML={{ __html: item }} key={item} />

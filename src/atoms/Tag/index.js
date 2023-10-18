@@ -1,23 +1,24 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import { colors, fonts, shadows } from '../../tokens';
+import { colors, fonts } from '../../tokens';
 
 const StyledTag = styled('div')`
   display: inline-block;
   font-size: 0.75rem;
-  line-height: 0.75rem;
-  font-family: ${fonts.headline};
-  font-weight: 500;
-  background-color: ${colors.constants.yellow};
-  color: ${colors.constants.darkpurple};
+  line-height: 1;
+  font-family: ${fonts.contrast};
+  font-weight: 100;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  background-color: ${props => props.theme.accentLight};
+  color: ${colors.constants.darkPurple};
   padding: 0;
   border-radius: 0.25rem;
   margin-bottom: 0.25rem;
   margin-right: 0.25rem;
   transition: all 0.25s ease-in;
   text-decoration: none;
-  box-shadow: ${shadows.slimShadow};
   overflow: hidden;
 
   &:hover {
