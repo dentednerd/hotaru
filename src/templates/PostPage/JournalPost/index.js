@@ -18,22 +18,14 @@ const JournalPost = ({ post }) => {
 
     p:first-of-type:first-letter {
       font-family: ${fonts.headline};
-      font-size: 3.5rem;
-      line-height: 3.5rem;
-      font-weight: 700;
-      float: left;
-      margin-right: 0.25rem;
+      initial-letter: 2;
+      margin-right: 0.5rem;
     }
 
-    blockquote p:first-of-type:first-letter {
+    blockquote p:first-of-type:first-letter, li p:first-of-type:first-letter {
       font-family: inherit;
-      text-shadow: inherit;
-      font-size: 1rem;
-      line-height: 1.25rem;
-      font-weight: 400;
-      clear: both;
-      float: none;
-      margin-right: 0;
+      initial-letter: 1;
+      margin-right: 0.1rem;
     }
 
     ul {
@@ -46,11 +38,6 @@ const JournalPost = ({ post }) => {
         content: '» ';
       }
     }
-  `;
-
-  const PostTitle = styled('h2')`
-    border-bottom: solid 1px ${colors.constants.purple};
-    padding-bottom: 1rem;
   `;
 
   const Byline = styled('p')`
@@ -66,7 +53,6 @@ const JournalPost = ({ post }) => {
 
   return (
     <StyledJournalPost>
-      <PostTitle>{post.frontmatter.title}</PostTitle>
       <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
       <Byline>thanks for reading! Joey x</Byline>
       <Tags>

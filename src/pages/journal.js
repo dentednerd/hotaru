@@ -20,6 +20,7 @@ const JournalGrid = styled('section')`
   grid-template-columns: 1fr;
   gap: 1rem;
   margin-bottom: 2rem;
+  width: 100%;
 
   @media (min-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
@@ -28,6 +29,8 @@ const JournalGrid = styled('section')`
 
 const Journal = React.memo(({ data }) => {
   const { posts, tags } = data;
+
+  if (!data) return <p>Loading...</p>;
 
   return (
     <Layout>

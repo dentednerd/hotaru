@@ -74,139 +74,80 @@ const portfolioData = {
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
 
-  CodeNinjas: {
-    title: 'Code Ninjas',
+  FMBlogr: {
+    title: 'FM Blogr',
     caption:
-      '<p>An educational multiple-choice game, created during the final project phase at Northcoders in a team of four. Accessibility was important to our design approach.</p><p>I tried to keep that approach to accessibility in the second version, whilst implementing a cleaner, slicker design, and adding new features such as level select, a progress bar for each level, and more ninja-themed assets!</p>',
+      '<p>This is another <a href="https://www.frontendmentor.io/">Frontend Mentor</a> solution, this time for a publishing platform landing page. It was a good opportunity to practise with CSS Grid. The hardest part was positioning that background image inside the header whilst keeping it responsive!</p>',
     links: [
       {
-        text: 'Code Ninjas (down for maintenance!)',
-        url: '',
-      },
-      {
-        text: 'codeninjas-api',
-        url: 'https://codeninjas-api.fly.dev/'
-      },
-      {
-        text: 'front end code',
-        url: 'https://github.com/dentednerd/CodeNinjas'
-      },
-      {
-        text: 'back end code',
-        url: 'https://github.com/dentednerd/CodeNinjasBack'
-      }
-    ],
-    relatedPosts: [
-      {
-        name: 'Code Ninjas: revisiting Northcoders project phase',
-        slug: '/posts/code-ninjas/',
-      },
-    ],
-    stack: ['React', 'Redux', 'Express', 'MongoDB'],
-  },
-
-  NorthcodersNews: {
-    title: 'Northcoders News',
-    caption:
-      "<p>An ERN-stack Reddit clone, created over two sprints at Northcoders.</p><p>The first version of the front end, created near the end of the course, was styled with Bulma. This experience taught me that I prefer not to use CSS frameworks whenever possible. No disrespect to Bulma users, obviously! But it's not for me.</p><p>In version 2, I used this project to demonstrate Docker containerisation to some colleagues, and I took the opportunity to add new functionality, refactor, redesign (replacing Bulma with styled-components), and redeploy.</p><p>In version 3, I completely rebuilt the API in PostgreSQL instead of MongoDB, and also rebuilt the front end using hooks and context instead of Redux, and Stitches instead of styled-components.</p>",
-    links: [
-      {
-        text: 'Northcoders News',
-        url: 'https://dentednerds-northcoders-news.netlify.app/',
-      },
-      {
-        text: 'nc-news-finale API',
-        url: 'https://nc-news-finale.fly.dev/',
-      },
-      {
-        text: 'front end code',
-        url: 'https://github.com/dentednerd/ncnews'
-      },
-      {
-        text: 'back end code',
-        url: 'https://github.com/dentednerd/nc-news-sql',
-      },
-    ],
-    stack: ['React', 'Redux', 'Bulma', 'styled-components', 'Stitches', 'Express', 'MongoDB', 'PostgreSQL'],
-    relatedPosts: [
-      {
-        name: 'Northcoders News, revisited',
-        slug: '/posts/northcoders-news-revisited/',
-      },
-      {
-        name: 'The Return of Northcoders News',
-        slug: '/posts/the-return-of-northcoders-news/',
-      }
-    ],
-  },
-  HouseofGames: {
-    title: 'House of Games',
-    caption:
-      "<p>Nowadays at Northcoders, the NC News sprint comes in two flavours: the news aggregation site that we all know and love, and a games rating and discussion site. However, the building of either of these projects is now very different to the stack we used when I was on the bootcamp. Instead of a MongoDB database, students now use PostgreSQL. On the front end, React hooks are much easier to grasp than Redux. </p><p>So I took the opportunity to build dentednerd's House of Games, getting more comfortable with SQL in the process, and using a CSS-in-JS library named Stitches for the first time on the front end. This was so successful that I went back and rebuilt NC News for the third time!</p>",
-    links: [
-      {
-        text: "dentednerd's House of Games",
-        url: 'https://dentednerds-house-of-games.netlify.app/',
-      },
-      {
-        text: 'nc-games-finale API',
-        url: 'https://nc-games-finale.fly.dev/',
-      },
-      {
-        text: 'front end code',
-        url: 'https://github.com/dentednerd/house-of-games'
-      },
-      {
-        text: 'back end code',
-        url: 'https://github.com/dentednerd/nc-games-sql'
-      }
-    ],
-    stack: ['React', 'Stitches', 'Express', 'PostgreSQL'],
-    relatedPosts: [
-      {
-        name: 'The Return of Northcoders News',
-        slug: '/posts/the-return-of-northcoders-news/',
-      }
-    ],
-  },
-  TrellJo: {
-    title: 'TrellJo',
-    caption:
-      "<p>A bare-bones Trello clone, created at Northcoders.</p><p>Most developers starting out in React will create a to-do list app fairly early on so as to learn the fundamentals of state management, so the Trello clone felt like the next logical step. I tried not to deviate the design too much from Trello's own, but at the time I was very proud of that stripy background.</p><p>The work I did on TrellJo informed a lot of what I did on Pinpin later on.</p>",
-    links: [
-      {
-        text: 'TrellJo',
-        url: 'https://dentednerd.github.io/Trell-Jo/',
+        text: 'Blogr',
+        url: 'https://dentednerd.github.io/fm-blogr-sass',
       },
       {
         text: 'code',
-        url: 'https://github.com/dentednerd/Trell-Jo',
+        url: 'https://github.com/dentednerd/fm-blogr-sass',
       },
     ],
-    stack: ['React', 'Bulma'],
+    stack: ['Sass', 'JavaScript'],
   },
 
-  Northwitter: {
-    title: 'Northwitter',
+  FMSpaceTourism: {
+    title: 'FM Space Tourism',
     caption:
-      "<p>A Twitter clone, based on a mock API, and created at Northcoders.</p><p>I really liked the idea of a cute, pastel version of Twitter. You may have noticed that pastel colour schemes have very much become my personal aesthetic ever since.</p><p>This was the first project in which I'd ever used a CSS framework. I can absolutely see why they're useful, particularly if you're just starting out in CSS, but for me, they feel a bit restrictive.</p><p>(Yep, this has the same stripy background as TrellJo!)</p>",
+      '<p>I took this on during my return to work (journal entry forthcoming). It was a good opportunity to learn the basics of NextJS and to play with Sass modules. I don\'t consider this my finest work, but it was a good boost to my confidence after so much time away from code.</p>',
     links: [
       {
-        text: 'Northwitter',
-        url: 'https://dentednerd.github.io/Northwitter/',
+        text: 'FM Space Tourism',
+        url: 'https://fm-space-tourism-eight.vercel.app/'
       },
       {
         text: 'code',
-        url: 'https://github.com/dentednerd/Northwitter',
+        url: 'https://github.com/dentednerd/fm-space-tourism'
+      }
+    ],
+    stack: ['React', 'NextJS', 'CSS', 'Sass']
+  },
+
+  FMSolutions: {
+    title: 'FM Solutions',
+    caption:
+      '<p><a href="https://www.frontendmentor.io/">Frontend Mentor</a> is a great resource for frontend developers at all levels. They provide challenges with designs, assets and style guides, and your job is to build them. The newbie-level challenges lend themselves to being individual components rather than full pages in their own right, so I\'ve collected my solutions into a single app.</p><p>Each of the challenges has their own repo and deployment; you\'ll be able to find the links in the app.</p>',
+    links: [
+      {
+        text: "Joey's Frontend Mentor Solutions",
+        url: 'https://joeysfmsolutions.netlify.app/',
       },
     ],
-    stack: ['React', 'Bootstrap'],
+    stack: ['React'],
+  },
+
+  DeSoto: {
+    title: 'DeSoto',
+    caption:
+      '<p>My contribution to Steph Eckles\' <a href="https://stylestage.dev/">StyleStage</a> community project. A chance to stretch my Sass wings, and to get as pernickety as I please about accessibility. Inspired by <a href="https://store.steampowered.com/app/1440440/Sam__Max_Save_the_World/">Sam and Max Save the World</a>.</p>',
+    links: [
+      {
+        text: 'DeSoto',
+        url: 'https://stylestage.dev/styles/desoto/'
+      },
+      {
+        text: 'code',
+        url: 'https://github.com/dentednerd/desoto'
+      }
+    ],
+    relatedPosts: [
+      {
+        name: 'DeSoto: a StyleStage contribution',
+        slug: '/posts/desoto-stylestage-contribution/',
+      },
+    ],
+    stack: ['CSS', 'Sass'],
   },
 
   DentedNerdReviews: {
     title: 'Dented Nerd Reviews',
     caption:
-      "<p>A small pre-Northcoders project to showcase my HTML and CSS design skills, with a little jQuery animation on the navigation menu.</p><p>I based the design on a Tumblr theme I'd built a couple of years previously, which I've recently revisited and updated to be more responsive. Making Tumblr themes was great practice for my HTML and CSS skills for a number of years, before I made the decision to make web development my career.</p>",
+      "<p>A small pre-bootcamp project to showcase my HTML and CSS design skills, with a little jQuery animation on the navigation menu.</p><p>I based the design on a Tumblr theme I'd built a couple of years previously, which I've recently revisited and updated to be more responsive. Making Tumblr themes was great practice for my HTML and CSS skills for a number of years, before I made the decision to make web development my career.</p>",
     links: [
       {
         text: 'Dented Nerd Reviews',
@@ -217,9 +158,13 @@ const portfolioData = {
         url: 'https://github.com/dentednerd/precourse-section-3',
       },
       {
-        text: 'Sundae Times Tumblr theme demo',
+        text: 'Sundae Times demo',
         url: 'https://sundaetimes-theme.tumblr.com/',
       },
+      {
+        text: 'Sundae Times theme',
+        url: 'https://www.tumblr.com/theme/38862'
+      }
     ],
     stack: ['HTML', 'CSS', 'jQuery'],
   },
@@ -264,35 +209,102 @@ const portfolioData = {
     stack: ['React'],
   },
 
-  FMSolutions: {
-    title: 'FM Solutions',
+  CodeNinjas: {
+    title: 'Code Ninjas',
     caption:
-      '<p><a href="https://www.frontendmentor.io/">Frontend Mentor</a> is a great resource for frontend developers at all levels. They provide challenges with designs, assets and style guides, and your job is to build them. The newbie-level challenges lend themselves to being individual components rather than full pages in their own right, so I\'ve collected my solutions into a single app.</p><p>Each of the challenges has their own repo and deployment; you\'ll be able to find the links in the app.</p>',
+      '<p>An educational multiple-choice game, created during the final project phase at NC in a team of four. Accessibility was important to our design approach.</p><p>I tried to keep that approach to accessibility in the second version, whilst implementing a cleaner, slicker design, and adding new features such as level select, a progress bar for each level, and more ninja-themed assets!</p>',
     links: [
       {
-        text: "Joey's Frontend Mentor Solutions",
-        url: 'https://joeysfmsolutions.netlify.app/',
+        text: 'Code Ninjas (down for maintenance!)',
+        url: '',
+      },
+      {
+        text: 'codeninjas-api',
+        url: 'https://codeninjas-api.fly.dev/'
+      },
+      {
+        text: 'front end code',
+        url: 'https://github.com/dentednerd/CodeNinjas'
+      },
+      {
+        text: 'back end code',
+        url: 'https://github.com/dentednerd/CodeNinjasBack'
+      }
+    ],
+    relatedPosts: [
+      {
+        name: 'Code Ninjas',
+        slug: '/posts/code-ninjas/',
       },
     ],
-    stack: ['React'],
+    stack: ['React', 'Redux', 'Express', 'MongoDB'],
   },
 
-  FMBlogr: {
-    title: 'FM Blogr',
+  NCNews: {
+    title: 'NC News',
     caption:
-      '<p>This is another <a href="https://www.frontendmentor.io/">Frontend Mentor</a> solution, this time for a publishing platform landing page. It was a good opportunity to practise with CSS Grid. The hardest part was positioning that background image inside the header whilst keeping it responsive!</p>',
+      "<p>An ERN-stack Reddit clone, created over two sprints at NC.</p><p>The first version of the front end, created near the end of the course, was styled with Bulma. This experience taught me that I prefer not to use CSS frameworks whenever possible. No disrespect to Bulma users, obviously! But it's not for me.</p><p>In version 2, I used this project to demonstrate Docker containerisation to some colleagues, and I took the opportunity to add new functionality, refactor, redesign (replacing Bulma with styled-components), and redeploy.</p><p>In version 3, I completely rebuilt the API in PostgreSQL instead of MongoDB, and also rebuilt the front end using hooks and context instead of Redux, and Stitches instead of styled-components.</p>",
     links: [
       {
-        text: 'Blogr',
-        url: 'https://dentednerd.github.io/fm-blogr-sass',
+        text: 'NC News',
+        url: 'https://dentednerds-northcoders-news.netlify.app/',
       },
       {
-        text: 'code',
-        url: 'https://github.com/dentednerd/fm-blogr-sass',
+        text: 'nc-news-finale API',
+        url: 'https://nc-news-finale.fly.dev/',
+      },
+      {
+        text: 'front end code',
+        url: 'https://github.com/dentednerd/ncnews'
+      },
+      {
+        text: 'back end code',
+        url: 'https://github.com/dentednerd/nc-news-sql',
       },
     ],
-    stack: ['Sass', 'JavaScript'],
+    stack: ['React', 'Redux', 'Bulma', 'styled-components', 'Stitches', 'Express', 'MongoDB', 'PostgreSQL'],
+    relatedPosts: [
+      {
+        name: 'NC News, revisited',
+        slug: '/posts/nc-news-revisited/',
+      },
+      {
+        name: 'The Return of NC News',
+        slug: '/posts/the-return-of-nc-news/',
+      }
+    ],
   },
+  HouseofGames: {
+    title: 'House of Games',
+    caption:
+      "<p>Nowadays at NC, the individual project comes in two flavours: the news aggregation site that we all know and love, and a games rating and discussion site. However, the building of either of these projects is now very different to the stack we used when I was on the bootcamp. Instead of a MongoDB database, students now use PostgreSQL. On the front end, React hooks are much easier to grasp than Redux. </p><p>So I took the opportunity to build dentednerd's House of Games, getting more comfortable with SQL in the process, and using a CSS-in-JS library named Stitches for the first time on the front end. This was so successful that I went back and rebuilt NC News for the third time!</p>",
+    links: [
+      {
+        text: "dentednerd's House of Games",
+        url: 'https://dentednerds-house-of-games.netlify.app/',
+      },
+      {
+        text: 'nc-games-finale API',
+        url: 'https://nc-games-finale.fly.dev/',
+      },
+      {
+        text: 'front end code',
+        url: 'https://github.com/dentednerd/house-of-games'
+      },
+      {
+        text: 'back end code',
+        url: 'https://github.com/dentednerd/nc-games-sql'
+      }
+    ],
+    stack: ['React', 'Stitches', 'Express', 'PostgreSQL'],
+    relatedPosts: [
+      {
+        name: 'The Return of NC News',
+        slug: '/posts/the-return-of-nc-news/',
+      }
+    ],
+  },
+
 };
 
 export default portfolioData;

@@ -26,7 +26,7 @@ const CTALink = ({
     background-color: ${theme.accentLight};
     color: ${colors.constants.darkPurple};
     width: fit-content;
-    height: 2.5rem;
+    height: fit-content;
     font-family: ${fonts.headline};
     font-size: 1.25rem;
     line-height: 1;
@@ -41,6 +41,7 @@ const CTALink = ({
     }
 
     @media(min-width: 1024px) {
+      height: 2.5rem;
       margin: 0;
     }
 

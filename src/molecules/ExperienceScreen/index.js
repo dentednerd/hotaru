@@ -19,7 +19,9 @@ const ExperienceContainer = styled('section')`
     letter-spacing: 0.125rem;
   }
 
-  div.stack {
+  .stack {
+    display: flex;
+    flex-flow: row wrap;
     font-family: ${fonts.headline};
   }
 
@@ -27,7 +29,15 @@ const ExperienceContainer = styled('section')`
     max-width: 50%;
   }
 
+  ul {
+    margin: 1.5rem 0;
+  }
+
   li {
+    margin-bottom: 1rem;
+  }
+
+  h4 {
     margin-bottom: 0.5rem;
   }
 `;
@@ -36,11 +46,15 @@ const ExperienceScreen = ({ job }) => (
   <ExperienceContainer>
     <h4>{`${job.companyName}: ${job.jobTitle}`}</h4>
     <p className="dates">{job.dates}</p>
-    <ul>
-      {job.jobDesc.map(item => (
-        <li dangerouslySetInnerHTML={{ __html: item }} key={item} />
-      ))}
-    </ul>
+
+    {job.jobDesc && (
+      <ul>
+        {job.jobDesc.map(item => (
+          <li dangerouslySetInnerHTML={{ __html: item }} key={item} />
+        ))}
+      </ul>
+    )}
+
     <div className="stack">{stackMap(job.skills)}</div>
   </ExperienceContainer>
 );

@@ -8,7 +8,7 @@ const timelineData = [
       'Collaborating with clients on various public-facing projects, often working to tight deadlines', 'Improving standards in code quality, testing strategy and engineering culture for our clients', 'Gained AWS and PSM qualifications'
     ],
     skills: [
-      'NodeJS', 'Express', 'SQL', 'React', 'HTML', 'CSS', 'AWS'
+      'NodeJS', 'Express', 'SQL', 'React', 'Redux', 'HTML', 'CSS', 'AWS'
     ]
   },
   {
@@ -54,9 +54,6 @@ const timelineData = [
     dates: 'May - Jun 2018',
     companyName: 'Northcoders',
     jobTitle: 'Tutor (Saturdays)',
-    jobDesc: [
-      'Supporting students on the part-time course in their front end development studies',
-    ],
     skills: ['React', 'HTML', 'CSS'],
   },
   {
@@ -64,7 +61,6 @@ const timelineData = [
     dates: 'Aug 2017 - Jul 2018',
     companyName: 'Careicon',
     jobTitle: 'Front End Developer',
-    jobDesc: ['Currently under NDA'],
     skills: ['React', 'Redux', 'Redux-Saga', 'Storybook', 'Jest'],
   },
 ];

@@ -41,7 +41,7 @@ const PortfolioMenu = ({ setCurrentProject, images }) => {
   return (
     <StyledMenu>
       <div className="grid">
-        {projectList.sort().map(
+        {projectList.map(
           item => {
             const project = portfolioData[item];
             const projectImage = getProjectImage(project, images);

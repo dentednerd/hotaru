@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import { portfolioData } from '../data';
-import Project from '../molecules/PortfolioProject';
+import CurrentProject from '../molecules/CurrentProject';
 import PortfolioMenu from '../molecules/PortfolioMenu';
 import PageHeader from '../molecules/PageHeader';
 import FindMe from '../molecules/FindMe';
@@ -9,26 +9,21 @@ import Layout from '../templates/Layout';
 import { Late } from '../assets/undraws';
 import { getProjectImage } from '../helpers';
 
-const PortfolioTemplate = () => {
+const PortfolioTemplate = ({ data }) => {
   const [currentProject, setCurrentProject] = useState('LADbible');
+  const [currentImage, setCurrentImage] = useState(null);
+  const [allImages, setAllImages] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentProject]);
 
-  const { allImageSharp: { edges } } = useStaticQuery(graphql`
-    query {
-      allImageSharp {
-        edges {
-          node {
-            gatsbyImageData
-          }
-        }
-      }
+  useEffect(() => {
+    if (data) {
+      setAllImages(data.allImageSharp.edges);
+      setCurrentImage(getProjectImage({ title: currentProject } , data.allImageSharp.edges));
     }
-  `);
-
-  const projectImage = getProjectImage(portfolioData[currentProject], edges);
+  }, [data, currentProject, currentImage]);
 
   return (
     <Layout>
@@ -39,11 +34,31 @@ const PortfolioTemplate = () => {
           <h2>Portfolio</h2>
         </>
       </PageHeader>
-      <Project project={portfolioData[currentProject]} image={projectImage} />
-      <PortfolioMenu setCurrentProject={setCurrentProject} images={edges} />
-      <FindMe />
+      {data
+        ? (
+          <>
+            <CurrentProject project={portfolioData[currentProject]} image={currentImage} />
+            <PortfolioMenu setCurrentProject={setCurrentProject} images={allImages} />
+            <FindMe />
+          </>
+        ) : (
+          <p>Loading...</p>
+        )
+      }
     </Layout>
   );
 };
 
 export default PortfolioTemplate;
+
+export const query = graphql`
+  query {
+    allImageSharp {
+      edges {
+        node {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`;

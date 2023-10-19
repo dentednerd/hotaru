@@ -39,7 +39,7 @@ const PostPage = ({ data, pageContext }) => {
         <meta name="description" content={post.excerpt} />
         <meta name="author" content="Joey Imlay" />
       </Helmet>
-      <Hero image={thisFeaturedImage} alt={post.frontmatter.title} />
+      <Hero image={thisFeaturedImage.images.fallback.src} title={post.frontmatter.title} />
       <JournalPost post={post} />
       <NextPrevious>
         {pageContext.previous ? (

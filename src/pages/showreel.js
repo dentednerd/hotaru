@@ -52,19 +52,19 @@ const List = styled('ul')`
 const videos = [
   {
     id: 'https://www.youtube.com/embed/locZbr8Dx1A',
-    name: 'Queer Coded - Joey Imlay'
+    name: 'Queer Coded'
   },
   {
     id: 'https://www.youtube.com/embed/_xPTMGeWW2A',
     name: 'Unconscious Mentoring'
   },
   {
-    id: 'https://www.youtube.com/embed/hmOmKOoF9PU',
-    name: 'Northcoders Lightning Talks 31/3/22'
+    id: 'https://www.youtube.com/embed/hmOmKOoF9PU?start=2515',
+    name: 'yet()'
   },
   {
     id: 'https://www.youtube.com/embed/eaY8ovn1FzI',
-    name: 'Let\'s go, gamers: how we built the GAMINGbible menu'
+    name: 'Let\'s go, gamers'
   },
   {
     id: 'https://youtube.com/embed/gk_5ezTqd3c',
@@ -72,24 +72,8 @@ const videos = [
   },
   {
     id: 'https://youtube.com/embed/l62-FZS5lGA',
-    name: 'Careers in Coding - The Future of Work Webinar',
+    name: 'Careers in Coding webinar',
   },
-  {
-    id: 'https://youtube.com/embed/3Ew5dfitW6g',
-    name: 'Northcoders: Jo | Student Stories',
-  },
-  {
-    id: 'https://youtube.com/embed/SsoueiuOUbc',
-    name: 'Northcoders: is coding for everyone?',
-  },
-  {
-    id: 'https://youtube.com/embed/Ua4bVgMO8ls',
-    name: 'Northcoders: a new opportunity',
-  },
-  {
-    id: 'https://youtube.com/embed/2bA0KAGYjIc',
-    name: 'Northcoders scholarship supports women programmers',
-  }
 ];
 
 const ShowreelTemplate = () => {

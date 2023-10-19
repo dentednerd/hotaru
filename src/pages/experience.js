@@ -23,6 +23,7 @@ const CVLayout = styled('section')`
 
   li {
     margin-bottom: 1rem;
+    line-height: normal;
 
     span {
       font-family: ${fonts.headline};
@@ -48,9 +49,18 @@ const CVSection = styled('section')`
     border-bottom: none;
   }
 
+  li {
+    font-size: 1.125rem;
+    line-height: normal;
+  }
+
   li:before {
     content: "";
     display: none;
+  }
+
+  h4 {
+    font-size: 1.25rem;
   }
 `;
 

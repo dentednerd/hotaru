@@ -1,4 +1,5 @@
 module.exports = {
+  trailingSlash: 'always',
   flags: {
     DEV_SSR: false
   },
@@ -8,10 +9,35 @@ module.exports = {
     siteUrl: 'https://www.joeyimlay.dev',
   },
   plugins: [
+    'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet-async',
     'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `blurred`,
+          quality: 50,
+          breakpoints: [768, 1024, 1280, 1920],
+          backgroundColor: `transparent`,
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: ['gatsby-remark-copy-linked-files'],
+      },
+    },
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
@@ -58,14 +84,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: ['gatsby-remark-copy-linked-files'],
       },
     },
     {
