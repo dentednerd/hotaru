@@ -38,7 +38,7 @@ const PortfolioTemplate = ({ data }) => {
         ? (
           <>
             <CurrentProject project={portfolioData[currentProject]} image={currentImage} />
-            <PortfolioMenu setCurrentProject={setCurrentProject} images={allImages} />
+            {allImages && <PortfolioMenu setCurrentProject={setCurrentProject} images={allImages} />}
             <FindMe />
           </>
         ) : (

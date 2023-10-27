@@ -23,66 +23,61 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const result = await graphql(`
-    {
-      postsRemark: allMarkdownRemark(
-        sort: {order: DESC, fields: [frontmatter___date]}
-        limit: 2000
-      ) {
-        edges {
-          next {
-            frontmatter {
-              title
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            fields {
-              slug
+  const result = await graphql(`{
+  postsRemark: allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 2000) {
+    edges {
+      next {
+        frontmatter {
+          title
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData
             }
           }
-          previous {
-            frontmatter {
-              title
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            fields {
-              slug
-            }
-          }
-          node {
-            id
-            frontmatter {
-              title
-              date(formatString: "DD MMMM, YYYY")
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-              tags
-              category
-            }
-            fields {
-              slug
-            }
-            excerpt(pruneLength: 125)
-          }
+        }
+        fields {
+          slug
         }
       }
-      tagsRemark: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tags) {
-          fieldValue
+      previous {
+        frontmatter {
+          title
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
+        fields {
+          slug
+        }
+      }
+      node {
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          tags
+          category
+        }
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 125)
       }
     }
-  `);
+  }
+  tagsRemark: allMarkdownRemark(limit: 2000) {
+    group(field: {frontmatter: {tags: SELECT}}) {
+      fieldValue
+    }
+  }
+}`);
 
   // handle errors
   if (result.errors) {

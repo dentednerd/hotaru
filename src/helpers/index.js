@@ -4,6 +4,7 @@ import Tag from '../atoms/Tag';
 const stackMap = stack => stack.map(tech => <Tag key={tech}>{tech}</Tag>);
 
 const getProjectImage = (project, images) => {
+  if (!images) return;
   const imgFilename = `${project.title.split(" ").join("")}.png`;
   const projectImage = images.filter(img => img?.node?.gatsbyImageData?.images?.fallback?.src.split("/")[4] === imgFilename)[0]?.node?.gatsbyImageData;
   return projectImage;

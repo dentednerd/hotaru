@@ -6,6 +6,7 @@ import { hexToRGBA } from '../../helpers';
 
 const HoverCard = ({ text, image, onClick }) => {
   const theme = useTheme();
+  if (!image) return null;
 
   const StyledHoverCard = styled.section`
     aspect-ratio: 2 / 1;
@@ -18,6 +19,7 @@ const HoverCard = ({ text, image, onClick }) => {
     background-position: center;
     background-size: cover;
     background-blend-mode: darken;
+    cursor: pointer;
 
     @media(hover: hover) {
       &:hover {

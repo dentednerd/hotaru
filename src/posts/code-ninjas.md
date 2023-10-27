@@ -26,7 +26,7 @@ Version 3 contains some major updates to both the database and the design. Pleas
 
 ## Further reading
 
-- [Code Ninjas](https://codeninjas-v2.herokuapp.com/)
+- [Code Ninjas](https://code-ninjas-dentednerd.netlify.app/)
 - [API](https://codeninjas-api.fly.dev/)
 - [front end code](https://github.com/dentednerd/CodeNinjas)
 - [back end code](https://github.com/dentednerd/CodeNinjasBack)
