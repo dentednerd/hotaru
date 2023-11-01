@@ -25,7 +25,7 @@ const StyledLayout = styled('div')`
   }
 
   div.container {
-    max-width: 425px;
+    max-width: calc(100% - 2rem);
     margin: 0 auto;
   }
 

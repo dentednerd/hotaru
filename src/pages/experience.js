@@ -61,6 +61,13 @@ const CVSection = styled('section')`
 
   h4 {
     font-size: 1.25rem;
+    font-family: ${fonts.contrast};
+    font-weight: 400;
+
+    span {
+      font-family: ${fonts.contrast};
+      font-weight: 300;
+    }
   }
 `;
 

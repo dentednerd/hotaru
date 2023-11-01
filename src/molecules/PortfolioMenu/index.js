@@ -44,7 +44,7 @@ const PortfolioMenu = ({ setCurrentProject, images = [] }) => {
         {projectList.map(
           item => {
             const project = portfolioData[item];
-            const projectImage = getProjectImage(project, images);
+            const projectImage = getProjectImage(project.title, images);
             return (
               <HoverCard
                 text={project.title}

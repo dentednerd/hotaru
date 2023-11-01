@@ -45,14 +45,13 @@ const GlobalStyles = ({ children, theme }) => (
         width: 60%;
         padding: 1rem;
         margin: 1rem auto;
-        background-color: ${colors.constants.green};
-        color: ${colors.constants.darkPurple};
-        border-radius: 1rem;
+        color: ${theme.accentBold};
+        border-left: solid 0.125rem ${theme.accentBold};
       }
 
-      blockquote a {
-        color: ${colors.constants.darkPurple};
-        text-decoration: underline;
+      blockquote span {
+        font-family: ${fonts.cursive};
+        font-size: 2rem;
       }
 
       ul,
@@ -69,10 +68,6 @@ const GlobalStyles = ({ children, theme }) => (
       /* headings */
 
       h1 {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
         color: ${theme.accentBold};
         font-size: 1.5rem;
         line-height: 1.5rem;
@@ -96,17 +91,19 @@ const GlobalStyles = ({ children, theme }) => (
       h3 {
         display: flex;
         align-items: center;
-        height: 2rem;
+        min-height: 3rem;
         margin: 0 0 1rem;
         padding: 0.5rem;
-        background-color: ${theme.accentLight};
-        color: ${colors.constants.darkPurple} !important;
+        background-image: linear-gradient(
+          130deg,
+          ${theme.accentLight},
+          ${theme.accentBold}
+        );
+        color: ${colors.constants.darkPurple};
         font-family: ${fonts.contrast};
-        font-weight: 700;
-        font-size: 1rem;
+        font-weight: 900;
+        font-size: 2rem;
         line-height: 1;
-        text-transform: uppercase;
-        letter-spacing: 0.125rem;
       }
 
       h3 svg {
@@ -119,7 +116,7 @@ const GlobalStyles = ({ children, theme }) => (
       }
 
       h4 {
-        font-family: ${fonts.headline};
+        font-family: ${fonts.contrast};
         font-weight: 400;
         font-size: 1.5rem;
         line-height: 1;
@@ -141,8 +138,6 @@ const GlobalStyles = ({ children, theme }) => (
         font-weight: 700;
         font-size: 1rem;
         line-height: 1;
-        /* text-transform: uppercase; */
-        letter-spacing: 0.125rem;
       }
 
       h6 {
@@ -156,23 +151,52 @@ const GlobalStyles = ({ children, theme }) => (
       }
 
       a {
-        text-decoration: none;
         color: ${theme.accentBold};
-        transition: 0.5s ease;
+        text-decoration: none;
       }
 
-      a:hover {
-        text-decoration: underline;
-        transition: 0.5s ease;
+      p a,
+      li a,
+      blockquote a {
+        background:
+          linear-gradient(
+            130deg,
+            ${theme.accentLight},
+            ${theme.accentBold}
+          ),
+          linear-gradient(
+            130deg,
+            ${colors.constants.pink},
+            ${colors.constants.yellow},
+            ${colors.constants.green},
+            ${colors.constants.blue},
+            ${colors.constants.purple}
+          );
+        background-size:
+          100% 0.125rem,
+          0 0.125rem;
+        background-position:
+          100% 100%,
+          0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 400ms;
+      }
+
+      p a:hover,
+      li a:hover,
+      blockquote a:hover {
+        background-size:
+          0 0.125rem,
+          100% 0.125rem;
       }
 
       .dates {
-        font-family: ${fonts.contrast} !important;
+        font-family: ${fonts.contrast};
         font-size: 1rem;
         line-height: 1;
         letter-spacing: 0.125rem;
-        font-weight: 100 !important;
-        color: ${theme.text} !important;
+        font-weight: 300;
+        color: ${theme.text};
       }
 
       .svg-inline--fa {

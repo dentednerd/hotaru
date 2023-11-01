@@ -7,11 +7,9 @@ import PageHeader from '../molecules/PageHeader';
 import FindMe from '../molecules/FindMe';
 import Layout from '../templates/Layout';
 import { Late } from '../assets/undraws';
-import { getProjectImage } from '../helpers';
 
 const PortfolioTemplate = ({ data }) => {
   const [currentProject, setCurrentProject] = useState('LADbible');
-  const [currentImage, setCurrentImage] = useState(null);
   const [allImages, setAllImages] = useState(null);
 
   useEffect(() => {
@@ -21,9 +19,8 @@ const PortfolioTemplate = ({ data }) => {
   useEffect(() => {
     if (data) {
       setAllImages(data.allImageSharp.edges);
-      setCurrentImage(getProjectImage({ title: currentProject } , data.allImageSharp.edges));
     }
-  }, [data, currentProject, currentImage]);
+  }, [data, currentProject]);
 
   return (
     <Layout>
@@ -37,7 +34,7 @@ const PortfolioTemplate = ({ data }) => {
       {data
         ? (
           <>
-            <CurrentProject project={portfolioData[currentProject]} image={currentImage} />
+            <CurrentProject project={portfolioData[currentProject]} images={allImages} />
             {allImages && <PortfolioMenu setCurrentProject={setCurrentProject} images={allImages} />}
             <FindMe />
           </>

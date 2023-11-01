@@ -1,7 +1,7 @@
 ---
 title: "Code Ninjas"
 date: "2018-05-25"
-featuredImage: "./images/code-ninjas.png"
+featuredImage: "./images/codeninjas.png"
 category: "projects"
 tags: ["MongoDB", "Heroku", "fly.io", "Netlify", "React", "Redux", "MERN"]
 ---

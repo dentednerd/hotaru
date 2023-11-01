@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
 import CTALink from '../atoms/CTALink';
 import PageHeader from '../molecules/PageHeader';
+import Modal from '../organisms/Modal';
 import Layout from '../templates/Layout';
 import { Programmer } from '../assets/undraws';
+import { colors } from '../tokens';
+import talksData from '../data/talksData';
 
 const StyledShowreel = styled.section`
   display: flex;
@@ -13,104 +17,92 @@ const StyledShowreel = styled.section`
   align-items: center;
 `;
 
-const TV = styled('iframe')`
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  margin: 2rem auto 3rem;
-  border: 0;
-
-  /* @media (min-width: 800px) {
-    width: 50vw;
-    height: 28.125vw;
-  } */
-
-  @media (min-width: 1024px) {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
-`;
-
 const List = styled('ul')`
   list-style: none;
   width: 100%;
-  margin: 0 0 1rem 0;
+  margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
 
-  section {
-    width: calc(100% - 1rem);
+  li.talk {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: solid 1px ${colors.constants.purple};
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    section.links {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 1rem;
+    }
   }
 
-  @media(min-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
+  h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    width: fit-content;
   }
 `;
 
-const videos = [
-  {
-    id: 'https://www.youtube.com/embed/locZbr8Dx1A',
-    name: 'Queer Coded'
-  },
-  {
-    id: 'https://www.youtube.com/embed/_xPTMGeWW2A',
-    name: 'Unconscious Mentoring'
-  },
-  {
-    id: 'https://www.youtube.com/embed/hmOmKOoF9PU?start=2515',
-    name: 'yet()'
-  },
-  {
-    id: 'https://www.youtube.com/embed/eaY8ovn1FzI',
-    name: 'Let\'s go, gamers'
-  },
-  {
-    id: 'https://youtube.com/embed/gk_5ezTqd3c',
-    name: 'Automating BrowserStack screenshot generation with CircleCI',
-  },
-  {
-    id: 'https://youtube.com/embed/l62-FZS5lGA',
-    name: 'Careers in Coding webinar',
-  },
-];
-
 const ShowreelTemplate = () => {
+  const [showModal, setShowModal] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(
     'https://www.youtube.com/embed/locZbr8Dx1A'
   );
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (!showModal) document.body.style.overflow = "auto";
+  }, [showModal]);
+
   return (
-    <Layout>
-      <StyledShowreel>
-        <PageHeader>
-          <Programmer />
-          <>
-            <p>Sometimes folks like to get me on camera saying nice things about tech. What they don&apos;t always know is that I love talking about tech, and I&apos;d talk for hours if they&apos;d let me.</p>
-            <h2>Showreel</h2>
-          </>
-        </PageHeader>
-        <TV
-          title="showreel"
-          src={currentVideo}
-          allow="encrypted-media"
-          allowFullScreen
-        />
-        <List>
-          {videos.map(video => (
-            <CTALink
-              icon={faYoutube}
-              onClick={() => setCurrentVideo(video.id)}
-              key={video.name}
-              className="fill"
-            >
-              {video.name}
-            </CTALink>
-          ))}
-        </List>
-      </StyledShowreel>
-    </Layout>
+    <>
+      <Layout>
+        <StyledShowreel>
+          <PageHeader>
+            <Programmer />
+            <>
+              <p>Sometimes folks like to get me on camera saying nice things about tech. What they don&apos;t always know is that I love talking about tech, and I&apos;d talk for hours if they&apos;d let me.</p>
+              <h2>Showreel</h2>
+            </>
+          </PageHeader>
+          <List>
+            {talksData.map(talk => (
+              <li className="talk" key={talk.name}>
+                <h3>{talk.name}</h3>
+                {talk.event && (<h4>{talk.event}<br /><span className="dates">{talk.date}</span></h4>)}
+                <p>{talk.description}</p>
+                <section className="links">
+                  <CTALink
+                    icon={faYoutube}
+                    onClick={() => {
+                      setCurrentVideo(talk.youtubeUrl);
+                      setShowModal(true);
+                    }}
+                  >
+                    watch
+                  </CTALink>
+                  {talk.relatedLinks?.map(link => (
+                    <CTALink
+                      ghost
+                      key={link.name}
+                      href={link.url}
+                      icon={faExternalLinkAlt}
+                    >
+                      {link.name}
+                    </CTALink>
+                  ))}
+                </section>
+              </li>
+            ))}
+          </List>
+        </StyledShowreel>
+
+      </Layout>
+      <Modal show={showModal} setShow={setShowModal} currentVideo={currentVideo} />
+    </>
   );
 };
 

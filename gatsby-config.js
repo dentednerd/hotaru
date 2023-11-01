@@ -141,7 +141,7 @@ module.exports = {
         fonts: [
           'Zilla Slab:300,500,700',
           'Source Sans Pro:400,700',
-          'Raleway',
+          'Raleway:300,400,900',
           'Sacramento',
           'Ubuntu Mono',
         ],

@@ -8,7 +8,7 @@ const StyledTag = styled('div')`
   font-size: 0.75rem;
   line-height: 1;
   font-family: ${fonts.contrast};
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
   background-color: ${props => props.theme.accentLight};

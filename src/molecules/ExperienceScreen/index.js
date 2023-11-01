@@ -12,13 +12,6 @@ const ExperienceContainer = styled('section')`
     margin-bottom: 0.5rem;
   }
 
-  .dates {
-    font-family: ${fonts.contrast};
-    font-size: 1rem;
-    line-height: 1;
-    letter-spacing: 0.125rem;
-  }
-
   .stack {
     display: flex;
     flex-flow: row wrap;

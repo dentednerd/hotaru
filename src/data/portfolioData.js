@@ -234,7 +234,7 @@ const portfolioData = {
     relatedPosts: [
       {
         name: 'Code Ninjas',
-        slug: '/posts/code-ninjas/',
+        slug: '/posts/codeninjas/',
       },
     ],
     stack: ['React', 'Redux', 'Express', 'MongoDB'],
@@ -274,7 +274,7 @@ const portfolioData = {
       }
     ],
   },
-  HouseofGames: {
+  houseofgames: {
     title: 'House of Games',
     caption:
       "<p>Nowadays at NC, the individual project comes in two flavours: the news aggregation site that we all know and love, and a games rating and discussion site. However, the building of either of these projects is now very different to the stack we used when I was on the bootcamp. Instead of a MongoDB database, students now use PostgreSQL. On the front end, React hooks are much easier to grasp than Redux. </p><p>So I took the opportunity to build dentednerd's House of Games, getting more comfortable with SQL in the process, and using a CSS-in-JS library named Stitches for the first time on the front end. This was so successful that I went back and rebuilt NC News for the third time!</p>",

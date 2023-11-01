@@ -22,7 +22,8 @@ const JournalPost = ({ post }) => {
       margin-right: 0.5rem;
     }
 
-    blockquote p:first-of-type:first-letter, li p:first-of-type:first-letter {
+    blockquote p:first-of-type:first-letter,
+    li p:first-of-type:first-letter {
       font-family: inherit;
       initial-letter: 1;
       margin-right: 0.1rem;

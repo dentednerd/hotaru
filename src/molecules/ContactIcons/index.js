@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
-import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import { faLinkedin, faGithub, faCodepen } from '@fortawesome/free-brands-svg-icons';
 import FaIcon from '../../atoms/FaIcon';
 
 const StyledContactIcons = styled.div`
@@ -29,13 +28,18 @@ const icons = [
     image: faGithub,
     alt: 'Github',
   },
+  {
+    link: 'https://codepen.io/dentednerd',
+    image: faCodepen,
+    alt: 'Codepen',
+  }
 ];
 
 const ContactIcons = () => (
   <StyledContactIcons>
     {icons.map(icon => (
-      <a href={icon.link} key={icon.link}>
-        <FaIcon icon={icon.image} size="2x" />
+      <a href={icon.link} key={icon.link} aria-label={`Visit my ${icon.alt} profile`}>
+        <FaIcon icon={icon.image} size="2x" alt={icon.alt} />
       </a>
     ))}
   </StyledContactIcons>

@@ -4,7 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
 import CTALink from '../../atoms/CTALink';
-import { stackMap } from '../../helpers';
+import { getProjectImage, stackMap } from '../../helpers';
 import { colors } from '../../tokens';
 
 const StyledProject = styled.article`
@@ -37,7 +37,7 @@ const StyledProject = styled.article`
     blockquote {
       width: 100%;
       max-width: calc(100vw - 4rem);
-      margin-bottom: 3rem;
+      margin: 0 auto 2rem;
     }
   }
 `;
@@ -58,58 +58,63 @@ const Links = styled.section`
   }
 `;
 
-const CurrentProject = ({ project, image }) => (
-  <StyledProject>
+const CurrentProject = ({ project, images }) => {
+  const projectImage = getProjectImage(project.title, images);
+  return (
+    <StyledProject>
 
-    <GatsbyImage
-      className="screenshot"
-      image={image}
-      alt={project.title}
-      loading="lazy"
-    />
-
-    <section className="text">
-      <h3>{project.title}</h3>
-
-      <section
-        className="caption"
-        dangerouslySetInnerHTML={{ __html: project.caption }}
+      <GatsbyImage
+        className="screenshot"
+        image={projectImage}
+        alt={project.title}
+        loading="eager"
+        backgroundColor={colors.constants.purple}
       />
 
-      {project.relatedPosts && (
-        <blockquote>
-          <p>
-            Read more in my journal:&nbsp;
-            {project.relatedPosts.map((link, index) => (
-              <Fragment key={link.name}>
-                <Link to={link.slug} >
-                  {link.name}
-                </Link>
-                {(project.relatedPosts.length > 1 && index < (project.relatedPosts.length - 1)) && '; '}
-              </Fragment>
-            ))}
-          </p>
-        </blockquote>
-      )}
+      <section className="text">
+        <h3>{project.title}</h3>
 
-      <Links>
-        {project.links.map(link => (
-          <CTALink
-            href={link.url}
-            key={link.url}
-            icon={faExternalLinkAlt}
-          >
-            {link.text}
-          </CTALink>
-        ))}
-      </Links>
+        <section
+          className="caption"
+          dangerouslySetInnerHTML={{ __html: project.caption }}
+        />
 
-      <section className="stack">
-        {stackMap(project.stack)}
+        {project.relatedPosts && (
+          <blockquote>
+            <p>
+              <span>Read more in my journal:</span>&nbsp;
+              {project.relatedPosts.map((link, index) => (
+                <Fragment key={link.name}>
+                  <Link to={link.slug} >
+                    {link.name}
+                  </Link>
+                  {(project.relatedPosts.length > 1 && index < (project.relatedPosts.length - 1)) && '; '}
+                </Fragment>
+              ))}
+            </p>
+          </blockquote>
+        )}
+
+        <Links>
+          {project.links.map((link, i) => (
+            <CTALink
+              href={link.url}
+              key={link.url}
+              icon={faExternalLinkAlt}
+              ghost={i >= 1}
+            >
+              {link.text}
+            </CTALink>
+          ))}
+        </Links>
+
+        <section className="stack">
+          {stackMap(project.stack)}
+        </section>
+
       </section>
-
-    </section>
-  </StyledProject>
-);
+    </StyledProject>
+  );
+}
 
 export default CurrentProject;

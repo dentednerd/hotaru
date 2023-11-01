@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
+import styled from '@emotion/styled';
 import FaIcon from '../FaIcon';
-import { colors, fonts, shadows } from '../../tokens';
+import { colors, fonts } from '../../tokens';
 
 const CTALink = ({
   to,
   href,
+  ghost,
   icon,
   onClick,
   style,
@@ -18,30 +19,40 @@ const CTALink = ({
 
   const theme = useTheme();
 
+  const backgroundImage = ghost ? 'none' : `linear-gradient(
+    130deg,
+    ${colors.constants.green},
+    ${colors.constants.blue}
+  )`;
+  const borderImageSource = ghost ? `linear-gradient(
+    130deg,
+    ${colors.constants.green},
+    ${colors.constants.blue}
+  )` : 'none';
+  const color = ghost ? theme.text : colors.constants.darkPurple;
+
   const StyledCTALink = styled(Element)`
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: ${theme.accentLight};
-    color: ${colors.constants.darkPurple};
+    background-color: transparent;
+    background-image: ${backgroundImage};
+    color: ${color};
     width: fit-content;
-    height: fit-content;
     font-family: ${fonts.headline};
     font-size: 1.25rem;
     line-height: 1;
     margin: 0 auto;
-    padding: 0.5rem;
-    box-shadow: ${shadows.ctaShadow};
+    padding: 1rem;
     transition: all 0.2s;
     cursor: pointer;
-
-    &.fill {
-      width: 100% !important;
-    }
+    border-style: ${ghost ? 'solid' : 'none'};
+    border-width: ${ghost ? '0.25rem' : '0'};
+    border-image-slice: ${ghost ? '1' : '0'};
+    border-image-source: ${borderImageSource};
 
     @media(min-width: 1024px) {
-      height: 2.5rem;
       margin: 0;
     }
 
@@ -52,16 +63,14 @@ const CTALink = ({
 
     svg {
       grid-column: 1;
-      color: ${colors.constants.darkPurple};
+      color: ${color};
       width: 1rem;
       margin-right: 0.5rem;
     }
 
     &:hover {
       transform: scale(1.1);
-      background-color: ${theme.accentBold};
       text-decoration: none;
-      box-shadow: ${shadows.ctaHoverShadow};
       transition: all 0.2s;
     }
   `;
