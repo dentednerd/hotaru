@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import { Link } from 'gatsby';
+import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
@@ -31,7 +30,12 @@ const StyledProject = styled.article`
     align-items: flex-start;
 
     .stack {
-      margin: 0.5rem 0;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: 0.25rem;
+      min-height: 2.25rem;
+      margin: 0 0 1rem;
     }
 
     blockquote {
@@ -48,13 +52,14 @@ const Links = styled.section`
   justify-content: flex-start;
   gap: 1rem;
   margin-bottom: 1rem;
+  width: 100%;
 
   a {
     margin: 0 !important;
   }
 
-  @media(min-width: 1024px) {
-    flex-flow: row nowrap;
+  @media(min-width: 768px) {
+    flex-flow: row wrap;
   }
 `;
 
@@ -79,21 +84,9 @@ const CurrentProject = ({ project, images }) => {
           dangerouslySetInnerHTML={{ __html: project.caption }}
         />
 
-        {project.relatedPosts && (
-          <blockquote>
-            <p>
-              <span>Read more in my journal:</span>&nbsp;
-              {project.relatedPosts.map((link, index) => (
-                <Fragment key={link.name}>
-                  <Link to={link.slug} >
-                    {link.name}
-                  </Link>
-                  {(project.relatedPosts.length > 1 && index < (project.relatedPosts.length - 1)) && '; '}
-                </Fragment>
-              ))}
-            </p>
-          </blockquote>
-        )}
+        <section className="stack">
+          {stackMap(project.stack)}
+        </section>
 
         <Links>
           {project.links.map((link, i) => (
@@ -107,10 +100,6 @@ const CurrentProject = ({ project, images }) => {
             </CTALink>
           ))}
         </Links>
-
-        <section className="stack">
-          {stackMap(project.stack)}
-        </section>
 
       </section>
     </StyledProject>

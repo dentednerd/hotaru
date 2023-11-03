@@ -9,7 +9,6 @@ import GlobalStyles from './GlobalStyles';
 import { shadows, colors } from '../../tokens';
 
 const StyledLayout = styled('div')`
-  position: relative;
   margin: 0 auto;
   padding: 0;
 
@@ -18,19 +17,21 @@ const StyledLayout = styled('div')`
     color: ${props => props.theme.text};
     min-height: 100vh;
     max-width: 100vw;
-    position: relative;
     z-index: 1;
     box-shadow: ${shadows.darkShadow};
-    padding: 5rem 1rem 1rem;
+    padding-top: 5rem;
+    position: relative;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
   }
 
-  div.container {
+  .container {
     max-width: calc(100% - 2rem);
     margin: 0 auto;
   }
 
-  @media(min-width: 1024px) {
-    div.container {
+  @media(min-width: 800px) {
+    .container {
       max-width: 800px;
       margin: 0 auto;
     }
@@ -73,9 +74,7 @@ const Layout = (props) => {
         <GlobalStyles theme={themeColors} />
         <Header darkMode={darkMode} />
         <main>
-          <div className="container">
-            {children}
-          </div>
+          {children}
         </main>
         <Footer />
       </StyledLayout>

@@ -11,7 +11,7 @@ const talksData = [
     name: 'Unconscious Mentoring',
     event: 'All Day Hey',
     date: '5th May 2022',
-    description: 'Development is a team sport, and none of us have got to where we are without the input and influence of others. In fact, we\'re capable of influencing the people around us even when we\'re unaware.',
+    description: 'You don\'t have to have status or achievements under your belt to be a great mentor. You just need to have experience and knowledge to share. In fact, you probably do your best mentoring when you\'re not even aware that you\'re mentoring.',
     relatedLinks: [
       {
         name: 'All Day Hey 2022',
@@ -23,9 +23,15 @@ const talksData = [
     type: 'talk',
     youtubeUrl: 'https://www.youtube.com/embed/hmOmKOoF9PU?start=2515',
     name: 'yet()',
-    event: 'NC Lightning Talks',
+    event: 'IWD Lightning Talks',
     date: '31st March 2022',
-    description: 'Impostor syndrome is rife in the tech world. Often it feels impossible to keep up with constant change. How can we, as developers, hope to overcome it?'
+    description: 'Impostor syndrome is rife in the tech world. Often it feels impossible to keep up with constant change. How can we, as developers, hope to overcome it?',
+    relatedLinks: [
+      {
+        name: 'International Womens Day',
+        url: 'https://www.internationalwomensday.com/'
+      }
+    ]
   },
   {
     type: 'talk',

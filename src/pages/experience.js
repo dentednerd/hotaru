@@ -8,7 +8,7 @@ import { Remote } from '../assets/undraws';
 import { colors, fonts } from '../tokens';
 
 const CVLayout = styled('section')`
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 1rem;
@@ -37,13 +37,9 @@ const CVLayout = styled('section')`
   }
 `;
 
-const Experience = styled('section')`
-`;
-
 const CVSection = styled('section')`
   height: min-content;
   margin-bottom: 1rem;
-  border-bottom: solid 1px ${colors.constants.purple};
 
   &:last-of-type {
     border-bottom: none;
@@ -73,7 +69,7 @@ const CVSection = styled('section')`
 
 const ExperienceTemplate = () => (
   <Layout>
-    <CVLayout>
+    <CVLayout className="container">
       <PageHeader style={{ gridColumn: '1 / 3' }}>
         <Remote />
         <>
@@ -91,12 +87,12 @@ const ExperienceTemplate = () => (
           <h2>Experience</h2>
         </>
       </PageHeader>
-      <Experience>
+      <section>
         <h3>History</h3>
         {timelineData.map((job, index) => (
           <ExperienceScreen job={job} index={index} key={job.dates + job.companyName} />
         ))}
-      </Experience>
+      </section>
       <section>
         <CVSection>
           <h3>Qualifications</h3>

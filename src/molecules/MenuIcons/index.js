@@ -70,19 +70,19 @@ const navItems = [
     ariaLabel: 'Portfolio',
   },
   {
-    link: '/experience',
-    icon: faHistory,
-    ariaLabel: 'Experience',
-  },
-  {
     link: '/journal',
     icon: faPencilAlt,
     ariaLabel: 'Journal',
   },
   {
-    link: '/showreel',
+    link: '/speaking',
     icon: faYoutube,
-    ariaLabel: 'Showreel',
+    ariaLabel: 'Speaking',
+  },
+  {
+    link: '/experience',
+    icon: faHistory,
+    ariaLabel: 'Experience',
   },
 ];
 

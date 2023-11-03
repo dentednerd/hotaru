@@ -2,8 +2,11 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
+import CTALink from '../atoms/CTALink';
 import Tag from '../atoms/Tag';
 import HoverCard from '../atoms/HoverCard';
+import FindMe from '../molecules/FindMe';
 import PageHeader from '../molecules/PageHeader';
 import Layout from '../templates/Layout';
 import { Engineer } from '../assets/undraws';
@@ -13,6 +16,13 @@ const StyledJournalHome = styled('article')`
   flex-flow: column;
   justify-content: center;
   align-items: center;
+
+  section.tags {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.25rem;
+    padding-bottom: 1rem;
+  }
 `;
 
 const JournalGrid = styled('section')`
@@ -34,7 +44,7 @@ const Journal = React.memo(({ data }) => {
 
   return (
     <Layout>
-      <StyledJournalHome>
+      <StyledJournalHome className="container">
         <PageHeader>
           <Engineer />
           <>
@@ -53,7 +63,7 @@ const Journal = React.memo(({ data }) => {
             </Link>
           ))}
         </JournalGrid>
-        <section>
+        <section className="tags">
           {tags.group.map(thisTag => (
             <Tag to={`/tags/${kebabCase(thisTag.fieldValue)}/`} key={thisTag.fieldValue}>
               {thisTag.fieldValue}
@@ -62,6 +72,14 @@ const Journal = React.memo(({ data }) => {
           ))}
         </section>
       </StyledJournalHome>
+      <FindMe>
+        <CTALink
+          href='https://medium.com/@jo.imlay'
+          icon={faExternalLinkAlt}
+        >
+          find me on Medium
+        </CTALink>
+      </FindMe>
     </Layout>
   );
 });

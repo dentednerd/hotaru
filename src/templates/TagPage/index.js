@@ -27,36 +27,38 @@ const TagPage = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <PageHeader>
-          <Engineer />
-          <>
-            <p>This is the place in which I collect my thoughts on tech - the projects I&apos;ve worked on, events I&apos;ve attended, and the cool things I&apos;ve learned along the way.</p>
-            <h2>Journal</h2>
-          </>
-        </PageHeader>
-      <h2>{`entries about ${tag}`}</h2>
-      <JournalGrid>
-        {edges.map(({ node }) => (
-          <Link to={node.fields.slug}>
-            <HoverCard
-              text={node.frontmatter.title}
-              image={node.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
-              onClick={(e) => e.stopPropagation()}
-            />
-          </Link>
-        ))}
-      </JournalGrid>
-      <section>
-        {tags.group.map(thisTag => (
-          <Tag to={`/tags/${kebabCase(thisTag.fieldValue)}/`} key={thisTag.fieldValue}>
-            {thisTag.fieldValue}
-            <span>{thisTag.totalCount}</span>
-          </Tag>
-        ))}
-      </section>
-      <CTALink to="/journal">
-        &laquo; back to journal
-      </CTALink>
+      <div className="container">
+        <PageHeader>
+            <Engineer />
+            <>
+              <p>This is the place in which I collect my thoughts on tech - the projects I&apos;ve worked on, events I&apos;ve attended, and the cool things I&apos;ve learned along the way.</p>
+              <h2>Journal</h2>
+            </>
+          </PageHeader>
+        <h2>{`entries about ${tag}`}</h2>
+        <JournalGrid>
+          {edges.map(({ node }) => (
+            <Link to={node.fields.slug}>
+              <HoverCard
+                text={node.frontmatter.title}
+                image={node.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </Link>
+          ))}
+        </JournalGrid>
+        <section>
+          {tags.group.map(thisTag => (
+            <Tag to={`/tags/${kebabCase(thisTag.fieldValue)}/`} key={thisTag.fieldValue}>
+              {thisTag.fieldValue}
+              <span>{thisTag.totalCount}</span>
+            </Tag>
+          ))}
+        </section>
+        <CTALink to="/journal">
+          &laquo; back to journal
+        </CTALink>
+      </div>
     </Layout>
   );
 };

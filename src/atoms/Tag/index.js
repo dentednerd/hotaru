@@ -15,8 +15,6 @@ const StyledTag = styled('div')`
   color: ${colors.constants.darkPurple};
   padding: 0;
   border-radius: 0.25rem;
-  margin-bottom: 0.25rem;
-  margin-right: 0.25rem;
   transition: all 0.25s ease-in;
   text-decoration: none;
   overflow: hidden;

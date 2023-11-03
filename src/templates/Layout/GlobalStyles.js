@@ -18,7 +18,7 @@ const GlobalStyles = ({ children, theme }) => (
         padding: 0;
       }
 
-      @media (min-width: 1024px) {
+      @media (min-width: 800px) {
         body {
           font-size: 20px;
           line-height: 36px;
@@ -29,7 +29,7 @@ const GlobalStyles = ({ children, theme }) => (
 
       p {
         margin-top: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
       }
 
       p:last-child {

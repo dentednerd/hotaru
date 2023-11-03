@@ -4,14 +4,18 @@ const colors = {
     text: '#ffffff',
     accentBold: '#ffff66',
     accentLight: '#ffffcc',
-    navShadow: '#161032'
+    navShadow: '#161032',
+    bg2: '#990055',
+    bg3: '#332574'
   },
   light: {
     background: '#ffffff',
     text: '#666699',
     accentBold: '#ff44aa',
     accentLight: '#ffccee',
-    navShadow: 'rgba(51, 51, 102, 0.25)'
+    navShadow: 'rgba(51, 51, 102, 0.25)',
+    bg2: '#ffe5f6',
+    bg3: '#ffffcc'
   },
   constants: {
     pink: '#ff44aa',

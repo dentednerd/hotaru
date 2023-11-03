@@ -9,7 +9,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 
 const FaIcon = props => {
   const { icon, onClick } = props;
-  return <StyledIcon {...props} icon={icon} onClick={onClick} />;
+  return <StyledIcon className="icon" {...props} icon={icon} onClick={onClick} />;
 };
 
 export default FaIcon;

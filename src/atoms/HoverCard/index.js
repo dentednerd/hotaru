@@ -53,13 +53,20 @@ const HoverCard = ({ text, image, onClick }) => {
         );
         max-width: 80%;
         font-family: ${fonts.headline};
-        font-size: 1.25rem;
+        font-size: 16px;
         color: ${colors.constants.darkPurple};
         text-decoration: none;
         line-height: 1;
         padding: 0.5rem;
         transform: scale(1);
         transition: transform 0.2s ease-in-out;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @media (min-width: 800px) {
+          font-size: 1.25rem;
+        }
       }
     }
 

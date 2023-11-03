@@ -9,6 +9,7 @@ const JournalPost = ({ post }) => {
 
   const StyledJournalPost = styled('article')`
     position: relative;
+    width: calc(100% - 2rem);
     max-width: 800px;
     margin: 50vh auto 0;
   `;
@@ -44,12 +45,17 @@ const JournalPost = ({ post }) => {
   const Byline = styled('p')`
     font-family: ${fonts.cursive};
     font-size: 2rem;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem;
     color: ${colors.text};
   `;
 
   const Tags = styled('section')`
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.25rem;
     z-index: 2;
+    border-top: solid 1px ${colors.constants.purple};
+    padding: 1rem 0;
   `;
 
   return (

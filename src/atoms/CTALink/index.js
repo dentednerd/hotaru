@@ -41,9 +41,8 @@ const CTALink = ({
     color: ${color};
     width: fit-content;
     font-family: ${fonts.headline};
-    font-size: 1.25rem;
+    font-size: 16px;
     line-height: 1;
-    margin: 0 auto;
     padding: 1rem;
     transition: all 0.2s;
     cursor: pointer;
@@ -52,8 +51,9 @@ const CTALink = ({
     border-image-slice: ${ghost ? '1' : '0'};
     border-image-source: ${borderImageSource};
 
-    @media(min-width: 1024px) {
+    @media(min-width: 800px) {
       margin: 0;
+      font-size: 1.25rem;
     }
 
     section.center-text {

@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
 import CTALink from '../atoms/CTALink';
+import FindMe from '../molecules/FindMe';
 import PageHeader from '../molecules/PageHeader';
 import Modal from '../organisms/Modal';
 import Layout from '../templates/Layout';
@@ -10,7 +11,7 @@ import { Programmer } from '../assets/undraws';
 import { colors } from '../tokens';
 import talksData from '../data/talksData';
 
-const StyledShowreel = styled.section`
+const StyledSpeaking = styled.section`
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -30,6 +31,7 @@ const List = styled('ul')`
 
     &:last-of-type {
       border-bottom: none;
+      margin-bottom: 0;
     }
 
     section.links {
@@ -46,7 +48,7 @@ const List = styled('ul')`
   }
 `;
 
-const ShowreelTemplate = () => {
+const SpeakingTemplate = () => {
   const [showModal, setShowModal] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(
     'https://www.youtube.com/embed/locZbr8Dx1A'
@@ -60,20 +62,24 @@ const ShowreelTemplate = () => {
   return (
     <>
       <Layout>
-        <StyledShowreel>
+        <StyledSpeaking className="container">
           <PageHeader>
             <Programmer />
             <>
               <p>Sometimes folks like to get me on camera saying nice things about tech. What they don&apos;t always know is that I love talking about tech, and I&apos;d talk for hours if they&apos;d let me.</p>
-              <h2>Showreel</h2>
+              <h2>Speaking</h2>
             </>
           </PageHeader>
           <List>
             {talksData.map(talk => (
               <li className="talk" key={talk.name}>
+
                 <h3>{talk.name}</h3>
+
                 {talk.event && (<h4>{talk.event}<br /><span className="dates">{talk.date}</span></h4>)}
+
                 <p>{talk.description}</p>
+
                 <section className="links">
                   <CTALink
                     icon={faYoutube}
@@ -95,15 +101,23 @@ const ShowreelTemplate = () => {
                     </CTALink>
                   ))}
                 </section>
+
               </li>
             ))}
           </List>
-        </StyledShowreel>
-
+        </StyledSpeaking>
+        <FindMe>
+          <CTALink
+              href='https://noti.st/dentednerd'
+              icon={faExternalLinkAlt}
+            >
+              find me on Notist
+            </CTALink>
+        </FindMe>
       </Layout>
       <Modal show={showModal} setShow={setShowModal} currentVideo={currentVideo} />
     </>
   );
 };
 
-export default ShowreelTemplate;
+export default SpeakingTemplate;

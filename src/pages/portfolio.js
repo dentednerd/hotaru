@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { portfolioData } from '../data';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
+import CTALink from '../atoms/CTALink';
 import CurrentProject from '../molecules/CurrentProject';
 import PortfolioMenu from '../molecules/PortfolioMenu';
 import PageHeader from '../molecules/PageHeader';
@@ -24,24 +26,50 @@ const PortfolioTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <PageHeader>
-        <Late />
-        <>
-          <p>This isn&apos;t a comprehensive collection of all the projects I&apos;ve ever worked on, but I reckon these are the most important ones.</p>
-          <h2>Portfolio</h2>
-        </>
-      </PageHeader>
-      {data
-        ? (
+      <div className="container">
+        <PageHeader>
+          <Late />
           <>
-            <CurrentProject project={portfolioData[currentProject]} images={allImages} />
-            {allImages && <PortfolioMenu setCurrentProject={setCurrentProject} images={allImages} />}
-            <FindMe />
+            <p>This isn&apos;t a comprehensive collection of all the projects I&apos;ve ever worked on, but I reckon these are the most important ones.</p>
+            <h2>Portfolio</h2>
           </>
-        ) : (
-          <p>Loading...</p>
-        )
-      }
+        </PageHeader>
+        {data
+          ? (
+            <>
+              <CurrentProject project={portfolioData[currentProject]} images={allImages} />
+              {allImages && <PortfolioMenu setCurrentProject={setCurrentProject} images={allImages} />}
+
+            </>
+          ) : (
+            <p>Loading...</p>
+          )
+        }
+      </div>
+
+      <FindMe>
+        <CTALink
+          href='https://github.com/dentednerd'
+          icon={faExternalLinkAlt}
+        >
+          find me on GitHub
+        </CTALink>
+
+        <CTALink
+          href='https://codepen.io/dentednerd'
+          icon={faExternalLinkAlt}
+        >
+          find me on Codepen
+        </CTALink>
+
+        <CTALink
+          href='https://www.frontendmentor.io/profile/dentednerd'
+          icon={faExternalLinkAlt}
+        >
+          find me on Frontend Mentor
+        </CTALink>
+      </FindMe>
+
     </Layout>
   );
 };

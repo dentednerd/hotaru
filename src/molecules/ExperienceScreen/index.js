@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { stackMap } from '../../helpers';
-import { colors, fonts } from '../../tokens';
+import { colors } from '../../tokens';
 
 const ExperienceContainer = styled('section')`
   margin: 0 0 1rem;
   padding-bottom: 1rem;
   border-bottom: solid 1px ${colors.constants.purple};
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 
   p {
     margin-bottom: 0.5rem;
@@ -15,7 +19,7 @@ const ExperienceContainer = styled('section')`
   .stack {
     display: flex;
     flex-flow: row wrap;
-    font-family: ${fonts.headline};
+    gap: 0.25rem;
   }
 
   img {

@@ -7,6 +7,7 @@ import Layout from '../Layout';
 import Hero from './Hero';
 import JournalPost from './JournalPost';
 import HoverCard from '../../atoms/HoverCard';
+import FindMe from '../../molecules/FindMe';
 
 const NextPrevious = styled('nav')`
   display: grid;
@@ -41,26 +42,28 @@ const PostPage = ({ data, pageContext }) => {
       </Helmet>
       <Hero image={thisFeaturedImage.images.fallback.src} title={post.frontmatter.title} />
       <JournalPost post={post} />
-      <NextPrevious>
-        {pageContext.previous ? (
-          <Link to={previous.fields.slug}>
-            <HoverCard
-              text={`« ${previous.frontmatter.title}`}
-              image={previousImage}
-              onClick={(e) => e.stopPropagation()}
-            />
-          </Link>
-        ) : (<p>&nbsp;</p>)}
-        {pageContext.next ? (
-          <Link to={next.fields.slug}>
-            <HoverCard
-              text={`${next.frontmatter.title} »`}
-              image={nextImage}
-              onClick={(e) => e.stopPropagation()}
-            />
-          </Link>
-        ) : (<p>&nbsp;</p>)}
-      </NextPrevious>
+      <FindMe>
+        <NextPrevious>
+          {pageContext.previous && (
+            <Link to={previous.fields.slug}>
+              <HoverCard
+                text={`« ${previous.frontmatter.title}`}
+                image={previousImage}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </Link>
+          )}
+          {pageContext.next && (
+            <Link to={next.fields.slug}>
+              <HoverCard
+                text={`${next.frontmatter.title} »`}
+                image={nextImage}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </Link>
+          )}
+        </NextPrevious>
+      </FindMe>
     </Layout>
   );
 };

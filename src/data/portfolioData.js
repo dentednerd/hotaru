@@ -8,6 +8,10 @@ const portfolioData = {
         text: 'LADbible',
         url: 'https://www.ladbible.com',
       },
+      {
+        text: 'Medium: Automating BrowserStack screenshots',
+        url: 'https://medium.com/ladbiblegroup/automating-browserstack-screenshot-generation-with-circleci-502bad7dcb7d'
+      }
     ],
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
@@ -34,12 +38,10 @@ const portfolioData = {
         text: 'GAMINGbible',
         url: 'https://www.gamingbible.co.uk',
       },
-    ],
-    relatedPosts: [
       {
-        name: "Medium: Let's go, gamers: how we built the GAMINGbible menu",
-        slug: '/posts/lets-go-gamers/',
-      },
+        text: 'Medium: Let\'s go, gamers',
+        url: 'https://medium.com/ladbiblegroup/lets-go-gamers-how-we-made-the-gamingbible-menu-d33115c86e28'
+      }
     ],
     stack: ['React', 'Apollo', 'Koa', 'GraphQL'],
   },
@@ -54,7 +56,7 @@ const portfolioData = {
         url: 'https://www.tyla.com',
       },
       {
-        text: 'my Tyla swipe effect Codepen',
+        text: 'Codepen: CSS swipe-on-hover link',
         url: 'https://codepen.io/dentednerd/pen/WNNbwEo',
       },
     ],
@@ -133,12 +135,10 @@ const portfolioData = {
       {
         text: 'code',
         url: 'https://github.com/dentednerd/desoto'
-      }
-    ],
-    relatedPosts: [
+      },
       {
-        name: 'DeSoto: a StyleStage contribution',
-        slug: '/posts/desoto-stylestage-contribution/',
+        text: 'DeSoto: a StyleStage contribution',
+        url: '/posts/desoto-stylestage-contribution/',
       },
     ],
     stack: ['CSS', 'Sass'],
@@ -182,11 +182,9 @@ const portfolioData = {
         text: 'code',
         url: 'https://github.com/dentednerd/pinpin',
       },
-    ],
-    relatedPosts: [
       {
-        name: 'Pinpin: a calming new tab for Chrome',
-        slug: '/posts/pinpin/',
+        text: 'Pinpin: a calming new tab for Chrome',
+        url: '/posts/pinpin/',
       },
     ],
     stack: ['React'],
@@ -231,12 +229,6 @@ const portfolioData = {
         url: 'https://github.com/dentednerd/CodeNinjasBack'
       }
     ],
-    relatedPosts: [
-      {
-        name: 'Code Ninjas',
-        slug: '/posts/codeninjas/',
-      },
-    ],
     stack: ['React', 'Redux', 'Express', 'MongoDB'],
   },
 
@@ -263,24 +255,14 @@ const portfolioData = {
       },
     ],
     stack: ['React', 'Redux', 'Bulma', 'styled-components', 'Stitches', 'Express', 'MongoDB', 'PostgreSQL'],
-    relatedPosts: [
-      {
-        name: 'NC News, revisited',
-        slug: '/posts/nc-news-revisited/',
-      },
-      {
-        name: 'The Return of NC News',
-        slug: '/posts/the-return-of-nc-news/',
-      }
-    ],
   },
   houseofgames: {
     title: 'House of Games',
     caption:
-      "<p>Nowadays at NC, the individual project comes in two flavours: the news aggregation site that we all know and love, and a games rating and discussion site. However, the building of either of these projects is now very different to the stack we used when I was on the bootcamp. Instead of a MongoDB database, students now use PostgreSQL. On the front end, React hooks are much easier to grasp than Redux. </p><p>So I took the opportunity to build dentednerd's House of Games, getting more comfortable with SQL in the process, and using a CSS-in-JS library named Stitches for the first time on the front end. This was so successful that I went back and rebuilt NC News for the third time!</p>",
+      "<p>Nowadays at NC, the individual project comes in two flavours: the news aggregation site that we all know and love, and a games rating and discussion site. However, the building of either of these projects is now very different to the stack we used when I was on the bootcamp. Instead of a MongoDB database, students now use PostgreSQL. On the front end, React hooks are much easier to grasp than Redux. </p><p>So I took the opportunity to build House of Games, getting more comfortable with SQL in the process, and using a CSS-in-JS library named Stitches for the first time on the front end. This was so successful that I went back and rebuilt NC News for the third time!</p>",
     links: [
       {
-        text: "dentednerd's House of Games",
+        text: "House of Games",
         url: 'https://dentednerds-house-of-games.netlify.app/',
       },
       {
@@ -297,12 +279,6 @@ const portfolioData = {
       }
     ],
     stack: ['React', 'Stitches', 'Express', 'PostgreSQL'],
-    relatedPosts: [
-      {
-        name: 'The Return of NC News',
-        slug: '/posts/the-return-of-nc-news/',
-      }
-    ],
   },
 
 };
