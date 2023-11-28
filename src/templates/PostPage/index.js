@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Helmet } from 'react-helmet-async';
 import { Link, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from '../Layout';
 import Hero from './Hero';
 import JournalPost from './JournalPost';
+import SEO from '../../atoms/SEO';
 import HoverCard from '../../atoms/HoverCard';
 import FindMe from '../../molecules/FindMe';
 
@@ -31,15 +31,12 @@ const PostPage = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Helmet
-        htmlAttributes={{
-          lang: 'en',
-        }}
-      >
-        <title>{post.frontmatter.title}</title>
-        <meta name="description" content={post.excerpt} />
-        <meta name="author" content="Joey Imlay" />
-      </Helmet>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.excerpt}
+        featuredImage={thisFeaturedImage.images.fallback.src}
+        keywords={post.frontmatter.tags}
+      />
       <Hero image={thisFeaturedImage.images.fallback.src} title={post.frontmatter.title} />
       <JournalPost post={post} />
       <FindMe>

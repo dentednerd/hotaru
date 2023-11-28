@@ -7,6 +7,9 @@ module.exports = {
     title: 'Joey Imlay',
     description: 'front end developer in Manchester, England',
     siteUrl: 'https://www.joeyimlay.dev',
+    og: {
+      siteName: 'Joey Imlay'
+    }
   },
   plugins: [
     'gatsby-plugin-eslint',
