@@ -1,6 +1,5 @@
 const timelineData = [
   {
-    link: 'https://www.infinityworks.com/',
     dates: 'Aug 2022 - present',
     companyName: 'Accenture Next Gen Engineering (fka Infinity Works)',
     jobTitle: 'Consultant',
@@ -12,7 +11,6 @@ const timelineData = [
     ]
   },
   {
-    link: 'https://www.northcoders.com',
     dates: 'Jun 2021 - Aug 2022',
     companyName: 'Northcoders',
     jobTitle: 'Software Engineer & Mentor',
@@ -22,7 +20,6 @@ const timelineData = [
     skills: ['NodeJS', 'Express', 'SQL', 'React', 'HTML', 'CSS'],
   },
   {
-    link: 'http://www.ladbible.com',
     dates: 'Jul 2018 - Jun 2021',
     companyName: 'LADbible Group',
     jobTitle: 'Software Engineer',
@@ -50,14 +47,6 @@ const timelineData = [
     ],
   },
   {
-    link: 'https://www.northcoders.com',
-    dates: 'May - Jun 2018',
-    companyName: 'Northcoders',
-    jobTitle: 'Tutor (Saturdays)',
-    skills: ['React', 'HTML', 'CSS'],
-  },
-  {
-    link: 'https://www.careicon.com',
     dates: 'Aug 2017 - Jul 2018',
     companyName: 'Careicon',
     jobTitle: 'Front End Developer',

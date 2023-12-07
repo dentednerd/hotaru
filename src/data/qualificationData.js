@@ -5,7 +5,7 @@ const qualificationData = [
   },
   {
     qualification: 'Professional Scrum Master I',
-    date: '2023'
+    date: '2024'
   },
 ];
 

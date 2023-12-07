@@ -210,7 +210,7 @@ const portfolioData = {
   CodeNinjas: {
     title: 'Code Ninjas',
     caption:
-      '<p>An educational multiple-choice game, created during the final project phase at NC in a team of four. Accessibility was important to our design approach.</p><p>I tried to keep that approach to accessibility in the second version, whilst implementing a cleaner, slicker design, and adding new features such as level select, a progress bar for each level, and more ninja-themed assets!</p>',
+      '<p>An educational multiple-choice game, created with Team JSKids. Accessibility was important to our design approach.</p><p>I tried to keep that approach to accessibility in the second and third versions, whilst implementing a cleaner, slicker design, and adding new features such as level select, a progress bar for each level, and more ninja-themed fun!</p>',
     links: [
       {
         text: 'Code Ninjas',
@@ -232,34 +232,10 @@ const portfolioData = {
     stack: ['React', 'Redux', 'Express', 'MongoDB'],
   },
 
-  NCNews: {
-    title: 'NC News',
-    caption:
-      "<p>An ERN-stack Reddit clone, created over two sprints at NC.</p><p>The first version of the front end, created near the end of the course, was styled with Bulma. This experience taught me that I prefer not to use CSS frameworks whenever possible. No disrespect to Bulma users, obviously! But it's not for me.</p><p>In version 2, I used this project to demonstrate Docker containerisation to some colleagues, and I took the opportunity to add new functionality, refactor, redesign (replacing Bulma with styled-components), and redeploy.</p><p>In version 3, I completely rebuilt the API in PostgreSQL instead of MongoDB, and also rebuilt the front end using hooks and context instead of Redux, and Stitches instead of styled-components.</p>",
-    links: [
-      {
-        text: 'NC News',
-        url: 'https://dentednerds-northcoders-news.netlify.app/',
-      },
-      {
-        text: 'nc-news-finale API',
-        url: 'https://nc-news-finale.fly.dev/',
-      },
-      {
-        text: 'front end code',
-        url: 'https://github.com/dentednerd/ncnews'
-      },
-      {
-        text: 'back end code',
-        url: 'https://github.com/dentednerd/nc-news-sql',
-      },
-    ],
-    stack: ['React', 'Redux', 'Bulma', 'styled-components', 'Stitches', 'Express', 'MongoDB', 'PostgreSQL'],
-  },
   houseofgames: {
     title: 'House of Games',
     caption:
-      "<p>Nowadays at NC, the individual project comes in two flavours: the news aggregation site that we all know and love, and a games rating and discussion site. However, the building of either of these projects is now very different to the stack we used when I was on the bootcamp. Instead of a MongoDB database, students now use PostgreSQL. On the front end, React hooks are much easier to grasp than Redux. </p><p>So I took the opportunity to build House of Games, getting more comfortable with SQL in the process, and using a CSS-in-JS library named Stitches for the first time on the front end. This was so successful that I went back and rebuilt NC News for the third time!</p>",
+      "<p>House of Games is a full-stack app, with an Express API on top of a PostgreSQL database, and a React front end using context and localStorage to mock user login, with Stitches for styling.</p>",
     links: [
       {
         text: "House of Games",

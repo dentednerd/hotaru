@@ -30,6 +30,14 @@ const HomePage = () => {
         row-gap: 0;
         text-align: left;
       }
+
+      div.text-content > * {
+        margin-inline: auto;
+
+        @media (min-width: 1024px) {
+          margin-inline: 0;
+        }
+      }
     }
 
     &::after {
@@ -51,10 +59,10 @@ const HomePage = () => {
       -webkit-text-fill-color: transparent;
       font-family: "Raleway", sans-serif;
       font-weight: 900;
-      margin-inline: auto;
+      margin-inline: auto !important;
 
-      @media (min-width: 800px) {
-        margin-inline: 0;
+      @media (min-width: 1024px) {
+        margin-inline: 0 !important;
       }
     }
 
@@ -102,7 +110,7 @@ const HomePage = () => {
       {introData.map((entry, index) => (
         <HomeSection index={index} key={entry.text} backgroundColor={entry.color}>
           <div className="container">
-            <div>
+            <div className="text-content">
               <section className="content" dangerouslySetInnerHTML={{ __html: entry.content }} />
               <CTALink to={entry.link} icon={entry.icon}>
                 {entry.text}

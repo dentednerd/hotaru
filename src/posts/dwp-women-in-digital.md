@@ -6,7 +6,7 @@ category: "events"
 tags: ["women in tech"]
 ---
 
-A few weeks ago, James from NC put out an open invitation to the WiT community for speakers to follow his opening keynote speech at the [DWP Women in Digital conference](https://dwpdigital.blog.gov.uk/2018/05/30/introducing-our-second-women-in-digital-event/) in Leeds. He hoped a few of us could talk about our journeys into coding, to further illustrate the good work NC already does in getting women into technology careers. I immediately volunteered.
+In the spring of 2018, James Brooke put out an open invitation to the WiT community for speakers to follow his opening keynote speech at the [DWP Women in Digital conference](https://dwpdigital.blog.gov.uk/2018/05/30/introducing-our-second-women-in-digital-event/) in Leeds. He hoped a few of us could talk about our journeys into coding, so I immediately volunteered.
 
 [DWP Digital guest post by James: Changing workplace dynamics](https://dwpdigital.blog.gov.uk/2018/06/18/guest-post-changing-workplace-dynamics/)
 

@@ -3,7 +3,6 @@ import interestsData from './interestsData';
 import introData from './introData';
 import portfolioData from './portfolioData';
 import timelineData from './timelineData';
-import timelineOldData from './timelineOldData';
 import qualificationData from './qualificationData';
 
 export {
@@ -12,6 +11,5 @@ export {
   introData,
   portfolioData,
   timelineData,
-  timelineOldData,
   qualificationData,
 };

@@ -10,7 +10,7 @@ Huge congratulations to [Beckie Taylor](https://twitter.com/RTaylor81) and the [
 
 ## Harriet Ryder
 
-My former mentor from NC days, now working with Tech Returners and Codebar, talked about the things she's learned from coaching and mentoring so many people in the tech world over the past three years. She might not have a background in education, but her experience has given her a lot of excellent insight into how people learn, and by extension the best way people can be taught new skills by an expert.
+My former mentor, now working with Tech Returners and Codebar, talked about the things she's learned from coaching and mentoring so many people in the tech world over the past three years. She might not have a background in education, but her experience has given her a lot of excellent insight into how people learn, and by extension the best way people can be taught new skills by an expert.
 
 Key point: Use compassionate language - no "only", "just" or "simply".
 
