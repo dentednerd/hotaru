@@ -63,12 +63,11 @@ const TagPage = ({ pageContext, data }) => {
 
 export default TagPage;
 
-export const pageQuery = graphql`
-query($tag: String) {
+export const pageQuery = graphql`query ($tag: String) {
   taggedPosts: allMarkdownRemark(
     limit: 2000
-    sort: { fields: [frontmatter___date], order: DESC }
-    filter: { frontmatter: { tags: { in: [$tag] } } }
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {tags: {in: [$tag]}}}
   ) {
     totalCount
     edges {
@@ -89,10 +88,9 @@ query($tag: String) {
     }
   }
   tags: allMarkdownRemark {
-    group(field: frontmatter___tags) {
+    group(field: {frontmatter: {tags: SELECT}}) {
       fieldValue
       totalCount
     }
   }
-}
-`;
+}`;

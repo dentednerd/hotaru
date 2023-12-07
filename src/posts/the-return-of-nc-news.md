@@ -1,20 +1,16 @@
 ---
-title: "The Return of Northcoders News"
+title: "The Return of NC News"
 date: "2021-09-16"
 featuredImage: "./images/the-return-of-northcoders-news.png"
 category: "projects"
-tags: ["Northcoders", "React", "Heroku", "hooks", "CSS-in-JS", "Stitches", "PostgreSQL"]
+tags: ["React", "Heroku", "fly.io", "Netlify", "hooks", "CSS-in-JS", "Stitches", "PostgreSQL"]
 ---
 
-"Maybe one day I'll be back with Northcoders News v3!" Remember when I said that?
-
-Hiiiii.
-
-I do love when a prophecy comes to pass. Yes, my third iteration of [Northcoders News](https://dentednerds-northcoders-news.netlify.app/) is now live. The data is still the same, but the code is *very* different.
+"Maybe one day I'll be back with NC News v3!" Remember when [I said that](https://www.joeyimlay.dev/posts/northcoders-news-revisited/)? Well, here we are. I do love when I eventually prove myself right. In this version, the data is still the same, but the code on both ends is *very* different.
 
 ## Plus ça change
 
-It makes sense that a few things on the course have changed since my time on the bootcamp. Not only has the stack changed - SQL instead of MongoDB on the back end, and hooks replacing Redux on the React side - but the sprint now offers a choice of datasets. NC News still exists, but now there is also NC Games - still very Reddit-clone-y, but with a focus on board game reviews. My primary motivation in building first House of Games, then my third iteration of Northcoders News, was to brush up on my SQL knowledge so I can be as supportive to current Northcoders students as possible. But that's not to say I didn't have some fun with it too.
+It makes sense that a few things on the course have changed since my time on the bootcamp. Not only has the stack changed - SQL instead of MongoDB on the back end, and hooks replacing Redux on the React side - but the sprint now offers a choice of datasets. NC News still exists, but now there is also NC Games - still very Reddit-clone-y, but with a focus on board game reviews. My primary motivation in building first House of Games, then my third iteration of NC News, was to brush up on my SQL knowledge so I can be as supportive to current NC students as possible. But that's not to say I didn't have some fun with it too.
 
 ## SQL in the API
 
@@ -34,9 +30,15 @@ So what will the inevitable version 4 look like? Maybe I'll combine the two into
 
 Never underestimate the power of revisiting old projects and rebuilding them. It's not just about the nostalgia hit, but it's good practice for both old and new skills, and it's a huge confidence booster to boot.
 
-See you in Northcoders News v4: Endgame...
+See you in NC News v4: Endgame...
+
+## Postscript
+
+Joey from October 2023 here. For a number of reasons there won't be a version 4, but maintenance had to be done on all my NC projects after Heroku removed their free Postgres hosting tier. With plenty of time on my hands (the subject of a future journal entry), I Dockerised the API and deployed it on [fly.io](https://fly.io) alongside their free Postgres provision, with documentation on the front page created in EJS. On the front end, I've squished all the previous codebases into one repo with separate branches for each version, with the latest version deployed on [Netlify](https://netlify.com).
+
+I've repeated this process for House of Games. The Code Ninjas API now also lives on fly.io, but its MongoDB database is hosted on [MongoDB Atlas](https://cloud.mongodb.com) (thank goodness that's still free). Once the Code Ninjas front end has been upgraded and deployed, I'll be putting all NC projects aside for good. It's time to move on.
 
 ## Further reading
 
-- Northcoders News: [live](https://dentednerds-northcoders-news.netlify.app/), [API](https://nc-news-sql-dentednerd.herokuapp.com/api), [front end code](https://github.com/dentednerd/nc-news-3), [back end code](https://github.com/dentednerd/nc-news-sql-dentednerd)
-- House of Games: [live](https://dentednerds-house-of-games.netlify.app/), [API](https://nc-games-sql-dentednerd.herokuapp.com/api), [front end code](https://github.com/dentednerd/house-of-games), [back end code](https://github.com/dentednerd/be-nc-games)
+- NC News: [live](https://dentednerds-northcoders-news.netlify.app/), [API](https://nc-news-finale.fly.dev/), [front end code](https://github.com/dentednerd/ncnews), [back end code](https://github.com/dentednerd/nc-news-sql)
+- House of Games: [live](https://dentednerds-house-of-games.netlify.app/), [API](https://nc-games-finale.fly.dev/), [front end code](https://github.com/dentednerd/house-of-games), [back end code](https://github.com/dentednerd/nc-games-sql)

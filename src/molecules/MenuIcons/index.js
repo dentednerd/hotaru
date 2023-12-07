@@ -53,11 +53,11 @@ const NavItem = styled(Link)`
 
   &:hover {
     text-decoration: none;
-    color: ${props => props.theme.link};
+    color: ${props => props.theme.accentBold};
 
     svg {
       transform: scale(1.5);
-      color: ${props => props.theme.link};
+      color: ${props => props.theme.accentBold};
       transition: all 0.2s ease-in-out;
     }
   }
