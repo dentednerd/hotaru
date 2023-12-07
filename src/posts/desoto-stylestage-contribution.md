@@ -10,7 +10,7 @@ Sometimes you have to do the scary thing. I finally submitted a contribution to 
 
 The project in question is [StyleStage](https://stylestage.dev/), created and maintained by [Steph Eckles](https://twitter.com/5t3ph). It's a CSS showcase that anyone can contribute to; the idea is that you create your own stylesheet for the front page of the project. Your design, your method and the technology you use are all up to you, as long as you end up with a single unminified CSS file.
 
-So that's what I did, and now here's how I did it. Welcome to the story of my StyleStage contribution: DeSoto.
+So that's what I did, and now here's how I did it. Welcome to the story of my StyleStage contribution: [DeSoto](https://stylestage.dev/styles/desoto/).
 
 ## Be inspired by what you love
 

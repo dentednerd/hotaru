@@ -1,18 +1,18 @@
 ---
 title: "DWP Women in Digital conference"
-date: "2018-06-21" 
+date: "2018-06-21"
 featuredImage: "./images/dwp.jpg"
 category: "events"
-tags: ["Northcoders", "women in tech"]
+tags: ["women in tech"]
 ---
 
-A few weeks ago, James from [Northcoders](https://www.northcoders.com) put out an open invitation to the Northcoders WiT community for speakers to follow his opening keynote speech at the [DWP Women in Digital conference](https://dwpdigital.blog.gov.uk/2018/05/30/introducing-our-second-women-in-digital-event/) in Leeds. He hoped a few of us could talk about our journeys into coding, to further illustrate the good work Northcoders already do in getting women into technology careers. I immediately volunteered, for two reasons. Firstly, being a Northcoder has absolutely turned my life around, and I will take any opportunity to tell people how supportive and encouraging the Northcoders community is. Secondly, I have a certain history with the DWP, and I figured it might be time to face down an old demon or two. (Disclaimer: I did not meet anyone in the least bit demonic that day. My issues are with the policymakers, not with the people on the ground.)
+A few weeks ago, James from NC put out an open invitation to the WiT community for speakers to follow his opening keynote speech at the [DWP Women in Digital conference](https://dwpdigital.blog.gov.uk/2018/05/30/introducing-our-second-women-in-digital-event/) in Leeds. He hoped a few of us could talk about our journeys into coding, to further illustrate the good work NC already does in getting women into technology careers. I immediately volunteered.
 
 [DWP Digital guest post by James: Changing workplace dynamics](https://dwpdigital.blog.gov.uk/2018/06/18/guest-post-changing-workplace-dynamics/)
 
-Going into this, I had a good idea of the sort of impact James’ keynote would have on the conference. He’s passionate about gender equality and diversity not just in the tech world but in the workplace full stop. I wouldn’t have been able to become a Northcoder if it hadn’t been for their Women in Tech scholarships. I think the statement James made about diffusion of responsibility gave the whole audience food for thought - our efforts may seem tiny and insignificant, but they are part of a massive whole and we can, in fact, have a great influence when we pull together.
+Going into this, I had a good idea of the sort of impact James’ keynote would have on the conference. He’s passionate about gender equality and diversity not just in the tech world but in the workplace full stop. I wouldn’t have been able to become an NCer if it hadn’t been for their Women in Tech scholarships. I think the statement James made about diffusion of responsibility gave the whole audience food for thought - our efforts may seem tiny and insignificant, but they are part of a massive whole and we can, in fact, have a great influence when we pull together.
 
-“No snowflake feels responsible in an avalanche.” – Voltaire
+> “No snowflake feels responsible in an avalanche.” – Voltaire
 
 What I wasn’t prepared for, however, was the impact that [Emily](https://twitter.com/emily_walker_96), [Bernie](https://twitter.com/BernieSnell) and I would have on the day. I had no idea that sharing our stories would be so powerful. Emily talked about how imposter syndrome affects us all. Bernie shared the importance of seeing people like ourselves succeeding at what we want to do. And I, in terrified demon-fighting form, spoke for the first time in public about the impact domestic abuse had on me, and why having a community telling you “yes, you can” is so vital.
 
@@ -26,6 +26,12 @@ I don’t know if or how sharing my own story will continue to have an impact be
 
 I want to thank everyone that attended that day for making the event the inspiration that it was. I hope I’ve managed to follow everyone who tweeted about it! It’s my hope that we women of the digital world continue to be the role models that women of the future need to see.
 
-“Feel the fear and do it anyway.” – Susan Jeffers
+> “Feel the fear and do it anyway.” – Susan Jeffers
 
-[DWPWID Twitter moment](https://twitter.com/i/moments/1009365383567020034)
+## Postscript
+
+This entry has been edited to reflect the shift in NC's mission statement.
+
+## Further reading
+
+- [DWPWID Twitter moment](https://twitter.com/i/moments/1009365383567020034)

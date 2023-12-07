@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { hexToRGBA } from '../../../helpers';
+import { colors } from '../../../tokens';
 
-const Hero = ({ image, alt }) => {
+const Hero = ({ image, title }) => {
   const theme = useTheme();
 
   const StyledHero = styled('header')`
@@ -12,34 +13,28 @@ const Hero = ({ image, alt }) => {
     left: 0;
     width: 100vw;
     height: 50vh;
+    display: grid;
+    place-items: center;
     overflow: hidden;
+    background-image: url(${image}), linear-gradient(to bottom right, ${hexToRGBA(theme.accentLight, 0.75)}, ${hexToRGBA(colors.constants.purple, 0.75)});
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: darken;
 
-    div {
-      width: 100vw;
-      height: 50vh;
+    h2 {
+      max-width: 800px;
+      text-align: center;
+      padding: 1rem;
+      margin: 0 1rem;
+      background-color: ${theme.accentLight};
+      color: ${colors.constants.purple};
+      border: solid 0.5rem ${colors.constants.purple};
     }
-
-    img {
-      object-fit: cover !important;
-      object-position: center;
-    }
-  `;
-
-  const Overlay = styled('div')`
-    position: absolute;
-    z-index: 9999;
-    background-image: linear-gradient(to bottom, transparent, ${theme.background} 50vh);
   `;
 
   return (
     <StyledHero>
-      <Overlay>
-        &nbsp;
-      </Overlay>
-      <GatsbyImage
-        image={image}
-        alt={alt}
-      />
+      <h2>{title}</h2>
     </StyledHero>
   );
 };

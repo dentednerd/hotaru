@@ -35,13 +35,13 @@ const StyledMenu = styled.div`
   }
 `;
 
-const PortfolioMenu = ({ setCurrentProject, images }) => {
-  if (!images) return null;
+const PortfolioMenu = ({ setCurrentProject, images = [] }) => {
+  if (!images || !images.length) return null;
 
   return (
     <StyledMenu>
       <div className="grid">
-        {projectList.sort().map(
+        {projectList.map(
           item => {
             const project = portfolioData[item];
             const projectImage = getProjectImage(project, images);

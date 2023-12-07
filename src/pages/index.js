@@ -12,25 +12,22 @@ const HomeSection = styled('section')`
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: 1fr;
-  row-gap: 1rem;
+  gap: 2rem;
   place-items: center;
+  text-align: center;
 
-  @media(min-width: 800px) {
+  @media(min-width: 1024px) {
     grid-template-rows: 1fr;
     grid-template-columns: 2fr 1fr;
     column-gap: 1rem;
     row-gap: 0;
+    text-align: left;
   }
 
   &::after {
     content: '';
     display: table;
     clear: both;
-  }
-
-  section,
-  p {
-    text-align: left;
   }
 
   svg {
@@ -42,10 +39,12 @@ const HomeSection = styled('section')`
     display: flex;
     flex-flow: column;
     justify-content: center;
-  }
+    margin-bottom: 1rem;
+    order: 2;
 
-  section.cta {
-    flex-flow: column;
+    @media (min-width: 1024px) {
+      order: 1;
+    }
   }
 `;
 
@@ -53,13 +52,13 @@ const HomePage = () => (
   <Layout>
     {introData.map((entry, index) => (
       <HomeSection index={index} key={entry.text}>
-        <section className="content" dangerouslySetInnerHTML={{ __html: entry.content }} />
         <div>
-          {entry.svg}
+          <section className="content" dangerouslySetInnerHTML={{ __html: entry.content }} />
           <CTALink to={entry.link} icon={entry.icon}>
             {entry.text}
           </CTALink>
         </div>
+        {entry.svg}
       </HomeSection>
     ))}
   </Layout>

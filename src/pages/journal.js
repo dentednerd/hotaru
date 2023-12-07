@@ -20,6 +20,7 @@ const JournalGrid = styled('section')`
   grid-template-columns: 1fr;
   gap: 1rem;
   margin-bottom: 2rem;
+  width: 100%;
 
   @media (min-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
@@ -28,6 +29,8 @@ const JournalGrid = styled('section')`
 
 const Journal = React.memo(({ data }) => {
   const { posts, tags } = data;
+
+  if (!data) return <p>Loading...</p>;
 
   return (
     <Layout>
@@ -65,64 +68,60 @@ const Journal = React.memo(({ data }) => {
 
 export default Journal;
 
-export const pageQuery = graphql`
-  query {
-    posts: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
-      edges {
-        next {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
+export const pageQuery = graphql`{
+  posts: allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    edges {
+      next {
+        fields {
+          slug
         }
-        previous {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
+        frontmatter {
+          title
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData
             }
           }
-        }
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-            tags
-            category
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 90)
-          html
         }
       }
-    }
-    tags: allMarkdownRemark {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
+      previous {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+      node {
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          tags
+          category
+        }
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 90)
+        html
       }
     }
   }
-`;
+  tags: allMarkdownRemark {
+    group(field: {frontmatter: {tags: SELECT}}) {
+      fieldValue
+      totalCount
+    }
+  }
+}`;
