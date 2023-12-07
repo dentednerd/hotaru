@@ -8,9 +8,7 @@ tags: ["Visual Studio Code", "iTerm2", "zsh"]
 
 Most of my life as a developer is wrapped up in [Visual Studio Code](https://code.visualstudio.com/). I love it - it's endlessly customisable and extendable, which is great when you have a burning need to impress your own personality upon your immediate environment.
 
-Below I've linked to the VSCode extensions I use on the daily, along with the relevant settings from my `settings.json`. [Let me know](https://www.twitter.com/dentednerd) if any of these are useful to you!
-
-> Because so many Northcoders students have been asking me about my theme, I've updated this post just for you!
+Below I've linked to the VSCode extensions I use on the daily, along with the relevant settings from my `settings.json`.
 
 ## Colours
 
@@ -55,8 +53,6 @@ To easily differentiate between repos, I use [Peacock](https://marketplace.visua
   },
 ]
 ```
-
-> Update: Peacock was super helpful in my work at LADbible, where I was working with a handful of repos. At Northcoders, I'm jumping in and out of hundreds of repos, so setting a Peacock colour for every repo would be troublesome! But I'm leaving these settings here in case you find them useful.
 
 Here are some further customisations I've made to the colours in VSCode, in keeping with the theme but also maximising readability:
 
@@ -124,8 +120,6 @@ Let me head this section up with another recommendation - the [Command Line Powe
 
 In iTerm2, I've split up my default window into four panes, one for each of the repos I work with most often. I've set them up to run immediately on startup - one click to open iTerm, and a few seconds later all my Docker containers are up and running. No typing. Terminal zen.
 
-> Update: Again, this was super useful at LAD; I only use a single pane at Northcoders.
-
 Replicating this level of zen in VSCode's integrated terminal requires a few extra settings. To get VSCode to use iTerm, add these settings:
 
 ```json
@@ -133,7 +127,7 @@ Replicating this level of zen in VSCode's integrated terminal requires a few ext
 "terminal.explorerKind": "external",
 ```
 
-With this, your integrated terminal will happily use zsh, Oh My ZSH and your chosen OMZ theme, but it's likely that if you're using a colour scheme in iTerm, your integrated terminal colours won't match yet. Don't worry, because there are settings for those too. A *lot* of settings...
+With this, your integrated terminal will happily use zsh, Oh My ZSH and your chosen OMZ theme, but it's likely that if you're using a colour scheme in iTerm, your integrated terminal colours won't match yet. Don't worry, because there are settings for those too:
 
 ```json
 "workbench.colorCustomizations" : {
@@ -159,6 +153,7 @@ With this, your integrated terminal will happily use zsh, Oh My ZSH and your cho
 },
 ```
 
-One final recommendation:  [VSCode can do that?!](https://vscodecandothat.com/) lists a ton of features and extensions for VSCode that might make your dev life a little easier.
+## Further reading
 
-Has this inspired you to upgrade your dev environment? Do you also find the fairyfloss palette great for coding? [Drop me a tweet](https://www.twitter.com/dentednerd) if you found this post helpful!
+- [VSCode can do that?!](https://vscodecandothat.com/)
+- [25 VS Code Productivity Tips and Speed Hacks](https://www.youtube.com/watch?v=ifTF3ags0XI)

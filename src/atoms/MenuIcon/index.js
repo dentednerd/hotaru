@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { colors } from '../../tokens';
 
 
 const StyledMenuIcon = styled('div')`
@@ -16,7 +15,7 @@ const StyledMenuIcon = styled('div')`
     position: absolute;
     height: 0.25rem;
     width: 100%;
-    background: ${colors.constants.purple};
+    background: ${props => props.theme.text};
     border-radius: 0.125rem;
     opacity: 1;
     left: 0;

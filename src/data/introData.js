@@ -23,7 +23,7 @@ const introData = [
   },
   {
     content:
-      "<h2>I'm a career changer.</h2><p>In 2017, I decided to switch away from an unhappy career in primary school teaching to working in tech. I won a women in tech scholarship to <a href='http://www.northcoders.com'>Northcoders</a>, and trained as a JavaScript developer. It was the most intense three months of my life, and the experience immeasurably changed my life for the better. These days, I'm a consultant with Infinity Works.</p>",
+      "<h2>I'm a career changer.</h2><p>In 2017, I was awarded a women in tech scholarship to a JavaScript bootcamp. My career in tech took off, and right now I'm a consultant with Accenture Next Gen Engineering.</p>",
       link: '/showreel',
       icon: faYoutube,
       text: 'Watch me talking tech.',

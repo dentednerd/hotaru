@@ -5,8 +5,8 @@ const shadows = {
   menuShadow: '-0.25rem 0.25rem 0.25rem rgba(51, 46, 74, 0.5)',
   darkShadow: '0 0.5rem 0.5rem rgba(22, 16, 50, 0.5)',
   slimShadow: '0 0.25rem 0.25rem rgba(22, 16, 50, 0.5)',
-  ctaShadow: `0.25rem 0.25rem 0 ${colors.constants.lightpurple}`,
-  ctaHoverShadow: `0.5rem 0.5rem 0 ${colors.constants.darkpurple}`
+  ctaShadow: `0.25rem 0.25rem 0 ${colors.constants.lightPurple}`,
+  ctaHoverShadow: `0.5rem 0.5rem 0 ${colors.constants.lightPurple}`
 };
 
 export default shadows;
