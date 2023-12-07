@@ -5,7 +5,7 @@ import { colors, fonts } from '../../tokens';
 
 config.autoAddCss = false;
 
-const GlobalStyles = ({ children }) => (
+const GlobalStyles = ({ children, theme }) => (
   <Global
     styles={css`
       body {
@@ -46,12 +46,12 @@ const GlobalStyles = ({ children }) => (
         padding: 1rem;
         margin: 1rem auto;
         background-color: ${colors.constants.green};
-        color: ${colors.constants.darkpurple};
+        color: ${colors.constants.darkPurple};
         border-radius: 1rem;
       }
 
       blockquote a {
-        color: ${colors.constants.darkpurple};
+        color: ${colors.constants.darkPurple};
         text-decoration: underline;
       }
 
@@ -68,6 +68,23 @@ const GlobalStyles = ({ children }) => (
 
       /* headings */
 
+      h1 {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        color: ${theme.accentBold};
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        font-family: ${fonts.cursive};
+        margin: 1rem 0;
+        padding: 0;
+      }
+
+      h1:hover {
+        color:${theme.accentBold};
+      }
+
       h2 {
         font-family: ${fonts.headline};
         font-weight: 700;
@@ -77,11 +94,19 @@ const GlobalStyles = ({ children }) => (
       }
 
       h3 {
-        font-family: ${fonts.headline};
-        font-weight: 700;
-        font-size: 1.75rem;
-        line-height: 2rem;
+        display: flex;
+        align-items: center;
+        height: 2rem;
         margin: 0 0 1rem;
+        padding: 0.5rem;
+        background-color: ${theme.accentLight};
+        color: ${colors.constants.darkPurple} !important;
+        font-family: ${fonts.contrast};
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.125rem;
       }
 
       h3 svg {
@@ -95,23 +120,59 @@ const GlobalStyles = ({ children }) => (
 
       h4 {
         font-family: ${fonts.headline};
-        font-weight: 300;
-        font-size: 1rem;
-        line-height: 1rem;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 1;
         margin: 0 0 1rem;
         letter-spacing: -0.05rem;
-        color: ${colors.constants.darkpurple};
+        color: ${theme.accentBold};
+      }
+
+      h5 {
+        display: grid;
+        place-items: center left;
+        height: 1.5rem;
+        width: fit-content;
+        margin: 0 0 1rem;
+        padding: 0.25rem;
+        background-color: ${theme.accentLight};
+        color: ${colors.constants.darkPurple} !important;
+        font-family: ${fonts.contrast};
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1;
+        /* text-transform: uppercase; */
+        letter-spacing: 0.125rem;
+      }
+
+      h6 {
+        font-family: ${fonts.headline};
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1;
+        margin: 0 0 1rem;
+        letter-spacing: -0.05rem;
+        color: ${theme.accentBold};
       }
 
       a {
         text-decoration: none;
-        color: var(--color-link);
+        color: ${theme.accentBold};
         transition: 0.5s ease;
       }
 
       a:hover {
         text-decoration: underline;
         transition: 0.5s ease;
+      }
+
+      .dates {
+        font-family: ${fonts.contrast} !important;
+        font-size: 1rem;
+        line-height: 1;
+        letter-spacing: 0.125rem;
+        font-weight: 100 !important;
+        color: ${theme.text} !important;
       }
 
       .svg-inline--fa {
@@ -180,12 +241,12 @@ const GlobalStyles = ({ children }) => (
 
       :not(pre) > code[class*='language-'],
       pre[class*='language-'] {
-        background-color: ${colors.constants.darkpurple} !important;
+        background-color: ${colors.constants.darkPurple} !important;
       }
 
       /* Inline code */
       :not(pre) > code[class*='language-'] {
-        background-color: ${colors.constants.darkpurple};
+        background-color: ${colors.constants.darkPurple};
         display: inline-block;
         padding: 0 0.125rem;
         border-radius: 0.125rem;
@@ -205,11 +266,11 @@ const GlobalStyles = ({ children }) => (
       .token.prolog,
       .token.doctype,
       .token.cdata {
-        color: ${colors.lightpurple};
+        color: ${colors.lightPurple};
       }
 
       .token.punctuation {
-        color: ${colors.lightpurple};
+        color: ${colors.lightPurple};
       }
 
       .token.tag,

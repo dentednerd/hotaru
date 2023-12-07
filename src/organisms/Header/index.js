@@ -19,7 +19,7 @@ const StyledHeader = styled('header')`
   color: ${props => props.theme.text};
   padding: 0 1rem;
   margin-bottom: 1rem;
-  box-shadow: ${shadows.darkShadow};
+  box-shadow: 0 0.15rem 0.15rem ${props => props.theme.navShadow};
 `;
 
 const Menu = styled('div')`
@@ -27,7 +27,7 @@ const Menu = styled('div')`
   top: 56px;
   right: calc(-1rem - 1px);
   background-color: ${props => props.theme.background};
-  box-shadow: ${shadows.darkShadow};
+  box-shadow: 0 0.15rem 0.15rem ${props => props.theme.navShadow};
   padding: 1rem;
   height: 10rem;
   width: 8rem;
@@ -60,6 +60,10 @@ const DesktopNav = styled('nav')`
   @media(min-width: 1024px) {
     display: inline-block;
     flex: 1;
+
+    a {
+      color: ${props => props.theme.text};
+    }
   }
 `;
 
@@ -73,6 +77,12 @@ const MobileNav = styled('nav')`
   @media(min-width: 1024px) {
     display: none;
   }
+`;
+
+const ButtonContainer = styled('section')`
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
 `;
 
 const Header = ({ darkMode }) => {
@@ -90,17 +100,19 @@ const Header = ({ darkMode }) => {
       <DesktopNav>
         <MenuIcons />
       </DesktopNav>
-      <DarkToggle darkMode={darkMode} />
-      <MobileNav>
-        <MenuIcon
-          isOpen={isOpen}
-          toggleIsOpen={toggleIsOpen}
-          headerClasses={headerClasses}
-        />
-        <Menu className={headerClasses.join(' ')} theme={theme}>
-          <MenuIcons toggleIsOpen={toggleIsOpen} />
-        </Menu>
-      </MobileNav>
+      <ButtonContainer>
+        <DarkToggle darkMode={darkMode} />
+        <MobileNav>
+          <MenuIcon
+            isOpen={isOpen}
+            toggleIsOpen={toggleIsOpen}
+            headerClasses={headerClasses}
+          />
+          <Menu className={headerClasses.join(' ')} theme={theme}>
+            <MenuIcons toggleIsOpen={toggleIsOpen} />
+          </Menu>
+        </MobileNav>
+      </ButtonContainer>
     </StyledHeader>
   );
 };

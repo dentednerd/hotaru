@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { timelineData, educationData, interestsData } from '../data';
+import { timelineData, educationData, interestsData, qualificationData } from '../data';
 import ExperienceScreen from '../molecules/ExperienceScreen';
 import PageHeader from '../molecules/PageHeader';
 import Layout from '../templates/Layout';
@@ -8,16 +8,10 @@ import { Remote } from '../assets/undraws';
 import { colors, fonts } from '../tokens';
 
 const CVLayout = styled('section')`
-  display: grid;
-  grid-template: auto 1fr auto / 1fr;
-  grid-column-gap: 8px;
-
-  @media (min-width: 480px) {
-    grid-template: auto 1fr auto / 2fr 1fr;
-  }
-
   @media (min-width: 1024px) {
-    grid-column-gap: 16px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 1rem;
   }
 
   ul {
@@ -27,35 +21,9 @@ const CVLayout = styled('section')`
     padding: 0;
   }
 
-  h3, h4, ul li span {
-    color: var(--color-text);
-  }
-
-  h3 {
-    font-family: ${fonts.contrast};
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    padding-bottom: 1rem;
-    // border-bottom: solid 1px ${colors.constants.purple};
-  }
-
-  h4 {
-    font-size: 1.5rem;
-    line-height: 1.25;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-
-  p.date {
-    font-family: ${fonts.headline};
-    font-weight: 300;
-    letter-spacing: -0.05rem;
-    font-size: 1rem;
-    line-height: 1rem;
-  }
-
   li {
     margin-bottom: 1rem;
+    line-height: normal;
 
     span {
       font-family: ${fonts.headline};
@@ -70,19 +38,20 @@ const CVLayout = styled('section')`
 `;
 
 const Experience = styled('section')`
-  grid-column: 1 / 2;
 `;
 
-const Education = styled('aside')`
-  grid-column: 1 / 2;
+const CVSection = styled('section')`
+  height: min-content;
+  margin-bottom: 1rem;
+  border-bottom: solid 1px ${colors.constants.purple};
 
-  h3,
-  h4 {
-    color: ${colors.text};
+  &:last-of-type {
+    border-bottom: none;
   }
 
-  h4 {
-    font-size: 1.25rem;
+  li {
+    font-size: 1.125rem;
+    line-height: normal;
   }
 
   li:before {
@@ -90,13 +59,9 @@ const Education = styled('aside')`
     display: none;
   }
 
-  @media (min-width: 480px) {
-    grid-column: 2 / 3;
+  h4 {
+    font-size: 1.25rem;
   }
-`;
-
-const Interests = styled('footer')`
-  grid-column: 1 / 3;
 `;
 
 const ExperienceTemplate = () => (
@@ -125,31 +90,43 @@ const ExperienceTemplate = () => (
           <ExperienceScreen job={job} index={index} key={job.dates + job.companyName} />
         ))}
       </Experience>
-      <Education>
-        <h3>Education</h3>
-        <ul>
-          {educationData.map(job => (
-            <li key={job.dates + job.companyName}>
-              <h4>{`${job.companyName}: ${job.jobTitle}`}</h4>
-              <p className="date">{job.dates}</p>
-            </li>
-          ))}
-        </ul>
-      </Education>
-      <Interests>
-        <h3>Interests</h3>
-        <ul>
-          {interestsData.map(interest => (
-            <li key={interest.label}>
-              <span>
-                {interest.label}
-                :&nbsp;
-              </span>
-              {interest.content}
-            </li>
-          ))}
-        </ul>
-      </Interests>
+      <section>
+        <CVSection>
+          <h3>Qualifications</h3>
+          <ul>
+            {qualificationData.map(q => (
+              <li key={q.date + q.qualification}>
+                <h4>{`${q.qualification}`}&nbsp;<span className="dates">{q.date}</span></h4>
+              </li>
+            ))}
+          </ul>
+        </CVSection>
+        <CVSection>
+          <h3>Education</h3>
+          <ul>
+            {educationData.map(job => (
+              <li key={job.dates + job.companyName}>
+                <h4>{job.companyName ? `${job.companyName}: ${job.jobTitle}` : `${job.jobTitle}`}&nbsp;<span className="dates">{job.dates}</span></h4>
+              </li>
+            ))}
+          </ul>
+        </CVSection>
+        <CVSection>
+          <h3>Interests</h3>
+          <ul>
+            {interestsData.map(interest => (
+              <li key={interest.label}>
+                <span>
+                  {interest.label}
+                  :&nbsp;
+                </span>
+                {interest.content}
+              </li>
+            ))}
+          </ul>
+        </CVSection>
+        </section>
+
     </CVLayout>
   </Layout>
 );

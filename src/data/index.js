@@ -4,6 +4,7 @@ import introData from './introData';
 import portfolioData from './portfolioData';
 import timelineData from './timelineData';
 import timelineOldData from './timelineOldData';
+import qualificationData from './qualificationData';
 
 export {
   educationData,
@@ -11,5 +12,6 @@ export {
   introData,
   portfolioData,
   timelineData,
-  timelineOldData
+  timelineOldData,
+  qualificationData,
 };

@@ -4,16 +4,30 @@ import { colors } from '../../tokens';
 
 const PageHeaderGrid = styled('header')`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
-  padding-bottom: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 0;
+  padding-bottom: 2rem;
   border-bottom: solid 1px ${colors.constants.purple};
   margin-bottom: 1rem;
+  height: auto;
   width: 100%;
+
+  @media(min-width: 425px) {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    height: 12rem;
+  }
 
   svg {
     width: 100%;
-    max-height: 8rem;
+    max-height: 10rem;
+    margin: 0;
+
+    @media(min-width: 425px) {
+      margin: 1rem 0;
+    }
   }
 
   div.text {
@@ -27,8 +41,8 @@ const PageHeaderGrid = styled('header')`
     }
 
     p {
-      font-size: 0.8rem;
-      line-height: 1rem;
+      font-size: 1rem;
+      line-height: normal;
     }
   }
 `;

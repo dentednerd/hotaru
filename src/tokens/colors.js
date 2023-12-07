@@ -2,14 +2,16 @@ const colors = {
   dark: {
     background: '#161032',
     text: '#ffffff',
-    headline: '#ffff66',
-    link: '#ffff66',
+    accentBold: '#ffff66',
+    accentLight: '#ffffcc',
+    navShadow: '#161032'
   },
   light: {
-    text: '#666699',
     background: '#ffffff',
-    headline: '#ffff66',
-    link: '#ff66b3',
+    text: '#666699',
+    accentBold: '#ff66bb',
+    accentLight: '#ffccee',
+    navShadow: 'rgba(51, 51, 102, 0.25)'
   },
   constants: {
     pink: '#ff99cc',
@@ -17,8 +19,8 @@ const colors = {
     green: '#ccffff',
     blue: '#99ccff',
     purple: '#666699',
-    darkpurple: '#333366',
-    lightpurple: '#9999cc',
+    darkPurple: '#333366',
+    lightPurple: '#9999cc',
     footerbg: '#2B2B68'
   }
 };

@@ -39,7 +39,7 @@ const PostPage = ({ data, pageContext }) => {
         <meta name="description" content={post.excerpt} />
         <meta name="author" content="Joey Imlay" />
       </Helmet>
-      <Hero image={thisFeaturedImage} alt={post.frontmatter.title} />
+      <Hero image={thisFeaturedImage.images.fallback.src} title={post.frontmatter.title} />
       <JournalPost post={post} />
       <NextPrevious>
         {pageContext.previous ? (
@@ -67,80 +67,72 @@ const PostPage = ({ data, pageContext }) => {
 
 export default PostPage;
 
-export const query = graphql`
-  query($slug: String!) {
-    post: markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      excerpt
-      frontmatter {
-        title
-        date(formatString: "DD MMMM, YYYY")
-        tags
-        featuredImage {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
-      fields {
-        slug
-      }
-    }
-    tags: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 2000
-    ) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-        nodes {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-            tags
-            category
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 90)
-          html
+export const query = graphql`query ($slug: String!) {
+  post: markdownRemark(fields: {slug: {eq: $slug}}) {
+    html
+    excerpt
+    frontmatter {
+      title
+      date(formatString: "DD MMMM, YYYY")
+      tags
+      featuredImage {
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }
-    categories: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 2000
-    ) {
-      group(field: frontmatter___category) {
-        fieldValue
-        totalCount
-        nodes {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
+    fields {
+      slug
+    }
+  }
+  tags: allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 2000) {
+    group(field: {frontmatter: {tags: SELECT}}) {
+      fieldValue
+      totalCount
+      nodes {
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData
             }
-            tags
-            category
           }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 90)
-          html
+          tags
+          category
         }
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 90)
+        html
       }
     }
   }
-`;
+  categories: allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 2000) {
+    group(field: {frontmatter: {category: SELECT}}) {
+      fieldValue
+      totalCount
+      nodes {
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          tags
+          category
+        }
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 90)
+        html
+      }
+    }
+  }
+}`;
