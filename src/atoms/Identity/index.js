@@ -26,7 +26,7 @@ const StyledIdentity = styled('section')`
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
-      color: ${props => props.theme.link};
+      color: ${props => props.theme.accentBold};
       font-size: 1.5rem;
       line-height: 1.5rem;
       font-family: ${fonts.cursive};
@@ -35,7 +35,7 @@ const StyledIdentity = styled('section')`
     }
 
     &:hover {
-      color:${props => props.theme.link};
+      color:${props => props.theme.accentBold};
     }
   }
 `;

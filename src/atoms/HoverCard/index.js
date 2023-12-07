@@ -1,22 +1,29 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import { useTheme } from '@emotion/react';
-import { fonts, shadows } from '../../tokens';
+import { colors, fonts } from '../../tokens';
+import { hexToRGBA } from '../../helpers';
 
 const HoverCard = ({ text, image, onClick }) => {
   const theme = useTheme();
+  if (!image) return null;
 
   const StyledHoverCard = styled.section`
+    aspect-ratio: 2 / 1;
     position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
     transform: scale(1);
-    transition: transform 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    background-image: url(${image.images.fallback.src}), linear-gradient(to bottom right, ${hexToRGBA(theme.accentLight, 0.5)}, ${hexToRGBA(colors.constants.purple, 0.5)});
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: darken;
+    cursor: pointer;
 
     @media(hover: hover) {
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.2);
         z-index: 999;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
@@ -45,7 +52,8 @@ const HoverCard = ({ text, image, onClick }) => {
       right:0;
       bottom:0;
       left:0;
-      background-image: linear-gradient(to bottom, transparent, ${theme.background} 100%);
+      /* background-image: linear-gradient(to bottom, transparent, ${theme.background} 100%); */
+      backdrop-filter: blur(1px);
       text-align: center;
       padding: 1rem;
 
@@ -55,14 +63,13 @@ const HoverCard = ({ text, image, onClick }) => {
       }
 
       span {
-        background-color: ${theme.background};
-        font-family: ${fonts.contrast};
-        font-size: 0.875rem;
-        color: ${theme.text};
+        background-color: ${theme.accentLight};
+        font-family: ${fonts.headline};
+        font-size: 1rem;
+        color: ${colors.constants.darkPurple};
         text-decoration: none;
-        border: solid 0.25rem ${theme.text};
-        box-shadow: ${shadows.ctaShadow};
-        line-height: 1.125rem;
+        border: solid 0.25rem ${colors.constants.darkPurple};
+        line-height: 1;
         padding: 0.5rem;
       }
     }
@@ -70,7 +77,7 @@ const HoverCard = ({ text, image, onClick }) => {
 
   return (
     <StyledHoverCard onClick={onClick}>
-      <GatsbyImage image={image} alt={text} />
+      {/* <GatsbyImage image={image} alt={text} /> */}
       <div className="title">
         <span>{text}</span>
       </div>

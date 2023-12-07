@@ -1,22 +1,22 @@
 ---
-title: "Northcoders News, revisited"
+title: "NC News, revisited"
 date: "2020-03-10"
 featuredImage: "./images/northcoders-news-revisited.png"
 category: "projects"
-tags: ["Northcoders", "React", "Redux", "MongoDB", "Heroku", "hooks", "CSS-in-JS", "MERN"]
+tags: ["React", "Redux", "MongoDB", "Heroku", "hooks", "CSS-in-JS", "MERN"]
 ---
 
 It's a nice, quiet day. I'm working on this very site, paying attention to all sorts of details in my never-ending quest for perfection. Right now, I'm looking at my portfolio. Can I improve the presentation? Would animation give each project a boost? _Do all the links work?_
 
-As it turns out, not all of the links worked. In one of my portfolio project screens, the link took you to an empty shell of perfectly pretty React-generated UI, with absolutely no data to display. Northcoders News, my dear old friend and among the earliest of my portfolio pieces, was busted.
+As it turns out, not all of the links worked. In one of my portfolio project screens, the link took you to an empty shell of perfectly pretty React-generated UI, with absolutely no data to display. NC News, my dear old friend and among the earliest of my portfolio pieces, was busted.
 
-Now, here's one thing that I've learned whilst revisiting this project: the Northcoders News that my cohort and I built is a _completely different animal_ to the project that more recent cohorts have created. Totally different stack! So if you, dear friendly Northcoder, are thinking of refactoring your own NC News, be aware this story of mine may only be of limited use to you!
+Now, here's one thing that I've learned whilst revisiting this project: the NC News that my cohort and I built is a _completely different animal_ to the project that more recent cohorts have created. Totally different stack! So if you, dear friendly Northcoder, are thinking of refactoring your own NC News, be aware this story of mine may only be of limited use to you!
 
-For my non-Northcoder readers, who most likely have no idea what Northcoders News is: the project is to create a Reddit clone, with a small dataset that you're provided with. My version of Northcoders News is a MERN-stack app; that is, MongoDB, Express, React and Nodejs.
+For my non-NC readers, who most likely have no idea what NC News is: the project is to create a Reddit clone, with a small dataset that you're provided with. My version of NC News is a MERN-stack app; that is, MongoDB, Express, React and Nodejs.
 
 ## When two become one
 
-The project that became one of my first portfolio pieces, Northcoders News, was constructed over two sprints. In the first sprint, at the end of the back-end block, we created a local MongoDB database, seeded it with data, and wrote an Express server to fetch that data. In the second, we created a client app using React and Redux to present that data to the world.
+The project that became one of my first portfolio pieces, NC News, was constructed over two sprints. In the first sprint, at the end of the back-end block, we created a local MongoDB database, seeded it with data, and wrote an Express server to fetch that data. In the second, we created a client app using React and Redux to present that data to the world.
 
 I didn't want to deploy an API app and a client app. I wanted to deploy a single full-stack app. Now, there are plenty of tutorials out there that will walk you through the construction of a MERN app from the ground up, and I'm not about to add to that list. What I can tell you is that I did two things: firstly, I moved my React client into the back-end repo, in its own `/client` sub-directory, complete with its own `package.json`; secondly, I tweaked my `server.js` to point its root towards the client's `/build` folder, like so:
 
@@ -60,10 +60,10 @@ There's actually not a whole lot of difference - each package requires its own D
 
 ## To the future!
 
-Well, Northcoders News v2 is hosted by our old friend Heroku. If it's a little slow to start, it's because I'm using free plans on both Heroku and mLab, so any delay will be in spinning up the repo again. Be patient! The code is available on [Github](https://github.com/dentednerd/northcodersnewsdocker) - feel free to have a play with it. I'd love to know if you have any suggestions! [Tweet me](https://twitter.com/dentednerd) with your ideas, okay?
-
-Also, I've got my original [Northcoders News](https://northcoders-news-dentednerd.herokuapp.com/) working, using the API of NC News v2, so you can compare the two. Version 1 isn't a looker though! Think of it more as a _proof of concept_...
-
 I've got some ideas about future iterations. I'd like to go back and tidy up the components a bit more - the structure isn't as neat as I'd like, and a few things need splitting out in the name of separation of concerns. It would be nice to bring vote counts back into article cards, as they were a huge part of the cards in the first iteration, but totally absent in this version. I'd like to add a footer to match the header! Most of all, I want to see if it's possible to strip out Redux and control the state entirely with `useState`, `useEffect` and `useContext` hooks.
 
-Maybe one day I'll be back with Northcoders News v3!
+Maybe one day I'll be back with [NC News v3](http://joeyimlay.dev/posts/the-return-of-northcoders-news/)!
+
+## Postscript
+
+This entry has been edited to remove some dead links. For further context, read [The Return of NC News](http://joeyimlay.dev/posts/the-return-of-northcoders-news/).
