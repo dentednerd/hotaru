@@ -1,26 +1,18 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { useTheme } from '@emotion/react';
-import { colors, fonts } from '../../tokens';
+import styled from '@emotion/styled'
+import React from 'react'
+import { breakpoints, colors, fonts, shadows } from '../../tokens'
 
 const HoverCard = ({ text, image, onClick }) => {
-  const theme = useTheme();
-  if (!image) return null;
+  if (!image) return null
 
-  const StyledHoverCard = styled.section`
+  const StyledHoverCard = styled.div`
     aspect-ratio: 2 / 1;
     position: relative;
-    border-radius: 0.5rem;
     overflow: hidden;
-    background-image: linear-gradient(
-      130deg,
-      ${theme.accentLight},
-      ${colors.constants.purple}
-    );
+    cursor: pointer;
     background-position: center top;
     background-size: cover;
-    background-blend-mode: darken;
-    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 
     img {
       display: block;
@@ -30,27 +22,23 @@ const HoverCard = ({ text, image, onClick }) => {
       mix-blend-mode: luminosity;
     }
 
-    .title {
+    div.blur {
       display: flex;
       flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-end;
+      align-items: flex-end;
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(0.5px);
       text-align: center;
       padding: 1rem;
-      border-radius: 0.5rem;
+      box-shadow: ${shadows.inset};
 
-      span {
-        background-image: linear-gradient(
-          130deg,
-          ${colors.constants.green},
-          ${colors.constants.blue}
-        );
+      span.title {
+        background-color: ${colors.constants.blue};
         max-width: 80%;
         font-family: ${fonts.headline};
         font-size: 16px;
@@ -63,41 +51,41 @@ const HoverCard = ({ text, image, onClick }) => {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-bottom: 1rem;
 
-        @media (min-width: 800px) {
+        @media (min-width: ${breakpoints.md}px) {
           font-size: 1.25rem;
         }
       }
     }
 
-    @media(hover: hover) {
-      &:hover {
-        cursor: pointer;
+    &:hover {
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
 
-        img {
-          mix-blend-mode: normal;
-        }
+      img {
+        mix-blend-mode: normal;
+      }
 
-        .title {
-          backdrop-filter: blur(0.5px);
+      div.blur {
+        backdrop-filter: none;
 
-          span {
-            transform: scale(1.2);
-            transition: transform 0.2s ease-in-out;
-          }
+        span.title {
+          transform: scale(1.1);
+          transition: transform 0.2s ease-in-out;
         }
       }
     }
-  `;
+  `
 
   return (
     <StyledHoverCard onClick={onClick}>
       <img src={image.images.fallback.src} alt="" />
-      <div className="title">
-        <span>{text}</span>
+      <div className="blur">
+        <span className="title">{text}</span>
       </div>
     </StyledHoverCard>
-  );
-};
+  )
+}
 
-export default HoverCard;
+export default HoverCard

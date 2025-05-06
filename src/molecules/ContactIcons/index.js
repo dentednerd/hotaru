@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { faLinkedin, faGithub, faCodepen } from '@fortawesome/free-brands-svg-icons';
-import FaIcon from '../../atoms/FaIcon';
+import { useTheme } from '@emotion/react'
+import styled from '@emotion/styled'
+import React from 'react'
+import { Codepen, Github, LinkedIn } from '../../assets/icons'
 
 const StyledContactIcons = styled.div`
   display: flex;
@@ -11,38 +11,52 @@ const StyledContactIcons = styled.div`
 
     svg {
       color: #fff;
-      height: 3rem;
-      width: 3rem;
+      height: 2rem;
+      width: 2rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: ${(props) => props.theme.accentBold};
+        transition: color 0.3s ease;
+      }
     }
   }
-`;
+`
 
 const icons = [
   {
     link: 'https://www.linkedin.com/in/joey-imlay-4a7a7056/',
-    image: faLinkedin,
+    icon: <LinkedIn />,
     alt: 'LinkedIn',
   },
   {
     link: 'https://github.com/dentednerd',
-    image: faGithub,
+    icon: <Github />,
     alt: 'Github',
   },
   {
     link: 'https://codepen.io/dentednerd',
-    image: faCodepen,
+    icon: <Codepen />,
     alt: 'Codepen',
-  }
-];
+  },
+]
 
-const ContactIcons = () => (
-  <StyledContactIcons>
-    {icons.map(icon => (
-      <a href={icon.link} key={icon.link} aria-label={`Visit my ${icon.alt} profile`}>
-        <FaIcon icon={icon.image} size="2x" alt={icon.alt} />
-      </a>
-    ))}
-  </StyledContactIcons>
-);
+const ContactIcons = () => {
+  const theme = useTheme()
 
-export default ContactIcons;
+  return (
+    <StyledContactIcons theme={theme}>
+      {icons.map((icon) => (
+        <a
+          href={icon.link}
+          key={icon.link}
+          aria-label={`Visit my ${icon.alt} profile`}
+        >
+          {icon.icon}
+        </a>
+      ))}
+    </StyledContactIcons>
+  )
+}
+
+export default ContactIcons

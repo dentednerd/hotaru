@@ -1,33 +1,76 @@
+const tokens = {
+  green: '#ccffff',
+  blue: '#99ccff',
+  white: '#ffffff',
+  pink100: '#420024',
+  pink200: '#750040',
+  pink300: '#a8005c',
+  pink400: '#db0078',
+  pink500: '#ff0f93',
+  pink600: '#ff44aa',
+  pink700: '#ff75c1',
+  pink800: '#ffa8d8',
+  pink900: '#ffdbef',
+  pink950: '#fff5fa',
+  purple100: '#111122',
+  purple200: '#222244',
+  purple300: '#333366',
+  purple400: '#444488',
+  purple500: '#5555aa',
+  purple600: '#7777bb',
+  purple700: '#9999cc',
+  purple800: '#bbbbdd',
+  purple900: '#ddddee',
+  yellow100: '#333300',
+  yellow200: '#666600',
+  yellow300: '#999900',
+  yellow400: '#cccc00',
+  yellow500: '#ffff00',
+  yellow600: '#ffff33',
+  yellow700: '#ffff66',
+  yellow800: '#ffff99',
+  yellow900: '#ffffcc',
+}
+
 const colors = {
   dark: {
-    background: '#161032',
-    text: '#ffffff',
-    accentBold: '#ffff66',
-    accentLight: '#ffffcc',
-    navShadow: '#161032',
-    bg2: '#990055',
-    bg3: '#332574'
+    // purple bg, white text, yellow accent
+    bg1: tokens.purple300,
+    bg2: tokens.purple400,
+    text: tokens.white,
+    accentLight: tokens.yellow800,
+    accentBold: tokens.yellow700,
+    accentShadow: tokens.yellow400,
+    bgContrast: tokens.purple800,
+    imageOverlay: tokens.purple700,
   },
   light: {
-    background: '#ffffff',
-    text: '#666699',
-    accentBold: '#ff44aa',
-    accentLight: '#ffccee',
-    navShadow: 'rgba(51, 51, 102, 0.25)',
-    bg2: '#ffe5f6',
-    bg3: '#ffffcc'
+    // white bg, purple text, pink accent
+    bg1: tokens.white,
+    bg2: tokens.pink950,
+    text: tokens.purple400,
+    accentLight: tokens.pink800,
+    accentBold: tokens.pink700,
+    accentShadow: tokens.pink400,
+    bgContrast: tokens.pink900,
+    imageOverlay: tokens.pink800,
   },
   constants: {
-    pink: '#ff44aa',
-    yellow: '#ffffcc',
-    green: '#ccffff',
-    blue: '#99ccff',
-    purple: '#666699',
-    darkPurple: '#333366',
-    lightPurple: '#9999cc',
-    footerbg: '#2B2B68',
-    modalBg: 'rgba(51, 51, 102, 0.75)'
-  }
-};
+    pink: tokens.pink400,
+    yellow: tokens.yellow700,
+    green: tokens.green,
+    blue: tokens.blue,
+    purple: tokens.purple700,
+    white: tokens.white,
 
-export default colors;
+    ctaText: tokens.purple400,
+    ctaHoverText: tokens.purple200,
+
+    darkPurple: tokens.purple300,
+    lightPurple: tokens.purple700,
+    footerBg: tokens.purple200,
+    modalBg: 'rgba(51, 51, 102, 0.75)',
+  },
+}
+
+export default colors

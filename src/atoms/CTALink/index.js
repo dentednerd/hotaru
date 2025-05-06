@@ -1,93 +1,74 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { useTheme } from '@emotion/react';
-import styled from '@emotion/styled';
-import FaIcon from '../FaIcon';
-import { colors, fonts } from '../../tokens';
+import styled from '@emotion/styled'
+import { Link } from 'gatsby'
+import React from 'react'
+import { ExtLink } from '../../assets/icons'
+import { colors, fonts, shadows } from '../../tokens'
 
-const CTALink = ({
-  to,
-  href,
-  ghost,
-  icon,
-  onClick,
-  style,
-  children }) => {
-  let Element = 'section';
-  if (to) Element = Link;
-  if (href) Element = 'a';
-
-  const theme = useTheme();
-
-  const backgroundImage = ghost ? 'none' : `linear-gradient(
-    130deg,
-    ${colors.constants.green},
-    ${colors.constants.blue}
-  )`;
-  const borderImageSource = ghost ? `linear-gradient(
-    130deg,
-    ${colors.constants.green},
-    ${colors.constants.blue}
-  )` : 'none';
-  const color = ghost ? theme.text : colors.constants.darkPurple;
+const CTALink = ({ to, href, onClick, style, children }) => {
+  let Element = 'span'
+  if (to) Element = Link
+  if (href) Element = 'a'
 
   const StyledCTALink = styled(Element)`
+    position: relative;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-    background-image: ${backgroundImage};
-    color: ${color};
+    justify-content: flex-start;
+    align-content: center;
+    text-wrap: nowrap;
     width: fit-content;
+    color: ${colors.constants.ctaText};
     font-family: ${fonts.headline};
-    font-size: 16px;
     line-height: 1;
-    padding: 1rem;
-    transition: all 0.2s;
+    padding: 0.5lh;
+    box-shadow: ${shadows.cta};
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
-    border-style: ${ghost ? 'solid' : 'none'};
-    border-width: ${ghost ? '0.25rem' : '0'};
-    border-image-slice: ${ghost ? '1' : '0'};
-    border-image-source: ${borderImageSource};
-
-    @media(min-width: 800px) {
-      margin: 0;
-      font-size: 1.25rem;
-    }
-
-    section.center-text {
-      width: 100%;
-      text-align: center;
-    }
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: linear-gradient(
+      to bottom,
+      ${colors.constants.blue},
+      ${colors.constants.purple},
+      ${(props) => props.theme.accentBold} 60%,
+      ${(props) => props.theme.accentBold} 100%
+    );
+    background-origin: padding-box;
+    background-repeat: repeat;
+    background-size: 100vh;
+    background-position: center;
 
     svg {
-      grid-column: 1;
-      color: ${color};
-      width: 1rem;
+      color: ${colors.constants.ctaText};
+      width: 1lh;
       margin-right: 0.5rem;
+      z-index: 2;
+      transition: all 0.3s ease-in-out;
     }
 
     &:hover {
-      transform: scale(1.1);
-      text-decoration: none;
-      transition: all 0.2s;
+      box-shadow: ${shadows.ctaHover};
+      color: ${colors.constants.ctaHoverText};
+
+      svg {
+        color: ${colors.constants.ctaHoverText};
+        transition: all 0.3s ease-in-out;
+      }
     }
-  `;
+  `
 
   return (
     <StyledCTALink
       to={to || null}
       href={href || null}
-      onClick={() => onClick ? onClick() : null}
+      onClick={() => (onClick ? onClick() : null)}
       style={style}
     >
-      {icon ? <FaIcon icon={icon} /> : null}
-      <section className="center-text">
-        {children}
-      </section>
+      <ExtLink />
+      {children}
     </StyledCTALink>
-  );
-};
+  )
+}
 
-export default CTALink;
+export default CTALink

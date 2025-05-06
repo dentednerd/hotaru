@@ -1,50 +1,44 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { useTheme } from '@emotion/react';
-import { hexToRGBA } from '../../../helpers';
-import { colors, fonts } from '../../../tokens';
+import React from 'react'
+import styled from '@emotion/styled'
+import { useTheme } from '@emotion/react'
+import { breakpoints, fonts, shadows } from '../../../tokens'
+import { hexToRGBA } from '../../../helpers'
 
 const Hero = ({ image, title }) => {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const StyledHero = styled('header')`
-    position: absolute;
-    top: 3.5rem;
-    left: 0;
     width: 100vw;
     height: 50vh;
     display: grid;
     place-items: center;
     overflow: hidden;
-    background-image: url(${image}), linear-gradient(to bottom right, ${hexToRGBA(theme.accentLight, 0.25)}, ${hexToRGBA(colors.constants.purple, 0.25)});
-    background-position: center top;
+    background-image: url(${image});
+    background-position: center;
     background-size: cover;
-    background-blend-mode: darken;
+    background-blend-mode: multiply;
+    backdrop-filter: blur(2px);
+    box-shadow: ${shadows.insetHero};
 
     h1 {
-      text-align: center;
       width: fit-content;
-      max-width: 800px;
-      margin: 0 0 1rem;
+      max-width: ${breakpoints.sm}px;
       padding: 1rem;
-      background-image: linear-gradient(
-        130deg,
-        ${theme.accentLight},
-        ${theme.accentBold}
-      );
-      color: ${colors.constants.darkPurple};
-      font-family: ${fonts.contrast};
+      background-color: ${theme.bg1};
+      color: ${theme.text};
+      font-family: ${fonts.headline};
       font-weight: 900;
       font-size: min(9vmin, 3rem);
       line-height: 1;
+      /* box-shadow: 0 0 50vw 25vh ${hexToRGBA(theme.accentLight, 0.75)}; */
     }
-  `;
+  `
 
   return (
     <StyledHero>
       <h1>{title}</h1>
     </StyledHero>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

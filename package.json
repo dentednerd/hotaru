@@ -43,6 +43,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@types/react-dom": "^18.0.6",
     "babel": "^6.23.0",
+    "dayjs": "^1.11.13",
     "eslint-plugin-emotion": "^11.0.0",
     "eslint-plugin-react-hooks": "^4.0.6",
     "gatsby": "^5.12.9",
@@ -99,6 +100,7 @@
     "pinst": "^3.0.0",
     "prettier": "^2.7.1",
     "prop-types": "^15.5.10",
+    "react-multi-carousel": "^2.8.5",
     "react-scripts": "^5.0.1"
   }
 }

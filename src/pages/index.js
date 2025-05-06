@@ -1,127 +1,94 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import CTALink from '../atoms/CTALink';
-import introData from '../data/introData';
-import Layout from '../templates/Layout';
+import { graphql } from 'gatsby'
+import React from 'react'
+import Layout from '../templates/Layout'
 
-const HomePage = () => {
-  const HomeSection = styled('section')`
-    background-color: ${props => props.theme[props.backgroundColor]};
-    height: 100vh;
-    max-width: 100vw;
-    display: grid;
-    place-items: center;
-    scroll-snap-align: start;
+import BrandsScreen from './BrandsScreen'
+import IntroScreen from './IntroScreen'
+import JournalScreen from './JournalScreen'
+import MediaScreen from './MediaScreen'
+import PortfolioScreen from './PortfolioScreen'
 
-    .container {
-      display: grid;
-      grid-template-rows: 2fr 1fr;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      place-items: center;
-      text-align: center;
-      height: fit-content;
+const HomePage = ({ data }) => {
+  const { posts, images } = data
 
-      @media(min-width: 1024px) {
-        height: 100vh;
-        grid-template-rows: 1fr;
-        grid-template-columns: 2fr 1fr;
-        column-gap: 1rem;
-        row-gap: 0;
-        text-align: left;
-      }
-
-      div.text-content > * {
-        margin-inline: auto;
-
-        @media (min-width: 1024px) {
-          margin-inline: 0;
-        }
-      }
-    }
-
-    &::after {
-      content: '';
-      display: table;
-      clear: both;
-    }
-
-    h2 {
-      display: inline;
-      width: fit-content;
-      background: linear-gradient(
-        130deg,
-        ${props => props.theme.accentBold},
-        ${props => props.theme.text}
-      );
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: "Raleway", sans-serif;
-      font-weight: 900;
-      margin-inline: auto !important;
-
-      @media (min-width: 1024px) {
-        margin-inline: 0 !important;
-      }
-    }
-
-    svg:not(.icon) {
-      align-self: start !important;
-      max-height: 10rem;
-      width: 100%;
-
-      @media (min-width: 800px) {
-        align-self: center !important;
-      }
-    }
-
-    .content-wrapper {
-      align-self: end;
-
-      @media (min-width: 800px) {
-        align-self: center;
-      }
-    }
-
-    section.content {
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      margin-bottom: 1rem;
-      order: 2;
-
-      @media (min-width: 1024px) {
-        order: 1;
-      }
-    }
-
-    a {
-      margin-inline: auto;
-
-      @media (min-width: 800px) {
-        margin-inline: 0;
-      }
-    }
-  `;
+  if (!images) return null
 
   return (
     <Layout>
-      {introData.map((entry, index) => (
-        <HomeSection index={index} key={entry.text} backgroundColor={entry.color}>
-          <div className="container">
-            <div className="text-content">
-              <section className="content" dangerouslySetInnerHTML={{ __html: entry.content }} />
-              <CTALink to={entry.link} icon={entry.icon}>
-                {entry.text}
-              </CTALink>
-            </div>
-            {entry.svg}
-          </div>
-        </HomeSection>
-      ))}
+      <IntroScreen />
+      <BrandsScreen />
+      <PortfolioScreen images={images} />
+      <MediaScreen />
+      <JournalScreen posts={posts} />
     </Layout>
-  );
+  )
 }
 
-export default HomePage;
+export const pageQuery = graphql`
+  {
+    posts: allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+      edges {
+        next {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+        previous {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+            tags
+            category
+          }
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 90)
+          html
+        }
+      }
+    }
+    tags: allMarkdownRemark {
+      group(field: { frontmatter: { tags: SELECT } }) {
+        fieldValue
+        totalCount
+      }
+    }
+    images: allImageSharp {
+      edges {
+        node {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`
+
+export default HomePage

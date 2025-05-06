@@ -1,22 +1,22 @@
-import React, { useEffect } from 'react';
-import styled from '@emotion/styled';
-import FaIcon from '../../atoms/FaIcon';
-import { faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons/faArrowRotateLeft';
-import { colors } from '../../tokens';
+import React, { useEffect } from 'react'
+import styled from '@emotion/styled'
+import FaIcon from '../../atoms/FaIcon'
+import { faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons/faArrowRotateLeft'
+import { breakpoints, colors } from '../../tokens'
 
 const Modal = ({ show, setShow, currentVideo }) => {
   const closeOnEscapeKeyDown = (e) => {
     if ((e.charCode || e.keyCode) === 27) {
-      setShow(false);
+      setShow(false)
     }
-  };
+  }
 
   useEffect(() => {
-    document.body.addEventListener('keydown', closeOnEscapeKeyDown);
+    document.body.addEventListener('keydown', closeOnEscapeKeyDown)
     return function cleanup() {
-      document.body.removeEventListener('keydown', closeOnEscapeKeyDown);
-    };
-  });
+      document.body.removeEventListener('keydown', closeOnEscapeKeyDown)
+    }
+  })
 
   const StyledModal = styled('section')`
     &.overlay {
@@ -38,39 +38,40 @@ const Modal = ({ show, setShow, currentVideo }) => {
         pointer-events: visible;
       }
 
-  section.modal {
-    position: relative;
-    width: calc(100% - 2rem);
-    max-width: 800px;
-    gap: 1rem;
-    opacity: 0;
-    transform: translateY(-100px);
-    transition: all 0.3s ease-in-out;
-    pointer-events: none;
-    aspect-ratio: 16 / 9;
+      section.modal {
+        position: relative;
+        width: calc(100% - 2rem);
+        max-width: ${breakpoints.md}px;
+        gap: 1rem;
+        opacity: 0;
+        transform: translateY(-100px);
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
+        aspect-ratio: 16 / 9;
 
-    &.show {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: visible;
+        &.show {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: visible;
+        }
+      }
+
+      svg {
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        color: white;
+      }
     }
-  }
+  `
 
-  svg {
-    position: absolute;
-    top: -1rem;
-    right: -1rem;
-    width: 3rem;
-    height: 3rem;
-    cursor: pointer;
-    color: white;
-  }
-}`;
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-  document.body.style.overflow = "hidden";
-});
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    document.body.style.overflow = 'hidden'
+  })
 
   const TV = styled('iframe')`
     display: block;
@@ -79,11 +80,17 @@ useEffect(() => {
     margin: 0;
     border: 0;
     background-color: ${colors.constants.purple};
-  `;
+  `
 
   return (
-    <StyledModal className={`overlay ${show ? 'show' : ''}`} onClick={() => setShow(false)}>
-      <section className={`modal ${show ? 'show' : ''}`} onClick={(e) => e.stopPropagation()}>
+    <StyledModal
+      className={`overlay ${show ? 'show' : ''}`}
+      onClick={() => setShow(false)}
+    >
+      <section
+        className={`modal ${show ? 'show' : ''}`}
+        onClick={(e) => e.stopPropagation()}
+      >
         <TV
           title="showreel"
           src={currentVideo}
@@ -91,10 +98,10 @@ useEffect(() => {
           allowFullScreen
         />
 
-        <FaIcon icon={faArrowRotateLeft} onClick={() => setShow(false)}/>
+        <FaIcon icon={faArrowRotateLeft} onClick={() => setShow(false)} />
       </section>
     </StyledModal>
-  );
+  )
 }
 
-export default Modal;
+export default Modal

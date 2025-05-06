@@ -1,35 +1,39 @@
-import React from 'react';
-import { Global, css } from '@emotion/react';
-import { config, dom } from '@fortawesome/fontawesome-svg-core';
-import { colors, fonts } from '../../tokens';
+import { Global, css } from '@emotion/react'
+import { config, dom } from '@fortawesome/fontawesome-svg-core'
+import React from 'react'
+import { colors, fonts, sizes } from '../../tokens'
 
-config.autoAddCss = false;
+config.autoAddCss = false
 
 const GlobalStyles = ({ children, theme }) => (
   <Global
     styles={css`
-      body {
-        background-color: ${colors.constants.footerbg};
-        font-family: ${fonts.body};
-        font-size: 16px;
-        line-height: 28px;
-        font-weight: 400;
+      * {
         margin: 0;
         padding: 0;
       }
 
-      @media (min-width: 800px) {
-        body {
-          font-size: 20px;
-          line-height: 36px;
-        }
+      body {
+        background-color: ${colors.constants.footerBg};
+        font-family: ${fonts.body};
+        font-size: ${sizes.md};
+        line-height: 1.25;
+        font-weight: 400;
+        overscroll-behavior-y: none;
+        overflow-x: hidden;
+      }
+
+      #___gatsby,
+      #gatsby-focus-wrapper {
+        width: 100%;
+        height: 100%;
       }
 
       ${dom.css()}
 
       p {
         margin-top: 0;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1lh;
       }
 
       p:last-child {
@@ -38,7 +42,7 @@ const GlobalStyles = ({ children, theme }) => (
 
       hr {
         border-top: solid 1px ${colors.constants.purple};
-        margin: 1rem 0;
+        margin: 1lh 0;
       }
 
       blockquote {
@@ -77,37 +81,42 @@ const GlobalStyles = ({ children, theme }) => (
       }
 
       h1:hover {
-        color:${theme.accentBold};
+        color: ${theme.accentBold};
       }
 
       h2 {
+        background-attachment: fixed;
+        background-clip: text;
+        background-color: transparent;
+        background-image: linear-gradient(
+          to bottom,
+          ${colors.constants.blue},
+          ${theme.accentBold}
+        );
+        background-origin: padding-box;
+        background-repeat: repeat;
+        background-size: auto;
+        text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+        color: ${theme.accentBold};
         font-family: ${fonts.headline};
         font-weight: 700;
-        font-size: 2rem;
-        line-height: 2.25rem;
+        font-size: ${sizes.xl};
+        line-height: 1.25;
         margin: 0 0 1rem;
       }
 
       h3 {
-        display: flex;
-        align-items: center;
-        min-height: 3rem;
-        margin: 0 0 1rem;
-        padding: 0.5rem;
-        background-image: linear-gradient(
-          130deg,
-          ${theme.accentLight},
-          ${theme.accentBold}
-        );
-        color: ${colors.constants.darkPurple};
+        color: ${colors.text};
         font-family: ${fonts.contrast};
         font-weight: 900;
-        font-size: 2rem;
-        line-height: 1;
+        font-size: ${sizes.xl};
+        line-height: 1.25;
+        margin: 0 0 1lh;
       }
 
       h3 svg {
-        margin: 0 1rem 0 0;
+        margin: 0 1lh 0 0;
         opacity: 1;
       }
 
@@ -118,34 +127,9 @@ const GlobalStyles = ({ children, theme }) => (
       h4 {
         font-family: ${fonts.contrast};
         font-weight: 400;
-        font-size: 1.5rem;
-        line-height: 1;
-        margin: 0 0 1rem;
-        letter-spacing: -0.05rem;
-        color: ${theme.accentBold};
-      }
-
-      h5 {
-        display: grid;
-        place-items: center left;
-        height: 1.5rem;
-        width: fit-content;
-        margin: 0 0 1rem;
-        padding: 0.25rem;
-        background-color: ${theme.accentLight};
-        color: ${colors.constants.darkPurple} !important;
-        font-family: ${fonts.contrast};
-        font-weight: 700;
-        font-size: 1rem;
-        line-height: 1;
-      }
-
-      h6 {
-        font-family: ${fonts.headline};
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1;
-        margin: 0 0 1rem;
+        font-size: ${sizes.lg};
+        line-height: 1.25;
+        margin: 0 0 1lh;
         letter-spacing: -0.05rem;
         color: ${theme.accentBold};
       }
@@ -158,8 +142,7 @@ const GlobalStyles = ({ children, theme }) => (
       p a,
       li a,
       blockquote a {
-        background:
-          linear-gradient(
+        background: linear-gradient(
             130deg,
             ${theme.accentLight},
             ${theme.accentBold}
@@ -172,12 +155,8 @@ const GlobalStyles = ({ children, theme }) => (
             ${colors.constants.blue},
             ${colors.constants.purple}
           );
-        background-size:
-          100% 0.125rem,
-          0 0.125rem;
-        background-position:
-          100% 100%,
-          0 100%;
+        background-size: 100% 0.125rem, 0 0.125rem;
+        background-position: 100% 100%, 0 100%;
         background-repeat: no-repeat;
         transition: background-size 400ms;
       }
@@ -185,9 +164,11 @@ const GlobalStyles = ({ children, theme }) => (
       p a:hover,
       li a:hover,
       blockquote a:hover {
-        background-size:
-          0 0.125rem,
-          100% 0.125rem;
+        background-size: 0 0.125rem, 100% 0.125rem;
+
+        &:not(a:hover) {
+          color: black;
+        }
       }
 
       .dates {
@@ -251,6 +232,7 @@ const GlobalStyles = ({ children, theme }) => (
         word-break: break-all;
       }
 
+      // TODO: joey wtf
       @media (max-width: 767px) {
         pre[class*='language-'] {
           width: calc(100% - 2rem);
@@ -371,6 +353,6 @@ const GlobalStyles = ({ children, theme }) => (
   >
     {children}
   </Global>
-);
+)
 
-export default GlobalStyles;
+export default GlobalStyles
