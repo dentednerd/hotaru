@@ -1,0 +1,37 @@
+@use "../../scss/breakpoints";
+@use "../../scss/colors";
+@use "../../scss/fonts";
+@use "../../scss/spacing";
+
+header.header {
+  position: relative;
+  width: 100%;
+  color: colors.$text;
+  z-index: 1;
+  padding: spacing.$md 0;
+  margin-bottom: spacing.$xl*2;
+
+  div.name {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: spacing.$md spacing.$xl;
+
+    h1, div.contact-icons {
+      display: inline;
+      flex: 0 1 fit-content;
+    }
+
+    h1 {
+      @include colors.sparkles(0, -1*spacing.$md);
+      font-size: 3rem;
+    }
+  }
+
+  div.flex-container svg#illustration {
+    color: colors.$mustard-yellow;
+    height: fit-content;
+    max-width: 100%;
+  }
+}

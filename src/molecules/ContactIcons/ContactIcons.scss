@@ -1,0 +1,30 @@
+@use '../../scss/colors';
+@use '../../scss/spacing';
+
+.contact-icons {
+  display: flex;
+  flex-flow: row nowrap;
+
+  a {
+    display: inline-block;
+    padding: spacing.$xs;
+    border-radius: spacing.$xs;
+    @include colors.gradient-bg;
+    margin-right: spacing.$md;
+    aspect-ratio: 1;
+    height: 100%;
+
+    svg {
+      color: colors.$bg1;
+      height: spacing.$lg;
+      width: spacing.$lg;
+      transform: scale(1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover svg {
+      transform: scale(1.2);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@use "../../scss/breakpoints";
+@use "../../scss/colors";
+@use "../../scss/fonts";
+@use "../../scss/spacing";
+
+div.portfolio {
+  position: relative;
+  border: solid spacing.$xs colors.$text;
+  border-bottom: solid spacing.$xl colors.$text;
+  border-radius: calc(spacing.$xs / 2);
+  width: fit-content;
+  aspect-ratio: 3/2;
+  box-shadow: 1px 1px colors.$purple,
+  2px 2px colors.$purple,
+  3px 3px colors.$purple,
+  4px 4px colors.$purple;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  max-width: calc(100% - spacing.$xs);
+
+  a.portfolio-item {
+    position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: block;
+    aspect-ratio: 3/2;
+
+    div.gatsby-image-wrapper {
+      width: 100%;
+      aspect-ratio: 3/2;
+      height: min-content;
+      object-fit: cover;
+    }
+
+    img, picture img {
+      object-fit: cover;
+    }
+
+    span.title {
+      @include colors.gradient-bg;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-family: fonts.$headline;
+      font-size: spacing.$md;
+      color: colors.$bg1;
+      text-decoration: none;
+      line-height: 1;
+      padding: 0.5rem;
+      transform: scale(1);
+      transition: transform 0.2s ease-in-out;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      z-index:99;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@use '../../scss/colors';
+@use '../../scss/spacing';
+
+.most-recent-blog-post {
+  @include colors.sparkles(spacing.$lg, spacing.$lg)
+}

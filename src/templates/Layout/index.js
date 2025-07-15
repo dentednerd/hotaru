@@ -1,69 +1,54 @@
-import { ThemeProvider } from '@emotion/react'
-import styled from '@emotion/styled'
-import useDarkMode from '@fisch0920/use-dark-mode'
-import React, { useEffect, useRef, useState } from 'react'
-import { Helmet } from 'react-helmet-async'
-import Footer from '../../organisms/Footer'
-import Header from '../../organisms/Header'
-import { colors, shadows } from '../../tokens'
-import GlobalStyles from './GlobalStyles'
+import { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
+import useDarkMode from '@fisch0920/use-dark-mode';
 
-const StyledMain = styled.main`
-  position: relative;
-  z-index: 1;
-  background-color: ${(props) => props.theme.bg1};
-  color: ${(props) => props.theme.text};
-  box-shadow: ${shadows.footer};
-  margin-bottom: 100vh;
-  overflow-x: hidden;
-`
+import DarkToggle from '../../atoms/DarkToggle';
+import Footer from '../../organisms/Footer';
 
-const Layout = (props) => {
-  const { children } = props
-  const [themeColors, setThemeColors] = useState(null)
+import '../../scss/main.scss';
 
-  const isBrowser = () => typeof window !== 'undefined'
+const Layout = ({ children }) => {
+  const isBrowser = () => typeof window !== 'undefined';
   const darkPreference =
-    isBrowser() && window.matchMedia('(prefers-color-scheme: dark)').matches
-  const darkMode = useDarkMode(darkPreference)
+    isBrowser() &&  window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  const mainRef = useRef()
+  const darkMode = useDarkMode(darkPreference);
+  const mainRef = useRef();
 
   useEffect(() => {
     mainRef.current?.scroll({
       top: 0,
       behavior: 'smooth',
-    })
-  }, [mainRef])
-
-  useEffect(() => {
-    const theme = darkMode.value ? 'dark' : 'light'
-    setThemeColors(colors[theme])
-  }, [darkMode])
-
-  if (!themeColors) return null
+    });
+  }, [mainRef]);
 
   return (
-    <ThemeProvider theme={themeColors}>
-      <Helmet
-        htmlAttributes={{
-          lang: 'en',
-        }}
-      >
-        <title>Joey Imlay, software engineer in Manchester</title>
-        <meta
-          name="description"
-          content="Joey Imlay is a software engineer in Manchester, England."
-        />
-      </Helmet>
-      <GlobalStyles theme={themeColors} />
-      <Header darkMode={darkMode} />
-      <StyledMain theme={themeColors} ref={mainRef}>
-        {children}
-      </StyledMain>
-      <Footer />
-    </ThemeProvider>
-  )
-}
+    <div>
+      <div className="container">
+        <Helmet
+          htmlAttributes={{
+            lang: 'en',
+          }}
+          bodyAttributes={{
+            'data-theme': darkMode.value ? 'dark' : 'light',
+            class: darkMode.value ? 'dark-mode' : 'light-mode'
+          }}
+        >
+          <title>Joey Imlay</title>
+          <meta
+            name="description"
+            content="Joey Imlay is a front end engineer in Manchester, England."
+          />
+        </Helmet>
 
-export default Layout
+        <main ref={mainRef}>
+          <DarkToggle darkMode={darkMode} />
+          {children}
+        </main>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default Layout;

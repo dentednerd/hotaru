@@ -1,5 +1,4 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from '@reach/router';
 
@@ -66,7 +65,7 @@ export default function SEO(props) {
       name: 'og:url',
       content: `${site?.siteMetadata?.siteUrl}${location.pathname}`
     }
-  ]
+  ];
 
   if (props.keywords) {
     metas.push({
@@ -86,5 +85,5 @@ export default function SEO(props) {
         ))
       }
     </Helmet>
-  )
+  );
 }

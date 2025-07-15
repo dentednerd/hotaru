@@ -1,0 +1,29 @@
+@use '../../scss/breakpoints';
+
+.content {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 1fr;
+  gap: spacing.$md;
+  place-items: center;
+  text-align: left;
+  height: fit-content;
+  width: calc(100vw - 4rem);
+  max-width: breakpoints.$lg;
+  padding: spacing.$xl;
+  margin: 0;
+
+  @media (orientation: landscape) {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, calc(50% - spacing.$md));
+  }
+
+  p,
+  svg {
+    width: 100%;
+  }
+
+  svg:not(.icon) {
+    align-self: start !important;
+  }
+}

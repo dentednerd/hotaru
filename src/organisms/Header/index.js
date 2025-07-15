@@ -1,32 +1,31 @@
-import { useTheme } from '@emotion/react'
-import styled from '@emotion/styled'
-import React from 'react'
-import DarkToggle from '../../atoms/DarkToggle'
+import { Link } from 'gatsby';
 
-const StyledHeader = styled.header`
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 9;
-  width: fit-content;
-  display: flex;
-  flex-flow: row-reverse nowrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  color: ${(props) => props.theme.text};
-  padding: 1rem;
-  margin-bottom: 1rem;
-`
+import ContactIcons from '../../molecules/ContactIcons';
+import MixedText from '../../atoms/MixedText';
+import { Remote } from '../../assets/undraws';
 
-const Header = ({ darkMode }) => {
-  const theme = useTheme()
+import './Header.scss';
 
-  return (
-    <StyledHeader theme={theme}>
-      <DarkToggle darkMode={darkMode} />
-    </StyledHeader>
-  )
-}
+const Header = () => (
+  <header className="header">
+    <div className="flex-container align-to-start">
+      <div className="name">
+        <Link to="/">
+          <h1>Joey Imlay</h1>
+        </Link>
+        <ContactIcons />
 
-export default Header
+          <MixedText>
+            Hello there! I'm a <span>senior front end engineer</span> in{' '}
+            <span>Manchester, England</span>, experienced in{' '}
+            <span>design systems</span>, <span>accessibility</span> and{' '}
+            <span>Scrum</span>.
+          </MixedText>
+
+      </div>
+      <Remote id="illustration" />
+    </div>
+  </header>
+);
+
+export default Header;

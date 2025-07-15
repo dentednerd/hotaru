@@ -2,6 +2,15 @@ const path = require('path')
 const _ = require('lodash')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: '@babel/plugin-transform-react-jsx',
+    options: {
+      runtime: 'automatic',
+    },
+  })
+}
+
 exports.onPostBuild = ({ reporter }) => {
   reporter.info(`Your Gatsby site has been built!`)
 }
@@ -27,58 +36,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     {
       postsRemark: allMarkdownRemark(
         sort: { frontmatter: { date: DESC } }
-        limit: 2000
+        limit: 100
       ) {
         edges {
-          next {
-            frontmatter {
-              title
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            fields {
-              slug
-            }
-          }
-          previous {
-            frontmatter {
-              title
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            fields {
-              slug
-            }
-          }
           node {
             id
             frontmatter {
               title
-              date(formatString: "DD MMMM, YYYY")
+              date(formatString: "Do MMMM, YYYY")
               featuredImage {
                 childImageSharp {
                   gatsbyImageData
                 }
               }
-              tags
-              category
             }
             fields {
               slug
             }
             excerpt(pruneLength: 125)
           }
-        }
-      }
-      tagsRemark: allMarkdownRemark(limit: 2000) {
-        group(field: { frontmatter: { tags: SELECT } }) {
-          fieldValue
         }
       }
     }

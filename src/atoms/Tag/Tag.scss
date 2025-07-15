@@ -1,0 +1,46 @@
+@use '../../scss/fonts';
+@use '../../scss/colors';
+@use '../../scss/spacing';
+
+.tag {
+  @include colors.gradient-bg;
+  color: colors.$bg1;
+  font-family: fonts.$body;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: spacing.$border;
+  text-transform: uppercase;
+  padding: spacing.$border spacing.$border*2;
+  border-radius: 0.25rem;
+  transition: all 0.25s ease-in;
+  text-decoration: none;
+  overflow: hidden;
+  margin-right: spacing.$border;
+
+  &:hover {
+    box-shadow: none;
+    transition: all 0.25s ease-in;
+    cursor: pointer;
+  }
+
+  .flex {
+    display: flex;
+    flex-flow: row nowrap;
+
+    span {
+      padding: 0.25rem;
+      display: inline-block;
+      background: colors.$pink;
+      color: #fff;
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+      height: 100%;
+    }
+
+    .pad {
+      padding: 0.25rem;
+    }
+  }
+}

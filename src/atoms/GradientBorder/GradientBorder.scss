@@ -1,0 +1,17 @@
+@use "../../scss/colors";
+@use "../../scss/spacing";
+
+div.gradient-border {
+  @include colors.gradient-bg;
+  padding: spacing.$md;
+
+  div.gradient-border-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: spacing.$xl;
+    background: colors.$bg1;
+    padding: spacing.$xl;
+  }
+}

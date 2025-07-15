@@ -1,0 +1,95 @@
+@use '../../scss/breakpoints';
+@use '../../scss/colors';
+@use '../../scss/fonts';
+@use '../../scss/spacing';
+
+.accordion-item {
+  height: 3lh;
+
+  button.toggle {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: min-content;
+    width: 100%;
+    max-width: breakpoints.$md;
+    font-family: fonts.$body;
+    background: transparent;
+    padding: 0.5lh 0;
+    margin: 0 auto;
+    text-align: left;
+    color: colors.$text;
+    transition: color 0.4s ease-in-out;
+    border: none;
+    border-bottom: solid 1px colors.$bgContrast;
+
+    h3 {
+      margin-bottom: 0;
+      pointer-events: none;
+      font-size: 2vmin;
+    }
+
+    svg {
+      height: 2vmin;
+      width: 2vmin;
+      padding: 0 spacing.$md;
+      aspect-ratio: 1;
+      pointer-events: none;
+    }
+
+    &:focus {
+      border: none;
+      border-bottom: solid 1px colors.$bgContrast;
+      outline: none;
+    }
+
+    &:hover {
+      color: colors.$accentBold;
+      background-size: 0 spacing.$border,
+      100% spacing.$border;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    max-height: 0;
+    padding: 0;
+    background-color: colors.$bgContrast;
+    color: colors.$ctaText;
+    font-size: spacing.$md;
+    line-height: 1.25;
+    max-width: calc(breakpoints.$md - 2lh);
+
+    div.links {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 0.5lh;
+      margin-bottom: 1lh;
+    }
+  }
+
+  &.open {
+    height: fit-content;
+
+    button.toggle {
+      font-weight: 700;
+
+      h3 {
+        color: colors.$accentBold;
+      }
+
+      svg {
+        transform: scaleY(-1);
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+
+    .content {
+      height: fit-content;
+      padding: spacing.$md;
+      margin-bottom: 1lh;
+    }
+  }
+}

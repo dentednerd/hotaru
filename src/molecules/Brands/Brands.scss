@@ -1,0 +1,38 @@
+@use '../../scss/breakpoints';
+@use '../../scss/colors';
+@use '../../scss/spacing';
+
+div.brands.gradient-border {
+  div.gradient-border-content {
+    display: flex;
+    flex-flow: row wrap;
+
+    a {
+      flex: 0 1 8rem;
+      text-align: center;
+
+      svg {
+        height: fit-content;
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out;
+
+        path,
+        polygon {
+          fill: colors.$text;
+          transition: fill 0.3s ease-in-out;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          transition: transform 0.3s ease-in-out;
+
+          path,
+          polygon {
+            fill: colors.$accentBold;
+            transition: fill 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

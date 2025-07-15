@@ -1,0 +1,322 @@
+@use 'breakpoints';
+@use 'colors';
+@use 'fonts';
+@use 'shadows';
+@use 'spacing';
+
+:root {
+  color-scheme: light dark;
+}
+
+[data-theme="light"], .light-mode {
+  color-scheme: light;
+}
+
+[data-theme="dark"], .dark-mode {
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: colors.$footerBg;
+  font-family: fonts.$body;
+  font-size: spacing.$md;
+  line-height: 1.25;
+  font-weight: 400;
+  overscroll-behavior-y: none;
+  overflow-x: hidden;
+}
+
+.container {
+  background: colors.$bg1;
+  width: 100vw;
+  z-index: 3;
+  height: fit-content;
+  box-shadow: shadows.$shadow-footer;
+}
+
+main {
+  position: relative;
+  z-index: 4;
+  background-color: colors.$bg1;
+  color: colors.$text;
+  margin: 0 auto 100vh auto;
+  padding: 0;
+  overflow-x: hidden;
+
+  @media(min-width: breakpoints.$lg) {
+    width: breakpoints.$lg;
+  }
+
+  div.home-page-container {
+    padding-inline: spacing.$md;
+
+    @media(min-width: calc(breakpoints.$lg + 1px)) {
+      padding: 0;
+    }
+
+    div.home-page-organism {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+div.flex-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  margin-bottom: spacing.$xl;
+
+  > * {
+    flex: 0 1 50%;
+  }
+
+  @media (min-width: breakpoints.$md) {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.align-to-start {
+    align-items: flex-start;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1lh;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+hr {
+  border-top: solid 1px colors.$purple;
+  margin: 1lh 0;
+}
+
+blockquote {
+  @include colors.gradient-border-left;
+  position: relative;
+  width: 80%;
+  padding: spacing.$md;
+  margin: spacing.$md auto;
+  color: colors.$gradient-start;
+}
+
+blockquote span {
+  font-family: fonts.$cursive;
+  font-size: spacing.$xl;
+}
+
+ul,
+ol {
+  padding-left: spacing.$lg;
+  margin: 0 auto 1lh;
+}
+
+ul li,
+ol li {
+  margin-bottom: spacing.$md;
+}
+
+/* headings */
+
+h1, h2 {
+  @include colors.gradient-text;
+
+  & {
+    font-family: fonts.$headline;
+    font-weight: 700;
+    font-size: spacing.$xl;
+    line-height: 1.25;
+  }
+}
+
+h2 {
+  margin: 0 0 spacing.$md;
+}
+
+h3 {
+  color: colors.$text;
+  font-family: fonts.$contrast;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  font-size: spacing.$md;
+  line-height: 1;
+  margin: 0 0 1lh;
+}
+
+a {
+  color: colors.$gradient-start;
+  text-decoration: none;
+}
+
+p a,
+li a,
+blockquote a {
+  background: linear-gradient(to right,
+    colors.$gradient-start,
+    colors.$gradient-end),
+  linear-gradient(to right,
+    colors.$pink,
+    colors.$yellow,
+    colors.$cyan,
+    colors.$blue,
+    colors.$purple);
+  background-size: 100% spacing.$border,
+  0 spacing.$border;
+  background-position: 100% 100%,
+  0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+p a:hover,
+li a:hover,
+blockquote a:hover {
+  background-size: 0 spacing.$border, 100% spacing.$border;
+}
+
+.dates {
+  font-family: fonts.$contrast;
+  font-size: spacing.$md;
+  line-height: 1;
+  letter-spacing: spacing.$border;
+  font-weight: 300;
+  color: colors.$text;
+}
+
+.svg-inline--fa {
+  height: spacing.$md;
+  width: spacing.$md;
+}
+
+/* code and pre blocks */
+
+pre code {
+  background-color: transparent;
+  color: colors.$white;
+  font-size: spacing.$md;
+  line-height: 1.2;
+
+  span {
+    display: inline-block;
+    overflow-wrap: break-word;
+  }
+}
+
+pre[class*='language-'] {
+  background-color: colors.$purple-400;
+  color: colors.$bg1;
+  font-family: fonts.$code;
+  line-height: 1;
+  padding: spacing.$md;
+  margin: spacing.$md auto;
+  width: 100%;
+  border-radius: spacing.$md;
+  overflow-x: auto;
+  white-space: pre;
+  word-spacing: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+  tab-size: 4;
+  hyphens: none;
+
+  @media(min-width: breakpoints.$md) {
+    width: 80%;
+  }
+}
+
+:not(pre)>code[class*='language-'] {
+  background-color: colors.$text;
+  color: colors.$bg1;
+  font-size: spacing.$md;
+  padding: spacing.$border;
+  border-radius: spacing.$border;
+  line-height: 1;
+}
+
+/* code block tokens */
+
+.token.punctuation,
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: colors.$lightPurple;
+}
+
+.token.constant,
+.token.symbol,
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.number,
+.token.unit,
+.token.hexcode,
+.token.deleted {
+  color: colors.$pink-800;
+}
+
+.token.property,
+.token.selector {
+  color: colors.$cyan;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.function-name,
+.token.boolean,
+.token.selector .token.id,
+.token.function {
+  color: colors.$blue-800;
+}
+
+.token.class-name {
+  color: colors.$yellow;
+}
+
+.token.parameter,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.selector .token.class,
+.token.builtin {
+  color: colors.$yellow;
+  font-style: italic;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: colors.$pink-700;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: colors.$cyan;
+}

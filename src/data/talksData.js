@@ -3,6 +3,7 @@ const talksData = [
     name: 'Setting up a React component library',
     description:
       'A guide to building a robust and scalable React component library, using Vite, TypeScript, Conventional Commits, and Storybook.',
+    date: "2024-08-06",
     links: [
       {
         name: 'Medium',
@@ -14,6 +15,7 @@ const talksData = [
     name: 'Queer Coded #7',
     description:
       'Learning to code and getting to grips with my sexuality happened at the same time for me when I was a teenager. I talk to Eli and Emily about how the two are inseparable to me.',
+    date: "2023-01-05",
     links: [
       {
         name: 'Youtube',
@@ -24,7 +26,7 @@ const talksData = [
   {
     name: 'Unconscious Mentoring',
     event: 'All Day Hey',
-    date: '5th May 2022',
+    date: '2022-05-05',
     description:
       "You don't have to have status or achievements under your belt to be a great mentor. You just need to have experience and knowledge to share. In fact, you probably do your best mentoring when you're not even aware that you're mentoring.",
     links: [
@@ -46,7 +48,7 @@ const talksData = [
     type: 'talk',
     name: 'yet()',
     event: 'IWD Lightning Talks',
-    date: '31st March 2022',
+    date: '2022-03-31',
     description:
       'Impostor syndrome is rife in the tech world. Often it feels impossible to keep up with constant change. How can we, as developers, hope to overcome it?',
     links: [
@@ -59,7 +61,7 @@ const talksData = [
         url: 'https://noti.st/dentednerd/dbxiJd/yet-overcoming-imposter-syndrome-in-the-tech-world',
       },
       {
-        name: 'International Womens Day',
+        name: 'IWD',
         url: 'https://www.internationalwomensday.com/',
       },
     ],
@@ -68,7 +70,7 @@ const talksData = [
     type: 'talk',
     name: "Let's go, gamers",
     event: 'ReactJS Girls Online #2',
-    date: '22nd April 2021',
+    date: '2021-04-22',
     description:
       'Looking at a menu component with many complex behaviours, achieved with React hooks and the IntersectionObserver API.',
     links: [
@@ -94,7 +96,7 @@ const talksData = [
     type: 'talk',
     name: 'Automating BrowserStack screenshot generation with CircleCI',
     event: 'Manchester Web Meetup #3',
-    date: '24th October 2018',
+    date: '2018-10-24',
     description:
       'Looking at a cross-browser testing strategy, harnessing the BrowserStack API from within a CircleCI build workflow.',
     links: [
@@ -112,6 +114,6 @@ const talksData = [
       },
     ],
   },
-]
+];
 
-export default talksData
+export default talksData;

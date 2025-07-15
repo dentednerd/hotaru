@@ -1,0 +1,29 @@
+@use '../../scss/breakpoints';
+@use '../../scss/colors';
+@use '../../scss/fonts';
+@use '../../scss/spacing';
+
+.footer {
+  color-scheme: dark;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: spacing.$md;
+  color: colors.$white;
+  height: 100vh;
+  width: calc(100% - spacing.$xl);
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+
+  div {
+    max-width: breakpoints.$md;
+    margin: spacing.$md auto 0;
+  }
+
+  .signature {
+    font-family: fonts.$cursive;
+    font-size: spacing.$xl;
+    margin: spacing.$xl 0 spacing.$md;
+  }
+}

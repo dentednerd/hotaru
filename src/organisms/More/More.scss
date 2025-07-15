@@ -1,0 +1,11 @@
+@use '../../scss/spacing';
+
+div.flex-container div.portfolio-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: spacing.$md;
+
+  p.mixed-text {
+    text-align: center;
+  }
+}

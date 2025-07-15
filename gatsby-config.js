@@ -1,23 +1,38 @@
+const adapter = require('gatsby-adapter-netlify').default
+
 module.exports = {
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+    imageCDN: false,
+  }),
   trailingSlash: 'always',
   flags: {
-    DEV_SSR: false
+    DEV_SSR: false,
   },
   siteMetadata: {
     title: 'Joey Imlay',
-    description: 'front end developer in Manchester, England',
-    siteUrl: 'https://www.joeyimlay.dev',
+    description: 'senior front end engineer in Manchester, England',
+    siteUrl: 'https://joeyimlay.dev',
     og: {
-      siteName: 'Joey Imlay'
-    }
+      siteName: 'Joey Imlay',
+    },
   },
   plugins: [
+    '@mediacurrent/gatsby-plugin-silence-css-order-warning',
     'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet-async',
     'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        sassOptions: {
+          includePaths: ['src/scss'],
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -39,17 +54,6 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: ['gatsby-remark-copy-linked-files'],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
-        // The values for each key in this example are the defaults the plugin uses.
-        sourceMap: true,
-        autoLabel: "dev-only",
-        labelFormat: `[local]`,
-        cssPropOptimization: true,
       },
     },
     {
@@ -152,4 +156,4 @@ module.exports = {
       },
     },
   ],
-};
+}

@@ -1,0 +1,40 @@
+@use '../../scss/colors';
+@use '../../scss/fonts';
+@use '../../scss/shadows';
+@use '../../scss/spacing';
+
+.cta-link {
+  @include colors.gradient-bg;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  text-wrap: nowrap;
+  width: fit-content;
+  color: colors.$bg1;
+  font-family: fonts.$headline;
+  line-height: 1;
+  padding: 0.5lh;
+  box-shadow: shadows.$shadow-cta;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  svg {
+    color: colors.$bg1;
+    width: 1lh;
+    margin-right: 0.5rem;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    box-shadow: shadows.$shadow-ctaHover;
+    color: colors.$ctaHoverText;
+
+    svg {
+      color: colors.$ctaHoverText;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

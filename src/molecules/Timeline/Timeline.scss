@@ -1,0 +1,92 @@
+@use "../../scss/breakpoints";
+@use "../../scss/colors";
+@use "../../scss/spacing";
+
+.timeline {
+  $small-spacing: spacing.$md;
+  $medium-spacing: spacing.$xl;
+
+  @include colors.gradient-bg;
+  background-size: spacing.$border 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .timeline-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: transparent;
+
+    .half {
+      width: calc(50% - spacing.$border / 2);
+    }
+
+    &.left {
+      flex-direction: row;
+
+      .half {
+        text-align: right;
+      }
+    }
+
+    &.right {
+      flex-direction: row-reverse;
+    }
+
+    .content {
+      width: 100%;
+      padding: $small-spacing;
+
+
+
+      h2 {
+        margin: 0;
+        font-size: spacing.$md;
+
+        @media(min-width: breakpoints.$md) {
+          font-size: spacing.$lg;
+        }
+      }
+
+      h3 {
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: spacing.$sm;
+
+        @media(min-width: breakpoints.$md) {
+          font-size: spacing.$md;
+        }
+
+        &.date {
+          margin: 0;
+          text-transform: uppercase;
+        }
+      }
+
+      div.tag {
+        display: none;
+
+        @media(min-width: breakpoints.$md) {
+          display: inline-block;
+        }
+      }
+    }
+
+    &:after {
+      @include colors.gradient-bg;
+      display: block;
+      content: '';
+      position: absolute;
+      width: spacing.$md;
+      aspect-ratio: 1;
+      top: spacing.$xl;
+      left: calc(50% - spacing.$xs);
+      border-radius: 50%;
+      z-index: 1;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use '../../scss/breakpoints';
+@use '../../scss/colors';
+@use '../../scss/spacing';
+
+section.blog-post-list {
+  @include colors.gradient-bg;
+  padding: spacing.$md;
+  width: 100%;
+
+  div.content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: spacing.$md;
+    background: colors.$bg1;
+    padding: spacing.$md;
+    container-name: blog-post-list-content;
+    container-type: inline-size;
+  }
+}

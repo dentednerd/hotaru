@@ -1,15 +1,11 @@
 import educationData from './educationData';
-import interestsData from './interestsData';
-import introData from './introData';
 import portfolioData from './portfolioData';
-import timelineData from './timelineData';
 import qualificationData from './qualificationData';
+import timelineData from './timelineData';
 
 export {
   educationData,
-  interestsData,
-  introData,
   portfolioData,
-  timelineData,
   qualificationData,
+  timelineData,
 };

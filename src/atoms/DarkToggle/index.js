@@ -1,13 +1,20 @@
-import React from 'react'
-import { useTheme } from '@emotion/react'
-import { ToggleIcon } from '../../assets/icons'
+import FaIcon from '../FaIcon';
+import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon';
+import { faSun } from '@fortawesome/free-solid-svg-icons/faSun';
+
+import './DarkToggle.scss';
 
 const DarkToggle = ({ darkMode }) => {
-  const theme = useTheme()
-  const handleClick = () =>
-    darkMode.value ? darkMode.disable() : darkMode.enable()
+  const handleClick = () => darkMode.value ? darkMode.disable() : darkMode.enable();
 
-  return <ToggleIcon theme={theme} darkMode={darkMode} onClick={handleClick} />
-}
+  return (
+    <FaIcon
+      className="dark-toggle"
+      icon={darkMode.value ? faSun : faMoon}
+      onClick={handleClick}
+      size="3x"
+    />
+  );
+};
 
-export default DarkToggle
+export default DarkToggle;

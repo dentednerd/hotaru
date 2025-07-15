@@ -1,0 +1,20 @@
+@use "../../scss/breakpoints";
+@use "../../scss/colors";
+@use "../../scss/fonts";
+@use "../../scss/spacing";
+
+.headed-section {
+  text-align: justify;
+  width: 100%;
+  gap: spacing.$xl;
+
+  h2.headed-section-heading {
+    @include colors.gradient-border-bottom();
+    position: relative;
+    font-family: fonts.$cursive;
+    text-transform: lowercase;
+    line-height: 1.5;
+    font-weight: normal;
+    padding: spacing.$border 0 spacing.$border spacing.$xs;
+  }
+}

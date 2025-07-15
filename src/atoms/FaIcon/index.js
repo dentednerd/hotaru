@@ -1,15 +1,17 @@
-import React from 'react';
-import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const StyledIcon = styled(FontAwesomeIcon)`
-  margin: 0;
-  color: inherit;
-`;
+import './FaIcon.scss';
 
 const FaIcon = props => {
   const { icon, onClick } = props;
-  return <StyledIcon className="icon" {...props} icon={icon} onClick={onClick} />;
+  return (
+    <FontAwesomeIcon
+      className="fa-icon"
+      icon={icon}
+      onClick={onClick}
+      {...props}
+    />
+  );
 };
 
 export default FaIcon;

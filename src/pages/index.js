@@ -1,94 +1,20 @@
-import { graphql } from 'gatsby'
-import React from 'react'
-import Layout from '../templates/Layout'
+import Community from '../organisms/Community';
+import Experience from '../organisms/Experience';
+import Header from '../organisms/Header';
+import Layout from '../templates/Layout';
+import More from '../organisms/More';
 
-import BrandsScreen from './BrandsScreen'
-import IntroScreen from './IntroScreen'
-import JournalScreen from './JournalScreen'
-import MediaScreen from './MediaScreen'
-import PortfolioScreen from './PortfolioScreen'
-
-const HomePage = ({ data }) => {
-  const { posts, images } = data
-
-  if (!images) return null
-
+const HomePage = () => {
   return (
     <Layout>
-      <IntroScreen />
-      <BrandsScreen />
-      <PortfolioScreen images={images} />
-      <MediaScreen />
-      <JournalScreen posts={posts} />
+      <div className="home-page-container">
+        <Header />
+        <Experience />
+        <Community />
+        <More />
+      </div>
     </Layout>
-  )
-}
+  );
+};
 
-export const pageQuery = graphql`
-  {
-    posts: allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
-      edges {
-        next {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
-        previous {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-            tags
-            category
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 90)
-          html
-        }
-      }
-    }
-    tags: allMarkdownRemark {
-      group(field: { frontmatter: { tags: SELECT } }) {
-        fieldValue
-        totalCount
-      }
-    }
-    images: allImageSharp {
-      edges {
-        node {
-          gatsbyImageData
-        }
-      }
-    }
-  }
-`
-
-export default HomePage
+export default HomePage;

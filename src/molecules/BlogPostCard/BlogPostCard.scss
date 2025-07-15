@@ -1,0 +1,47 @@
+@use '../../scss/breakpoints';
+@use '../../scss/colors';
+@use '../../scss/fonts';
+@use '../../scss/shadows';
+@use '../../scss/spacing';
+
+.blog-post-card {
+  display: flex;
+  flex-flow: column nowrap;
+  border: solid 1px colors.$purple;
+  background-color: colors.$bg2;
+  color: colors.$darkPurple;
+  box-shadow: shadows.$shadow-cta;
+  transition: box-shadow 0.2s ease-in-out;
+  width: 100%;
+
+  &:hover {
+    background-color: colors.$bg1;
+    box-shadow: shadows.$shadow-ctaHover;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .gatsby-image-wrapper {
+    aspect-ratio: 16/9;
+
+    img {
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+
+  div.title {
+    padding: spacing.$sm;
+    font-family: fonts.$body;
+    font-size: spacing.$md;
+    font-weight: bold;
+    // letter-spacing: -(spacing.$border);
+    letter-spacing: 0;
+    color: colors.$gradient-start;
+    margin: 0;
+
+    p {
+      font-weight: normal;
+      color: colors.$purple;
+    }
+  }
+}

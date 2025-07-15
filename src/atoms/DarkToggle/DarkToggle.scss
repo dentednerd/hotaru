@@ -1,0 +1,29 @@
+@use '../../scss/spacing';
+@use '../../scss/colors';
+
+.dark-toggle {
+  $size: 2rem;
+
+  position: fixed;
+  right: spacing.$md;
+  top: spacing.$md;
+  height: $size;
+  width: $size;
+  cursor: pointer;
+  color: colors.$text;
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+  filter: drop-shadow(0 0 spacing.$border colors.$bg1);
+  z-index: 9;
+
+  &.svg-inline--fa {
+    height: $size !important;
+    width: $size !important;
+  }
+
+  &:hover {
+    transform: scale(1.25);
+    color: colors.$gradient-start;
+    transition: all 0.2s ease-in-out;
+  }
+}

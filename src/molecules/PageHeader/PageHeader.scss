@@ -1,0 +1,46 @@
+@use '../../scss/colors';
+
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 0;
+  padding-bottom: spacing.$xl;
+  border-bottom: solid 1px colors.$purple;
+  margin-bottom: spacing.$md;
+  height: auto;
+  width: 100%;
+
+  @media(min-width: 425px) {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: spacing.$md;
+    height: 1spacing.$xl;
+  }
+
+  svg {
+    width: 100%;
+    max-height: 10rem;
+    margin: 0;
+
+    @media(min-width: 425px) {
+      margin: spacing.$md 0;
+    }
+  }
+
+  div.text {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: spacing.$md;
+      line-height: normal;
+    }
+  }
+}

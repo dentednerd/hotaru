@@ -1,27 +1,6 @@
-import { useTheme } from '@emotion/react'
-import styled from '@emotion/styled'
-import React from 'react'
-import { Codepen, Github, LinkedIn } from '../../assets/icons'
+import { Codepen, Github, LinkedIn } from '../../assets/icons';
 
-const StyledContactIcons = styled.div`
-  display: flex;
-
-  a {
-    margin-right: 1rem;
-
-    svg {
-      color: #fff;
-      height: 2rem;
-      width: 2rem;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: ${(props) => props.theme.accentBold};
-        transition: color 0.3s ease;
-      }
-    }
-  }
-`
+import "./ContactIcons.scss";
 
 const icons = [
   {
@@ -39,24 +18,20 @@ const icons = [
     icon: <Codepen />,
     alt: 'Codepen',
   },
-]
+];
 
-const ContactIcons = () => {
-  const theme = useTheme()
+const ContactIcons = () => (
+  <div className="contact-icons">
+    {icons.map((icon) => (
+      <a
+        href={icon.link}
+        key={icon.link}
+        aria-label={`Visit my ${icon.alt} profile`}
+      >
+        {icon.icon}
+      </a>
+    ))}
+  </div>
+);
 
-  return (
-    <StyledContactIcons theme={theme}>
-      {icons.map((icon) => (
-        <a
-          href={icon.link}
-          key={icon.link}
-          aria-label={`Visit my ${icon.alt} profile`}
-        >
-          {icon.icon}
-        </a>
-      ))}
-    </StyledContactIcons>
-  )
-}
-
-export default ContactIcons
+export default ContactIcons;

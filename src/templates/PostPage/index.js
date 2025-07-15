@@ -1,80 +1,20 @@
-import styled from '@emotion/styled'
-import { Link, graphql } from 'gatsby'
-import { getImage } from 'gatsby-plugin-image'
-import React from 'react'
-import SEO from '../../atoms/SEO'
-import JournalCard from '../../molecules/JournalCard'
-import { breakpoints, colors, fonts } from '../../tokens'
-import Layout from '../Layout'
-import Hero from './Hero'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Link, graphql } from 'gatsby';
+import advancedFormat from 'dayjs/plugin/advancedFormat.js';
+import dayjs from 'dayjs';
 
-const ContentWrapper = styled.div`
-  width: calc(100vw - 2rem);
-  max-width: calc(${breakpoints.sm}px - 2rem);
-  margin: 1rem;
+import BlogPostList from '../../molecules/BlogPostList';
+import CTALink from '../../atoms/CTALink';
+import Layout from '../Layout';
+import SEO from '../../atoms/SEO';
 
-  @media (min-width: ${breakpoints.md}px) {
-    width: ${breakpoints.sm}px;
-    margin: 1rem auto;
-  }
-`
+import "./PostPage.scss";
 
-const PostFooter = styled.nav`
-  background-color: ${(props) => props.theme.bg2};
-  margin: 0 auto;
-  padding: 1rem 0;
+dayjs.extend(advancedFormat);
 
-  div {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 2rem;
-    place-items: center;
-
-    a {
-      max-width: 30vw;
-    }
-  }
-`
-
-const PostContent = styled.div`
-  padding: 0;
-
-  p:first-of-type:first-letter {
-    font-family: ${fonts.headline};
-    initial-letter: 2;
-    margin-right: 0.5rem;
-  }
-
-  blockquote p:first-of-type:first-letter,
-  li p:first-of-type:first-letter {
-    font-family: inherit;
-    initial-letter: 1;
-    margin-right: 0.1rem;
-  }
-
-  ul {
-    list-style: none;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-
-    li:before {
-      content: '» ';
-    }
-  }
-`
-
-const Byline = styled('p')`
-  font-family: ${fonts.cursive};
-  font-size: 2rem;
-  margin: 2rem 0 1rem;
-  color: ${colors.text};
-`
-
-const PostPage = ({ data, pageContext }) => {
-  const { post } = data
-  const thisFeaturedImage = getImage(post.frontmatter.featuredImage)
-  const { next, previous } = pageContext
+const PostPage = ({ data }) => {
+  const { post } = data;
+  const thisFeaturedImage = getImage(post.frontmatter.featuredImage);
 
   return (
     <Layout>
@@ -84,28 +24,37 @@ const PostPage = ({ data, pageContext }) => {
         featuredImage={thisFeaturedImage.images.fallback.src}
         keywords={post.frontmatter.tags}
       />
-      <Hero
-        image={thisFeaturedImage.images.fallback.src}
-        title={post.frontmatter.title}
-      />
 
-      <ContentWrapper>
-        <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Byline>thanks for reading! Joey x</Byline>
-      </ContentWrapper>
+      <section className="blog-post">
+        <header>
+          <GatsbyImage
+            image={thisFeaturedImage}
+            alt={post.title}
+            loading="eager"
+          />
+        </header>
 
-      <PostFooter>
-        <ContentWrapper>
-          {pageContext.previous && <JournalCard post={previous} />}
-          <Link to="/">Home</Link>
-          {pageContext.next && <JournalCard post={next} />}
-        </ContentWrapper>
-      </PostFooter>
+        <div className="blog-post-content">
+          <h1 className="blog-post-title">{post.frontmatter.title}</h1>
+          <p>
+            by <Link to="/">Joey Imlay</Link>
+            <br />
+            {dayjs(post.frontmatter.date).format('dddd Do MMMM YYYY')}
+          </p>
+          <article dangerouslySetInnerHTML={{ __html: post.html }} />
+          <p className="byline">thanks for reading! Joey x</p>
+          <CTALink to="/">back to homepage</CTALink>
+        </div>
+
+        <aside>
+          <BlogPostList />
+        </aside>
+      </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default PostPage
+export default PostPage;
 
 export const query = graphql`
   query ($slug: String!) {
@@ -183,4 +132,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

@@ -1,0 +1,8 @@
+@use 'colors';
+@use 'spacing';
+
+$shadow-footer: 0 0.5rem 0.5rem rgba(22, 16, 50, 0.5);
+$shadow-cta: 0.25rem 0.25rem 0 colors.$purple-700;
+$shadow-ctaHover: spacing.$border spacing.$border 0 colors.$purple-700;
+$shadow-inset: inset 0 0 0.5rem colors.$purple-300;
+$shadow-insetHero: inset 0 0 spacing.$md colors.$purple-300;

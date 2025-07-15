@@ -1,0 +1,28 @@
+@use '../../scss/breakpoints';
+@use '../../scss/colors';
+@use '../../scss/fonts';
+@use '../../scss/spacing';
+
+.mixed-text {
+  width: 100%;
+  max-width: breakpoints.$lg;
+  font-size: spacing.$lg;
+  line-height: 1.2;
+  font-family: fonts.$contrast;
+  text-align: left;
+  margin: 0;
+  align-self: end;
+
+  @media (orientation: landscape) {
+    align-self: center;
+  }
+
+  span {
+    font-family: fonts.$headline;
+    font-size: calc(spacing.$lg * 1.25);
+    font-style: normal;
+    font-weight: bold;
+    color: colors.$accentBold;
+    @include colors.gradient-text;
+  }
+}

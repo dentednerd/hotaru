@@ -1,0 +1,57 @@
+@use "../../scss/breakpoints";
+@use "../../scss/colors";
+@use "../../scss/fonts";
+@use "../../scss/spacing";
+
+div.out-and-about-item {
+  width: 100%;
+  padding: spacing.$xl 0;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  grid-template-rows: auto auto;
+  gap: spacing.$md;
+
+  @media (min-width: breakpoints.$lg) {
+    grid-template-columns: 4rem 3fr 1fr;
+    grid-template-rows: 100%;
+  }
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
+  div.item-date {
+    @include colors.gradient-bg;
+    position: relative;
+    width: 4rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    padding: spacing.$xs;
+    color: colors.$bg1;
+    font-family: fonts.$headline;
+  }
+
+  div.item-content {
+    h2{
+      font-size: spacing.$lg;
+      text-align: left;
+    }
+  }
+
+  div.links {
+    display: flex;
+    flex-flow: column wrap;
+    gap: spacing.$md;
+    grid-column: 2/3;
+
+    @media (min-width: breakpoints.$lg) {
+      grid-column: 3/4;
+    }
+  }
+}
