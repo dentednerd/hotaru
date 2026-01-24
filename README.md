@@ -1,5 +1,7 @@
 # [Hotaru](https://joanneimlay.dev)
 
+Retired as of 24th January 2026.
+
 My professional site, built in [Gatsby](https://www.gatsbyjs.org/) and hosted on [Netlify](https:///www.netlify.com).
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5dafda63-13c3-41e3-bd7d-68c386fca16f/deploy-status)](https://app.netlify.com/sites/joanneimlay/deploys)
